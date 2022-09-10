@@ -1,0 +1,71 @@
+% ---------------------------------------------------------------------------------------
+\chapter{La transformaci\'on de Box y Cox}\label{chap4}
+ 
+
+    La tranformaci\'on de Box y Cox, o simplemente BoxCox es una transformaci\'on no lineal propuesta por George Box y David Cox en el a\~no 1964 en su paper \textit{An Analysis of Transformations}. Es una transformaci\'on estad\'istica param\'etrica no lineal que es a menudo utilizada como un canal de preprocesamiento para convertir datos a una distribuci\'on normali. El método
+    es parte de las t\'ecnicas de tranformaci\'on de potencia, o\textit{power transformation}, cuyo objetivo es
+    encuentrar el par\'ametro $\lambda$ que maximiza la siguiente verosimilutud.
+
+    \begin{equation}
+        \mathcal{L}(\lambda) \equiv-\frac{n}{2} \log \left[\frac{1}{n} \sum_{j=1}^{n}\left(x_{j}^{\lambda}-\overline{x^{\lambda}}\right)^{2}\right] +(\lambda-1) \sum_{j=1}^{n} \log x_{j}
+    \end{equation}
+    donde $\overline{x^{\lambda}}$ es el promedio muestral del vector transformado.
+    
+    Dada la selecci\'on de $/lambda$, la transformaci\'on est\'a dada por:
+    \begin{equation}\label{boxcox}
+        y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
+    \end{equation}
+
+    $\forall y\in\R_{>0}$.Aunque tamb\'en existe una versi\'on para datos no positivos dada por
+    $$
+    y^{(\lambda)}= \begin{cases}\frac{\left(y+\lambda_{2}\right)^{\lambda_{1}}-1}{\lambda_{1}} & \left(\lambda_{1} \neq 0\right), \\ \log \left(y+\lambda_{2}\right) & \left(\lambda_{1}=0\right) .\end{cases}
+    $$
+    Pero esta no es muy usada, dado que antes de aplicar la transformaci\'on suele haber un paso de preprocesamiento de los datos que la deja por sobre 0. 
+
+    %access.2020.3018874.pdf
+
+    Nota: el siguiente parrafo mantiene las citas del paper On Box-Cox Transformation for Image Normality and Pattern Classification
+
+    El objetivo de la transformaci\'on es asegurar que se logren los supuestos para modelos lineales de modo que t\'ecnicas de an\'alisis de varianza est\'andar puedan aplicarse a los datos. La transformaci\'on no cambia el ordenamiento de los datos seg\'un Bicego y Bald\'o [3].
+
+    Obviamente, no todos los datos se pueden transformar de esta forma para producir normalidad, sin embargo, Draper y Cox [24] argumentan que incluso en los casos en que ninguna transformaci\'on de potencia podr\'ia llevar la distribuci\'on exactamente a la normalidad, las estimaciones habituales de $\lambda$ pueden ayudar a regularizar los datos y, finalmente, conducir a una distribuci\'on que satisfaga ciertas caracter\'isticas como la simetr\'ia o la homocedasticidad. Esta \'ultima es especialmente \'util en el reconocimiento de patrones y aprendizaje automático (p. ej., an\'alisis discriminante lineal de Fisher)
+
+
+
+    \section[]{BoxCox sobre imagenes} 
+
+    Como mencionamos en la introcucci\'on, no hay una gran cantidad de estudios que aborden la transformaci\'on BoxCox en conjunto con imágenes digitales. (ejemplos)
+
+
+    Notemos tambi\'en que la aplicaci\'on de la tranformaci\'on es un proceso iterativo en el cual se ha de buscar un parametro $\lambda$, esto hace que aplicar la transformaci\'on en grandes bancos de imagenes sea demoroso. Una alternativa propuesta por A. Cheddad (On Box-Cox Transformation for Image Normality and Pattern Classification) es utilizar el histograma como proxy comprido de la matriz de datos, dado que este refleja la probabilidad estimada de que un pixel esa de un tono en particular. En lo que continua de la secci\'on discutiremos este m\'etodo.
+
+    Dada una imagen en el espacio de color RGB, definimos:
+    $$
+    \mathcal{F}(u, v)=\{R(u, v), G(u, v), B(u, v)\}
+    $$
+    donde $(u, v)$ son las coordenadas en el espacio de pixeles que cumplen $u=1, \ldots U$, $v=1, \ldots V$ y $(U, V)$ son las dos dimensiones de la foto. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto definimos:
+    $$
+    \mathcal{F}^{\prime} =(0.299 \mathrm{R}+0.587 \mathrm{G}+0.114 \mathrm{~B})
+    $$
+
+
+    Que correspondo al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En base a esto definimos el histograma como
+    
+    $\chi(i)=\sum_{i=0}^{255}\mathcal{F}^{\prime} \text{ , si tiene nivel de gris } i$ 
+    
+    Ahora, denotemos por $\hat{\lambda}_{\chi}$ al parametro de la transformaci\'on BoxCox seleccionado usando el histograma, y de forma analoga definamos $\lambda_{\mathcal{F}^{\prime}}$ al seleccionado usando los datos completos. Fue obserado por Cheddad que estos no coinciden (de hecho la correlaci\'on entre estos es $r^2=-0.3022$) pero aun as\'i este calculo se ha desmostrado util en problemas de clasificaci\'on.
+
+
+    Ahora definimos $\mathcal{F}^{\prime}(u, v)^{\lambda_{\chi}}$ como los datos siendo aplicada la transformaci\'on BoxCox definida en (\ref{boxcox}), y por ultimo vamos a definir BoxCox para imagenes o BCI como:
+
+    $$    
+    \begin{aligned}
+        &B C I=\frac{\left(\mathcal{F}^{\prime \prime}(u, v)-\min \left(\mathcal{F}^{\prime \prime}(u, v)\right)\right)}{\left(\max \left(\mathcal{F}^{\prime \prime(u, v)}\right)-\min \left(\mathcal{F}^{\prime \prime(u, v)}\right)\right)}\\
+        &\text { con } \mathcal{F}^{\prime \prime}(u, v)=\mathcal{F}^{\prime}(u, v)^{\hat{\lambda}_{\chi}}
+    \end{aligned}
+    $$
+    
+    Nota. mantuve la notaci\'on del paper pero creo que esta necesita una revision.
+
+
+    Ahora veamos algunos ejemplos:
