@@ -1,0 +1,70 @@
+         
+
+black",b: : th=60).place(x=0,y=0)
+black",bg='alice blue’, width=30).place(x=140, y=80)
+
+    
+
+ 
+
+Montserrat”, 1 4), f
+(“Montserrat",15),fg=
+
+nvenido/a Administrador/a",fo!
+Ingrese usuario y contrasena",font=|
+
+Label(ventana_adm trador,text:
+Label(ventana_adm inistrador,text=
+
+ 
+
+Label(ventana_administrador,text="Usuario",font=("Montserrat",15),bg='alice blue’).place(x=218,y=1 80)
+Label(ventana_adm inistrador,text="Contrasefia”,font=("Montserrat”,15),bg='alice blue').place(x=180, y=240)
+
+ 
+
+usuario_administrador=Entry(ventana_administrador, width=25)
+usuario_administrador.place(x=330,y=182)
+
+ 
+
+  
+
+contrasena_administrador=Entry(ventana_administrador, width=25, show=""" )
+
+contrasena_administrador.place(x=330,y=242)
+
+boton_ingresar=Button(ventana_administrador, text="Ingresar", font=("Montserrat",15),bg="alice blue", fg="black", width=15, height=1, command=inicio_administrador).place(x:
+ventana_inicial.iconify()
+
+ventana_administrador.protocol("WM_DELETE_WINDOW’", cerrar_administrador)
+
+def acciones_administrador():
+def cerrar_all():
+ventana2_administrador.destroy()
+ventana_inicial.deiconify()
+
+def ingresar_paciente():
+ventana2_administrador.destroy()
+funcion_ingresar_paciente()
+
+def actualizar_paciente():
+ventana2_administrador.destroy()
+funcion_actualizar_paciente()
+
+def eliminar_paciente():
+ventana2_administrador.destroy()
+funcion_eliminar_paciente()
+
+def ver_paciente():
+ventana2_administrador.destroy()
+funcion_ver_paciente()
+
+ventana2_administrador=Toplevel(ventana_inicial)
+ventana2_administrador.title("Hospital Gustavo Chile-Perfil Administrador/a")
+ventana2_administrador.config(bg="gray90")
+ventana2_administrador.geometry("700x450")
+ventana2_administrador.resizable(0,0)
+
+ 
+

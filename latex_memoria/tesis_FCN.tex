@@ -1,0 +1,143 @@
+% $Id: tese-osorio.tex,v 0.2 2005/04/27 23:34:06 osorio Exp $
+\documentclass[10pt]{report}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[latin1]{inputenc} % include 'latin1' symbols
+\usepackage[spanish]{babel}
+\usepackage[authoryear]{natbib}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{fontenc,url,path}
+\usepackage{hyperref}
+\usepackage{float}
+
+\hypersetup{colorlinks,
+            urlcolor=blue,
+            citecolor=blue}
+
+\graphicspath{{figuras/}}
+
+% layout pars
+\setlength{\parindent}{0pt}
+\setlength{\arraycolsep}{2pt}
+\setlength{\parskip}{3pt}
+\vfuzz2pt % don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % don't report over-full h-boxes if over-edge is small
+
+% commands
+\newcommand{\intro}[1]
+  {{\normalsize\textsf{#1}}}
+
+\newcommand{\blankpage}%
+  {\newpage
+   \null\vfill\eject}
+
+% customized 'description' environment
+\renewcommand{\descriptionlabel}[1]%
+	{\hspace{\labelsep}\textsf{#1}}
+
+% text commands
+\def\etal{et al.}
+\def\ie{i.e}
+\renewcommand\spanishtablename{Tabla}
+
+% math commands
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Cor}{Cor}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\abs}{abs}
+\DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\blkdiag}{blc\,diag}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rd}{d}
+\DeclareMathOperator{\GIF}{GIF}
+\let \max \relax
+\DeclareMathOperator{\max}{max}
+\let \min \relax
+\DeclareMathOperator{\min}{min}
+\DeclareMathOperator{\nullity}{nulidad}
+\let \Pr \relax
+\DeclareMathOperator{\Pr}{P}
+\DeclareMathOperator{\rk}{rg}
+\let \SS \relax
+\DeclareMathOperator{\SS}{SS}
+\DeclareMathOperator{\SSD}{SSD}
+\DeclareMathOperator{\tr}{tr}
+\let \vec \relax
+\DeclareMathOperator{\vec}{vec}
+\DeclareMathOperator{\vech}{vech}
+\DeclareMathOperator{\vecp}{vecp}
+\def\half{{\textstyle\frac{1}{2}}}
+\def\Cset{\mathbb{C}}
+\def\Hset{\mathbb{H}}
+\def\Nset{\mathbb{N}}
+\def\Qset{\mathbb{Q}}
+\def\Rset{\mathbb{R}}
+\def\Zset{\mathbb{Z}}
+\def\D{\mathsf{D}}
+\def\H{\mathsf{H}}
+\newcommand{\bt}[1]{\ensuremath{\mathbf{#1}}}  % bold text
+\newcommand{\bm}[1]{\mbox{\boldmath $#1$}}     % bold math
+\newcommand{\bc}[1]{\ensuremath{\mathcal{#1}}}  % bold text
+\newcommand{\what}[1]{\widehat{#1}}             % shortcut for \widehat
+\newcommand{\C}{\textsf{C}}
+\newcommand{\Fortran}{\textsc{Fortran}}
+\newcommand{\R}{\textsc{R}}
+\newcommand{\s}{\textsf{S}}
+\newcommand{\Splus}{\textsc{S-Plus}}
+
+% Theorems -------------------------------------------------------------
+\theoremstyle{plain}
+\newtheorem{fact}{Hecho}
+\newtheorem{thm}{Teorema}[chapter]
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{property}[thm]{Propiedad}
+\theoremstyle{definition}
+\newtheorem{defn}{Definici\'{o}n}[chapter]
+\newtheorem{asump}{Supuesto}[chapter]
+\newtheorem{prop}{Proposici\'{o}n}[chapter]
+\newtheorem{result}{Resultado}[chapter]
+\theoremstyle{remark}
+\newtheorem{rem}{Observaci\'{o}n}[chapter]
+\newtheorem{example}{Ejemplo}[chapter]
+
+\title{{\LARGE\textbf{T\'opicos de Modelaci\'on Estad\'istica}} \\[0.8ex]
+    {\large\textbf{Notas de Clase MAT-305: M\'etodos Estad\'isticos}}}
+
+\author{Felipe Osorio}
+
+\hyphenation{ob-te-ne-mos
+    pro-ba-bi-li-dad
+    si-guien-tes
+    va-rian-za}
+
+\begin{document}
+
+\DeclareGraphicsExtensions{.epsi.gz,.epsi,.eps.gz,.eps,.ps,.ps.gz}
+
+% ----------------------------------------------------------------------
+\include{tapa}
+\blankpage
+
+\include{cap1}
+\include{cap2}
+\blankpage
+\include{cap3}
+\blankpage
+\include{cap4}
+\include{cap5}
+\blankpage
+\include{cap6}
+
+\blankpage
+\appendix
+\include{appA}
+
+\blankpage
+\nocite{*}
+\include{refs}
+% ----------------------------------------------------------------------
+
+\end{document} 

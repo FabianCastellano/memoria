@@ -27,38 +27,73 @@ Para una muestra de tama\~no $N$, tenemos:
 Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
 
 Hablar de The Ineffectiveness of the Correlation Coefficient for Image Comparisons
+
+\newpage
 \section[]{\textit{Maximal Information Coeficient}}
 %Reshef.SOM.v2.pdf
 
-\subsection{Discucion sobre el coef.}
+\subsection{Sobre el coeficiente}
 
-	donde se publico, como su ocupa, despcion en palabras
+	El coeficiente de informaci\'on m\'axima (Maximal Information Coefficient o MIC) es una medida estad\'istica propuesta por Reshef et al. en su paper "Detecting Novel Associations in Large Data Sets" [citar]. Este coeficiente mide la correlaci\'on entre dos variables en un conjunto de datos y se basa en la idea de que una relaci\'on fuerte entre dos variables deber\'ia ser capaz de predecir una variable a partir de la otra de manera precisa.
+
+	En su paper, Reshef et al. presentan un enfoque innovador para detectar asociaciones nobles en grandes conjuntos de datos, en lugar de buscar correlaciones fuertes entre dos variables, el coeficiente MIC permite detectar relaciones d\'ebiles pero a\'un importantes que pueden no ser evidentes al simplemente mirar los datos. Esto es posible gracias a que el coeficiente MIC es capaz de capturar no solo la fuerza de la correlaci\'on entre dos variables, sino tambi\'en su precisi\'on.
+
+	Para calcular el coeficiente, se parte de la idea de que la informaci\'on mutua entre dos variables es una medida de la precisi\'on con la que se puede predecir una variable a partir de la otra. Por lo tanto, el coeficiente se calcula como la informaci\'on mutua m\'axima posible entre dos variables, dado un conjunto de datos. Esto se hace a trav\'es de un procedimiento iterativo en el que se prueban diferentes particiones de los datos en conjuntos de entrenamiento y prueba, y se selecciona aquella que maximiza la informaci\'on mutua.
+
+	El la siguiente secci\'on estudiaremos las definiciones que nos entrega cada coeficiente.
  
-\section{Definiciones}
+\subsection{Definiciones}
 
-	Comenzaremso definiendo la inforamaci\'on mutua para dos variables aleatorias conjuntas discretas. 
+	Como mencionamos en la parte anterior, debemos primero encontrar la informaci\'on mutua entre las variables, para esto definamos:
 
 	\begin{defn}[Informaci\'on mutua]
-		Para dos variables aleatorias conjuntas discretas $X$ e $Y$, se define la informaci\'on mutua como:
+		Para dos variables aleatorias conjuntas $X$ e $Y$, se define la informaci\'on mutua como:
 		$$
 		\mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
 		$$
 		Donde $P_{(X, Y)}$ es la funci\'on de densidad de probabilidad conjunta y $P_{X}$, $P_{Y}$, las distribuciones marginales de $X$ e $Y$ respectivamente. 
 	\end{defn}
 
-	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida pokr los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. 
+	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida pokr los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. Veamos un ejemplo
+	\begin{figure}[H]
+		\centering
+		\includegraphics*[scale = 0.4]{D_G_example1.png}
+		\caption{Malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
+		\label{malla_G}
+	\end{figure}
 
-	Para un $D$ fijo, diferentes mallas $G$ resultan en diferentes distribuciones $D|_G$. Este es un hecho que explotamos en la siguiente definici\'on: 
+	Para la figura \ref{malla_G}, la funci\'on de densidad quedar\'ia de la forma:
+	\[
+		f_{D|_G}(i,j) = \left\{\begin{array}{lr}
+			\frac{2}{10} & \text{si } (i,j) \in \{ (1,1), (2,2), (4,2)\} \\
+			\frac{1}{10}, & \text{si }(i,j) \in \{ (3,2)\}  \\
+			\frac{3}{10}, & \text{si }(i,j) \in \{ (4,1)\}  \\
+			0, & \text{Otro caso.}
+			\end{array}\right.
+	\]
+
+
+
+	Notemos que para un $D$ fijo, aunque fijemos el grosor de la malla, la distrion de esta puede variar dependiendo de donde hagamos los cortes, por ejemplo:
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics*[scale = 0.4]{D_G_example2.png}
+		\caption{Otra malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
+		\label{malla_G_2}
+	\end{figure}
+
+	Aqu\'i podemo ver que la funci\'on de densidad que nos entrega est\'a malla es distinta a la definida para la figura \ref{malla_G_2}. Este es un hecho que explotamos en la siguiente definici\'on: 
 
 	\begin{defn}
-		Para un conjunto finito $D\in\R^2$ y enteros positivos $x,y$, definimos:
+		Para un conjunto finito $D\in\R^2$ y enteros positivos $i,j$, definimos:
 		$$
-		I^*(D,x,y)=\max I(D|_G)
+		I^*(D,i,j)=\max I(D|_G)
 		$$
-		donde el m\'aximo es sobre todas las mallas $G$ con $x$ columnas e $y$ filas, e $I(D|_G)$ denota la informaci\'on mutua de $D|_G$.
+		donde el m\'aximo es sobre todas las mallas $G$ con $i$ columnas y $j$ filas, con $I(D|_G)$ denot la informaci\'on mutua de $D|_G$.
 	\end{defn}
 
-	Ahora podemos definir la matriz caracteristica y el \textit{MIC} de $D$ en terminos de $I^*$.
+	Ya teniendo este valor procedemos a definir la matriz caracteristica del conjunto $D$.
 
 	\begin{defn}
 		La matriz caracteristica $M(D)$ de un conjunto bivariado $D$ es una matriz infinita con entradas:
@@ -74,8 +109,79 @@ Hablar de The Ineffectiveness of the Correlation Coefficient for Image Compariso
 		donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$ 
 	\end{defn}
 	\begin{rem}
-		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^0.6$, que es la funci\'on que ocupan en el paper citado al principio del la secci\'on
+		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, que es la funci\'on que ocupan en el paper citado al principio del la secci\'on
 	\end{rem}
+\subsection[]{Ejemplos}
+
+	Ya con la funci\'on bien definida, veamos unos ejemplos del coeficiente, primero para algunos datos, y luego entre im\'agenes. Comenzemos por algunos ejemplos usando 
+
+	el formato de esta secci\'on es temporal
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{away_x_dino_x_.png}
+		\caption{ MIC = 0.187}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{away_x_dino_y_.png}
+		\caption{ MIC = 0.227}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{bullseye_x_away_y_.png}
+		\caption{ MIC = 0.176}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{bullseye_x_bullseye_y_.png}
+		\caption{ MIC = 0.425}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{circle_x_circle_y_.png}
+		\caption{ MIC = 0.631}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{circle_x_dino_y_.png}
+		\caption{ MIC = 0.228}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{dino_x_dino_y_.png}
+		\caption{ MIC = 0.257}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{dots_x_dots_y_.png}
+		\caption{ MIC = 0.500}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{dots_x_high_lines_y_.png}
+		\caption{ MIC = 0.157}
+		\end{figure}
+		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.6]{h_lines_x_high_lines_x_.png}
+		\caption{ MIC = 0.212}
+		\end{figure}
+		\subsection{Hablar sobre el algoritmo y el papaer del 2016, que es TICe y MICe}
+
+\newpage
+
+	\subsection{Hablar sobre el algoritmo y el papaer del 2016, que es TICe y MICe}
+
 \section[]{Correlaci\'on local} 
 
 	%chen2010.pdf
@@ -119,13 +225,3 @@ Hablar de The Ineffectiveness of the Correlation Coefficient for Image Compariso
 		M=\max _{r}\{|\ell(r)|\}
 	$$
 	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
-
-\section[]{Distanc/'ia de covarianza browniana} 
-
-	%chen2010.pdf
-
-	\subsection{Discucion sobre el coef.}
-
-	donde se publico, como su ocupa, despcion en palabras
-
-	\subsection{Definiciones}

@@ -1,0 +1,60 @@
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/away_x_dino_x_.png}
+\caption{ MIC = 0.187}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/away_x_dino_y_.png}
+\caption{ MIC = 0.227}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/bullseye_x_away_y_.png}
+\caption{ MIC = 0.176}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/bullseye_x_bullseye_y_.png}
+\caption{ MIC = 0.425}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/circle_x_circle_y_.png}
+\caption{ MIC = 0.631}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/circle_x_dino_y_.png}
+\caption{ MIC = 0.228}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/dino_x_dino_y_.png}
+\caption{ MIC = 0.257}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/dots_x_dots_y_.png}
+\caption{ MIC = 0.500}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/dots_x_high_lines_y_.png}
+\caption{ MIC = 0.157}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.3]{plots/h_lines_x_high_lines_x_.png}
+\caption{ MIC = 0.212}
+\end{figure}
+
