@@ -117,7 +117,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	
 	Ya que $I(X,Y) = sup_G I((X,Y)|G)$ (consultar, por ejemplo, el Cap\'itulo 8 de Cover y Thomas, 2006), esto puede interpretarse como una versi\'on regularizada de la informaci\'on mutua que sanciona las rejillas complejas y garantiza que el resultado est\'e dentro del rango entre cero y uno.
 	
-	Previo a continuar, introducimos una definici\'on equivalente y sencilla de $MIC_$ que resulta \'util para los resultados en esta secci\'on. Esta definici\'on considera a $MIC_$ como el supremo de una matriz denominada matriz caracter\'istica poblacional, que se define a continuaci\'on.
+	Previo a continuar, introducimos una definici\'on equivalente y sencilla de $MIC_*$ que resulta \'util para los resultados en esta secci\'on. Esta definici\'on considera a $MIC_*$ como el supremo de una matriz denominada matriz caracter\'istica poblacional, que se define a continuaci\'on.
 	
 	\begin{defn}
 		Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. Sea
@@ -145,10 +145,10 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	\section[short]{El $MIC_*$ es el valor poblacional del $MIC$}
 
-	Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. (2011). Recordemos la Definiciones del MIC y la matriz caracter\'istica de muestra. Notemos que para evistar confución denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
+	Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. (2011). Recordemos la Definiciones del MIC y la matriz caracter\'istica de muestra. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
 
 	\begin{defn}
-		(Reshef et al., 2011)  Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz característica de muestra $\widehat{M}(D)$ de $D$ se define por
+		(Reshef et al., 2011)  Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz caracter\'istica de muestra $\widehat{M}(D)$ de $D$ se define por
 		$$
 		\widehat{M}(D)_{k, \ell}=\frac{I^*(D, k, \ell)}{\log \min \{k, \ell\}} .
 		$$
@@ -170,7 +170,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		$$
 		\left(f \circ r_{B(n)}\right)\left(\widehat{M}\left(D_n\right)\right) \rightarrow f(M(X, Y))
 		$$
-		en probabilidad donde $D_n$ es una muestra de tamaño $n$ de la distribución de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para algún $\varepsilon>0$.
+		en probabilidad donde $D_n$ es una muestra de tama\~no $n$ de la distribuci\'on de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{thm}
 
 	Dado que el supremo de una matriz es una funci\'on uniformemente continua en $m_\infty$ y se puede realizar como el l\'imite de m\'aximos de segmentos cada vez m\'as grandes de la matriz, este teorema genera nuestra afirmaci\'on sobre $MIC_*$ como corolario.
@@ -179,41 +179,46 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	Ya con esto podemos trabajar, bajo ciertas condiciones, con el $MIC_*$ como reemplazo del $MIC$. Pero, ¿Cu\'al es la ventaja de trabajar con este nuevo estimador? En pocas palabras, es m\'as f\'acil de estimar, y esto lo veremos en la en una secci\'on m\'as adelante. Antes de esto debemos revisar una caracterizaci\'on del $MIC_*$ que nos permitir\'a contruir un estimador de este.
 
-	\subsection[short]{title}{El $MIC_*$ es el supremo de la matriz caracter\'istica de muestra}
+	\subsection[short]{El $MIC_*$ es el supremo de la matriz caracter\'istica de muestra}
 
-	Ahora mostramos la una vista alternativa de $MIC_*$: que puede definirse de manera equivalente como el supremo sobre un límite de la matriz característica en lugar de como un supremo sobre todas las entradas de la matriz. Esta caracterización de $MIC_*$ servirá como base tanto para nuestro enfoque de aproximación de $MIC_*(X, Y)$ como para el nuevo estimador de $MIC_*$ que presentamos más adelante en este artículo.
+	Ahora mostramos la una vista alternativa de $MIC_*$: que puede definirse de manera equivalente como el supremo sobre un l\'imite de la matriz caracter\'istica en lugar de como un supremo sobre todas las entradas de la matriz. Esta caracterizaci\'on de $MIC_*$ servir\'a como base tanto para nuestro enfoque de aproximaci\'on de $MIC_*(X, Y)$ como para el nuevo estimador de $MIC_*$ que presentamos m\'as adelante en este art\'iculo.
 
-	Comenzamos definiendo lo que entendemos por límite de la matriz característica. Nuestra definición se basa en la siguiente observación.
+	Comenzamos definiendo lo que entendemos por l\'imite de la matriz caracter\'istica. Nuestra definici\'on se basa en la siguiente observaci\'on.
 	\begin{prop}
-		Sea $M$ una matriz característica poblacional. Entonces, para $\ell \geq k, M_{k, \ell} \leq M_{k, \ell+1}$
+		Sea $M$ una matriz caracter\'istica poblacional. Entonces, para $\ell \geq k, M_{k, \ell} \leq M_{k, \ell+1}$
 	\end{prop}
 	\begin{proof}
-		Sea $(X, Y)$ la variable aleatoria en cuestión. Dado que siempre podemos dejar una fila/columna vacía, sabemos que $I^*((X, Y), k, \ell) \leq I^*((X, Y), k, \ell+1)$. Y dado que $\ell, \ell+1 \geq k$, sabemos que $M_{k, \ell}=I^*((X, Y), k, \ell) / \log k \leq I^*((X, Y), k, \ell+1) / \log k=M_{k, \ell+1}$.
+		Sea $(X, Y)$ la variable aleatoria en cuesti\'on. Dado que siempre podemos dejar una fila/columna vac\'ia, sabemos que $I^*((X, Y), k, \ell) \leq I^*((X, Y), k, \ell+1)$. Y dado que $\ell, \ell+1 \geq k$, sabemos que $M_{k, \ell}=I^*((X, Y), k, \ell) / \log k \leq I^*((X, Y), k, \ell+1) / \log k=M_{k, \ell+1}$.
 	\end{proof}
 
-	Dado que las entradas de la matriz característica están acotadas, el teorema de convergencia monótona nos da el siguiente corolario. En el corolario y en adelante, dejamos $M_{k, \uparrow}=\lim _{\ell \rightarrow \infty} M_{k, \ell}$ y definimos $M_{\uparrow, \ell}$ de manera similar.
+	Dado que las entradas de la matriz caracter\'istica est\'an acotadas, el teorema de convergencia mon\'otona nos da el siguiente corolario. En el corolario y en adelante, dejamos $M_{k, \uparrow}=\lim _{\ell \rightarrow \infty} M_{k, \ell}$ y definimos $M_{\uparrow, \ell}$ de manera similar.
 	\begin{cor}
-		Sea $M$ una matriz característica poblacional. Entonces, $M_{k, \uparrow}$ existe, es finito e igual a $\sup _{\ell \geq k} M_{k, \ell}$. Lo mismo es válido para $M_{\uparrow, \ell}$.
+		Sea $M$ una matriz caracter\'istica poblacional. Entonces, $M_{k, \uparrow}$ existe, es finito e igual a $\sup _{\ell \geq k} M_{k, \ell}$. Lo mismo es v\'alido para $M_{\uparrow, \ell}$.
 	\end{cor}
 
-	El corolario anterior nos permite definir el límite de la matriz característica.
+	El corolario anterior nos permite definir el l\'imite de la matriz caracter\'istica.
 
 	\begin{defn}
-		Sea $M$ una matriz característica poblacional. El límite de $M$ es el conjunto
+		Sea $M$ una matriz caracter\'istica poblacional. El l\'imite de $M$ es el conjunto
 		$$
 		\partial M=\left\{M_{k, \uparrow}: 1<k<\infty\right\} \bigcup\left\{M_{\uparrow, \ell}: 1<\ell<\infty\right\}
 		$$
 	\end{defn}
 	
-	El teorema siguiente da una relación entre el límite de la matriz característica y $\mathrm{MIC}_*$.
+	El teorema siguiente da una relaci\'on entre el l\'imite de la matriz caracter\'istica y $\mathrm{MIC}_*$.
 	\begin{thm}
-	Teorema 15 Sea $(X, Y)$ una variable aleatoria. Tenemos
+	Sea $(X, Y)$ una variable aleatoria. Tenemos
 	$$
 	M I C_*(X, Y)=\sup \partial M(X, Y)
 	$$
-	donde $M(X, Y)$ es la matriz característica poblacional de $(X, Y)$.
+	donde $M(X, Y)$ es la matriz caracter\'istica poblacional de $(X, Y)$.
+	\end{thm}
 	\begin{proof}
-		El siguiente argumento muestra que cada entrada de $M$ es, como máximo, $\sup \partial M$: fije un par $(k, \ell)$ y observe que, o bien $k \leq \ell$, en cuyo caso $M_{k, \ell} \leq M_{k, \uparrow}$, o bien $\ell \leq k$, en cuyo caso $M_{k, \ell} \leq M_{\uparrow, \ell}$. Por lo tanto, $\operatorname{MIC}* \leq \sup \left{M{\uparrow, \ell}\right} \cup\left{M_{k, \uparrow}\right}=\sup \partial M$
+		El siguiente argumento muestra que cada entrada de $M$ es, como m\'aximo, $\sup \partial M$: fije un par $(k, \ell)$ y observe que, o bien $k \leq \ell$, en cuyo caso $M_{k, \ell} \leq M_{k, \uparrow}$, o bien $\ell \leq k$, en cuyo caso $M_{k, \ell} \leq M_{\uparrow, \ell}$. 
+		
+		Por lo tanto, 
+		
+		$\mathrm{MIC}_* \leq \sup \left\{M_{\uparrow, \ell}\right\} \cup\left\{M_{k, \uparrow}\right\}=\sup \partial M$
 	\end{proof}
 	
 	Por otro lado, el Corolario muestra que cada elemento de $\partial M$ es un supremo sobre algunos elementos de $M$. Por lo tanto, sup $\partial M$, al ser un supremo sobre supremos de elementos de $M$, no puede exceder $\sup M=\mathrm{MIC}_*$.
@@ -221,11 +226,11 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	\section{Estimando el $MIC_*$ con $MIC_e$}
 
-	Como hemos revisado, $MIC_*$ es el valor poblacional del estadístico MIC introducido en Reshef et al. (2011). Sin embargo, aunque es consistente, el estadístico MIC no se conoce por ser eficientemente computable y en Reshef et al. (2011) se calculó en su lugar un algoritmo heurístico de aproximación llamado Approx-MIC. En esta sección, revisaremos un estimador de $MIC_*$ que es tanto consistente como eficientemente computable. El nuevo estimador, llamado $MIC_e$, tiene una mejor complejidad de tiempo de ejecución incluso que el algoritmo heurístico Approx-MIC y es órdenes de magnitud más rápido en la práctica.
+	Como hemos revisado, $MIC_*$ es el valor poblacional del estad\'istico MIC introducido en Reshef et al. (2011). Sin embargo, aunque es consistente, el estad\'istico MIC no se conoce por ser eficientemente computable y en Reshef et al. (2011) se calcul\'o en su lugar un algoritmo heur\'istico de aproximaci\'on llamado Approx-MIC. En esta secci\'on, revisaremos un estimador de $MIC_*$ que es tanto consistente como eficientemente computable. El nuevo estimador, llamado $MIC_e$, tiene una mejor complejidad de tiempo de ejecuci\'on incluso que el algoritmo heur\'istico Approx-MIC y es \'ordenes de magnitud m\'as r\'apido en la pr\'actica.
 
-	El estimador MICe se basa en una de las caracterizaciones alternativas de $MIC_$ probadas en la sección anterior. Específicamente, si $MIC_$ puede considerarse como el supremo del límite de la matriz característica en lugar de la matriz completa, entonces solo el límite de la matriz debe estimarse con precisión para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz característica de muestra implica encontrar rejillas óptimas (bidimensionales), estimar las entradas del límite nos requiere solo encontrar particiones óptimas (unidimensionales). Si bien el primer problema es computacionalmente difícil, el segundo puede resolverse utilizando el algoritmo de programación dinámica de Reshef et al. (2011).
+	El estimador $MIC_e$ se basa en una de las caracterizaciones alternativas de $MIC_*$ probadas en la secci\'on anterior. Espec\'ificamente, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar rejillas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al. (2011).
 
-	{\textit{resumir la sección 4 de Reshef 2016}}
+	{\textit{resumir la secci\'on 4 de Reshef 2016}}
 
 	\subsection[]{Ejemplos}
 
