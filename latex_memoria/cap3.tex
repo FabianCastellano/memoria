@@ -1,34 +1,18 @@
 % ---------------------------------------------------------------------------------------
-\chapter{Coficientes para la comparaci\'on entre dos imagenes}\label{chap3}
+\chapter{Coeficientes para la
+comparaci\'on entre dos
+imagenes}\label{chap3}
 
-En este cap\'itulo discutiremos distintos m\'etodos para realizar comparaciones entre imagenes. Notemos que dado que nuestro objetivo final es comprar una imagen con su transformada de Box y Cox, 
+La creciente dimensionalidad de los conjuntos de datos utulizados comunmente ha llevado a la popularidad concepto de la ciencia generadora de hip\'otesis, en la cual los conjuntos de datos se utilizan para ayudar a los investigadores a formular nuevas hip\'otesis en lugar de probar las existentes. En este enfoque, se utilizan medidas de dependencia, que son estad\'isticas empleadas para evaluar pares de variables candidatas. Estos avances en el campo nos han entregado muchas herramientas, tanto para la comparaci\'on de datos en si mismos, junto con formas de avaluar estas medidas en si mismas. 
 
+Una forma de evaluar la utilidad de una medida de dependencia es examinar su potencia contra la independencia, lo que implica detectar varios tipos de relaciones no triviales. Este enfoque es especialmente importante cuando los conjuntos de datos tienen pocas o d\'ebiles relaciones que son dif\'iciles de detectar. Sin embargo, a menudo el n\'umero de relaciones estad\'isticamente significativas supera lo que se puede explorar m\'as a fondo, como se observa en los conjuntos de datos biol\'ogicos. Restringir el seguimiento a las relaciones con los valores de m\'as altos puede sesgar la direcci\'on del trabajo de seguimiento, ya que puede asignar puntuaciones m\'as altas a tipos de relaci\'on espec\'ificos, como las relaciones lineales, sobre las no lineales.
 
+Para abordar este problema, se introdujo un segundo m\'etodo de evaluaci\'on de una medida de dependencia llamado equitabilidad (Reshef et al., 2011). Las estad\'isticas equitativas asignan puntuaciones similares a relaciones igualmente fuertes, independientemente de su tipo. El objetivo es definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas relevantes de la fuerza de la relaci\'on.
 
-\section[]{Correlaci\'on de Pearson}
+La idea de equitabilidad ha motivado el desarrollo de varias medidas de dependencia, con diferentes formalizaciones y enfoques en aspectos espec\'ificos de la fuerza de la relaci\'on. El desaf\'io radica en definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas importantes de la fuerza de la relaci\'on, como se ve en el art\'iculo complementario de Reshef et al. Esta l\'inea de investigaci\'on tiene como objetivo proporcionar un enfoque m\'as poderoso y equitativo para medir la dependencia, lo que permite una identificaci\'on y priorizaci\'on m\'as precisas de las relaciones en conjuntos de datos complejos.
 
-\subsection{Discucion sobre el coef.}
+Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'on m\'axima (MIC), Correlaci\'on local, y la correlaci\'on de Pearson; los cuales son los coeficientes m\'as utilizados para la comparaci\'on entre dos imagenes. Notemos que que ya fue mostrado por Reshef et al (2011) que el coeficiente de informaci\'on m\'axima (MIC) es equitativo, estudiaremos la equitatividad de los otros dos coeficientes m\'as adelante.
 
-	donde se publico, como su ocupa, despcion en palabras
- 
-\section{Definiciones}
-
-El coef. se define como:
-\begin{equation}\label{pearson_orig}
-	\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}
-\end{equation}
-
-Para una muestra de tama\~no $N$, tenemos:
-
-\begin{equation}\label{pearson_r}
-	r=\frac{\sum_{i}^N\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum_{i}^n\left(x_{i}-\bar{x}\right)^{2}} \sqrt{\sum_{i}^n\left(y_{i}-\bar{y}\right)^{2}}}
-\end{equation}
-
-Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
-
-Hablar de The Ineffectiveness of the Correlation Coefficient for Image Comparisons
-
-\newpage
 \section[]{\textit{Maximal Information Coeficient}}
 %Reshef.SOM.v2.pdf
 
@@ -111,7 +95,46 @@ Hablar de The Ineffectiveness of the Correlation Coefficient for Image Compariso
 	\begin{rem}
 		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, que es la funci\'on que ocupan en el paper citado al principio del la secci\'on
 	\end{rem}
-\subsection[]{Ejemplos}
+
+	\subsection{Formas pr\'acticas de calcular el MIC, el $MIC_*$, $TIC_e$ y $MIC_e$}
+
+	En el art\'iculo "Measuring Dependence Powerfully and Equitably" de Reshef et al., los autores presentan y caracterizan te\'oricamente dos nuevas medidas de dependencia: $MIC_*$ y $MIC_e$. $MIC_*$ es una medida de dependencia poblacional, y el art\' iculo presenta tres formas de ver esta cantidad. Los autores demuestran que $MIC_*$ es el valor poblacional del coeficiente de informaci\'on m\'axima (MIC), una suavizaci\'on m\'inima de la informaci\'on mutua y el supremo de una secuencia infinita. Estas caracterizaciones simplifican el c\'alculo y fortalecen los resultados te\'oricos.
+
+	Adem\'as, los autores desarrollan algoritmos eficientes para aproximar $MIC_*$ en la pr\'actica y estimarlo de manera consistente a partir de una muestra finita. Introducen $MIC_e$, un estimador consistente de $MIC_*$, que es computable de manera eficiente y m\'as r\'apido en la pr\'actica que el algoritmo heur\'istico para calcular MIC. A trav\'es de simulaciones, demuestran que $MIC_e$ tiene mejores propiedades de sesgo/varianza y supera a los m\'etodos existentes en t\'erminos de equitabilidad con respecto a R2 en un amplio conjunto de relaciones funcionales ruidosas.
+
+	En esta secci\'on discutiremos las definiciones necesarias para llegar al calculo del $MIC_e$. El coeficiente de informaci\'on m\'axima poblacional puede definirse de varias formas equivalentes, como veremos m\'as adelante. Por ahora, comenzamos con la definici\'on m\'as simple.
+
+	Definici\'on 1: Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. El coeficiente de informaci\'on m\'axima poblacional ($MIC_*$) de $(X,Y)$ se define como:
+	
+	$$MIC*(X,Y) = sup G I((X,Y)|G) / log |G|$$
+	
+	donde $|G|$ denota el m\'inimo entre el n\'umero de filas y el n\'umero de columnas de G.
+	
+	Dado que $I(X,Y) = supG I((X,Y)|G)$ (ver, por ejemplo, el Cap\'itulo 8 de Cover y Thomas, 2006), esto puede verse como una versi\'on regularizada de la informaci\'on mutua que penaliza las cuadr\'iculas complicadas y asegura que el resultado est\'e entre cero y uno.
+	
+	Antes de continuar, presentamos una definici\'on simple equivalente de MIC* que es \'util para los resultados de esta secci\'on. Esta definici\'on ve a MIC* como el supremo de una matriz llamada matriz caracter\'istica poblacional, que se define a continuaci\'on.
+	
+	Definici\'on 2: Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. Sea
+	
+	$$I*((X,Y),k,l) = max G\in G(k,l) I((X,Y)|G).$$
+	
+	La matriz caracter\'istica poblacional de (X,Y), denotada por M(X,Y), se define como
+	
+	$$M(X,Y)k,l = I*((X,Y),k,l) / log(min{k,l})$$
+	
+	para $k$, $l > 1$.
+	
+	Es f\'acil ver lo siguiente:
+	
+	Proposici\'on 3: Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. Tenemos
+	
+	$$MIC*(X,Y) = sup M(X,Y)$$
+	
+	donde $M(X,Y)$ es la matriz caracter\'istica poblacional de $(X,Y)$.
+	
+	La matriz caracter\'istica poblacional se llama as\'i porque, al igual que MIC*, el supremo de esta matriz, captura una noci\'on de la fuerza de la relaci\'on, y otras propiedades de esta matriz corresponden a diferentes propiedades de las relaciones. Por ejemplo, m\'as adelante en este art\'iculo presentamos una propiedad adicional de la matriz caracter\'istica, el coeficiente de informaci\'on total, que es \'util para probar la presencia o ausencia de una relaci\'on en lugar de cuantificar la fuerza de la relaci\'on.
+
+	\subsection[]{Ejemplos}
 
 	Ya con la funci\'on bien definida, veamos unos ejemplos del coeficiente, primero para algunos datos, y luego entre im\'agenes. Comenzemos por algunos ejemplos usando 
 
@@ -176,12 +199,8 @@ Hablar de The Ineffectiveness of the Correlation Coefficient for Image Compariso
 		\includegraphics[scale=0.6]{h_lines_x_high_lines_x_.png}
 		\caption{ MIC = 0.212}
 		\end{figure}
-		\subsection{Hablar sobre el algoritmo y el papaer del 2016, que es TICe y MICe}
 
-\newpage
-
-	\subsection{Hablar sobre el algoritmo y el papaer del 2016, que es TICe y MICe}
-
+		
 \section[]{Correlaci\'on local} 
 
 	%chen2010.pdf
@@ -225,3 +244,29 @@ Hablar de The Ineffectiveness of the Correlation Coefficient for Image Compariso
 		M=\max _{r}\{|\ell(r)|\}
 	$$
 	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
+
+
+\section[]{Correlaci\'on de Pearson}
+
+	\subsection{Discucion sobre el coef.}
+	
+		donde se publico, como su ocupa, despcion en palabras
+	 
+	\section{Definiciones}
+	
+	El coef. se define como:
+	\begin{equation}\label{pearson_orig}
+		\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}
+	\end{equation}
+	
+	Para una muestra de tama\~no $N$, tenemos:
+	
+	\begin{equation}\label{pearson_r}
+		r=\frac{\sum_{i}^N\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum_{i}^n\left(x_{i}-\bar{x}\right)^{2}} \sqrt{\sum_{i}^n\left(y_{i}-\bar{y}\right)^{2}}}
+	\end{equation}
+	
+	Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
+	
+	Hablar de The Ineffectiveness of the Correlation Coefficient for Image Comparisons
+	
+	\newpage
