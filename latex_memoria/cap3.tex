@@ -230,7 +230,22 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	El estimador $MIC_e$ se basa en una de las caracterizaciones alternativas de $MIC_*$ probadas en la secci\'on anterior. Espec\'ificamente, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar rejillas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al. (2011).
 
+	En paper publicado Reshef (2016), esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz característica $M$ es la siguiente: mientras que la entrada $k, \ell$-th de $M$ se calcula a partir de la información mutua máxima alcanzable utilizando cualquier cuadrícula de $k$-por- $\ell$, la entrada $k, \ell$-th de $[M]$ se calcula a partir de la información mutua máxima alcanzable utilizando cualquier cuadrícula de $k$-por- $\ell$ que equiparticiona la dimensión con más filas/columnas. \ref{fig:matriz_equicaracteristica} (Ver Figura 1.) A pesar de esta diferencia, a medida que la equipartición en cuestión se vuelve más y más fina, se vuelve indistinguible de una partición óptima del mismo tamaño. Esta intuición se puede formalizar para mostrar que el límite de $[M]$ es igual al límite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducirá que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimación consistente de $\mathrm{MIC}*$.
+
+	\section{La matriz equicaracter\'istica} 
+
+	Ahora definimos la matriz equicaracterística y mostramos que su supremo es efectivamente MIC^. Para hacerlo, primero definimos una versión de I^ que equiparticiona la dimensión con más filas/columnas. Observe que en la definición, los corchetes se utilizan para indicar la presencia de una equipartición.
+
+	\begin{figure} \label{fig:matriz_equicaracteristica}
+		\centering
+		\includegraphics[scale=0.6]{figuras\figure_1_reshef_2016.png}
+		\caption{Ejemplo de matriz equicaracteristica}
+		\end{figure}
+	\end{figure}
+
+	
 	{\textit{resumir la secci\'on 4 de Reshef 2016}}
+
 
 	\subsection[]{Ejemplos}
 
