@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber tesis_FCN"] 1683053244 "tesis_FCN.bcf" "tesis_FCN.bbl" "tesis_FCN" 1683053251 0
+["biber tesis_FCN"] 1683726668 "tesis_FCN.bcf" "tesis_FCN.bbl" "tesis_FCN" 1683726680 0
   "./referencias.bib" 1683053103 1171 a0454cf9a8c95a18258ceb289dddf63a ""
-  "tesis_FCN.bcf" 1683053251 107771 b0f8aa5e8769f5cb60afb8b84203e881 "pdflatex"
+  "tesis_FCN.bcf" 1683726679 107901 7fdc96f3e4f6cc7a546039fd612740be "pdflatex"
   (generated)
   "tesis_FCN.bbl"
   "tesis_FCN.blg"
   (rewritten before read)
-["pdflatex"] 1683053248 "c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex" "tesis_FCN.pdf" "tesis_FCN" 1683053251 0
-  "appA.aux" 1683053250 4308 5d942a1cf41c2a7211f12cfac3bcc8db "pdflatex"
+["pdflatex"] 1683726676 "c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex" "tesis_FCN.pdf" "tesis_FCN" 1683726680 0
+  "appA.aux" 1683726679 4308 941dcefd63e6eaea749596a33c5bbd14 "pdflatex"
   "appA.tex" 1683046080 331 69086021007f469bf4f9e6b05a27565d ""
   "c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex" 1683049501 3906 97bf8c06a641d48402c370d8d65b08ce ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1682361102 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -141,17 +141,17 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1682365099 4683147 c40e3a1ac4f9bf67fe64e54fe7cecde0 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1682365317 7887293 34edcc67b74e9b5030d859fe28a3361c ""
   "c:/texlive/2023/texmf.cnf" 1682365073 713 e69b156964470283e0530f5060668171 ""
-  "cap1.aux" 1683053250 4296 750676878592ab2da91b181d20183f7a "pdflatex"
+  "cap1.aux" 1683726678 4296 750676878592ab2da91b181d20183f7a "pdflatex"
   "cap1.tex" 1683046080 607 c0328b13a431207bd8b4c702e9df349f ""
-  "cap2.aux" 1683053250 4512 293804d67ef36089dfd5f3da50a6df31 "pdflatex"
+  "cap2.aux" 1683726678 4512 293804d67ef36089dfd5f3da50a6df31 "pdflatex"
   "cap2.tex" 1683046080 299 84b896589ae7a47ee1aff160c217e9db ""
-  "cap3.aux" 1683053250 8508 10720500e9e008d8a43f88ab14c59a3b "pdflatex"
-  "cap3.tex" 1683053240 27512 55d4508af35168719bc9905b73e2a382 ""
-  "cap4.aux" 1683053250 4518 58746d5ba34ce31796f79337013c4345 "pdflatex"
+  "cap3.aux" 1683726679 8508 b881f4731d73835c49e5d6e86f04f5aa "pdflatex"
+  "cap3.tex" 1683726660 27521 addf035b5d00dc144af36b156e823165 ""
+  "cap4.aux" 1683726679 4518 bff4bf89579fa93d40d68fb760188e66 "pdflatex"
   "cap4.tex" 1683046080 5730 cf9fd38ab9119230d7bd39bfbc27892d ""
-  "cap5.aux" 1683053250 4353 c0542eeaff7beb3ad8034ec6872216da "pdflatex"
+  "cap5.aux" 1683726679 4353 0ec3bfc51ae9bfc2f0974796295d4527 "pdflatex"
   "cap5.tex" 1683046080 159 ef68754df33defc047ff057f1e3b3725 ""
-  "cap6.aux" 1683053250 4317 b64e118268738256e9baf2bcdbeb4678 "pdflatex"
+  "cap6.aux" 1683726679 4317 2da1b6c0426751974bab2a2bd2bcaff3 "pdflatex"
   "cap6.tex" 1683046080 141 166e2d1efc1e0e4d14b97db76a6a6db8 ""
   "figuras//D_G_example1.png" 1683046080 30063 436a0596e0a79a16b5124bbaffd6785e ""
   "figuras//D_G_example2.png" 1683046080 28678 3ea4ac13034c6cccc5018d64dfeaf320 ""
@@ -166,11 +166,11 @@
   "figuras//dots_x_high_lines_y_.png" 1683046080 22975 007be461c46378477ea3fbb673bb3ea6 ""
   "figuras//h_lines_x_high_lines_x_.png" 1683046080 25337 ca2f5f174ddb621ac9bb42ddf017d4a8 ""
   "figuras/figure_1_reshef_2016.png" 1683046080 27046 3a08a970cfe53c797cf4c5073f27b482 ""
-  "tapa.aux" 1683053250 4055 4ea5cdc69aaf49e99007d028cc074610 "pdflatex"
+  "tapa.aux" 1683726678 4055 4ea5cdc69aaf49e99007d028cc074610 "pdflatex"
   "tapa.tex" 1683046080 757 cf276cb5285fca32497541137cc35808 ""
-  "tesis_FCN.aux" 1683053250 8133 a5e247d77dea858238c0d612b24a320b "pdflatex"
-  "tesis_FCN.bbl" 1683053246 3611 2a30fb5aa5fc7e83dd239d885a1f75f7 "biber tesis_FCN"
-  "tesis_FCN.run.xml" 1683053251 2341 97b006a29d4713443a97ae66e55c5069 "pdflatex"
+  "tesis_FCN.aux" 1683726679 8255 d1d7ecd0b09abc58c6cbd78ed59a57b3 "pdflatex"
+  "tesis_FCN.bbl" 1683726676 3611 2a30fb5aa5fc7e83dd239d885a1f75f7 "biber tesis_FCN"
+  "tesis_FCN.run.xml" 1683726679 2341 97b006a29d4713443a97ae66e55c5069 "pdflatex"
   "tesis_FCN.tex" 1683049501 3906 97bf8c06a641d48402c370d8d65b08ce ""
   (generated)
   "appA.aux"

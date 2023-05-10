@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  2 MAY 2023 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  10 MAY 2023 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -626,12 +626,12 @@ Cap\'{\i }tulo 3.
 
 
 ] [7]
-<figuras//D_G_example1.png, id=49, 515.67656pt x 383.18156pt>
+<figuras//D_G_example1.png, id=51, 515.67656pt x 383.18156pt>
 File: figuras//D_G_example1.png Graphic file (type png)
 <use figuras//D_G_example1.png>
 Package pdftex.def Info: figuras//D_G_example1.png  used on input line 44.
 (pdftex.def)             Requested size: 206.26697pt x 153.2699pt.
-<figuras//D_G_example2.png, id=53, 508.90125pt x 383.18156pt>
+<figuras//D_G_example2.png, id=55, 508.90125pt x 383.18156pt>
 File: figuras//D_G_example2.png Graphic file (type png)
 <use figuras//D_G_example2.png>
 Package pdftex.def Info: figuras//D_G_example2.png  used on input line 64.
@@ -714,18 +714,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 225.
 
 [13]
-<figuras/figure_1_reshef_2016.png, id=118, 273.27094pt x 348.55219pt>
+<figuras/figure_1_reshef_2016.png, id=120, 273.27094pt x 348.55219pt>
 File: figuras/figure_1_reshef_2016.png Graphic file (type png)
 <use figuras/figure_1_reshef_2016.png>
 Package pdftex.def Info: figuras/figure_1_reshef_2016.png  used on input line 239.
 (pdftex.def)             Requested size: 163.9638pt x 209.1329pt.
-<figuras//away_x_dino_x_.png, id=119, 462.528pt x 346.896pt>
+<figuras//away_x_dino_x_.png, id=121, 462.528pt x 346.896pt>
 File: figuras//away_x_dino_x_.png Graphic file (type png)
 <use figuras//away_x_dino_x_.png>
 Package pdftex.def Info: figuras//away_x_dino_x_.png  used on input line 254.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [14]
-<figuras//away_x_dino_y_.png, id=126, 462.528pt x 346.896pt>
+<figuras//away_x_dino_y_.png, id=128, 462.528pt x 346.896pt>
 File: figuras//away_x_dino_y_.png Graphic file (type png)
 <use figuras//away_x_dino_y_.png>
 Package pdftex.def Info: figuras//away_x_dino_y_.png  used on input line 260.
@@ -741,12 +741,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) h
                                                   \__shipout_drop_firstpage_...
 l.263 		
          <./figuras/figure_1_reshef_2016.png> <./figuras//away_x_dino_x_.png>]
-<figuras//bullseye_x_away_y_.png, id=135, 462.528pt x 346.896pt>
+<figuras//bullseye_x_away_y_.png, id=137, 462.528pt x 346.896pt>
 File: figuras//bullseye_x_away_y_.png Graphic file (type png)
 <use figuras//bullseye_x_away_y_.png>
 Package pdftex.def Info: figuras//bullseye_x_away_y_.png  used on input line 266.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//bullseye_x_bullseye_y_.png, id=136, 462.528pt x 346.896pt>
+<figuras//bullseye_x_bullseye_y_.png, id=138, 462.528pt x 346.896pt>
 File: figuras//bullseye_x_bullseye_y_.png Graphic file (type png)
 <use figuras//bullseye_x_bullseye_y_.png>
 Package pdftex.def Info: figuras//bullseye_x_bullseye_y_.png  used on input line 272.
@@ -762,12 +762,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) h
                                                   \__shipout_drop_firstpage_...
 l.275 		
          <./figuras//away_x_dino_y_.png> <./figuras//bullseye_x_away_y_.png>]
-<figuras//circle_x_circle_y_.png, id=145, 462.528pt x 346.896pt>
+<figuras//circle_x_circle_y_.png, id=147, 462.528pt x 346.896pt>
 File: figuras//circle_x_circle_y_.png Graphic file (type png)
 <use figuras//circle_x_circle_y_.png>
 Package pdftex.def Info: figuras//circle_x_circle_y_.png  used on input line 278.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//circle_x_dino_y_.png, id=146, 462.528pt x 346.896pt>
+<figuras//circle_x_dino_y_.png, id=148, 462.528pt x 346.896pt>
 File: figuras//circle_x_dino_y_.png Graphic file (type png)
 <use figuras//circle_x_dino_y_.png>
 Package pdftex.def Info: figuras//circle_x_dino_y_.png  used on input line 284.
@@ -783,12 +783,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) h
                                                   \__shipout_drop_firstpage_...
 l.287 		
          <./figuras//bullseye_x_bullseye_y_.png> <./figuras//circle_x_circle_y_.png>]
-<figuras//dino_x_dino_y_.png, id=155, 462.528pt x 346.896pt>
+<figuras//dino_x_dino_y_.png, id=157, 462.528pt x 346.896pt>
 File: figuras//dino_x_dino_y_.png Graphic file (type png)
 <use figuras//dino_x_dino_y_.png>
 Package pdftex.def Info: figuras//dino_x_dino_y_.png  used on input line 290.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//dots_x_dots_y_.png, id=156, 462.528pt x 346.896pt>
+<figuras//dots_x_dots_y_.png, id=158, 462.528pt x 346.896pt>
 File: figuras//dots_x_dots_y_.png Graphic file (type png)
 <use figuras//dots_x_dots_y_.png>
 Package pdftex.def Info: figuras//dots_x_dots_y_.png  used on input line 296.
@@ -804,12 +804,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.3.10}) 
                                                   \__shipout_drop_firstpage_...
 l.299 		
          <./figuras//circle_x_dino_y_.png> <./figuras//dino_x_dino_y_.png>]
-<figuras//dots_x_high_lines_y_.png, id=166, 462.528pt x 346.896pt>
+<figuras//dots_x_high_lines_y_.png, id=168, 462.528pt x 346.896pt>
 File: figuras//dots_x_high_lines_y_.png Graphic file (type png)
 <use figuras//dots_x_high_lines_y_.png>
 Package pdftex.def Info: figuras//dots_x_high_lines_y_.png  used on input line 302.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//h_lines_x_high_lines_x_.png, id=167, 462.528pt x 346.896pt>
+<figuras//h_lines_x_high_lines_x_.png, id=169, 462.528pt x 346.896pt>
 File: figuras//h_lines_x_high_lines_x_.png Graphic file (type png)
 <use figuras//h_lines_x_high_lines_x_.png>
 Package pdftex.def Info: figuras//h_lines_x_high_lines_x_.png  used on input line 308.
@@ -888,17 +888,17 @@ Package logreq Info: Writing requests to 'tesis_FCN.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  19605 strings out of 476001
- 336632 string characters out of 5793197
+ 336636 string characters out of 5793197
  1865068 words of memory out of 5000000
  39703 multiletter control sequences out of 15000+600000
  524253 words of font info for 77 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  75i,12n,76p,1270b,1853s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on tesis_FCN.pdf (33 pages, 522728 bytes).
+Output written on tesis_FCN.pdf (33 pages, 522753 bytes).
 PDF statistics:
- 446 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
+ 448 PDF objects out of 1000 (max. 8388607)
+ 339 compressed objects within 4 object streams
  93 named destinations out of 1000 (max. 500000)
  278 words of extra memory for PDF output out of 10000 (max. 10000000)
 
