@@ -704,12 +704,6 @@ INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
 INPUT c:/texlive/2023/texmf-dist/tex/latex/biblatex/lbx/spanish.lbx
 OUTPUT tesis_FCN.bcf
-INPUT tesis_FCN.bbl
-INPUT ./tesis_FCN.bbl
-INPUT tesis_FCN.bbl
-INPUT ./tesis_FCN.bbl
-INPUT ./tesis_FCN.bbl
-INPUT tesis_FCN.bbl
 INPUT ./tapa.tex
 INPUT ./tapa.tex
 INPUT ./tapa.tex
@@ -816,6 +810,11 @@ INPUT ./figuras/figure_1_reshef_2016.png
 INPUT figuras/figure_1_reshef_2016.png
 INPUT ./figuras/figure_1_reshef_2016.png
 INPUT ./figuras/figure_1_reshef_2016.png
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+INPUT c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT ./figuras//away_x_dino_x_.png
 INPUT figuras//away_x_dino_x_.png
 INPUT ./figuras//away_x_dino_x_.png
@@ -896,7 +895,6 @@ INPUT ./appA.tex
 INPUT appA.tex
 INPUT ./appA.tex
 INPUT appA.tex
-INPUT c:/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT tesis_FCN.aux
 INPUT ./tapa.aux
 INPUT tapa.aux
@@ -942,5 +940,6 @@ INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
