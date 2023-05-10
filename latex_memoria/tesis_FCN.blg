@@ -1,0 +1,14 @@
+[0] Config.pm:307> INFO - This is Biber 2.19
+[0] Config.pm:310> INFO - Logfile is 'tesis_FCN.blg'
+[116] biber-MSWIN64:340> INFO - === 
+[150] Biber.pm:419> INFO - Reading 'tesis_FCN.bcf'
+[265] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[280] Biber.pm:4419> INFO - Processing section 0
+[292] Biber.pm:4610> INFO - Looking for bibtex file 'referencias.bib' for section 0
+[340] bibtex.pm:1713> INFO - LaTeX decoding ...
+[349] bibtex.pm:1519> INFO - Found BibTeX data source 'referencias.bib'
+[396] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'variable = shifted' with 'variable = non-ignorable'
+[396] UCollate.pm:68> INFO - Overriding locale 'es-ES' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[397] Biber.pm:4239> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'es-ES'
+[398] bbl.pm:660> INFO - Writing 'tesis_FCN.bbl' with encoding 'latin1'
+[400] bbl.pm:763> INFO - Output to tesis_FCN.bbl

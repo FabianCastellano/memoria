@@ -3,12 +3,12 @@
 comparaci\'on entre dos
 imagenes}\label{chap3}
 
-La creciente dimensionalidad de los conjuntos de datos utulizados comunmente ha llevado a la popularidad concepto de la ciencia generadora de hip\'otesis, en la cual los conjuntos de datos se utilizan para ayudar a los investigadores a formular nuevas hip\'otesis en lugar de probar las existentes. En este enfoque, se utilizan medidas de dependencia, que son estad\'isticas empleadas para evaluar pares de variables candidatas. Estos avances en el campo nos han entregado muchas herramientas, tanto para la comparaci\'on de datos en si mismos, junto con formas de avaluar estas medidas en si mismas. 
+La creciente dimensionalidad de los conjuntos de datos utulizados comunmente ha llevado a la popularidad el concepto de la ciencia generadora de hip\'otesis, en la cual los conjuntos de datos se utilizan para ayudar a los investigadores a formular nuevas hip\'otesis en lugar de probar las existentes. En este enfoque, se utilizan medidas de dependencia, que son estad\'isticas empleadas para evaluar pares de variables candidatas. Estos avances en el campo de analisis de datos nos han entregado muchas herramientas, tanto para la comparaci\'on de datos en si mismos, junto con formas de evaluar estas medidas en si mismas. 
 
-Una forma de evaluar la utilidad de una medida de dependencia es examinar su potencia contra la independencia, lo que implica detectar varios tipos de relaciones no triviales. Este enfoque es especialmente importante cuando los conjuntos de datos tienen pocas o d\'ebiles relaciones que son dif\'iciles de detectar. Sin embargo, a menudo el n\'umero de relaciones estad\'isticamente significativas supera lo que se puede explorar m\'as a fondo, como se observa en los conjuntos de datos biol\'ogicos. Restringir el seguimiento a las relaciones con los valores de m\'as altos puede sesgar la direcci\'on del trabajo de seguimiento, ya que puede asignar puntuaciones m\'as altas a tipos de relaci\'on espec\'ificos, como las relaciones lineales, sobre las no lineales.
+Una manera de medir la utilidad de una medida de dependencia $\hat\varphi$ es la potencia contra la independencia, es decir, la capacidad de prueba de independencia basada en $\hat\varphi$ para detectar varios tipos de relaciones no triviales. Este es un objetivo importante para conjuntos de datos que tienen muy pocas relaciones no triviales, o solo relaciones muy d\'ebiles que son dif\'iciles de detectar. Sin embargo, a menudo el n\'umero de relaciones declaradas estad\'isticamente significativas por una medida de dependencia supera con creces el n\'umero de relaciones que luego se pueden explorar m\'as a fondo.
 
-Para abordar este problema, se introdujo un segundo m\'etodo de evaluaci\'on de una medida de dependencia llamado equitabilidad (Reshef et al., 2011). Las estad\'isticas equitativas asignan puntuaciones similares a relaciones igualmente fuertes, independientemente de su tipo. El objetivo es definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas relevantes de la fuerza de la relaci\'on.
-
+Para abordar este problema, se introdujo un segundo m\'etodo de evaluaci\'on de una medida de dependencia llamado equitabilidad \cite{Reshef2011}. Las estad\'isticas equitativas asignan puntuaciones similares a relaciones igualmente fuertes, independientemente de su tipo. El objetivo es definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas relevantes de la fuerza de la relaci\'on. 
+B
 La idea de equitabilidad ha motivado el desarrollo de varias medidas de dependencia, con diferentes formalizaciones y enfoques en aspectos espec\'ificos de la fuerza de la relaci\'on. El desaf\'io radica en definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas importantes de la fuerza de la relaci\'on, como se ve en el art\'iculo complementario de Reshef et al. Esta l\'inea de investigaci\'on tiene como objetivo proporcionar un enfoque m\'as poderoso y equitativo para medir la dependencia, lo que permite una identificaci\'on y priorizaci\'on m\'as precisas de las relaciones en conjuntos de datos complejos.
 
 Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'on m\'axima (MIC), Correlaci\'on local, y la correlaci\'on de Pearson; los cuales son los coeficientes m\'as utilizados para la comparaci\'on entre dos imagenes. Notemos que que ya fue mostrado por Reshef et al (2011) que el coeficiente de informaci\'on m\'axima (MIC) es equitativo, estudiaremos la equitatividad de los otros dos coeficientes m\'as adelante.
@@ -18,7 +18,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 \subsection{Sobre el coeficiente}
 
-	El coeficiente de informaci\'on m\'axima (Maximal Information Coefficient o MIC) es una medida estad\'istica propuesta por Reshef et al. en su paper "Detecting Novel Associations in Large Data Sets" [citar]. Este coeficiente mide la correlaci\'on entre dos variables en un conjunto de datos y se basa en la idea de que una relaci\'on fuerte entre dos variables deber\'ia ser capaz de predecir una variable a partir de la otra de manera precisa.
+	El coeficiente de informaci\'on m\'axima (Maximal Information Coefficient o MIC) es una medida estad\'istica propuesta por Reshef et al. en su paper "Detecting Novel Associations in Large Data Sets" \cite{Reshef2011}. Este coeficiente mide la correlaci\'on entre dos variables en un conjunto de datos y se basa en la idea de que una relaci\'on fuerte entre dos variables deber\'ia ser capaz de predecir una variable a partir de la otra de manera precisa.
 
 	En su paper, Reshef et al. presentan un enfoque innovador para detectar asociaciones nobles en grandes conjuntos de datos, en lugar de buscar correlaciones fuertes entre dos variables, el coeficiente MIC permite detectar relaciones d\'ebiles pero a\'un importantes que pueden no ser evidentes al simplemente mirar los datos. Esto es posible gracias a que el coeficiente MIC es capaz de capturar no solo la fuerza de la correlaci\'on entre dos variables, sino tambi\'en su precisi\'on.
 
@@ -39,11 +39,10 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\end{defn}
 
 	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida pokr los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. Veamos un ejemplo
-	\begin{figure}[H]
+	\begin{figure}[H]\label{malla_G}
 		\centering
 		\includegraphics*[scale = 0.4]{D_G_example1.png}
 		\caption{Malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
-		\label{malla_G}
 	\end{figure}
 
 	Para la figura \ref{malla_G}, la funci\'on de densidad quedar\'ia de la forma:
@@ -60,11 +59,10 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	Notemos que para un $D$ fijo, aunque fijemos el grosor de la malla, la distrion de esta puede variar dependiendo de donde hagamos los cortes, por ejemplo:
 
-	\begin{figure}[H]
+	\begin{figure}[H] \label{malla_G_2}
 		\centering
 		\includegraphics*[scale = 0.4]{D_G_example2.png}
 		\caption{Otra malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
-		\label{malla_G_2}
 	\end{figure}
 
 	Aqu\'i podemo ver que la funci\'on de densidad que nos entrega est\'a malla es distinta a la definida para la figura \ref{malla_G_2}. Este es un hecho que explotamos en la siguiente definici\'on: 
@@ -145,7 +143,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	\section[short]{El $MIC_*$ es el valor poblacional del $MIC$}
 
-	Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. (2011). Recordemos la Definiciones del MIC y la matriz caracter\'istica de muestra. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
+	Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. \cite{Reshef2011}. Recordemos la Definiciones del MIC y la matriz caracter\'istica de muestra. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
 
 	\begin{defn}
 		(Reshef et al., 2011)  Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz caracter\'istica de muestra $\widehat{M}(D)$ de $D$ se define por
@@ -161,7 +159,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		$$
 	\end{defn}
 
-	Donde la funci\'on B(n) es especificada por el usuario. En Reshef et al. (2011), se sugiri\'o que B(n) se elija como $n^\alpha$ para alguna constante $\alpha$ en el rango de 0.5 a 0.8. (Los estad\'isticos que presentaremos m\'as adelante tendr\'an un par\'ametro an\'alogo; v\'ease la Secci\'on 4.4.1.)
+	Donde la funci\'on B(n) es especificada por el usuario. En el paper se sugiri\'o que B(n) se elija como $n^\alpha$ para alguna constante $\alpha$ en el rango de 0.5 a 0.8. (Los estad\'isticos que presentaremos m\'as adelante tendr\'an un par\'ametro an\'alogo; v\'ease la Secci\'on 4.4.1.)
 
 	El siguiente resultado, demostrado en el paper de Reshef 2016, sobre la convergencia de funciones de la matriz caracter\'istica de muestra a sus contrapartes poblacionales, una consecuencia de lo cual es la convergencia de MIC a $MIC_*$. (En la declaraci\'on del teorema a continuaci\'on, recordemos que $m_\infty$ es el espacio de matrices infinitas equipadas con la norma supremo, y dada una matriz A, la proyecci\'on ri anula todas las entradas $A_{k, \ell}$ para las cuales $k\ell > i.$)
 
@@ -230,19 +228,17 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	El estimador $MIC_e$ se basa en una de las caracterizaciones alternativas de $MIC_*$ probadas en la secci\'on anterior. Espec\'ificamente, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar rejillas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al. (2011).
 
-	En paper publicado Reshef (2016), esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz característica $M$ es la siguiente: mientras que la entrada $k, \ell$-th de $M$ se calcula a partir de la información mutua máxima alcanzable utilizando cualquier cuadrícula de $k$-por- $\ell$, la entrada $k, \ell$-th de $[M]$ se calcula a partir de la información mutua máxima alcanzable utilizando cualquier cuadrícula de $k$-por- $\ell$ que equiparticiona la dimensión con más filas/columnas. \ref{fig:matriz_equicaracteristica} (Ver Figura 1.) A pesar de esta diferencia, a medida que la equipartición en cuestión se vuelve más y más fina, se vuelve indistinguible de una partición óptima del mismo tamaño. Esta intuición se puede formalizar para mostrar que el límite de $[M]$ es igual al límite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducirá que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimación consistente de $\mathrm{MIC}*$.
+	En paper publicado Reshef (2016), esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz caracter\'istica $M$ es la siguiente: mientras que la entrada $k, \ell$-th de $M$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$, la entrada $k, \ell$-th de $[M]$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$ que equiparticiona la dimensi\'on con m\'as filas/ 	columnas. \ref{fig:matriz_equicaracteristica} (Ver Figura 1.) A pesar de esta diferencia, a medida que la equipartici\'on en cuesti\'on se vuelve m\'as y m\'as fina, se vuelve indistinguible de una partici\'on \'optima del mismo tama\~no. Esta intuici\'on se puede formalizar para mostrar que el l\'imite de $[M]$ es igual al l\'imite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducir\'a que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimaci\'on consistente de $\mathrm{MIC}*$.
 
 	\section{La matriz equicaracter\'istica} 
 
-	Ahora definimos la matriz equicaracterística y mostramos que su supremo es efectivamente MIC^. Para hacerlo, primero definimos una versión de I^ que equiparticiona la dimensión con más filas/columnas. Observe que en la definición, los corchetes se utilizan para indicar la presencia de una equipartición.
+	Ahora definimos la matriz equicaracter\'istica y mostramos que su supremo es efectivamente $MIC^*$. Para hacerlo, primero definimos una versi\'on de $I^*$ que equiparticiona la dimensi\'on con m\'as filas/columnas. Observe que en la definici\'on, los corchetes se utilizan para indicar la presencia de una equipartici\'on.
 
 	\begin{figure} \label{fig:matriz_equicaracteristica}
 		\centering
-		\includegraphics[scale=0.6]{figuras\figure_1_reshef_2016.png}
+		\includegraphics[scale=0.6]{figuras/figure_1_reshef_2016.png}
 		\caption{Ejemplo de matriz equicaracteristica}
-		\end{figure}
 	\end{figure}
-
 	
 	{\textit{resumir la secci\'on 4 de Reshef 2016}}
 

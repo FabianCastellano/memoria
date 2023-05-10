@@ -1,16 +1,16 @@
-% $Id: tese-osorio.tex,v 0.2 2005/04/27 23:34:06 osorio Exp $
 \documentclass[10pt]{report}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage[latin1]{inputenc} % include 'latin1' symbols
 \usepackage[spanish]{babel}
-\usepackage[authoryear]{natbib}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
 \usepackage{fontenc,url,path}
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{bookmark}
 
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{referencias.bib}
 
 \hypersetup{colorlinks,
             urlcolor=blue,
@@ -138,8 +138,7 @@
 \include{appA}
 
 \blankpage
-\nocite{*}
-\include{refs}
+\printbibliography %Prints bibliography
 % ----------------------------------------------------------------------
 
 \end{document} 
