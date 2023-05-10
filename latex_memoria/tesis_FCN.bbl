@@ -19,6 +19,139 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{bicego2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=77878c5d2e7586eae49f2f76107b61de}{%
+           family={Bicego},
+           familyi={B\bibinitperiod},
+           given={Manuele},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1d84a2f473644842b87d569184327772}{%
+           family={Baldo},
+           familyi={B\bibinitperiod},
+           given={Sisto},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \strng{fullhash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \strng{bibnamehash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \strng{authorbibnamehash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \strng{authornamehash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \strng{authorfullhash}{a95eafb68ada358dcbccf0a5b84bd631}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neurocomputing}
+      \field{title}{Properties of the Box--Cox transformation for pattern classification}
+      \field{volume}{218}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{pages}{390\bibrangedash 400}
+      \range{pages}{11}
+    \endentry
+    \entry{boxcox64}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d30289ba50f0f7219fb405bc35b8b71c}{%
+           family={Box},
+           familyi={B\bibinitperiod},
+           given={George\bibnamedelima EP},
+           giveni={G\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=ec0b9ca4f3b98349d98f9f91b1ea21fe}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{8483afffb6b9bf1547836b5253508fb7}
+      \strng{fullhash}{8483afffb6b9bf1547836b5253508fb7}
+      \strng{bibnamehash}{8483afffb6b9bf1547836b5253508fb7}
+      \strng{authorbibnamehash}{8483afffb6b9bf1547836b5253508fb7}
+      \strng{authornamehash}{8483afffb6b9bf1547836b5253508fb7}
+      \strng{authorfullhash}{8483afffb6b9bf1547836b5253508fb7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Royal Statistical Society: Series B (Methodological)}
+      \field{number}{2}
+      \field{title}{An analysis of transformations}
+      \field{volume}{26}
+      \field{year}{1964}
+      \field{dateera}{ce}
+      \field{pages}{1518\bibrangedash 1524}
+      \range{pages}{7}
+    \endentry
+    \entry{boxcoximg}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d665af75fd4cfed700c1196799b4359f}{%
+           family={Cheddad},
+           familyi={C\bibinitperiod},
+           given={Abbas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{d665af75fd4cfed700c1196799b4359f}
+      \strng{fullhash}{d665af75fd4cfed700c1196799b4359f}
+      \strng{bibnamehash}{d665af75fd4cfed700c1196799b4359f}
+      \strng{authorbibnamehash}{d665af75fd4cfed700c1196799b4359f}
+      \strng{authornamehash}{d665af75fd4cfed700c1196799b4359f}
+      \strng{authorfullhash}{d665af75fd4cfed700c1196799b4359f}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{On box-cox transformation for image normality and pattern classification}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{154975\bibrangedash 154983}
+      \range{pages}{9}
+    \endentry
+    \entry{draper1969}{article}{}
+      \name{author}{2}{}{%
+        {{hash=17480e418d30c35033eb3b4a032bccbb}{%
+           family={Draper},
+           familyi={D\bibinitperiod},
+           given={Norman\bibnamedelima R},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=ec0b9ca4f3b98349d98f9f91b1ea21fe}{%
+           family={Cox},
+           familyi={C\bibinitperiod},
+           given={David\bibnamedelima R},
+           giveni={D\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{e21e911d0c25aaaac550319ad1a45e95}
+      \strng{fullhash}{e21e911d0c25aaaac550319ad1a45e95}
+      \strng{bibnamehash}{e21e911d0c25aaaac550319ad1a45e95}
+      \strng{authorbibnamehash}{e21e911d0c25aaaac550319ad1a45e95}
+      \strng{authornamehash}{e21e911d0c25aaaac550319ad1a45e95}
+      \strng{authorfullhash}{e21e911d0c25aaaac550319ad1a45e95}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Royal Statistical Society: Series B (Methodological)}
+      \field{number}{3}
+      \field{title}{On distributions and their transformation to normality}
+      \field{volume}{31}
+      \field{year}{1969}
+      \field{dateera}{ce}
+      \field{pages}{472\bibrangedash 476}
+      \range{pages}{5}
+    \endentry
     \entry{Reshef2011}{article}{}
       \name{author}{9}{}{%
         {{hash=755da2052d660f9249dc1e04bc1fb9a0}{%
@@ -90,6 +223,7 @@
       \range{pages}{7}
     \endentry
   \enddatalist
+  \missing{lee2009}
 \endrefsection
 \endinput
 
