@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  10 MAY 2023 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.24)  10 MAY 2023 09:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,2185 +718,215 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 225.
 
 [13]
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 231.
- (c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
 
-LaTeX Warning: Reference `fig:matriz_equicaracteristica' on page 14 undefined on input line 232.
+LaTeX Warning: Reference `fig:matriz_equicaracteristica' on page 14 undefined on input line 231.
 
-
-LaTeX Warning: Reference `fig:matriz_equicaracteristica' on page 14 undefined on input line 234.
-
-[14]
-<figuras/figure_1_reshef_2016.png, id=123, 273.27094pt x 348.55219pt>
+<figuras/figure_1_reshef_2016.png, id=117, 273.27094pt x 348.55219pt>
 File: figuras/figure_1_reshef_2016.png Graphic file (type png)
 <use figuras/figure_1_reshef_2016.png>
-Package pdftex.def Info: figuras/figure_1_reshef_2016.png  used on input line 243.
+Package pdftex.def Info: figuras/figure_1_reshef_2016.png  used on input line 239.
 (pdftex.def)             Requested size: 163.9638pt x 209.1329pt.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-Missing character: There is no ∫ in font cmr10!
-./cap3.tex:247: Extra \endcsname.
-\language@active@arg. ...@.@\string #1@\endcsname 
-                                                  \fi 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Missing } inserted.
-<inserted text> 
-                }
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-Missing character: There is no ∫ in font cmr10!
-./cap3.tex:247: Extra \endcsname.
-\language@active@arg. ...@.@\string #1@\endcsname 
-                                                  \fi 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 3780) in paragraph at lines 247--247
-\OT1/cmr/m/n/10 par-tir de la re-ji-lla []A$[]\OML/cmm/m/it/10 ptimade\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 por\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :Encontraste; lamatrizequicaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
-\OML/cmm/m/it/10 stica$\OT1/cmr/m/n/10 [M]$\OML/cmm/m/it/10 a[]noptimizalapartici[][]nm[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 speque[] \OMS/cmsy/m/n/10 ^^F \OML/cmm/m/it/10 adetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (58.6991pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 peroest[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 restringidaatenerlapartici[][]nm[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 sgrandecomounaequipartici[][]ndetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (335.13489pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :Estoresultaenunainformaci[][]nmutuam[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 sbajade\OT1/cmr/m/n/10 0[]613\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Abajo\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 Cuandosepermiten\OT1/cmr/m/n/10 9\OML/cmm/m/it/10 columnasenlugarde\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; larejillaencontradaporlamatrizcaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Overfull \hbox (106.09566pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 sticanocambia; yaquelarejillacon\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 columnasyaera[][]ptima:Sinembargo; ahoralamatrizequicaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
-\OML/cmm/m/it/10 sticautilizaunaequipartici[][]nencolumnasdetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (10.90169pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 9\OML/cmm/m/it/10 ; cuyaresoluci[][]nescapazdecapturarcompletamenteladependenciaentre$\OT1/cmr/m/n/10 X$\OML/cmm/m/it/10 e$\OT1/cmr/m/n/10 Y$\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 @$ 
- []
-
-./cap3.tex:247: Missing } inserted.
-<inserted text> 
-                }
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:259: Missing $ inserted.
-<inserted text> 
-                $
-l.259 ...jillas de $k$ por $[\ell]$ cuya partici√≥
-                                                  n del eje $y$ es una equip...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:259: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.259 ...jillas de $k$ por $[\ell]$ cuya partici√≥
-                                                  n del eje $y$ es una equip...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 259.
-
-./cap3.tex:259: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.259 ...artici√≥n del eje $y$ es una equipartici√
-                                                  ≥n de tama√±o $\ell$. Defi...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 259.
-
-./cap3.tex:259: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.259 ...el eje $y$ es una equipartici√≥n de tama√
-                                                  ±o $\ell$. Definir $I^*((X...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:259: Missing $ inserted.
-<inserted text> 
-                $
-l.259 ...y$ es una equipartici√≥n de tama√±o $\ell
-                                                  $. Definir $I^*((X, Y),[k]...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (114.88583pt too wide) in paragraph at lines 258--260
-\OT1/cmr/m/n/10 donde $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k; \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 `\OT1/cmr/m/n/10 ])$ es el con-jun-to de re-ji-llas de $\OML/cmm/m/it/10 k$ \OT1/cmr/m/n/10 por $[\OML/cmm/m/it/10 `\OT1/cmr/m/n/10 ]$ cu-ya par-ti-ci[]A$[]\OML/cmm/m/it/10 ndeleje$\OT1/cmr/m/n/10 y$\OML/cmm/m/it/10 esunaequipartici[][]ndetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-./cap3.tex:262: Missing } inserted.
-<inserted text> 
-                }
-l.262 	\end{defn}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:264: Missing $ inserted.
-<inserted text> 
-                $
-l.264 ... t√©rminos de $I^{[*]}$. En la definici√≥
-                                                  n a continuaci√≥n, continu...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:264: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.264 ... t√©rminos de $I^{[*]}$. En la definici√≥
-                                                  n a continuaci√≥n, continu...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 264.
-
-./cap3.tex:264: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.264 ...I^{[*]}$. En la definici√≥n a continuaci√
-                                                  ≥n, continuamos nuestra co...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 264.
-
-./cap3.tex:264: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.264 ...tinuaci√≥n, continuamos nuestra convenci√
-                                                  ≥n de usar corchetes para ...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:265: Missing $ inserted.
-<inserted text> 
-                $
-l.265 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (171.96985pt too wide) in paragraph at lines 264--265
-\OT1/cmr/m/n/10 ni-ci[]A$[]\OML/cmm/m/it/10 nacontinuaci[][]n; continuamosnuestraconvenci[][]ndeusarcorchetesparadenotarlapresenciadeequiparticiones:$ 
- []
-
-./cap3.tex:267: Missing $ inserted.
-<inserted text> 
-                $
-l.267 ...a matriz equicaracter√≠stica de poblaci√≥
-                                                  n de $(X, Y)$, denotada po...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:267: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.267 ...a matriz equicaracter√≠stica de poblaci√≥
-                                                  n de $(X, Y)$, denotada po...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap3.tex:271: Missing $ inserted.
-<inserted text> 
-                $
-l.271 		para $k, \ell
-                     >1$.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (107.59631pt too wide) in paragraph at lines 267--272
-\OT1/cmr/m/n/10 La ma-triz equi-ca-rac-ter[]A-stica de po-bla-ci[]A$[]\OML/cmm/m/it/10 nde$\OT1/cmr/m/n/10 (X, Y)$\OML/cmm/m/it/10 ; denotadapor$\OT1/cmr/m/n/10 [M](X, Y)$\OML/cmm/m/it/10 ; sedefinepor$$\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 )[] =
- []
-
-./cap3.tex:272: Missing } inserted.
-<inserted text> 
-                }
-l.272 	\end{defn}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...ada en su frontera, la equivalencia de ‚à
-                                                  Ç[M] y ‚àÇM produce el sig...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...da en su frontera, la equivalencia de ‚àÇ
-                                                  [M] y ‚àÇM produce el sigu...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ... frontera, la equivalencia de ‚àÇ[M] y ‚à
-                                                  ÇM produce el siguiente co...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
-(inputenc)                in inputencoding `latin1'.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.283 ...frontera, la equivalencia de ‚àÇ[M] y ‚àÇ
-                                                  M produce el siguiente cor...
-You need to provide a definition with \DeclareInputText 
-or \DeclareInputMath before using this key.
-
-./cap3.tex:291: Missing $ inserted.
-<inserted text> 
-                $
-l.291 ...tica de muestra, de manera an√°loga a c√≥
-                                                  mo definimos MIC con la ma...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:291: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.291 ...tica de muestra, de manera an√°loga a c√≥
-                                                  mo definimos MIC con la ma...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 291.
-
-./cap3.tex:291: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.291 ...≥mo definimos MIC con la matriz caracter√
-                                                  ≠stica de muestra.
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:292: Missing $ inserted.
-<inserted text> 
-                $
-l.292 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (9.21098pt too wide) in paragraph at lines 291--292
-\OT1/cmr/m/n/10 ma-ne-ra an[]A!`lo-ga a c[]A$[]\OML/cmm/m/it/10 modefinimosMICconlamatrizcaracter[]\OT1/cmr/m/n/10 -\OML/cmm/m/it/10 sticademuestra:$ 
- []
-
-[15{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [16
+[14] [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.303 		$$
-          
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.303 		$$
-           <./figuras/figure_1_reshef_2016.png>]
-./cap3.tex:317: Missing $ inserted.
-<inserted text> 
-                $
-l.317 ...idad donde $D_n$ es una muestra de tama√±
-                                                  o $n$ de la distribuci√≥n ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+l.259 		S
+         ea $(X, Y)$ variables aleatorias conjuntamente distribuidas. La mat... <./figuras/figure_1_reshef_2016.png>]
 
-
-LaTeX Warning: Command \~ invalid in math mode on input line 317.
-
-./cap3.tex:317: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.317 ... muestra de tama√±o $n$ de la distribuci√
-                                                  ≥n de $(X, Y)$, siempre qu...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:317: Missing $ inserted.
-<inserted text> 
-                $
-l.317 ...ibuci√≥n de $(X, Y)$, siempre que $\omega
-                                                  (1)<B(n) \leq O\left(n^{1-...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-<figuras//away_x_dino_x_.png, id=144, 462.528pt x 346.896pt>
-File: figuras//away_x_dino_x_.png Graphic file (type png)
-<use figuras//away_x_dino_x_.png>
-Package pdftex.def Info: figuras//away_x_dino_x_.png  used on input line 345.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-[17]
-<figuras//away_x_dino_y_.png, id=154, 462.528pt x 346.896pt>
-File: figuras//away_x_dino_y_.png Graphic file (type png)
-<use figuras//away_x_dino_y_.png>
-Package pdftex.def Info: figuras//away_x_dino_y_.png  used on input line 351.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//bullseye_x_away_y_.png, id=155, 462.528pt x 346.896pt>
-File: figuras//bullseye_x_away_y_.png Graphic file (type png)
-<use figuras//bullseye_x_away_y_.png>
-Package pdftex.def Info: figuras//bullseye_x_away_y_.png  used on input line 357.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [18
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.360 		
-        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.360 		
-         <./figuras//away_x_dino_x_.png> <./figuras//away_x_dino_y_.png>]
-<figuras//bullseye_x_bullseye_y_.png, id=165, 462.528pt x 346.896pt>
-File: figuras//bullseye_x_bullseye_y_.png Graphic file (type png)
-<use figuras//bullseye_x_bullseye_y_.png>
-Package pdftex.def Info: figuras//bullseye_x_bullseye_y_.png  used on input line 363.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//circle_x_circle_y_.png, id=166, 462.528pt x 346.896pt>
-File: figuras//circle_x_circle_y_.png Graphic file (type png)
-<use figuras//circle_x_circle_y_.png>
-Package pdftex.def Info: figuras//circle_x_circle_y_.png  used on input line 369.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [19
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.372 		
-        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.372 		
-         <./figuras//bullseye_x_away_y_.png> <./figuras//bullseye_x_bullseye_y_.png>]
-<figuras//circle_x_dino_y_.png, id=176, 462.528pt x 346.896pt>
-File: figuras//circle_x_dino_y_.png Graphic file (type png)
-<use figuras//circle_x_dino_y_.png>
-Package pdftex.def Info: figuras//circle_x_dino_y_.png  used on input line 375.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//dino_x_dino_y_.png, id=177, 462.528pt x 346.896pt>
-File: figuras//dino_x_dino_y_.png Graphic file (type png)
-<use figuras//dino_x_dino_y_.png>
-Package pdftex.def Info: figuras//dino_x_dino_y_.png  used on input line 381.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [20
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.384 		
-        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.384 		
-         <./figuras//circle_x_circle_y_.png> <./figuras//circle_x_dino_y_.png>]
-<figuras//dots_x_dots_y_.png, id=186, 462.528pt x 346.896pt>
-File: figuras//dots_x_dots_y_.png Graphic file (type png)
-<use figuras//dots_x_dots_y_.png>
-Package pdftex.def Info: figuras//dots_x_dots_y_.png  used on input line 387.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-<figuras//dots_x_high_lines_y_.png, id=187, 462.528pt x 346.896pt>
-File: figuras//dots_x_high_lines_y_.png Graphic file (type png)
-<use figuras//dots_x_high_lines_y_.png>
-Package pdftex.def Info: figuras//dots_x_high_lines_y_.png  used on input line 393.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [21
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.11}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.396 		
-        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.12}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.396 		
-         <./figuras//dino_x_dino_y_.png> <./figuras//dots_x_dots_y_.png>]
-<figuras//h_lines_x_high_lines_x_.png, id=196, 462.528pt x 346.896pt>
-File: figuras//h_lines_x_high_lines_x_.png Graphic file (type png)
-<use figuras//h_lines_x_high_lines_x_.png>
-Package pdftex.def Info: figuras//h_lines_x_high_lines_x_.png  used on input line 399.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [22
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.412 	L
-        a correlaci\'on local, tamb\'ien conodica como coeficiente no param\...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3.14}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.412 	L
-        a correlaci\'on local, tamb\'ien conodica como coeficiente no param\... <./figuras//dots_x_high_lines_y_.png> <./figuras//h_lines_x_high_lines_x_.png>] [23] [24])
-c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex:129: Extra \else.
-\@include ...ediate \closeout \@partaux \fi \else 
-                                                  \deadcycles \z@ \@nameuse ...
-l.129 \include{cap3}
-                    
-I'm ignoring this; it doesn't match any \if.
-
-c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex:129: Extra \else.
-\@include ...ed}\fi \let \@auxout \@mainaux \else 
-                                                  \@latex@warning {\noexpand...
-l.129 \include{cap3}
-                    
-I'm ignoring this; it doesn't match any \if.
-
-
-LaTeX Warning: \include should only be used after \begin{document} on input line 129.
-
-(./cap3.tex
-Cap\'{\i }tulo 4.
-[25
-
-
-
-] [26]
-File: figuras//D_G_example1.png Graphic file (type png)
-<use figuras//D_G_example1.png>
-Package pdftex.def Info: figuras//D_G_example1.png  used on input line 44.
-(pdftex.def)             Requested size: 206.26697pt x 153.2699pt.
-
-
-LaTeX Warning: Reference `malla_G' on page 27 undefined on input line 48.
-
-File: figuras//D_G_example2.png Graphic file (type png)
-<use figuras//D_G_example2.png>
-Package pdftex.def Info: figuras//D_G_example2.png  used on input line 64.
-(pdftex.def)             Requested size: 203.55688pt x 153.2699pt.
-[27
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.67 
-     ]
-
-LaTeX Warning: Reference `malla_G_2' on page 28 undefined on input line 68.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 97.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 97.
-
-[28
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.100 
-      ] [29] [30]
-Overfull \hbox (25.54308pt too wide) in paragraph at lines 189--190
-\OT1/cmr/m/n/10 po-de-mos de-jar una fi-la/columna vac^^S^^Pa, sa-be-mos que $\OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; k; `\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^T \OML/cmm/m/it/10 I[]\OT1/cmr/m/n/10 ((\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; k; ` \OT1/cmr/m/n/10 +
- []
-
-[31]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
-
-[32]
-
-LaTeX Warning: Reference `fig:matriz_equicaracteristica' on page 33 undefined on input line 232.
-
-
-LaTeX Warning: Reference `fig:matriz_equicaracteristica' on page 33 undefined on input line 234.
-
-[33]
-File: figuras/figure_1_reshef_2016.png Graphic file (type png)
-<use figuras/figure_1_reshef_2016.png>
-Package pdftex.def Info: figuras/figure_1_reshef_2016.png  used on input line 243.
-(pdftex.def)             Requested size: 163.9638pt x 209.1329pt.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-Missing character: There is no ∫ in font cmr10!
-./cap3.tex:247: Extra \endcsname.
-\language@active@arg. ...@.@\string #1@\endcsname 
-                                                  \fi 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Missing } inserted.
-<inserted text> 
-                }
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:247: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \textordmasculine invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \textexclamdown invalid in math mode on input line 247.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 247.
-
-./cap3.tex:247: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-Missing character: There is no ∫ in font cmr10!
-./cap3.tex:247: Extra \endcsname.
-\language@active@arg. ...@.@\string #1@\endcsname 
-                                                  \fi 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this, since I wasn't doing a \csname.
-
-./cap3.tex:247: Missing $ inserted.
-<inserted text> 
-                $
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Underfull \hbox (badness 3780) in paragraph at lines 247--247
-\OT1/cmr/m/n/10 par-tir de la re-ji-lla []A$[]\OML/cmm/m/it/10 ptimade\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 por\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :Encontraste; lamatrizequicaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
-\OML/cmm/m/it/10 stica$\OT1/cmr/m/n/10 [M]$\OML/cmm/m/it/10 a[]noptimizalapartici[][]nm[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 speque[] \OMS/cmsy/m/n/10 ^^F \OML/cmm/m/it/10 adetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (58.6991pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 peroest[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 restringidaatenerlapartici[][]nm[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 sgrandecomounaequipartici[][]ndetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (335.13489pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :Estoresultaenunainformaci[][]nmutuam[]\OT1/cmr/m/n/10 !`\OML/cmm/m/it/10 sbajade\OT1/cmr/m/n/10 0[]613\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Abajo\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 Cuandosepermiten\OT1/cmr/m/n/10 9\OML/cmm/m/it/10 columnasenlugarde\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 ; larejillaencontradaporlamatrizcaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Overfull \hbox (106.09566pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 sticanocambia; yaquelarejillacon\OT1/cmr/m/n/10 3\OML/cmm/m/it/10 columnasyaera[][]ptima:Sinembargo; ahoralamatrizequicaracter[]\OT1/cmr/m/n/10 -
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--247
-\OML/cmm/m/it/10 sticautilizaunaequipartici[][]nencolumnasdetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-
-Overfull \hbox (10.90169pt too wide) in paragraph at lines 247--247
-\OML/cmm/m/it/10 o\OT1/cmr/m/n/10 9\OML/cmm/m/it/10 ; cuyaresoluci[][]nescapazdecapturarcompletamenteladependenciaentre$\OT1/cmr/m/n/10 X$\OML/cmm/m/it/10 e$\OT1/cmr/m/n/10 Y$\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 @$ 
- []
-
-./cap3.tex:247: Extra \else.
-\@makecaption ...empboxa >\hsize #1: #2\par \else 
-                                                  \global \@minipagefalse \h...
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this; it doesn't match any \if.
-
-
-Overfull \hbox (3310.56961pt too wide) detected at line 247
- [] 
- []
-
-./cap3.tex:247: Extra \fi.
-\@makecaption ...\hfil \box \@tempboxa \hfil }\fi 
-                                                  \vskip \belowcaptionskip 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this; it doesn't match any \if.
-
-./cap3.tex:247: Extra \fi.
-\@tempf ...r {\@currentHref }{\relax }}#3\fi }\fi 
-                                                  \par \endgroup 
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I'm ignoring this; it doesn't match any \if.
-
-./cap3.tex:247: Missing } inserted.
-<inserted text> 
-                }
-l.247 ...etamente la dependencia entre $X$ e $Y$.}
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:259: Missing $ inserted.
-<inserted text> 
-                $
-l.259 ...jillas de $k$ por $[\ell]$ cuya partici√≥
-                                                  n del eje $y$ es una equip...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:259: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.259 ...jillas de $k$ por $[\ell]$ cuya partici√≥
-                                                  n del eje $y$ es una equip...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 259.
-
-./cap3.tex:259: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.259 ...artici√≥n del eje $y$ es una equipartici√
-                                                  ≥n de tama√±o $\ell$. Defi...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 259.
-
-./cap3.tex:259: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.259 ...el eje $y$ es una equipartici√≥n de tama√
-                                                  ±o $\ell$. Definir $I^*((X...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:259: Missing $ inserted.
-<inserted text> 
-                $
-l.259 ...y$ es una equipartici√≥n de tama√±o $\ell
-                                                  $. Definir $I^*((X, Y),[k]...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (114.88583pt too wide) in paragraph at lines 258--260
-\OT1/cmr/m/n/10 donde $\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 k; \OT1/cmr/m/n/10 [\OML/cmm/m/it/10 `\OT1/cmr/m/n/10 ])$ es el con-jun-to de re-ji-llas de $\OML/cmm/m/it/10 k$ \OT1/cmr/m/n/10 por $[\OML/cmm/m/it/10 `\OT1/cmr/m/n/10 ]$ cu-ya par-ti-ci[]A$[]\OML/cmm/m/it/10 ndeleje$\OT1/cmr/m/n/10 y$\OML/cmm/m/it/10 esunaequipartici[][]ndetama[] \OMS/cmsy/m/n/10 ^^F
- []
-
-./cap3.tex:262: Missing } inserted.
-<inserted text> 
-                }
-l.262 	\end{defn}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-./cap3.tex:264: Missing $ inserted.
-<inserted text> 
-                $
-l.264 ... t√©rminos de $I^{[*]}$. En la definici√≥
-                                                  n a continuaci√≥n, continu...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:264: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.264 ... t√©rminos de $I^{[*]}$. En la definici√≥
-                                                  n a continuaci√≥n, continu...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 264.
-
-./cap3.tex:264: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.264 ...I^{[*]}$. En la definici√≥n a continuaci√
-                                                  ≥n, continuamos nuestra co...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 264.
-
-./cap3.tex:264: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.264 ...tinuaci√≥n, continuamos nuestra convenci√
-                                                  ≥n de usar corchetes para ...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:265: Missing $ inserted.
-<inserted text> 
-                $
-l.265 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (171.96985pt too wide) in paragraph at lines 264--265
-\OT1/cmr/m/n/10 ni-ci[]A$[]\OML/cmm/m/it/10 nacontinuaci[][]n; continuamosnuestraconvenci[][]ndeusarcorchetesparadenotarlapresenciadeequiparticiones:$ 
- []
-
-./cap3.tex:267: Missing $ inserted.
-<inserted text> 
-                $
-l.267 ...a matriz equicaracter√≠stica de poblaci√≥
-                                                  n de $(X, Y)$, denotada po...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:267: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.267 ...a matriz equicaracter√≠stica de poblaci√≥
-                                                  n de $(X, Y)$, denotada po...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./cap3.tex:271: Missing $ inserted.
-<inserted text> 
-                $
-l.271 		para $k, \ell
-                     >1$.
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (107.59631pt too wide) in paragraph at lines 267--272
-\OT1/cmr/m/n/10 La ma-triz equi-ca-rac-ter[]A-stica de po-bla-ci[]A$[]\OML/cmm/m/it/10 nde$\OT1/cmr/m/n/10 (X, Y)$\OML/cmm/m/it/10 ; denotadapor$\OT1/cmr/m/n/10 [M](X, Y)$\OML/cmm/m/it/10 ; sedefinepor$$\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 M\OT1/cmr/m/n/10 ](\OML/cmm/m/it/10 X; Y\OT1/cmr/m/n/10 )[] =
- []
-
-./cap3.tex:272: Missing } inserted.
-<inserted text> 
-                }
-l.272 	\end{defn}
-                 
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
+./cap3.tex:275: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 ...ada en su frontera, la equivalencia de ‚à
+l.275 ...ada en su frontera, la equivalencia de ‚à
                                                   Ç[M] y ‚àÇM produce el sig...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
+./cap3.tex:275: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 ...da en su frontera, la equivalencia de ‚àÇ
+l.275 ...da en su frontera, la equivalencia de ‚àÇ
                                                   [M] y ‚àÇM produce el sigu...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
+./cap3.tex:275: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 ... frontera, la equivalencia de ‚àÇ[M] y ‚à
+l.275 ... frontera, la equivalencia de ‚àÇ[M] y ‚à
                                                   ÇM produce el siguiente co...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
 
-./cap3.tex:283: Package inputenc Error: Keyboard character used is undefined
+./cap3.tex:275: Package inputenc Error: Keyboard character used is undefined
 (inputenc)                in inputencoding `latin1'.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.283 ...frontera, la equivalencia de ‚àÇ[M] y ‚àÇ
+l.275 ...frontera, la equivalencia de ‚àÇ[M] y ‚àÇ
                                                   M produce el siguiente cor...
 You need to provide a definition with \DeclareInputText 
 or \DeclareInputMath before using this key.
 
-./cap3.tex:291: Missing $ inserted.
-<inserted text> 
-                $
-l.291 ...tica de muestra, de manera an√°loga a c√≥
-                                                  mo definimos MIC con la ma...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./cap3.tex:291: Extra }, or forgotten $.
-\maththreesuperior ->{^3}
-                         
-l.291 ...tica de muestra, de manera an√°loga a c√≥
-                                                  mo definimos MIC con la ma...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 291.
-
-./cap3.tex:291: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.291 ...≥mo definimos MIC con la matriz caracter√
-                                                  ≠stica de muestra.
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:292: Missing $ inserted.
-<inserted text> 
-                $
-l.292 
-      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (9.21098pt too wide) in paragraph at lines 291--292
-\OT1/cmr/m/n/10 ma-ne-ra an[]A!`lo-ga a c[]A$[]\OML/cmm/m/it/10 modefinimosMICconlamatrizcaracter[]\OT1/cmr/m/n/10 -\OML/cmm/m/it/10 sticademuestra:$ 
- []
-
-[34] [35
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.303 		$$
-          
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.303 		$$
-          
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.303 		$$
-          ]
-./cap3.tex:317: Missing $ inserted.
-<inserted text> 
-                $
-l.317 ...idad donde $D_n$ es una muestra de tama√±
-                                                  o $n$ de la distribuci√≥n ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-LaTeX Warning: Command \~ invalid in math mode on input line 317.
-
-./cap3.tex:317: Please use \mathaccent for accents in math mode.
-\add@accent ... \let \ignorespaces \relax \accent 
-                                                  #1 #2\egroup \ifmmode \els...
-l.317 ... muestra de tama√±o $n$ de la distribuci√
-                                                  ≥n de $(X, Y)$, siempre qu...
-I'm changing \accent to \mathaccent here; wish me luck.
-(Accents are not the same in formulas as they are in text.)
-
-./cap3.tex:317: Missing $ inserted.
-<inserted text> 
-                $
-l.317 ...ibuci√≥n de $(X, Y)$, siempre que $\omega
-                                                  (1)<B(n) \leq O\left(n^{1-...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
+[16]
+<figuras//away_x_dino_x_.png, id=140, 462.528pt x 346.896pt>
 File: figuras//away_x_dino_x_.png Graphic file (type png)
 <use figuras//away_x_dino_x_.png>
-Package pdftex.def Info: figuras//away_x_dino_x_.png  used on input line 345.
+Package pdftex.def Info: figuras//away_x_dino_x_.png  used on input line 337.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-[36]
+ [17]
+<figuras//away_x_dino_y_.png, id=148, 462.528pt x 346.896pt>
 File: figuras//away_x_dino_y_.png Graphic file (type png)
 <use figuras//away_x_dino_y_.png>
-Package pdftex.def Info: figuras//away_x_dino_y_.png  used on input line 351.
+Package pdftex.def Info: figuras//away_x_dino_y_.png  used on input line 343.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<figuras//bullseye_x_away_y_.png, id=149, 462.528pt x 346.896pt>
 File: figuras//bullseye_x_away_y_.png Graphic file (type png)
 <use figuras//bullseye_x_away_y_.png>
-Package pdftex.def Info: figuras//bullseye_x_away_y_.png  used on input line 357.
+Package pdftex.def Info: figuras//bullseye_x_away_y_.png  used on input line 349.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [37
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5}) has been already used, duplicate ignored
+ [18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360 		
+l.352 		
         
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.360 		
-        ]
+l.352 		
+         <./figuras//away_x_dino_x_.png> <./figuras//away_x_dino_y_.png>]
+<figuras//bullseye_x_bullseye_y_.png, id=159, 462.528pt x 346.896pt>
 File: figuras//bullseye_x_bullseye_y_.png Graphic file (type png)
 <use figuras//bullseye_x_bullseye_y_.png>
-Package pdftex.def Info: figuras//bullseye_x_bullseye_y_.png  used on input line 363.
+Package pdftex.def Info: figuras//bullseye_x_bullseye_y_.png  used on input line 355.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<figuras//circle_x_circle_y_.png, id=160, 462.528pt x 346.896pt>
 File: figuras//circle_x_circle_y_.png Graphic file (type png)
 <use figuras//circle_x_circle_y_.png>
-Package pdftex.def Info: figuras//circle_x_circle_y_.png  used on input line 369.
+Package pdftex.def Info: figuras//circle_x_circle_y_.png  used on input line 361.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [38
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7}) has been already used, duplicate ignored
+ [19
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.372 		
+l.364 		
         
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.372 		
-        ]
+l.364 		
+         <./figuras//bullseye_x_away_y_.png> <./figuras//bullseye_x_bullseye_y_.png>]
+<figuras//circle_x_dino_y_.png, id=170, 462.528pt x 346.896pt>
 File: figuras//circle_x_dino_y_.png Graphic file (type png)
 <use figuras//circle_x_dino_y_.png>
-Package pdftex.def Info: figuras//circle_x_dino_y_.png  used on input line 375.
+Package pdftex.def Info: figuras//circle_x_dino_y_.png  used on input line 367.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<figuras//dino_x_dino_y_.png, id=171, 462.528pt x 346.896pt>
 File: figuras//dino_x_dino_y_.png Graphic file (type png)
 <use figuras//dino_x_dino_y_.png>
-Package pdftex.def Info: figuras//dino_x_dino_y_.png  used on input line 381.
+Package pdftex.def Info: figuras//dino_x_dino_y_.png  used on input line 373.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [39
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.9}) has been already used, duplicate ignored
+ [20
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.384 		
+l.376 		
         
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.10}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.384 		
-        ]
+l.376 		
+         <./figuras//circle_x_circle_y_.png> <./figuras//circle_x_dino_y_.png>]
+<figuras//dots_x_dots_y_.png, id=180, 462.528pt x 346.896pt>
 File: figuras//dots_x_dots_y_.png Graphic file (type png)
 <use figuras//dots_x_dots_y_.png>
-Package pdftex.def Info: figuras//dots_x_dots_y_.png  used on input line 387.
+Package pdftex.def Info: figuras//dots_x_dots_y_.png  used on input line 379.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+<figuras//dots_x_high_lines_y_.png, id=181, 462.528pt x 346.896pt>
 File: figuras//dots_x_high_lines_y_.png Graphic file (type png)
 <use figuras//dots_x_high_lines_y_.png>
-Package pdftex.def Info: figuras//dots_x_high_lines_y_.png  used on input line 393.
+Package pdftex.def Info: figuras//dots_x_high_lines_y_.png  used on input line 385.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [40
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.11}) has been already used, duplicate ignored
+ [21
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.396 		
+l.388 		
         
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.12}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.396 		
-        ]
+l.388 		
+         <./figuras//dino_x_dino_y_.png> <./figuras//dots_x_dots_y_.png>]
+<figuras//h_lines_x_high_lines_x_.png, id=190, 462.528pt x 346.896pt>
 File: figuras//h_lines_x_high_lines_x_.png Graphic file (type png)
 <use figuras//h_lines_x_high_lines_x_.png>
-Package pdftex.def Info: figuras//h_lines_x_high_lines_x_.png  used on input line 399.
+Package pdftex.def Info: figuras//h_lines_x_high_lines_x_.png  used on input line 391.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [41
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.13}) has been already used, duplicate ignored
+ [22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.412 	L
+l.404 	L
         a correlaci\'on local, tamb\'ien conodica como coeficiente no param\...
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.14}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.13}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.412 	L
-        a correlaci\'on local, tamb\'ien conodica como coeficiente no param\...] [42] [43])
-c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex:129: Extra \fi.
-\@include ...g \begin {document}}\@input@ {#1}\fi 
-                                                  
-l.129 \include{cap3}
-                    
-I'm ignoring this; it doesn't match any \if.
-
-c:/Users/Fabia/Documents/uni/memoria/latex_memoria/tesis_FCN.tex:129: Extra \fi.
-\include ...clude \expandafter {\@curr@file } \fi 
-                                                  
-l.129 \include{cap3}
-                    
-I'm ignoring this; it doesn't match any \if.
-
-[44]
-\openout2 = `cap4.aux'.
-
- (./cap4.tex
-Cap\'{\i }tulo 5.
-[45
+l.404 	L
+        a correlaci\'on local, tamb\'ien conodica como coeficiente no param\... <./figuras//dots_x_high_lines_y_.png> <./figuras//h_lines_x_high_lines_x_.png>] [23] [24]) [25
 
 
 ]
+\openout2 = `cap4.aux'.
 
-LaTeX Warning: Reference `boxcox' on page 46 undefined on input line 59.
+ (./cap4.tex
+Cap\'{\i }tulo 4.
+[26
 
-[46]) [47]
+
+{c:/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+LaTeX Warning: Reference `boxcox' on page 27 undefined on input line 59.
+
+[27]) [28]
 \openout2 = `cap5.aux'.
 
  (./cap5.tex
-Cap\'{\i }tulo 6.
-) [48
+Cap\'{\i }tulo 5.
+) [29
 
 
 
 
-] [49
+] [30
 
 
 ]
 \openout2 = `cap6.aux'.
 
  (./cap6.tex
-Cap\'{\i }tulo 7.
-) [50
+Cap\'{\i }tulo 6.
+) [31
 
 
-] [51
+] [32
 
 
 ]
@@ -2904,13 +934,13 @@ Cap\'{\i }tulo 7.
 
  (./appA.tex
 Ap\'{e}ndice A.
-) [52
+) [33
 
 
-] [53
+] [34
 
 
-] [54
+] [35
 
 ] (./tesis_FCN.aux (./tapa.aux)
 LaTeX Info: Redefining \sptext on input line 25.
@@ -2931,27 +961,20 @@ Package biblatex Warning: Please (re)run Biber on the file:
 Package logreq Info: Writing requests to 'tesis_FCN.run.xml'.
 \openout1 = `tesis_FCN.run.xml'.
 
- )
-(\end occurred inside a group at level 4)
-
-### simple group (level 4) entered at line 291 ({)
-### simple group (level 3) entered at line 264 ({)
-### simple group (level 2) entered at line 291 ({)
-### simple group (level 1) entered at line 264 ({)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 19720 strings out of 476001
- 338085 string characters out of 5793197
- 1868068 words of memory out of 5000000
- 39739 multiletter control sequences out of 15000+600000
- 524736 words of font info for 79 fonts, out of 8000000 for 9000
+ 19598 strings out of 476001
+ 336612 string characters out of 5793197
+ 1865068 words of memory out of 5000000
+ 39701 multiletter control sequences out of 15000+600000
+ 524253 words of font info for 77 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 75i,12n,76p,1280b,2269s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on tesis_FCN.pdf (54 pages, 591750 bytes).
+ 75i,12n,76p,1267b,1863s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on tesis_FCN.pdf (35 pages, 530412 bytes).
 PDF statistics:
- 694 PDF objects out of 1000 (max. 8388607)
- 556 compressed objects within 6 object streams
- 181 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 355 compressed objects within 4 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

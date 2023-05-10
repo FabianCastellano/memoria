@@ -228,11 +228,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	El estimador $MIC_e$ se basa en una de las caracterizaciones alternativas de $MIC_*$ probadas en la secci\'on anterior. Espec\'ificamente, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar rejillas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al. (2011).
 
-<<<<<<< HEAD
-	En paper publicado Reshef (2016), esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz caracter\'istica $M$ es la siguiente: mientras que la entrada $k, \ell$-th de $M$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$, la entrada $k, \ell$-th de $[M]$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$ que equiparticiona la dimensi\'on con m\'as filas/ 	columnas. \ref{fig:matriz_equicaracteristica} (Ver Figura 1.) A pesar de esta diferencia, a medida que la equipartici\'on en cuesti\'on se vuelve m\'as y m\'as fina, se vuelve indistinguible de una partici\'on \'optima del mismo tama\~no. Esta intuici\'on se puede formalizar para mostrar que el l\'imite de $[M]$ es igual al l\'imite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducir\'a que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimaci\'on consistente de $\mathrm{MIC}*$.
-=======
 	En paper publicado Reshef (2016), esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz caracter\'istica $M$ es la siguiente: mientras que la entrada $k, \ell$-th de $M$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$, la entrada $k, \ell$-th de $[M]$ se calcula a partir de l\ informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k$-por- $\ell$ que equiparticiona la dimensi\'on con m\'as filas/columnas. \ref{fig:matriz_equicaracteristica} (Ver Figura 1.) A pesar de esta diferencia, a medida que la equipartici\'on en cuesti\'on se vuelve m\'as y m\'as fina, se vuelve indistinguible de una partici\'on \'optima del mismo tama\~no Esta intuici\'on se puede formalizar para mostrar que el l\'imite de $[M]$ es igual al l\'imite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducir\'a que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimaci\'on consistente de $\mathrm{MIC}*$.
->>>>>>> 538d8b19d39c08610e54681125cfce966e2b300b
 
 	\section{La matriz equicaracter\'istica} 
 
@@ -241,11 +237,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{figure} \label{fig:matriz_equicaracteristica}
 		\centering
 		\includegraphics[scale=0.6]{figuras/figure_1_reshef_2016.png}
-<<<<<<< HEAD
-		\caption{Ejemplo de matriz equicaracteristica}
-=======
-		\caption{Un esquema que ilustra la diferencia entre la matriz característica $M$ y la matriz equicaracterística $[M]$. (Arriba) Cuando se restringe a 2 filas y 3 columnas, la matriz característica $M$ se calcula a partir de la rejilla óptima de 2 por 3. En contraste, la matriz equicaracterística $[M]$ aún optimiza la partición más pequeña de tamaño 2 pero está restringida a tener la partición más grande como una equipartición de tamaño 3. Esto resulta en una información mutua más baja de 0.613. (Abajo) Cuando se permiten 9 columnas en lugar de 3, la rejilla encontrada por la matriz característica no cambia, ya que la rejilla con 3 columnas ya era óptima. Sin embargo, ahora la matriz equicaracterística utiliza una equipartición en columnas de tamaño 9, cuya resolución es capaz de capturar completamente la dependencia entre $X$ e $Y$.}
->>>>>>> 538d8b19d39c08610e54681125cfce966e2b300b
+		\caption{Un esquema que ilustra la diferencia entre la matriz caracter\'istica $M$ y la matriz equicaracter\'istica $[M]$. (Arriba) Cuando se restringe a 2 filas y 3 columnas, la matriz caracter\'istica $M$ se calcula a partir de la rejilla \'optima de 2 por 3. En contraste, la matriz equicaracter\'istica $[M]$ a\'un optimiza la partici\'on m\'as peque\~na de tama\~no 2 pero est\'a restringida a tener la partici\'on m\'as grande como una equipartici\'on de tama\~no 3. Esto resulta en una informaci\'on mutua m\'as baja de 0.613. (Abajo) Cuando se permiten 9 columnas en lugar de 3, la rejilla encontrada por la matriz caracter\'istica no cambia, ya que la rejilla con 3 columnas ya era \'optima. Sin embargo, ahora la matriz equicaracter\'istica utiliza una equipartici\'on en columnas de tama\~no 9, cuya resoluci\'on es capaz de capturar completamente la dependencia entre $X$ e $Y$.}
 	\end{figure}
 	
 	
@@ -256,22 +248,22 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		$$
 		I^*((X, Y), k,[\ell])=\max _{G \in G(k,[\ell])} I\left(\left.(X, Y)\right|_G\right)
 		$$
-		donde $G(k,[\ell])$ es el conjunto de rejillas de $k$ por $[\ell]$ cuya partición del eje $y$ es una equipartición de tamaño $\ell$. Definir $I^*((X, Y),[k], \ell)$ análogamente.
+		donde $G(k,[\ell])$ es el conjunto de rejillas de $k$ por $[\ell]$ cuya partici\'on del eje $y$ es una equipartici\'on de tama\~no $\ell$. Definir $I^*((X, Y),[k], \ell)$ an\'alogamente.
 
 		Definir $I^{[]}((X, Y), k, \ell)$ igual a $I^((X, Y), k,[\ell])$ si $k<\ell$ y $I^((X, Y),[k], \ell)$ en caso contrario.
 	\end{defn}
 
-	Ahora definimos la matriz equicaracterística en términos de $I^{[*]}$. En la definición a continuación, continuamos nuestra convención de usar corchetes para denotar la presencia de equiparticiones.
+	Ahora definimos la matriz equicaracter\'istica en t\'erminos de $I^{[*]}$. En la definici\'on a continuaci\'on, continuamos nuestra convenci\'on de usar corchetes para denotar la presencia de equiparticiones.
 
 	\begin{defn}
-		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. La matriz equicaracterística de población de $(X, Y)$, denotada por $[M](X, Y)$, se define por
+		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. La matriz equicaracter\'istica de poblaci\'on de $(X, Y)$, denotada por $[M](X, Y)$, se define por
 		$$
 		[M](X, Y)_{k, \ell}=\frac{I^{[*]}((X, Y), k, \ell)}{\log \min \{k, \ell\}}
 		$$
 		para $k, \ell>1$.
 	\end{defn}
 
-	La frontera de la matriz equicaracterística se puede definir mediante un límite de la misma manera que la matriz característica. Luego tenemos el siguiente teorema.
+	La frontera de la matriz equicaracter\'istica se puede definir mediante un l\'imite de la misma manera que la matriz caracter\'istica. Luego tenemos el siguiente teorema.
 
 	\begin{thm}
 		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. Entonces $\partial[M]=\partial M$.
@@ -280,7 +272,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		Ap\'endice F de Reshef 2016
 	\end{proof}
 
-	Dado que cada entrada de la matriz equicaracterística está dominada por alguna entrada en su frontera, la equivalencia de ∂[M] y ∂M produce el siguiente corolario como una simple consecuencia
+	Dado que cada entrada de la matriz equicaracter\'istica est\'a dominada por alguna entrada en su frontera, la equivalencia de ∂[M] y ∂M produce el siguiente corolario como una simple consecuencia
 
 	\begin{cor}
 		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. Entonces $\sup [M](X, Y)=$ $M I C_*(X, Y)$.
@@ -288,10 +280,10 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	\subsection[short]{El estimador $MIC_e$}
 
-	Con la matriz equicaracterística definida, podemos ahora definir nuestro nuevo estimador $\mathrm{MIC}_e$ en términos de la matriz equicaracterística de muestra, de manera análoga a cómo definimos MIC con la matriz característica de muestra.
+	Con la matriz equicaracter\'istica definida, podemos ahora definir nuestro nuevo estimador $\mathrm{MIC}_e$ en t\'erminos de la matriz equicaracter\'istica de muestra, de manera an\'aloga a c\'omo definimos MIC con la matriz caracter\'istica de muestra.
 
 	\begin{defn}
-		Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz equicaracterística de muestra $\widehat{M}](D)$ de $D$ se define como
+		Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz equicaracter\'istica de muestra $\widehat{M}](D)$ de $D$ se define como
 		$$
 		\widehat{M}](D)_{k, \ell}=\frac{I^{[*]}(D, k, \ell)}{\log \min \{k, \ell\}} .
 		$$
@@ -305,7 +297,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 
 
-	Con la equivalencia establecida entre el frontera de la matriz característica y el de la matriz equicaracterística, es fácil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Apéndice G. Reshef 2016) Específicamente, mostramos el siguiente teorema, un análogo del Teorema 6.
+	Con la equivalencia establecida entre el frontera de la matriz caracter\'istica y el de la matriz equicaracter\'istica, es f\'acil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Ap\'endice G. Reshef 2016) Espec\'ificamente, mostramos el siguiente teorema, un an\'alogo del Teorema 6.
 	
 	\begin{thm}
 		Sea $f: m^{\infty} \rightarrow \mathbb{R}$ uniformemente continua, y suponga que $f \circ r_i \rightarrow f$ puntualmente. Entonces para cada variable aleatoria $(X, Y)$, tenemos:
@@ -314,16 +306,16 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		\left.\left(f \circ r_{B(n)}\right)(\widehat{M}]\left(D_n\right)\right) \rightarrow f([M](X, Y))
 		$$
 
-		en probabilidad donde $D_n$ es una muestra de tamaño $n$ de la distribución de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para algún $\varepsilon>0$.
+		en probabilidad donde $D_n$ es una muestra de tama\~no $n$ de la distribuci\'on de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{thm}
 	\begin{proof}
-		Apéndice A. Reshef 2016
+		Ap\'endice A. Reshef 2016
 	\end{proof}
 
 	Al establecer $f([M])=\sup [M]$, obtenemos como corolario la consistencia de $\mathrm{MIC}e$.
 	
 	\begin{cor}
-		$M I C_{B}$ es un estimador consistente de $M I C_*$ siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para algún $\varepsilon>0$.
+		$M I C_{B}$ es un estimador consistente de $M I C_*$ siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{cor}
 	
 
