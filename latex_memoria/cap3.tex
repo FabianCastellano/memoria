@@ -25,44 +25,45 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
  
 \subsection{Definiciones}
 
-	Como mencionamos en la parte anterior, debemos primero encontrar la informaci\'on mutua entre las variables, para esto definamos:
+	Como mencionamos en la parte anterior, debemos primero encontrar la informaci\'on mutua entre las variables.
 
 	\begin{defn}[Informaci\'on mutua]
-		Para dos variables aleatorias conjuntas $X$ e $Y$, se define la informaci\'on mutua como:
+		Para un variable aleatoria vibariada $(X,Y)$, se define la informaci\'on mutua como:
 		$$
 		\mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
 		$$
 		Donde $P_{(X, Y)}$ es la funci\'on de densidad de probabilidad conjunta y $P_{X}$, $P_{Y}$, las distribuciones marginales de $X$ e $Y$ respectivamente. 
 	\end{defn}
 
-	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida pokr los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. Veamos un ejemplo
+	Notemos que esta cantidad no es necesariamente finita. A pesar de no existir limitaciones sobre los momentos de la variable aleatoria bivariada, en su paper "Mutual Information as a Function of Moments" \cite{alghamdi2019} donde se crea un estimador asint\'oticamente concistente de la informaci\'on mutua, se asume que una de las variables tiene funcion generadora de momentos (FGM) finita en todas partes, y dado que esta aprocimacion nos ser\'a \'util m\'as adelate tambi\'en en adelate se tomara este supuesto.
+
+	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida por los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. Veamos un ejemplo
 	\begin{figure}[H]\label{malla_G}
 		\centering
-		\includegraphics*[scale = 0.4]{D_G_example1.png}
-		\caption{Malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
+		\includegraphics*[scale = 0.4]{mallaG4x3.png}
+		\caption{Malla G de $4x3$ sobre el conjunto de pares ordenados D, figura no final}
 	\end{figure}
 
-	Para la figura \ref{malla_G}, la funci\'on de densidad quedar\'ia de la forma:
+	Para la Figura \ref{malla_G}, la funci\'on de densidad quedar\'ia de la forma:
 	\[
 		f_{D|_G}(i,j) = \left\{\begin{array}{lr}
-			\frac{2}{10} & \text{si } (i,j) \in \{ (1,1), (2,2), (4,2)\} \\
-			\frac{1}{10}, & \text{si }(i,j) \in \{ (3,2)\}  \\
-			\frac{3}{10}, & \text{si }(i,j) \in \{ (4,1)\}  \\
+			\frac{1}{10} & \text{si } (i,j) \in \{ (1,3), (4,1)\} \\
+			\frac{2}{10}, & \text{si }(i,j) \in \{ (1,2), (2,1), (3,1),(3,2)\}  \\
 			0, & \text{Otro caso.}
 			\end{array}\right.
 	\]
 
 
 
-	Notemos que para un $D$ fijo, aunque fijemos el grosor de la malla, la distrion de esta puede variar dependiendo de donde hagamos los cortes, por ejemplo:
+	Notemos que para un $D$ fijo, aunque fijemos el grosor de la malla, la distribuci\'on de esta puede variar dependiendo de donde hagamos los cortes, por ejemplo:
 
 	\begin{figure}[H] \label{malla_G_2}
 		\centering
-		\includegraphics*[scale = 0.4]{D_G_example2.png}
-		\caption{Otra malla G de 4x3 sobre el conjunto de pares ordenados D, figura no final}
+		\includegraphics*[scale = 0.4]{mallaG4x3_2.png}
+		\caption{Otra malla G de 4x3 sobre el conjunto de pares ordenados D.}
 	\end{figure}
 
-	Aqu\'i podemo ver que la funci\'on de densidad que nos entrega est\'a malla es distinta a la definida para la figura \ref{malla_G_2}. Este es un hecho que explotamos en la siguiente definici\'on: 
+	Aqu\'i podemo ver que la funci\'on de densidad que nos entrega est\'a malla es distinta a la definida para la Figura \ref{malla_G_2}. Este es un hecho que explotamos en la siguiente definici\'on: 
 
 	\begin{defn}
 		Para un conjunto finito $D\in\R^2$ y enteros positivos $i,j$, definimos:
@@ -75,20 +76,20 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	Ya teniendo este valor procedemos a definir la matriz caracteristica del conjunto $D$.
 
 	\begin{defn}
-		La matriz caracteristica $M(D)$ de un conjunto bivariado $D$ es una matriz infinita con entradas:
+		La matriz caracteristica $M(D)$ de un conjunto de pared ordenados $D$ es una matriz infinita con entradas:
 		$$
 		M(D)_{x, y}=\frac{I^{*}(D, x, y)}{\log \min \{x, y\}}
 		$$
 	\end{defn}
 	\begin{defn}
-		El coeficiente de informaci\'on m\'axima o \textit{MIC} de un conjunto bivariado $D$ de tama\~no $n$ y una malla de tama\~no menos a $B(n)$ esta dado por:
+		El coeficiente de informaci\'on m\'axima o \textit{MIC} de un conjunto bivariado $D$ de tama\~no $n$ y una malla de tama\~no menor a $B(n)$ esta dado por:
 		$$
 		\operatorname{MIC}(D)=\max _{x y<B(n)}\left\{M(D)_{x, y}\right\}
 		$$
 		donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$ 
 	\end{defn}
 	\begin{rem}
-		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, que es la funci\'on que ocupan en el paper citado al principio del la secci\'on
+		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, que es la funci\'on utilizada en \cite{Reshef2011}.
 	\end{rem}
 
 	\subsection{Formas pr\'acticas de calcular el MIC, el $MIC_*$, $TIC_e$ y $MIC_e$}
