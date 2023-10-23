@@ -1,3 +1,77 @@
 % ---------------------------------------------------------------------------------------
-\chapter{Comprarando una Imgaen con su tranformada}\label{chap5}
+\chapter{La transformaci\'on de Box y Cox}\label{chap5}
+ 
 
+    La transformaci\'on de Box y Cox, conocida como BoxCox, es una t\'ecnica de transformaci\'on no lineal que fue propuesta por George Box y David Cox en 1964, cuenta la historia que el Profesor Box estaba visitando al doctor Box en Wisconsin, y decidieron que deberían escribir un artículo juntos dada la similitud de sus nombres, y que ambos eran británicos \cite{lane2003introduction}. Esta transformaci\'on estad\'istica param\'etrica fue presentada en su art\'iculo titulado "\textit{An Analysis of Transformations}"\cite{boxcox64}. Como canal de preprocesamiento, la transformaci\'on de BoxCox se utiliza com\'unmente para convertir un conjunto de datos en una distribuci\'on que se asemeja a la normal, lo que a su vez facilita un an\'alisis estad\'istico posterior.
+
+    La transformaci\'on de BoxCox pertenece a una familia de t\'ecnicas conocidas como transformaciones de potencia. Estas transformaciones buscan modificar los datos de entrada elev\'andolos a una potencia determinada, identificada por el par\'ametro $\lambda$. En el contexto de la transformaci\'on de BoxCox, el objetivo es encontrar el valor de $\lambda$ que proporciona el mejor ajuste a una distribuci\'on normal. Box y Cox desarrollaron este m\'etodo con la intenci\'on de crear una t\'ecnica de transformaci\'on flexible que pudiera adaptarse a diversas distribuciones de datos.
+
+    Para un $\lambda\in\R$ dado, la transformaci\'on de BoxCox se define como:
+    \begin{equation}\label{boxcox}
+        y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
+    \end{equation}
+    
+    $\forall y\in\R_{>0}$. En la pr\'actica los valores de $\lambda$ se restringen a un intervalo, normalmente $[-2,2]$ o $[-5,5]$, notemos adem\'as que en la practica se toma la segunda forma cuando $|\lambda|<0.01$\cite{boxcoximg}.
+    
+    Aunque tamb\'en existe una versi\'on para datos no positivos dada por:
+
+    $$
+    y^{(\lambda)}= \begin{cases}\frac{\left(y+\lambda_{2}\right)^{\lambda_{1}}-1}{\lambda_{1}} & \left(\lambda_{1} \neq 0\right), \\ \log \left(y+\lambda_{2}\right) & \left(\lambda_{1}=0\right) .\end{cases}
+    $$
+
+    Esta versi\'on es menos utilizada en la pr\'actica, dado que se suelen realizar otros pasos de preprocesamiento que dejan los datos entre 0 y 1, como por ejemplo la normalizaci\'on. 
+
+    Como mencionamos anteriormente, el objetivo de la transformaci\'on es encontrar el valor de $\lambda$ que proporciona el mejor ajuste a una distribuci\'on normal. Para esto, Box y Cox proponen un criterio de m\'axima verosimilitud, el cual se define como:
+
+    \begin{equation}
+        \mathcal{L}(\lambda) \equiv-\frac{n}{2} \log \left[\frac{1}{n} \sum_{j=1}^{n}\left(x_{j}^{\lambda}-\overline{x^{\lambda}}\right)^{2}\right] +(\lambda-1) \sum_{j=1}^{n} \log x_{j}
+    \end{equation}
+    donde $\overline{x^{\lambda}}$ es el promedio muestral del vector transformado.
+
+    La verosimilitud juega un papel crucial en el proceso de transformaci\'on de BoxCox. En t\'erminos simples, la verosimilitud se refiere a la probabilidad de que un conjunto de datos observados se derive de una distribuci\'on estad\'istica particular. En este caso, la verosimilitud se utiliza para medir qu\'e tan bien una distribuci\'on normal se ajusta a los datos transformados para diferentes valores de $\lambda$. El valor de $\lambda$ que maximiza esta verosimilitud es el que se selecciona para la transformaci\'on.
+
+    
+    La transformaci\'on de BoxCox persigue un objetivo esencial en el an\'alisis estad\'istico: garantizar el cumplimiento de los supuestos necesarios para la aplicaci\'on de modelos lineales. Esta garant\'ia posibilita el uso de t\'ecnicas de an\'alisis de varianza est\'andar en los datos transformados. En este sentido, Bicego y Bald\'o \cite{bicego2016} resaltan que esta transformaci\'on no altera el ordenamiento de los datos, manteniendo intacta la relaci\'on inherente entre ellos.
+
+    Es importante aclarar, sin embargo, que no todos los conjuntos de datos pueden ser transformados de tal manera que resulten en una distribuci\'on normal perfecta. A pesar de esta limitaci\'on, Draper y Cox \cite{draper1969}argumentan que la transformaci\'on de potencia puede ser efectiva en muchos casos. Incluso en situaciones donde la transformaci\'on no logra una normalidad exacta, las estimaciones habituales del par\'ametro $\lambda$ pueden desempe\~nar un papel vital en la regularizaci\'on de los datos.
+
+    Este proceso de regularizaci\'on conduce a una distribuci\'on que cumple con ciertos criterios deseables, como la simetr\'ia o la homocedasticidad. Esta \'ultima caracter\'istica, que se refiere a la constancia de la varianza a lo largo del conjunto de datos, es especialmente \'util en campos como el reconocimiento de patrones y el aprendizaje autom\'atico. Por ejemplo, en el an\'alisis discriminante lineal de Fisher, la homocedasticidad facilita la diferenciaci\'on entre diferentes clases de datos, potenciando la eficacia de este tipo de t\'ecnicas de aprendizaje autom\'atico.
+
+
+
+    \section[]{BoxCox sobre imagenes} 
+
+    En su art\'iculo del 2020 \cite{boxcoximg}, Abbas Cheddad resalta una notable brecha en la aplicaci\'on de la transformaci\'on de BoxCox a im\'agenes digitales. Seg\'un Cheddad, existe una carencia significativa de estudios en este \'ambito, destacando el trabajo de JD Lee en 2009 como una excepci\'on\cite{lee2009mr}. En el estudio de Lee, se present\'o un m\'etodo de segmentaci\'on para im\'agenes de resonancia magn\'etica cerebral a trav\'es de una t\'ecnica de transformaci\'on de distribuci\'on. En este enfoque, la transformaci\'on de Box-Cox se aplic\'o a las im\'agenes de resonancia magn\'etica cerebral para normalizar la distribuci\'on de intensidad de los p\'ixeles. Es relevante se\~nalar que, en este estudio, las im\'agenes se trataron como un vector de datos en lugar de una matriz, lo que implica un enfoque unidimensional en la manipulaci\'on y an\'alisis de la imagen.
+
+    Cabe destacar que el proceso de aplicar la tranformaci\'on es iterativo, en el cual se ha de buscar un parametro $\lambda$, esto hace que aplicar esta la transformaci\'on en grandes bancos de imagenes sea demoroso. Una alternativa propuesta por A. Cheddad \cite{boxcoximg} es utilizar el histograma como proxy comprido de la matriz de datos, dado que este refleja la probabilidad estimada de que un pixel esa de un tono en particular. En lo que continua de la secci\'on discutiremos este m\'etodo.
+
+    Dada una imagen en el espacio de color RGB, definimos:
+    $$
+    \mathcal{F}(u, v)=\{R(u, v), G(u, v), B(u, v)\}
+    $$
+
+    donde $(u, v)$ son las coordenadas en el espacio de pixeles que cumplen $u=1, \ldots U$, $v=1, \ldots V$ y $(U, V)$ son las dos dimensiones de la foto. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto definimos:
+    $$
+    \mathcal{F}^{\prime} =(0.299 \mathrm{R}+0.587 \mathrm{G}+0.114 \mathrm{~B})
+    $$
+
+
+    Que correspondo al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En base a esto definimos el histograma como
+    
+    $\chi(i)=\sum_{i=0}^{255}\mathcal{F}^{\prime} \text{ , si tiene nivel de gris } i$ 
+    
+    Ahora, denotemos por $\hat{\lambda}_{\chi}$ al parametro de la transformaci\'on BoxCox seleccionado usando el histograma, y de forma analoga definamos $\lambda_{\mathcal{F}^{\prime}}$ al seleccionado usando los datos completos. Fue obserado por Cheddad que estos no coinciden (de hecho la correlaci\'on entre estos es $r^2=-0.3022$) pero aun as\'i este calculo se ha desmostrado util en problemas de clasificaci\'on.
+
+
+    Ahora definimos $\mathcal{F}^{\prime}(u, v)^{\lambda_{\chi}}$ como los datos siendo aplicada la transformaci\'on BoxCox definida en (\ref{boxcox}), y por ultimo vamos a definir BoxCox para imagenes o BCI como:
+
+    $$    
+    \begin{aligned}
+        &B C I=\frac{\left(\mathcal{F}^{\prime \prime}(u, v)-\min \left(\mathcal{F}^{\prime \prime}(u, v)\right)\right)}{\left(\max \left(\mathcal{F}^{\prime \prime(u, v)}\right)-\min \left(\mathcal{F}^{\prime \prime(u, v)}\right)\right)}\\
+        &\text { con } \mathcal{F}^{\prime \prime}(u, v)=\mathcal{F}^{\prime}(u, v)^{\hat{\lambda}_{\chi}}
+    \end{aligned}
+    $$
+    
+    Nota. mantuve la notaci\'on del paper pero creo que esta necesita una revision.
+
+    Ahora veamos algunos ejemplos:

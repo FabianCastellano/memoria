@@ -1,77 +1,73 @@
 % ---------------------------------------------------------------------------------------
-\chapter{La transformaci\'on de Box y Cox}\label{chap4}
- 
-
-    La transformaci\'on de Box y Cox, conocida como BoxCox, es una t\'ecnica de transformaci\'on no lineal que fue propuesta por George Box y David Cox en 1964, cuenta la historia que el Profesor Box estaba visitando al doctor Box en Wisconsin, y decidieron que deberían escribir un artículo juntos dada la similitud de sus nombres, y que ambos eran británicos \cite{lane2003introduction}. Esta transformaci\'on estad\'istica param\'etrica fue presentada en su art\'iculo titulado "\textit{An Analysis of Transformations}"\cite{boxcox64}. Como canal de preprocesamiento, la transformaci\'on de BoxCox se utiliza com\'unmente para convertir un conjunto de datos en una distribuci\'on que se asemeja a la normal, lo que a su vez facilita un an\'alisis estad\'istico posterior.
-
-    La transformaci\'on de BoxCox pertenece a una familia de t\'ecnicas conocidas como transformaciones de potencia. Estas transformaciones buscan modificar los datos de entrada elev\'andolos a una potencia determinada, identificada por el par\'ametro $\lambda$. En el contexto de la transformaci\'on de BoxCox, el objetivo es encontrar el valor de $\lambda$ que proporciona el mejor ajuste a una distribuci\'on normal. Box y Cox desarrollaron este m\'etodo con la intenci\'on de crear una t\'ecnica de transformaci\'on flexible que pudiera adaptarse a diversas distribuciones de datos.
-
-    Para un $\lambda\in\R$ dado, la transformaci\'on de BoxCox se define como:
-    \begin{equation}\label{boxcox}
-        y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
-    \end{equation}
-    
-    $\forall y\in\R_{>0}$. En la pr\'actica los valores de $\lambda$ se restringen a un intervalo, normalmente $[-2,2]$ o $[-5,5]$, notemos adem\'as que en la practica se toma la segunda forma cuando $|\lambda|<0.01$\cite{boxcoximg}.
-    
-    Aunque tamb\'en existe una versi\'on para datos no positivos dada por:
-
-    $$
-    y^{(\lambda)}= \begin{cases}\frac{\left(y+\lambda_{2}\right)^{\lambda_{1}}-1}{\lambda_{1}} & \left(\lambda_{1} \neq 0\right), \\ \log \left(y+\lambda_{2}\right) & \left(\lambda_{1}=0\right) .\end{cases}
-    $$
-
-    Esta versi\'on es menos utilizada en la pr\'actica, dado que se suelen realizar otros pasos de preprocesamiento que dejan los datos entre 0 y 1, como por ejemplo la normalizaci\'on. 
-
-    Como mencionamos anteriormente, el objetivo de la transformaci\'on es encontrar el valor de $\lambda$ que proporciona el mejor ajuste a una distribuci\'on normal. Para esto, Box y Cox proponen un criterio de m\'axima verosimilitud, el cual se define como:
-
-    \begin{equation}
-        \mathcal{L}(\lambda) \equiv-\frac{n}{2} \log \left[\frac{1}{n} \sum_{j=1}^{n}\left(x_{j}^{\lambda}-\overline{x^{\lambda}}\right)^{2}\right] +(\lambda-1) \sum_{j=1}^{n} \log x_{j}
-    \end{equation}
-    donde $\overline{x^{\lambda}}$ es el promedio muestral del vector transformado.
-
-    La verosimilitud juega un papel crucial en el proceso de transformaci\'on de BoxCox. En t\'erminos simples, la verosimilitud se refiere a la probabilidad de que un conjunto de datos observados se derive de una distribuci\'on estad\'istica particular. En este caso, la verosimilitud se utiliza para medir qu\'e tan bien una distribuci\'on normal se ajusta a los datos transformados para diferentes valores de $\lambda$. El valor de $\lambda$ que maximiza esta verosimilitud es el que se selecciona para la transformaci\'on.
-
-    
-    La transformaci\'on de BoxCox persigue un objetivo esencial en el an\'alisis estad\'istico: garantizar el cumplimiento de los supuestos necesarios para la aplicaci\'on de modelos lineales. Esta garant\'ia posibilita el uso de t\'ecnicas de an\'alisis de varianza est\'andar en los datos transformados. En este sentido, Bicego y Bald\'o \cite{bicego2016} resaltan que esta transformaci\'on no altera el ordenamiento de los datos, manteniendo intacta la relaci\'on inherente entre ellos.
-
-    Es importante aclarar, sin embargo, que no todos los conjuntos de datos pueden ser transformados de tal manera que resulten en una distribuci\'on normal perfecta. A pesar de esta limitaci\'on, Draper y Cox \cite{draper1969}argumentan que la transformaci\'on de potencia puede ser efectiva en muchos casos. Incluso en situaciones donde la transformaci\'on no logra una normalidad exacta, las estimaciones habituales del par\'ametro $\lambda$ pueden desempe\~nar un papel vital en la regularizaci\'on de los datos.
-
-    Este proceso de regularizaci\'on conduce a una distribuci\'on que cumple con ciertos criterios deseables, como la simetr\'ia o la homocedasticidad. Esta \'ultima caracter\'istica, que se refiere a la constancia de la varianza a lo largo del conjunto de datos, es especialmente \'util en campos como el reconocimiento de patrones y el aprendizaje autom\'atico. Por ejemplo, en el an\'alisis discriminante lineal de Fisher, la homocedasticidad facilita la diferenciaci\'on entre diferentes clases de datos, potenciando la eficacia de este tipo de t\'ecnicas de aprendizaje autom\'atico.
+\chapter{Otros Métodos de Comparación de Imágenes}\label{chap4}
 
 
+\section[]{Correlaci\'on local} 
 
-    \section[]{BoxCox sobre imagenes} 
+	%chen2010.pdf
 
-    En su art\'iculo del 2020 \cite{boxcoximg}, Abbas Cheddad resalta una notable brecha en la aplicaci\'on de la transformaci\'on de BoxCox a im\'agenes digitales. Seg\'un Cheddad, existe una carencia significativa de estudios en este \'ambito, destacando el trabajo de JD Lee en 2009 como una excepci\'on\cite{lee2009mr}. En el estudio de Lee, se present\'o un m\'etodo de segmentaci\'on para im\'agenes de resonancia magn\'etica cerebral a trav\'es de una t\'ecnica de transformaci\'on de distribuci\'on. En este enfoque, la transformaci\'on de Box-Cox se aplic\'o a las im\'agenes de resonancia magn\'etica cerebral para normalizar la distribuci\'on de intensidad de los p\'ixeles. Es relevante se\~nalar que, en este estudio, las im\'agenes se trataron como un vector de datos en lugar de una matriz, lo que implica un enfoque unidimensional en la manipulaci\'on y an\'alisis de la imagen.
+	\subsection{Discucion sobre el coef.}
 
-    Cabe destacar que el proceso de aplicar la tranformaci\'on es iterativo, en el cual se ha de buscar un parametro $\lambda$, esto hace que aplicar esta la transformaci\'on en grandes bancos de imagenes sea demoroso. Una alternativa propuesta por A. Cheddad \cite{boxcoximg} es utilizar el histograma como proxy comprido de la matriz de datos, dado que este refleja la probabilidad estimada de que un pixel esa de un tono en particular. En lo que continua de la secci\'on discutiremos este m\'etodo.
+	donde se publico, como su ocupa, despcion en palabras
 
-    Dada una imagen en el espacio de color RGB, definimos:
-    $$
-    \mathcal{F}(u, v)=\{R(u, v), G(u, v), B(u, v)\}
-    $$
+	La correlaci\'on local, tamb\'ien conodica como coeficiente no param\'etrico de Chen, o coeficiente de Chen. Este, sin realizar supuestos sobre distribuciones, detecta relaciones no lineales al invenstigar un mont\'on de correalciones locales. 
 
-    donde $(u, v)$ son las coordenadas en el espacio de pixeles que cumplen $u=1, \ldots U$, $v=1, \ldots V$ y $(U, V)$ son las dos dimensiones de la foto. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto definimos:
-    $$
-    \mathcal{F}^{\prime} =(0.299 \mathrm{R}+0.587 \mathrm{G}+0.114 \mathrm{~B})
-    $$
+	\subsection{Definiciones}
+
+	La definici\'on del m\'etodo est\'a basada en en el concepto de integrales de correlaci\'on, las cuales se definen de la siguiente forma:
+	\begin{defn}
+		$$
+		I(r)=\lim _{N \rightarrow \infty}\left\{\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)\right\}
+		$$
+	\end{defn}
+	La integral de correlaci\'on cuantifica el el n\'umero promedio de vecinos dentro de un radio $r$. Notemos que esta definici\'on sigue teniendo sentido cuando los datos no son series de tiempo.
+
+	Para desarrollar una medida de asociaci\'on entre vectores, $x$ e $y$, modificamos la definici\'on de $I(r)$ como sigue. Sean $z_i=(x_i,y_i)$ con $i=1,\dots, N$ las observaciones en el conjunto de datos. Sea $|z_i-z_j|$ la distancia euclidiana. Definimos $\hat{I}(r)=\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)$. Las distancias obsevadas son adem\'as linealmente transformadas para que se encuentren entres 0 y 1 antes de calcular $\hat{I}$. Notemos que $\hat{I}$a tiene las propiedades de una funci\'on de distribuci\'on acumulativa. Es no decreciente entre 0 y 1 y continua por la derecha. La funci\'on $\hat{I}(r)$ descrive el patr\'on global de distancias entre vecinos. 
+
+	Nuestro inter\'es principal es la definici\'on  de una metrica para cuantificar la asosiaci\'on no lineal estudiando patrones locale. Dado esto, definimos la densidad de vecinos $D$ de forma similar a la derivada de $\hat{I}$: 
+
+	$$
+		\hat{D}(r)= \frac{\vartriangle\hat{I}(r)}{\vartriangle r}
+	$$
+
+	Donde $\vartriangle\hat{I}(r)$ denota un cambio en $\hat{I}(r)$. La densidad de vecinos es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$  y $m$ es un grosor de malla arbitrario. Una funci\'on de suavizado autom\'atico usando validaci\'on cruzada es usada para elegir un \'optimo el tama\~no $m$ (Vilela et al. 2007) y se aplica para suavizar $D(r)$. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
+
+	En base a esto definimos la correlaci\'on local. Intuitivamente, las distancias entre los puntos de datos entre dos variables correlacionadas diferir\'ian de las distancias entre dos variables no correlacionadas. Sea $\widehat{D_0}(r)$ la estimaci\'on de una distribuci\'on nula, que se compone de dos vectores sin asociaci\'on. Definimos la correlaci\'on local ($\ell(r)$) como la desviaci\'on de D de la de la distribuci\'on nula a una distancia vecina dada r:
+
+	$$
+		\ell(r)=\widehat{D}(r)-\widehat{D}_{0}(r)
+	$$
+
+	Este enfoque no asume ninguna distribuci\'on param\'etrica. La flexibilidad de este m\'etodo facilita el cambio de la distribuci\'on nula a cualquier distribuci\'on de inter\'es. 
+	
+	Por ultimo, definimos el coficiente como de correlaci\'on local m\'axima, o coeficiente de Chen como:
+	$$
+		M=\max _{r}\{|\ell(r)|\}
+	$$
+	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
 
 
-    Que correspondo al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En base a esto definimos el histograma como
-    
-    $\chi(i)=\sum_{i=0}^{255}\mathcal{F}^{\prime} \text{ , si tiene nivel de gris } i$ 
-    
-    Ahora, denotemos por $\hat{\lambda}_{\chi}$ al parametro de la transformaci\'on BoxCox seleccionado usando el histograma, y de forma analoga definamos $\lambda_{\mathcal{F}^{\prime}}$ al seleccionado usando los datos completos. Fue obserado por Cheddad que estos no coinciden (de hecho la correlaci\'on entre estos es $r^2=-0.3022$) pero aun as\'i este calculo se ha desmostrado util en problemas de clasificaci\'on.
+\section[]{Correlaci\'on de Pearson}
 
-
-    Ahora definimos $\mathcal{F}^{\prime}(u, v)^{\lambda_{\chi}}$ como los datos siendo aplicada la transformaci\'on BoxCox definida en (\ref{boxcox}), y por ultimo vamos a definir BoxCox para imagenes o BCI como:
-
-    $$    
-    \begin{aligned}
-        &B C I=\frac{\left(\mathcal{F}^{\prime \prime}(u, v)-\min \left(\mathcal{F}^{\prime \prime}(u, v)\right)\right)}{\left(\max \left(\mathcal{F}^{\prime \prime(u, v)}\right)-\min \left(\mathcal{F}^{\prime \prime(u, v)}\right)\right)}\\
-        &\text { con } \mathcal{F}^{\prime \prime}(u, v)=\mathcal{F}^{\prime}(u, v)^{\hat{\lambda}_{\chi}}
-    \end{aligned}
-    $$
-    
-    Nota. mantuve la notaci\'on del paper pero creo que esta necesita una revision.
-
-    Ahora veamos algunos ejemplos:
+	\subsection{Discucion sobre el coef.}
+	
+		donde se publico, como su ocupa, despcion en palabras
+	 
+	\section{Definiciones}
+	
+	El coef. se define como:
+	\begin{equation}\label{pearson_orig}
+		\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}
+	\end{equation}
+	
+	Para una muestra de tama\~no $N$, tenemos:
+	
+	\begin{equation}\label{pearson_r}
+		r=\frac{\sum_{i}^N\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum_{i}^n\left(x_{i}-\bar{x}\right)^{2}} \sqrt{\sum_{i}^n\left(y_{i}-\bar{y}\right)^{2}}}
+	\end{equation}
+	
+	Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
+	
+	Hablar de The Ineffectiveness of the Correlation Coefficient for Image Comparisons
+	
+	\newpage
