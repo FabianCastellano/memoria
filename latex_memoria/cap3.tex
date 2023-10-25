@@ -1,15 +1,16 @@
 \chapter{\textit{Maximal Information Coeficient}}
 
-La creciente dimensionalidad de los conjuntos de datos utulizados comunmente ha llevado a la popularidad el concepto de la ciencia generadora de hip\'otesis, en la cual los conjuntos de datos se utilizan para ayudar a los investigadores a formular nuevas hip\'otesis en lugar de probar las existentes. En este enfoque, se utilizan medidas de dependencia, que son estad\'isticas empleadas para evaluar pares de variables candidatas. Estos avances en el campo de analisis de datos nos han entregado muchas herramientas, tanto para la comparaci\'on de datos en si mismos, junto con formas de evaluar estas medidas en si mismas. 
+La Coeficiente de Informaci\'on m\'axima (conocido como MIC por sus siglas en ingl\'es), es una medida estad\'istica propuesta por Reshef et al. en su paper "Detecting Novel Associations in Large Data Sets" \cite{Reshef2011}. Este coeficiente fue creado en el contexto de la ciencia generadora de hip\'otesis, en la cual los conjuntos de datos se utilizan para ayudar a los investigadores a formular nuevas hip\'otesis en lugar de probar las existentes. En este enfoque, se utilizan medidas de dependencia, que son estad\'isticas empleadas para evaluar pares de variables candidatas. Estos avances en el campo de analisis de datos nos han entregado muchas herramientas, tanto para la comparaci\'on de datos en si mismos, junto con formas de evaluar estas medidas en si mismas.
 
-Una manera de medir la utilidad de una medida de dependencia $\hat\varphi$ es la potencia contra la independencia, es decir, la capacidad de prueba de independencia basada en $\hat\varphi$ para detectar varios tipos de relaciones no triviales. Este es un objetivo importante para conjuntos de datos que tienen muy pocas relaciones no triviales, o solo relaciones muy d\'ebiles que son dif\'iciles de detectar. Sin embargo, a menudo el n\'umero de relaciones declaradas estad\'isticamente significativas por una medida de dependencia supera con creces el n\'umero de relaciones que luego se pueden explorar m\'as a fondo.
+Sea $\hat\varphi$ una medida de dependencia, una forma de medir la utilidad de esta es la \textit{potencia contra la independencia}, i.e., la capacidad de prueba de independencia basada en $\hat\varphi$ para detectar varios tipos de relaciones no triviales. Este es un objetivo importante para conjuntos de datos que tienen muy pocas relaciones no triviales, o solo relaciones muy d\'ebiles que son dif\'iciles de detectar. Sin embargo, a menudo el n\'umero de relaciones declaradas estad\'isticamente significativas por una medida de dependencia supera con creces el n\'umero de relaciones que luego se pueden explorar m\'as a fondo.
 
 Para abordar este problema, se introdujo un segundo m\'etodo de evaluaci\'on de una medida de dependencia llamado equitabilidad \cite{Reshef2011}. Las estad\'isticas equitativas asignan puntuaciones similares a relaciones igualmente fuertes, independientemente de su tipo. El objetivo es definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas relevantes de la fuerza de la relaci\'on. 
-B
-La idea de equitabilidad ha motivado el desarrollo de varias medidas de dependencia, con diferentes formalizaciones y enfoques en aspectos espec\'ificos de la fuerza de la relaci\'on. El desaf\'io radica en definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas importantes de la fuerza de la relaci\'on, como se ve en el art\'iculo complementario de Reshef et al. Esta l\'inea de investigaci\'on tiene como objetivo proporcionar un enfoque m\'as poderoso y equitativo para medir la dependencia, lo que permite una identificaci\'on y priorizaci\'on m\'as precisas de las relaciones en conjuntos de datos complejos.
 
-Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'on m\'axima (MIC), Correlaci\'on local, y la correlaci\'on de Pearson; los cuales son los coeficientes m\'as utilizados para la comparaci\'on entre dos imagenes. Notemos que que ya fue mostrado por Reshef et al (2011) \cite{Reshef2011} que el coeficiente de informaci\'on m\'axima (MIC) es equitativo, estudiaremos la equitatividad de los otros dos coeficientes m\'as adelante.
+La idea de equitabilidad ha motivado el desarrollo de varias medidas de dependencia, con diferentes formalizaciones y enfoques en aspectos espec\'ificos de la fuerza de la relaci\'on. El desaf\'io radica en definir medidas de dependencia que logren una buena equitabilidad con respecto a medidas importantes de la fuerza de la relaci\'on, como se ve en el art\'iculo complementario de Reshef et al (2011) \cite{Reshef2011}. Esta l\'inea de investigaci\'on tiene como objetivo proporcionar un enfoque m\'as poderoso y equitativo para medir la dependencia, lo que permite una identificaci\'on y priorizaci\'on m\'as precisas de las relaciones en conjuntos de datos complejos.
 
+En este contexto, el coeficiente de informaci\'on m\'axima (MIC) nos entrega una medida rebusta para encontrar relaci\'ones no lineales entre variables, para nuestro caso en particular, entre im\'agenes. C\'omo veremos en la secci\'on \ref{chap5}, la transformaci\'on de Box-Cox es no lineal, por lo que el coeficiente nos ayudar\'a a cuantificar la relaci\'on entre las im\'agenes transformadas y las originales, y podemos aprovechar la equitabilidad de este para comparar diferentes versiones de la transformaci\'on.
+
+En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedades y un par de caracterizaciones que nos ayudar\'an a llegar al $MIC_*$ y posteriormente al $MIC_e$, ambos siendo estimadores de $MIC$ que nos har\'an posible calcular este valor. Adem\'as introduciremos el concepto de Equitabilidad de forma m\'as formal y veremos como el $MIC$ cumple con esta propiedad, para posteriormente estudiar la equitabilidad de los coeficientes que introduciremos en el cap\'itulo \ref{chap4}.
 
 \section{Sobre el coeficiente}
 
@@ -17,7 +18,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	En este paper, Reshef et al. presentan un enfoque innovador para detectar asociaciones nobles en grandes conjuntos de datos, en lugar de buscar correlaciones fuertes entre dos variables, el coeficiente MIC permite detectar relaciones d\'ebiles pero a\'un importantes que pueden no ser evidentes al simplemente mirar los datos. Esto es posible gracias a que el coeficiente MIC es capaz de capturar no solo la fuerza de la correlaci\'on entre dos variables, sino tambi\'en su precisi\'on.
 
-	Para calcular el coeficiente, se parte de la idea de que la informaci\'on mutua entre dos variables es una medida de la precisi\'on con la que se puede predecir una variable a partir de la otra. Por lo tanto, el coeficiente se calcula como la informaci\'on mutua m\'axima posible entre dos variables, dado un conjunto de datos. Esto se hace a trav\'es de un procedimiento iterativo en el que se prueban diferentes particiones de los datos en conjuntos de entrenamiento y prueba, y se selecciona aquella que maximiza la informaci\'on mutua.
+	Para calcular el coeficiente, se comienza de la idea de que la informaci\'on mutua entre dos variables es una medida de la precisi\'on con la que se puede predecir una variable a partir de la otra. Por lo tanto, el coeficiente se calcula como la informaci\'on mutua m\'axima posible entre dos variables, dado un conjunto de datos. Esto se hace a trav\'es de un procedimiento iterativo en el que se prueban diferentes particiones de los datos en conjuntos de entrenamiento y prueba, y se selecciona aquella que maximiza la informaci\'on mutua.
 
 	El la siguiente secci\'on estudiaremos las definiciones que nos entrega cada coeficiente.
  
@@ -28,9 +29,9 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}[Informaci\'on mutua]
 		Para un vector aleatorio bivariado $(X,Y)$, se define la informaci\'on mutua como:
 		$$
-		\mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
+		\mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy,
 		$$
-		Donde $P_{(X, Y)}$ es la funci\'on de densidad de probabilidad conjunta y $P_{X}$, $P_{Y}$, las distribuciones marginales de $X$ e $Y$ respectivamente. 
+		donde $P_{(X, Y)}$ es la funci\'on de densidad de probabilidad conjunta y $P_{X}$, $P_{Y}$, las distribuciones marginales de $X$ e $Y$ respectivamente. 
 	\end{defn}
 
 	Luego, sea $D$ un conjunto finito de pares ordenados, podemos particionar los valores de la primera coordenada en $x$ contenedores, y los valores de la segunda en $y$ de estos. Dado una malla $G$, sea $D|_G$ la distribuci\'on inducida por los puntos de $D$ en las celdas de $G$, i.e., la distribuci\'on en las celdas de $G$ obtenida al dejar que la funci\'on de densidad de probabilidad en cada celda sea la fracci\'on de puntos de $D$ que caen en esa celda. Veamos un ejemplo
@@ -66,9 +67,9 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}
 		Para un conjunto finito $D\in\R^2$ y enteros positivos $i,j$, definimos:
 		$$
-		I^*(D,i,j)=\max I(D|_G)
+		I^*(D,i,j)=\max I(D|_G),
 		$$
-		donde el m\'aximo es sobre todas las mallas $G$ con $i$ columnas y $j$ filas, con $I(D|_G)$ denot la informaci\'on mutua de $D|_G$.
+		donde el m\'aximo es sobre todas las mallas $G$ con $i$ columnas y $j$ filas, con $I(D|_G)$ denota la informaci\'on mutua de $D|_G$.
 	\end{defn}
 
 	Ya teniendo este valor procedemos a definir la matriz caracteristica del conjunto $D$.
@@ -76,29 +77,30 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}
 		La matriz caracteristica $M(D)$ de un conjunto de pared ordenados $D$ es una matriz infinita con entradas:
 		$$
-		M(D)_{x, y}=\frac{I^{*}(D, x, y)}{\log \min \{x, y\}}
+		M(D)_{x, y}=\frac{I^{*}(D, x, y)}{\log \min \{x, y\}}.
 		$$
 	\end{defn}
 	\begin{defn}
 		El coeficiente de informaci\'on m\'axima o \textit{MIC} de un conjunto bivariado $D$ de tama\~no $n$ y una malla de tama\~no menor a $B(n)$ esta dado por:
 
 		$$
-		\operatorname{MIC}(D)=\max _{x y<B(n)}\left\{M(D)_{x, y}\right\}
+		\operatorname{MIC}(D)=\max _{x y<B(n)}\left\{M(D)_{x, y}\right\},
 		$$
 
-		donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$ 
+		donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$.
 	\end{defn}
 	\begin{rem}
-		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, que es la funci\'on utilizada en \cite{Reshef2011}.
+		A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, funci\'on de la cu\'al se encontr\'o que funcon\'a en pr\'actica en el art\'iculo complementario de Reshef et al. (2011) \cite[]{Reshef2011}, discuteremos la selecci\'on de este par\'ametro m\'as adelante en \ref{eligiendo_Bn}
 	\end{rem}
 
-	\subsection[Formas practicas de calcular el MIC, el MIC*, TICe y MICe]{Formas pr\'acticas de calcular el $MIC$, el $MIC_*$, $TIC_e$ y $MIC_e$}
+
+	\section[Formas practicas de calcular el MIC. MIC*, TICe y MICe]{Formas pr\'acticas de calcular el $MIC$. $MIC_*$, $TIC_e$ y $MIC_e$}
 æ
 	En el art\'iculo "Measuring Dependence Powerfully and Equitably" de Reshef et al. \cite{Reshef2016}, los autores presentan y caracterizan te\'oricamente dos nuevas medidas de dependencia: $MIC_*$ y $MIC_e$. $MIC_*$ es una medida de dependencia poblacional, y el art\' iculo presenta tres formas de ver esta cantidad. Los autores demuestran que $MIC_*$ es el valor poblacional del coeficiente de informaci\'on m\'axima (MIC), una suavizaci\'on m\'inima de la informaci\'on mutua y el supremo de una secuencia infinita. Estas caracterizaciones simplifican el c\'alculo y fortalecen los resultados te\'oricos.
 
 	Adem\'as, los autores desarrollan algoritmos eficientes para aproximar $MIC_*$ en la pr\'actica y estimarlo de manera consistente a partir de una muestra finita. Introducen $MIC_e$, un estimador consistente de $MIC_*$, que es computable de manera eficiente y m\'as r\'apido en la pr\'actica que el algoritmo heur\'istico para calcular MIC. A trav\'es de simulaciones, demuestran que $MIC_e$ tiene mejores propiedades de sesgo/varianza y supera a los m\'etodos existentes en t\'erminos de equitabilidad con respecto a R2 en un amplio conjunto de relaciones funcionales ruidosas.
 
-	\section[short]{Definiciones y propiedades de $MIC_*$}
+	\subsection[short]{Definiciones y propiedades de $MIC_*$}
 
 	En esta secci\'on, abordaremos las definiciones esenciales para el c\'alculo del $MIC_e$. El coeficiente m\'aximo de informaci\'on poblacional puede expresarse de diversas maneras equivalentes, como veremos m\'as adelante. Sin embargo, comenzaremos con la definici\'on m\'as sencilla.
 
@@ -111,18 +113,18 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		donde $||G||$ denota el m\'inimo entre el n\'umero de filas y el n\'umero de columnas de la malla $G$.
 	\end{defn}
 	
-	Ya que $I(X,Y) = sup_G I((X,Y)|G)$ (consultar, por ejemplo, el Cap\'itulo 8 de Cover y Thomas, 2006), esto puede interpretarse como una versi\'on regularizada de la informaci\'on mutua que sanciona las rejillas complejas y garantiza que el resultado est\'e dentro del rango entre cero y uno.
+	Ya que $I(X,Y) = sup_G I((X,Y)|G)$ (Cover y Thomas, 2006 \cite[Cap. 8]{CoverThomas2006}), esto puede interpretarse como una versi\'on regularizada de la informaci\'on mutua que sanciona las rejillas complejas y garantiza que el resultado est\'e dentro del rango entre cero y uno.
 	
 	Previo a continuar, introducimos una definici\'on equivalente y sencilla de $MIC_*$ que resulta \'util para los resultados en esta secci\'on. Esta definici\'on considera a $MIC_*$ como el supremo de una matriz denominada matriz caracter\'istica poblacional, que se define a continuaci\'on.
 	
 	\begin{defn}
 		Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. Sea
 		$$
-		I^*((X, Y), k, \ell)=\max _{G \in G(k, \ell)} I\left(\left.(X, Y)\right|_G\right)
+		I^*((X, Y), k, \ell)=\max _{G \in G(k, \ell)} I\left(\left.(X, Y)\right|_G\right),
 		$$
-		La matriz caracter\'istica poblacional de (X,Y), denotada por M(X,Y), se define como
+		la matriz caracter\'istica poblacional de (X,Y), denotada por M(X,Y), se define como
 		$$
-		M(X, Y)_{k, \ell}=\frac{I^*((X, Y), k, \ell)}{\log \min \{k, \ell\}}
+		M(X, Y)_{k, \ell}=\frac{I^*((X, Y), k, \ell)}{\log \min \{k, \ell\}}.
 		$$
 	\end{defn}
 	
@@ -131,9 +133,9 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	Es f\'acil ver lo siguiente:
 
 	\begin{prop}
-		Sea $(X,Y)$ una pareja de variables aleatorias conjuntamente distribuidas. Tenemos
+		Sea $(X,Y)$ una vector aleatorio bidimensional de variables aleatorias conjuntamente distribuidas. Tenemos
 	
-	$$MIC_*(X,Y) = \sup M(X,Y)$$
+	$$MIC_*(X,Y) = \sup M(X,Y),$$
 	
 	donde $M(X,Y)$ es la matriz caracter\'istica poblacional de $(X,Y)$.
 	\end{prop}	
@@ -141,14 +143,14 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	
 	La matriz caracter\'istica poblacional recibe este nombre porque, al igual que el $MIC_*$, el supremo de esta matriz, captura una noci\'on de la intensidad de la relaci\'on, y otras propiedades de esta matriz se relacionan con diferentes caracter\'isticas de las relaciones. Por ejemplo, m\'as adelante en este documento presentamos una propiedad adicional de la matriz caracter\'istica, el coeficiente de informaci\'on total, que es \'util para comprobar la presencia o ausencia de una relaci\'on en lugar de cuantificar la intensidad de la relaci\'on.
 
-	\section[]{El $MIC_*$ es el valor poblacional del $MIC$}
+	\subsection[]{El $MIC_*$ es el valor poblacional del $MIC$}
 
 	Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. \cite{Reshef2011}. Recordemos la Definiciones del MIC y la matriz caracter\'istica de muestra. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
 
 	\begin{defn}
 		(Reshef et al., 2011 \cite{Reshef2011})  Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz caracter\'istica de muestra $\widehat{M}(D)$ de $D$ se define por
 		$$
-		\widehat{M}(D)_{k, \ell}=\frac{I^*(D, k, \ell)}{\log \min \{k, \ell\}} .
+		\widehat{M}(D)_{k, \ell}=\frac{I^*(D, k, \ell)}{\log \min \{k, \ell\}}.
 		$$
 	\end{defn}
 
@@ -166,7 +168,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{thm}
 		Sea $f: m^{\infty} \rightarrow \mathbb{R}$ uniformemente continua, y suponga que $f \circ r_i \rightarrow f$ puntualmente. Entonces, para cada variable aleatoria $(X, Y)$, tenemos
 		$$
-		\left(f \circ r_{B(n)}\right)\left(\widehat{M}\left(D_n\right)\right) \rightarrow f(M(X, Y))
+		\left(f \circ r_{B(n)}\right)\left(\widehat{M}\left(D_n\right)\right) \rightarrow f(M(X, Y)),
 		$$
 		en probabilidad donde $D_n$ es una muestra de tama\~no $n$ de la distribuci\'on de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{thm}
@@ -185,10 +187,10 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 
 	Comenzamos definiendo lo que entendemos por l\'imite de la matriz caracter\'istica. Nuestra definici\'on se basa en la siguiente observaci\'on.
 	\begin{prop}
-		Sea $M$ una matriz caracter\'istica poblacional. Entonces, para $\ell \geq k, M_{k, \ell} \leq M_{k, \ell+1}$
+		Sea $M$ una matriz caracter\'istica poblacional. Entonces, para $\ell \geq k, M_{k, \ell} \leq M_{k, \ell+1}$.
 	\end{prop}
 	\begin{proof}
-		Sea $(X, Y)$ la variable aleatoria en cuesti\'on. Dado que siempre podemos dejar una fila/columna vac\'ia, sabemos que $I^*((X, Y), k, \ell) \leq I^*((X, Y), k, \ell+1)$. Y dado que $\ell, \ell+1 \geq k$, sabemos que $M_{k, \ell}=I^*((X, Y), k, \ell) / \log k \leq I^*((X, Y), k, \ell+1) / \log k=M_{k, \ell+1}$.
+		Sea $(X, Y)$ la variable aleatoria en cuesti\'on. Siempre podemos dejar una fila/columna vac\'ia, sabemos que $I^*((X, Y), k, \ell) \leq I^*((X, Y), k, \ell+1)$. Y dado que $\ell, \ell+1 \geq k$, sabemos que $M_{k, \ell}=I^*((X, Y), k, \ell) / \log k \leq I^*((X, Y), k, \ell+1) / \log k=M_{k, \ell+1}$.
 	\end{proof}
 
 	Dado que las entradas de la matriz caracter\'istica est\'an acotadas, el teorema de convergencia mon\'otona nos da el siguiente corolario. En el corolario y en adelante, dejamos $M_{k, \uparrow}=\lim _{\ell \rightarrow \infty} M_{k, \ell}$ y definimos $M_{\uparrow, \ell}$ de manera similar.
@@ -201,7 +203,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}
 		Sea $M$ una matriz caracter\'istica poblacional. El l\'imite de $M$ es el conjunto
 		$$
-		\partial M=\left\{M_{k, \uparrow}: 1<k<\infty\right\} \bigcup\left\{M_{\uparrow, \ell}: 1<\ell<\infty\right\}
+		\partial M=\left\{M_{k, \uparrow}: 1<k<\infty\right\} \bigcup\left\{M_{\uparrow, \ell}: 1<\ell<\infty\right\}.
 		$$
 	\end{defn}
 	
@@ -211,7 +213,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{thm}
 	Sea $(X, Y)$ un vector aleatorio bivariado. Tenemos
 	$$
-	M I C_*(X, Y)=\sup \partial M(X, Y)
+	M I C_*(X, Y)=\sup \partial M(X, Y),
 	$$
 	donde $M(X, Y)$ es la matriz caracter\'istica poblacional de $(X, Y)$.
 	\end{thm}
@@ -220,17 +222,15 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{proof}
 		El siguiente argumento muestra que cada entrada de $M$ es, como m\'aximo, $\sup \partial M$: fije un par $(k, \ell)$ y observe que, o bien $k \leq \ell$, en cuyo caso $M_{k, \ell} \leq M_{k, \uparrow}$, o bien $\ell \leq k$, en cuyo caso $M_{k, \ell} \leq M_{\uparrow, \ell}$. 
 		
-		Por lo tanto, 
-		
-		$\mathrm{MIC}_* \leq \sup \left\{M_{\uparrow, \ell}\right\} \cup\left\{M_{k, \uparrow}\right\}=\sup \partial M$
+		Por lo tanto, $\mathrm{MIC}_* \leq \sup \left\{M_{\uparrow, \ell}\right\} \cup\left\{M_{k, \uparrow}\right\}=\sup \partial M$.
 	\end{proof}
 	
 	Por otro lado, el Corolario muestra que cada elemento de $\partial M$ es un supremo sobre algunos elementos de $M$. Por lo tanto, sup $\partial M$, al ser un supremo sobre supremos de elementos de $M$, no puede exceder $\sup M=\mathrm{MIC}_*$.
 
 
-	\section[Estimando el MIC_star con MIC_e]{Estimando el $MIC_*$ con $MIC_e$}
+	\subsection[Estimando el MICstar con MIC e]{Estimando el $MIC_*$ con $MIC_e$}
 
-	Como hemos revisado, $MIC_*$ es el valor poblacional del estad\'istico MIC introducido en Reshef et al. (2011). Sin embargo, aunque es consistente, el estad\'istico MIC no se conoce por ser eficientemente computable y en Reshef et al. (2011) se calcul\'o en su lugar un algoritmo heur\'istico de aproximaci\'on llamado Approx-MIC. En esta secci\'on, revisaremos un estimador de $MIC_*$ que es tanto consistente como eficientemente computable. El nuevo estimador, llamado $MIC_e$, tiene una mejor complejidad de tiempo de ejecuci\'on incluso que el algoritmo heur\'istico Approx-MIC y es \'ordenes de magnitud m\'as r\'apido en la pr\'actica.
+	Como hemos revisado, $MIC_*$ es el valor poblacional del estad\'istico MIC introducido en Reshef et al. (2011). Sin embargo, aunque es consistente, el estad\'istico MIC no se conoce por ser eficientemente computable y en Reshef et al. (2011) \cite{Reshef2011} se calcul\'o en su lugar un algoritmo heur\'istico de aproximaci\'on llamado Approx-MIC. En esta secci\'on, revisaremos un estimador de $MIC_*$ que es tanto consistente como eficientemente computable. El nuevo estimador, llamado $MIC_e$, tiene una mejor complejidad de tiempo de ejecuci\'on incluso que el algoritmo heur\'istico Approx-MIC y es \'ordenes de magnitud m\'as r\'apido en la pr\'actica.
 
 	El estimador $MIC_e$ se basa en la caracterizaci\'on alternativa de $MIC_*$ probada en la secci\'on anterior, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar rejillas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al.(2011)\cite{Reshef2011}.
 
@@ -251,7 +251,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}
 		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. Definir
 		$$
-		I^*((X, Y), k,[\ell])=\max _{G \in G(k,[\ell])} I\left(\left.(X, Y)\right|_G\right)
+		I^*((X, Y), k,[\ell])=\max _{G \in G(k,[\ell])} I\left(\left.(X, Y)\right|_G\right),
 		$$
 		donde $G(k,[\ell])$ es el conjunto de rejillas de $k$ por $[\ell]$ cuya partici\'on del eje $y$ es una equipartici\'on de tama\~no $\ell$. Definir $I^*((X, Y),[k], \ell)$ an\'alogamente.
 
@@ -263,7 +263,7 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	\begin{defn}
 		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. La matriz equicaracter\'istica de poblaci\'on de $(X, Y)$, denotada por $[M](X, Y)$, se define por
 		$$
-		[M](X, Y)_{k, \ell}=\frac{I^{[*]}((X, Y), k, \ell)}{\log \min \{k, \ell\}}
+		[M](X, Y)_{k, \ell}=\frac{I^{[*]}((X, Y), k, \ell)}{\log \min \{k, \ell\}},
 		$$
 		para $k, \ell>1$.
 	\end{defn}
@@ -283,31 +283,31 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		Sea $(X, Y)$ variables aleatorias conjuntamente distribuidas. Entonces $\sup [M](X, Y)=$ $M I C_*(X, Y)$.
 	\end{cor}
 
-	\subsection[short]{El estimador $MIC_e$}
+	\section[short]{El estimador $MIC_e$}
 
 	Con la matriz equicaracter\'istica definida, podemos ahora definir nuestro nuevo estimador $\mathrm{MIC}_e$ en t\'erminos de la matriz equicaracter\'istica de muestra, de manera an\'aloga a c\'omo definimos MIC con la matriz caracter\'istica de muestra.
 
 	\begin{defn}
 		Sea $D \subset \mathbb{R}^2$ un conjunto de pares ordenados. La matriz equicaracter\'istica de muestra $\widehat[{M}](D)$ de $D$ se define como
 		$$
-		\widehat[{M}](D)_{k, \ell}=\frac{I^{[*]}(D, k, \ell)}{\log \min \{k, \ell\}} .
+		\widehat{[{M}]}(D)_{k, \ell}=\frac{I^{[*]}(D, k, \ell)}{\log \min \{k, \ell\}} .
 		$$
 	\end{defn}
 	\begin{defn}
 		Sea $D \subset \mathbb{R}^2$ un conjunto de $n$ pares ordenados, y sea $B: \mathbb{Z}^{+} \rightarrow \mathbb{Z}^{+}$. Definimos
 		$$
-		M I C_{e, B}(D)=\max _{k \ell \leq B(n)} \widehat{[M]}(D)_{k, \ell}
+		M I C_{e, B}(D)=\max _{k \ell \leq B(n)} \widehat{[M]}(D)_{k, \ell}.
 		$$
 	\end{defn}
 
 
-	Con la equivalencia establecida entre el frontera de la matriz caracter\'istica y el de la matriz equicaracter\'istica, es f\'acil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Ap\'endice G. Reshef 2016) Espec\'ificamente, mostramos el siguiente teorema, un an\'alogo del Teorema 6.
+	Con la equivalencia establecida entre la frontera de la matriz caracter\'istica y el de la matriz equicaracter\'istica, es f\'acil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Ap\'endice G. Reshef 2016) Espec\'ificamente, mostramos el siguiente teorema, un an\'alogo del Teorema 6.
 	
 	\begin{thm}
 		Sea $f: m^{\infty} \rightarrow \mathbb{R}$ uniformemente continua, y suponga que $f \circ r_i \rightarrow f$ puntualmente. Entonces para cada variable aleatoria $(X, Y)$, tenemos:
 
 		$$
-		\left.\left(f \circ r_{B(n)}\right)(\widehat{M}]\left(D_n\right)\right) \rightarrow f([M](X, Y))
+		\left.\left(f \circ r_{B(n)}\right)(\widehat{M}]\left(D_n\right)\right) \rightarrow f([M](X, Y)),
 		$$
 
 		en probabilidad donde $D_n$ es una muestra de tama\~no $n$ de la distribuci\'on de $(X, Y)$, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
@@ -316,13 +316,16 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 		Ap\'endice A. Reshef (2016) \cite{Reshef2016}
 	\end{proof}
 
-	Al establecer $f([M])=\sup [M]$, obtenemos como corolario la consistencia de $\mathrm{MIC}e$.
+	Al establecer $f([M])=\sup [M]$, obtenemos como corolario la consistencia de $\mathrm{MIC}_e$.
 	
 	\begin{cor}
 		$M I C_{B}$ es un estimador consistente de $M I C_*$ siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{cor}
 
-	\section{\textit{	 ($TIC$)}}
+	\section[equitabilidadmice]{Equitabilidad del $MIC_e$}
+
+	\section[TIC]{\textit{Total Information coefficient ($TIC$)}}
+
 	Hasta ahora hemos presentado resultados sobre estimadores del coeficiente de informaci\'on maximal de la poblaci\'on, una cantidad para la cual la equitabilidad es la principal motivaci\'on. Ahora introducimos y analizamos una nueva medida de dependencia, el coeficiente de informaci\'on total ($TIC$). A diferencia del coeficiente de informaci\'on maxima($MIC$), el coeficiente de informaci\'on total no est\'a dise\~nado para la equitabilidad, sino m\'as bien como una estad\'istica de prueba para probar una hip\'otesis nula de independencia.
 
 	Comenzamos dando alguna intuici\'on. Recordemos que el coeficiente de informaci\'on maximal es el supremo de la matriz caracter\'istica. Si bien estimar el supremo de esta matriz tiene muchas ventajas, esta estimaci\'on implica tomar un m\'aximo sobre muchas estimaciones de las entradas individuales de la matriz caracter\'istica. Dado que los m\'aximos de conjuntos de variables aleatorias tienden a aumentar a medida que crece el n\'umero de variables, se puede imaginar que este procedimiento puede llevar a un sesgo positivo indeseable en el caso de la independencia estad\'istica, cuando la matriz caracter\'istica de la poblaci\'on es igual a 0. Esto podr\'ia ser perjudicial para las pruebas de independencia, donde la distribuci\'on muestral de una estad\'istica bajo una hip\'otesis nula de independencia es crucial.
@@ -332,11 +335,16 @@ Con esto en mente, en esta secci\'on estudiaremos el coeficiente de informaci\'o
 	Cabe destacar que en Reshef et al. (2011)\cite{Reshef2011} se sugiere que otras propiedades de la matriz caracter\'istica pueden permitirnos medir otros aspectos de una relaci\'on dada adem\'as de su fuerza, y se definieron varias de estas propiedades. El coeficiente de informaci\'on total encaja dentro de este marco conceptual. En la siguiente secci\'on definimos el coeficiente de informaci\'on total en el caso de la matriz caracter\'istica ($TIC$) y la matriz equicaracter\'istica ($TIC_e$). Luego demostramos que tanto TIC como TICe producen pruebas de independencia que son consistentes frente a todas las alternativas dependientes. (Al igual que en el caso de $MIC$ y $MIC_e$, $TIC_e$ es m\'as f\'acil de calcular que $TIC$). Finalmente, revisaremos un estudio de simulaci\'on sobre la potencia de las pruebas de independencia basadas en TICe realizado en el paper de Reshef (2016)\cite{Reshef2016} en un conjunto de relaciones elegidas en Simon y Tibshirani (2012)\cite[]{SimonTibshirani}, mostrando que TICe supera a otras medidas comunes de dependencia en muchas de las relaciones y se ajusta estrechamente a su rendimiento en el resto.
 
 
+	\subsection[definicionyconcitenciatic]{Definici\'on y Consistenc/'ia de TIC}
 
-	\section[eligiendo_B(n)]{Eligiendo $B(n)$}
+	Comenzamos definiendo dos versiones del coeficiente. En la definici\'on 
+
+	\section[eligiendoBn]{Eligiendo $B(n)$}\label{eligiendo_Bn}
 		
 	Recordemos que, como fue propuesto en Reshef 2011 \cite{Reshef2011}, utilizamos funciones de la forma $B(n)=n^\alpha$. Valores grandes de $\alpha$ conducen a un aumento en el error esperado en reg\'imenes de baja se\~nal ($R^2$ bajos) debido tanto a un sesgo positivo en esos reg\'imenes como a un aumento general en la varianza que afecta predominantemente a esos reg\'imenes. Por otro lado, valores peque\~nos de $\alpha$ llevan a un aumento en el error esperado en reg\'imenes de alta se\~nal (R2 altos) al generar un sesgo negativo en esos reg\'imenes y desplazar la varianza del estimador hacia esos reg\'imenes. En otras palabras, valores más bajos de $\alpha$ son más adecuados para detectar se\~nales más débiles, mientras que valores más altos de $\alpha$ son más adecuados para distinguir entre se\~nales más fuertes. Esto concuerda con los resultados observados en nuestro trabajo complementario (Reshef et al., 2015a), que muestran que valores bajos de $\alpha$ hacen que MICe proporcione pruebas de independencia con mejor potencia, mientras que valores altos de $\alpha$ hacen que MICe tenga una mejor equidad.
 	\newpage
+
+
 	\subsection{Ejemplos}
 	Ya con la funci\'on bien definida, veamos unos ejemplos del coeficiente, primero para algunos datos, y luego entre im\'agenes. Comenzemos por algunos ejemplos usando 
 
