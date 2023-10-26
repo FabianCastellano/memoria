@@ -301,7 +301,7 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 	\end{defn}
 
 
-	Con la equivalencia establecida entre la frontera de la matriz caracter\'istica y el de la matriz equicaracter\'istica, es f\'acil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Ap\'endice G. Reshef 2016) Espec\'ificamente, mostramos el siguiente teorema, un an\'alogo del Teorema 6.
+	Con la equivalencia establecida entre la frontera de la matriz caracter\'istica y el de la matriz equicaracter\'istica, es f\'acil demostrar que $\mathrm{MIC}e$ es un estimador consistente de $\mathrm{MIC}*$ mediante argumentos similares a los que aplicamos en el caso de MIC. (Ver Ap\'endice G. Reshef (2016)\cite{Reshef2016}) Espec\'ificamente, mostramos el siguiente teorema, un an\'alogo del Teorema 6.
 	
 	\begin{thm}
 		Sea $f: m^{\infty} \rightarrow \mathbb{R}$ uniformemente continua, y suponga que $f \circ r_i \rightarrow f$ puntualmente. Entonces para cada variable aleatoria $(X, Y)$, tenemos:
@@ -322,7 +322,86 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 		$M I C_{B}$ es un estimador consistente de $M I C_*$ siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
 	\end{cor}
 
-	\section[equitabilidadmice]{Equitabilidad del $MIC_e$}
+	\subsection[computando mic e ]{Computando $MIC_e$}
+
+	Tanto el $MIC$ como el $MIC_e$ son estimadores consistentes de $MIC_*$. La diferencia entre ellos radica en que, mientras que el $MIC$ actualmente solo se puede calcular de manera eficiente a trav\'es de una aproximaci\'on heur\'istica, el $MIC_e$ se puede calcular de manera exacta y muy eficiente mediante un enfoque similar al utilizado para aproximar $MIC_*$ que involucra la subrutina \textit{OptimizeXAxis}. Ahora repasaremos los detalles de este enfoque.
+
+	Recordemos que, dada una partici\'on fija del eje $x$ $Q$ en $\ell$ columnas, un conjunto de $n$ puntos de datos, una partici\'on ''maestra'' del eje $y$ $\Pi$, y un n\'umero $k$, la subrutina \textit{OptimizeXAxis} encuentra, para cada $2 \leq i \leq k$, una partici\'on del eje $y$ $P_i \subset \Pi $de tama\~no como m\'aximo $i$ que maximiza la informaci\'on mutua inducida por la cuadr\'icula $(P_i, Q)$. El algoritmo realiza esto en un tiempo de $O(|\Pi|^2k\ell)$. Para obtener m\'as detalles sobre \textit{OptimizeXAxis}, consulte la Secci\'on 3.5 de Reshef el al. (2016) \cite{Reshef2016} 
+
+	En el par de teoremas a continuaci\'on, se muestran dos formas en que \textit{OptimizeXAxis} se puede utilizar para calcular eficientemente el $MIC_e$. 
+
+	\begin{thm}
+
+		Existe un algoritmo  \textit{EQUICHAR} que, dada una muestra $D$ de tama\~no $n$ y alg\'un $B \in \mathbb{Z}^{+}$, computa la porci\'on $r_{B(n)}(\widehat{[M]}(D))$ de la matriz equicaracteristica poblacional en tiempo $O\left(n^2 B^2\right)$, que es equivalente a $O\left(n^{4-2 \varepsilon}\right)$ para $B(n)=O\left(n^{1-\varepsilon}\right)$ con $\varepsilon>0$.
+	\end{thm}
+
+	\begin{proof}
+		Describimos el algoritmo y simult\'aneamente acotamos su tiempo de ejecuci\'on. Lo hacemos \'unicamente para las entradas $k, \ell$-\'esimas de $\widehat{[M]}(D)$ que satisfacen $k \leq \ell, k \ell \leq B$. Esto es suficiente, ya que por simetr\'ia, calcular el resto de las entradas requeridas como m\'aximo duplica el tiempo de ejecuci\'on.
+
+		Para calcular $\widehat{[M]}(D)_{k, \ell}$ con $k \leq \ell$, debemos fijar una partici\'on equitativa en $\ell$ columnas en el eje $\mathrm{x}$ y luego encontrar la partici\'on \'optima del eje $\mathrm{y}$ de tama\~no como m\'aximo $k$. Si configuramos la partici\'on maestra $\Pi$ del algoritmo \textit{OptimizeXAxis} como una partici\'on equitativa en filas de tama\~no $n$, entonces realiza precisamente la optimizaci\'on requerida. Adem\'as, para un $\ell$ fijo, puede llevar a cabo la optimizaci\'on simult\'aneamente para todos los pares ${(2, \ell), \ldots,(B / \ell, \ell)}$ en tiempo $O\left(|\Pi|^2(B / \ell) \ell\right)=O\left(n^2 B\right)$. Para un $\ell$ fijo, este conjunto contiene todos los pares $(k, \ell)$ que satisfacen $k \leq \ell, k \ell \leq B$. Por lo tanto, para calcular todas las entradas requeridas de $\widehat{[M]}(D)$, solo necesitamos aplicar este algoritmo para cada $\ell=2, \ldots, B / 2$. Hacerlo resulta en un tiempo de ejecuci\'on de $O\left(n^2 B^2\right)$.
+	\end{proof}
+
+	El algoritmo mencionado anteriormente, aunque es de tiempo polin\'omico, no es lo suficientemente eficiente para su uso en la pr\'actica. Sin embargo, una modificaci\'on simple resuelve este problema sin afectar la consistencia de las estimaciones resultantes. La modificaci\'on se basa en el hecho de que OptimizeXAxis puede usar particiones maestras $\Pi$ adem\'as de la partici\'on equitativa de tama\~no $n$ que utilizamos anteriormente. Espec\'ificamente, configurar $\Pi$ en el algoritmo anterior como una partici\'on equitativa en $c k$ "grupos", donde $k$ es el tama\~no de la partici\'on \'optima m\'as grande que se est\'a buscando, acelera significativamente el c\'alculo. Esta modificaci\'on proporciona una estad\'istica ligeramente diferente, pero que tiene todas las propiedades te\'oricas de $\mathrm{MIC}e$, es decir, una estimaci\'on consistente de $\mathrm{MIC}*$ y un c\'alculo exacto eficiente. Estas propiedades se formalizan en el siguiente teorema
+
+	\begin{thm}
+		Sea $(X, Y)$  un vertor aleatorio bivariado, y sea $D_n$ y sea una muestra de tama\~no $n$ de la distribucion $(X, Y)$. Para cada $c \geq 1$, existe una matriz $\{\widehat{M}\}^c\left(D_n\right)$ tal que:
+		\begin{enumerate}
+			\item La funci\'on
+			$$
+			\widetilde{M I C_{e, B}}(\cdot)=\max {k \ell \leq B(n)}\{\widehat{M}\}^c(\cdot){k, \ell},
+			$$
+			es un estimador concistente de $M I C_*$ dado $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
+			2. Existe un algoritmo \textit{EQUICHARCLUMP} para comparar $r_B\left(\{\widehat{M}\}^c\left(D_n\right)\right)$ en tiempo $O\left(n+B^{5 / 2}\right)$, que equivale a $O\left(n+n^{5(1-\varepsilon) / 2}\right)$ cuando $B(n)=O\left(n^{1-\varepsilon}\right)$.
+		\end{enumerate}
+		\begin{proof}
+			Ap\'endice H. Reshef (2016) \cite{Reshef2016}
+		\end{proof}
+
+		Para un an\'alisis del efecto del par\'ametro $c$ en el teorema anterior en los resultados del algoritmo \textit{EQUICHARCLUMP}, consulte el Ap\'endice H.3 de Reshef el al. (2016) \cite{Reshef2016}. Estableciendo $\varepsilon=0.6$ en el teorema anterior, obtenemos el siguiente corolario.
+
+		\begin{cor}
+			$ M I C_*$ puede estimarse de manera consistente en tiempo lineal. 
+		\end{cor}
+
+		Por supuesto, en tama\~nos de muestra peque\~nos, establecer $\varepsilon=0.6$ ser\'ia indeseable. Sin embargo, nuestro el art\'iculo complementario (Reshef et al.,(2015a) \cite{Reshef2015a}) demuestra emp\'iricamente que en tama\~nos de muestra grandes, esta estrategia funciona muy bien en relaciones t\'ipicas.
+
+		Cabe destacar que el algoritmo \textit{EQUICHARCLUMP} dado anteriormente es asint\'oticamente m\'as r\'apido incluso que el algoritmo heur\'istico \textit{APPROX-MIC} utilizado para calcular MIC en la pr\'actica, que se ejecuta en tiempo $O\left(B(n)^4\right)$. Como se demostr\'o en el art\'iculo complementario (Reshef et al., 2015a \cite{Reshef2016}), esta diferencia se traduce en una diferencia sustancial en los tiempos de ejecuci\'on para un rendimiento similar en una gama de tama\~nos de muestra realistas, que va desde una aceleraci\'on de 30 veces en $n=500$ hasta m\'as de 350 veces en $n=10,000$.
+	\end{thm}
+
+	\subsection[eligiendoBn]{Eligiendo $B(n)$}\label{eligiendo_Bn}
+		
+	Recordemos que, como fue propuesto en Reshef el al. (2011) \cite{Reshef2011}, utilizamos funciones de la forma $B(n)=n^\alpha$. Valores grandes de $\alpha$ conducen a un aumento en el error esperado en reg\'imenes de baja se\~nal ($R^2$ bajos) debido tanto a un sesgo positivo en esos reg\'imenes como a un aumento general en la varianza que afecta predominantemente a esos reg\'imenes. Por otro lado, valores peque\~nos de $\alpha$ llevan a un aumento en el error esperado en reg\'imenes de alta se\~nal (R2 altos) al generar un sesgo negativo en esos reg\'imenes y desplazar la varianza del estimador hacia esos reg\'imenes. En otras palabras, valores m\'as bajos de $\alpha$ son m\'as adecuados para detectar se\~nales m\'as d\'ebiles, mientras que valores m\'as altos de $\alpha$ son m\'as adecuados para distinguir entre se\~nales m\'as fuertes. Esto concuerda con los resultados observados en el trabajo complementario (Reshef et al., (2015a) \cite{Reshef2015a} ), que muestran que valores bajos de $\alpha$ hacen que MICe proporcione pruebas de independencia con mejor potencia, mientras que valores altos de $\alpha$ hacen que MICe tenga una mejor equidad.
+
+	\section[Equitabilidad]{Equitabilidad}
+
+
+	\subsection[equitabilidadmice]{Equitabilidad del $MIC_e$}
+
+	Como se mencion\'o previamente, una de las principales motivaciones para la introducci\'on de $MIC$ fue la equidad, es decir, hasta qu\'e punto una medida de dependencia captura \'utilmente alguna noci\'on de la fuerza de una relaci\'on en un conjunto de relaciones est\'andar. En esto contexto en Reshef et al. (2016) \cite{Reshef2016} se realiz\~o un an\'alisis emp\'irico de la equidad de $MIC_e$ con respecto a R2 y su desempe\~no fue comparado con la correlaci\'on de distancia (Sz\'ekely et al., 2007; Sz\'ekely and Rizzo, 2009), la estimaci\'on de la informaci\'on mutua (Kraskov et al., 2004) y la estimaci\'on de la correlaci\'on m\'axima (Breiman and Friedman, 1985).
+
+	Se comenz\'o evaluando la equidad en el conjunto de relaciones $Q$ definido anteriormente, un conjunto que ha sido analizado en otros trabajos previos (Reshef et al., 2011, 2015a; Kinney and Atwal, 2014). Los resultados, mostrados en la Figura \ref{reshef_2016_f3}, confirman la superior equidad del estimador $MIC_e$ en este conjunto de relaciones.
+
+	Para evaluar la equidad de manera m\'as objetiva sin depender de un conjunto de funciones curado manualmente, se analizaron 160 funciones aleatorias extra\'idas de una distribuci\'on de proceso Gaussiano con un kernel de funci\'on radial con una de ocho posibles anchuras en el conjunto $\{0.01, 0.025, 0.05, 0.1, 0.2, 0.25, 0.5, 1\}$ para representar una variedad de complejidades de relaciones posibles. Los resultados, mostrados en la Figura \ref{reshef_2016_f4}, muestran que $MIC_e$ supera a los m\'etodos existentes en t\'erminos de equidad con respecto a $R^2$ en estas funciones tambi\'en. Tambi\'en se examin\'o el efecto de las relaciones at\'ipicas en los resultados al muestrear repetidamente subconjuntos aleatorios de 20 funciones de este gran conjunto de relaciones y medir la equidad de cada m\'etodo en promedio sobre los subconjuntos; los resultados fueron similares.
+
+	Una caracter\'istica del desempe\~no de $MIC_e$ en estas relaciones elegidas al azar, como se muestra en la Figura \ref{reshef_2016_f4}, es que parece ser m\'inimamente sensible a la anchura del proceso Gaussiano del cual se extrae una relaci\'on dada. Esto contrasta, por ejemplo, con la estimaci\'on de la informaci\'on mutua, que muestra una sensibilidad pronunciada a este par\'ametro que le impide ser altamente equitativa cuando hay relaciones con diferentes anchuras en el mismo conjunto de datos.
+
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2016_fig3.png}
+		\caption{Equitabilidad con respecto a $R^2$ en un conjunto de relaciones funcionales ruidosas de $(a)$ el coeficiente de correlaci\~on de Pearson, $(b)$ una medida hipot\~etica de dependencia $\varphi$ con equitabilidad perfecta, $(c)$ la correlaci\~on de distancia, $(d)$ $\mathrm{MIC}_e$, $(e)$ estimaci\~on de correlaci\~on m\~axima y $(f)$ estimaci\~on de informaci\~on mutua. Para cada relaci\~on, una regi\~on sombreada denota los valores estimados en el percentil 5 y 95 de la distribuci\~on muestral de la estad\~istica en cuesti\~on en esa relaci\~on en cada valor de $R^2$. El gr\~afico resultante muestra qu\~e valores de $R^2$ corresponden a un valor dado de cada estad\~istica. El intervalo rojo en cada gr\~afico indica el rango m\~as amplio de valores de $R^2$ que corresponden a un valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Un intervalo rojo con ancho 0, como en $(b)$, significa que la estad\~istica refleja solo $R^2$ sin depender del tipo de relaci\~on, como se demuestra en los pares de miniaturas de relaciones de diferentes tipos con valores id\~enticos de $R^2$.}
+		\label{reshef_2016_f3}
+	\end{figure}
+
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2016_fig4.png}
+		\caption{Equitabilidad de los m\~etodos examinados en funciones extra\~idas al azar de una distribuci\~on de proceso gaussiano. Cada m\~etodo se eval\~ua como se muestra en la Figura \ref{reshef_2016_f3}, con un intervalo rojo que indica el rango m\~as amplio de valores de $R^2$ correspondiente a cualquier valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Cada regi\~on sombreada corresponde a una relaci\~on, y las regiones est\~an coloreadas seg\~un el ancho de banda del proceso gaussiano del que se muestrearon. Las relaciones de muestra para cada ancho de banda se muestran en la esquina superior derecha con colores correspondientes.}
+		\label{reshef_2016_f4}
+	\end{figure}
+
+
+	
+	
 
 	\section[TIC]{\textit{Total Information coefficient ($TIC$)}}
 
@@ -337,11 +416,66 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 
 	\subsection[definicionyconcitenciatic]{Definici\'on y Consistenc/'ia de TIC}
 
-	Comenzamos definiendo dos versiones del coeficiente. En la definici\'on 
+	Comenzamos definiendo dos versiones del coeficiente. En la siguiente definici\'on notemos qu\'e $\widehat{M}$ denota la matriz caracteristica poblacional y $\widehat{[M]}$ denota la matriz equicaracteristica de poblacional.
 
-	\section[eligiendoBn]{Eligiendo $B(n)$}\label{eligiendo_Bn}
+	\begin{defn}
+		Sea $D \subset \mathbb{R}^2$ un conjunto de $n$ pares ordenados, y sea $B: \mathbb{Z}^{+} \rightarrow \mathbb{Z}^{+}$. Definimos:
+		$$
+		T I C_B(D)=\sum_{k \ell \leq B(n)} \widehat{M}(D)_{k, \ell},
+		$$
+		y
+		$$
+		T I C_{e, B}(D)=\sum_{k \ell \leq B(n)} \widehat{[M]}(D)_{k, \ell}.
+		$$
+	\end{defn}
+
+	Ahora nos interesa mostrar que estos estad\'isticos nos entregan test de independencia concistente, para esto debemos detenernos y analizar el comportamiento de las cantidades poblacionales an\'alogas. 
+
+	\begin{defn}
+		Para una matriz $A$	y un n\'umero positivo $B$, la $B$-parcial suma de 	$A$, denotada por  $S_B(A)$, es:
+		$$
+		S_B(A)=\sum_{k \ell \leq B} A_{k, \ell}.
+		$$
 		
-	Recordemos que, como fue propuesto en Reshef 2011 \cite{Reshef2011}, utilizamos funciones de la forma $B(n)=n^\alpha$. Valores grandes de $\alpha$ conducen a un aumento en el error esperado en reg\'imenes de baja se\~nal ($R^2$ bajos) debido tanto a un sesgo positivo en esos reg\'imenes como a un aumento general en la varianza que afecta predominantemente a esos reg\'imenes. Por otro lado, valores peque\~nos de $\alpha$ llevan a un aumento en el error esperado en reg\'imenes de alta se\~nal (R2 altos) al generar un sesgo negativo en esos reg\'imenes y desplazar la varianza del estimador hacia esos reg\'imenes. En otras palabras, valores más bajos de $\alpha$ son más adecuados para detectar se\~nales más débiles, mientras que valores más altos de $\alpha$ son más adecuados para distinguir entre se\~nales más fuertes. Esto concuerda con los resultados observados en nuestro trabajo complementario (Reshef et al., 2015a), que muestran que valores bajos de $\alpha$ hacen que MICe proporcione pruebas de independencia con mejor potencia, mientras que valores altos de $\alpha$ hacen que MICe tenga una mejor equidad.
+		Cuando $A$ es una matriz (equi)caracteristica, $S_B(A)$ es la suma sobre todas las entradas correpondientes a mallas con al menos $B$ celdas totales. Por tanto, si $\widehat{M}(D)$ es una matriz equicaracteristica poblacional de $D, S_B(\widehat{M}(D))=\mathrm{TIC}_B(D)$, y lo mismo se mantiene cierto para $S_B(\widehat{[M]}(D))$ and $\mathrm{TIC}_{e, B}(D)$.
+		
+		Es claro que si $X$ e $Y$ son variables aleatorias estad\'isticamente independientes, se tiene que ambas matrices caracteristicas $M(X, Y)$ y la matriz equicaracteristica $[M](X, Y)$ son identicamente 0 , tal que $S_B(M(X, Y))=S_B([M](X, Y))=0$ para todo $B$. Sin embargo, tambi\'en nos interesa como estas cantidades se comportan cuando las variables $X$ e $Y$ son dependietes. Las siguientes proposiciones nos ayudan a entender esto. La primera nos muestra una cota inferior para los valores de las entradas de ambas $M(X, Y)$ y $[M](X, Y)$. La segunda nos muestra una caracterizaci\'on asint\'otica de como crecen $S_B(M)$ y $S_B([M])$ como funciones de $B$. Estas dos proposiciones son el coraz\'on t\'ecnico de por qu\'e el coeficiente de informaci\'on total produce un test de independencia consistente.
+		
+		\begin{prop}
+			Sea $(X, Y)$ un vector aleatorio bivariado. Si $X$ e $Y$ son estad\'isticamente independientes, entonces $M(X, Y) \equiv[M](X, Y) \equiv 0$. Si no, existe alg\'un $a>0$ y alg\'un entero $\ell_0 \geq 2$ tal que:
+			
+			$$
+			M(X, Y)_{k, \ell,}[M](X, Y)_{k, \ell} \geq \frac{a}{\log \min \{k, \ell\}},
+			$$
+			ya sea para todo $k \geq \ell \geq \ell_0$, o para todo $\ell \geq k \geq \ell_0$.
+		\end{prop}
+		\begin{proof}
+			Ap\'endice K.1. Reshef (2016) \cite{Reshef2016}
+		\end{proof}
+		\begin{prop}
+			Sean $(X, Y)$ un vector aleatorio bivariado. Si $X$ e $Y$ independites, se tiene que  $S_B(M(X, Y))=S_B([M](X, Y))=0$ para todo $B>0$. Si no, tenemos que $S_B(M(X, Y))$ y $S_B([M](X, Y))$ son ambos $\Omega(B \log \log B)$.
+		\end{prop}
+		\begin{proof}
+			Ap\'endice K.2. Reshef (2016) \cite{Reshef2016}
+		\end{proof}
+
+		Con las proposiciones presentadas, y siguiendo la misma l\'ogica de los argumentos de convergencia presentados anteriormente, podemos mostrar el resultado principal de esta secci\'on, que las estad\'isticas $TIC$ y $TIC_e$ producen tests de independencia consistentes.
+
+		\begin{thm}
+			Los estadisticos $T I C_B$ y $T I C_{e, B}$ proporcionan pruebas coherentes de cola derecha de independencia, siempre que $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $\varepsilon>0$.
+		\end{thm}
+		\begin{proof}
+			Ap\'endice K.3. Reshef (2016) \cite{Reshef2016}
+		\end{proof}
+
+		En la pr\'actica, usualemente se utiliza el algoritmo  EQUICHARCLUMP \cite[Secci\'on 4.3]{Reshef2016} para computar la matriz equicaracter\'istica, de donde calculamos $\mathrm{TIC}_e$. Este algoritmo no computa la matriz equicaracteristica exactamente. Pero, como es el caso con $\mathrm{MIC}_e$, el uso del algoritmo no afecta las propiedades te\'oricas de la estad\'istica. Esta demostraci\'on se puede encontrar en Reshef el al. (2016) \cite[Ap\'endice H]{Reshef2016}
+	\end{defn}
+
+	\subsection[poder de independencia basado en TICe]{Prueba de Poder de independencia basadas en $TIC_e$}
+
+	Ya sabemos que ambos, $TIC$ y $TIC_e$, son consitentes, ahora nos interesa 
+
+
 	\newpage
 
 

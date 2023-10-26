@@ -870,6 +870,14 @@ INPUT ./figuras/figure_1_reshef_2016.png
 INPUT figuras/figure_1_reshef_2016.png
 INPUT ./figuras/figure_1_reshef_2016.png
 INPUT ./figuras/figure_1_reshef_2016.png
+INPUT ./figuras//reshef_2016_fig3.png
+INPUT figuras//reshef_2016_fig3.png
+INPUT ./figuras//reshef_2016_fig3.png
+INPUT ./figuras//reshef_2016_fig3.png
+INPUT ./figuras//reshef_2016_fig4.png
+INPUT figuras//reshef_2016_fig4.png
+INPUT ./figuras//reshef_2016_fig4.png
+INPUT ./figuras//reshef_2016_fig4.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT ./figuras//away_x_dino_x_.png
 INPUT figuras//away_x_dino_x_.png
