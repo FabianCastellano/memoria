@@ -2373,23 +2373,36 @@
     <bcf:citekey order="22" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="23" intorder="1">Reshef2011</bcf:citekey>
     <bcf:citekey order="24" intorder="1">Reshef2015a</bcf:citekey>
-    <bcf:citekey order="25" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="26" intorder="1">Reshef2011</bcf:citekey>
-    <bcf:citekey order="27" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="28" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">Reshef2011</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="29" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="30" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="31" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="32" intorder="1">Reshef2016</bcf:citekey>
     <bcf:citekey order="33" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="34" intorder="1">lane2003introduction</bcf:citekey>
-    <bcf:citekey order="35" intorder="1">boxcox64</bcf:citekey>
-    <bcf:citekey order="36" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="37" intorder="1">bicego2016</bcf:citekey>
-    <bcf:citekey order="38" intorder="1">draper1969</bcf:citekey>
-    <bcf:citekey order="39" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="40" intorder="1">lee2009mr</bcf:citekey>
-    <bcf:citekey order="41" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="34" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="35" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="36" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="37" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">SimonTibshirani</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">datasaurus</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">Reshef2011</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Reshef2015</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">lane2003introduction</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">boxcox64</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">draper1969</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">lee2009mr</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">boxcoximg</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

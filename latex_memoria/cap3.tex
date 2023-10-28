@@ -10,7 +10,7 @@ La idea de equitabilidad ha motivado el desarrollo de varias medidas de dependen
 
 En este contexto, el coeficiente de informaci\'on m\'axima (MIC) nos entrega una medida rebusta para encontrar relaci\'ones no lineales entre variables, para nuestro caso en particular, entre im\'agenes. C\'omo veremos en la secci\'on \ref{chap5}, la transformaci\'on de Box-Cox es no lineal, por lo que el coeficiente nos ayudar\'a a cuantificar la relaci\'on entre las im\'agenes transformadas y las originales, y podemos aprovechar la equitabilidad de este para comparar diferentes versiones de la transformaci\'on.
 
-En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedades y un par de caracterizaciones que nos ayudar\'an a llegar al $MIC_*$ y posteriormente al $MIC_e$, ambos siendo estimadores de $MIC$ que nos har\'an posible calcular este valor. Adem\'as introduciremos el concepto de Equitabilidad de forma m\'as formal y veremos como el $MIC$ cumple con esta propiedad, para posteriormente estudiar la equitabilidad de los coeficientes que introduciremos en el cap\'itulo \ref{chap4}.
+En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedades y un par de caracterizaciones que nos ayudar\'an a llegar al $MIC_*$ y posteriormente al $MIC_e$, ambos siendo estimadores de $MIC$ que nos har\'an posible calcular este valor. 
 
 \section{Sobre el coeficiente}
 
@@ -372,36 +372,6 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 		
 	Recordemos que, como fue propuesto en Reshef el al. (2011) \cite{Reshef2011}, utilizamos funciones de la forma $B(n)=n^\alpha$. Valores grandes de $\alpha$ conducen a un aumento en el error esperado en reg\'imenes de baja se\~nal ($R^2$ bajos) debido tanto a un sesgo positivo en esos reg\'imenes como a un aumento general en la varianza que afecta predominantemente a esos reg\'imenes. Por otro lado, valores peque\~nos de $\alpha$ llevan a un aumento en el error esperado en reg\'imenes de alta se\~nal (R2 altos) al generar un sesgo negativo en esos reg\'imenes y desplazar la varianza del estimador hacia esos reg\'imenes. En otras palabras, valores m\'as bajos de $\alpha$ son m\'as adecuados para detectar se\~nales m\'as d\'ebiles, mientras que valores m\'as altos de $\alpha$ son m\'as adecuados para distinguir entre se\~nales m\'as fuertes. Esto concuerda con los resultados observados en el trabajo complementario (Reshef et al., (2015a) \cite{Reshef2015a} ), que muestran que valores bajos de $\alpha$ hacen que MICe proporcione pruebas de independencia con mejor potencia, mientras que valores altos de $\alpha$ hacen que MICe tenga una mejor equidad.
 
-	\section[Equitabilidad]{Equitabilidad}
-
-
-	\subsection[equitabilidadmice]{Equitabilidad del $MIC_e$}
-
-	Como se mencion\'o previamente, una de las principales motivaciones para la introducci\'on de $MIC$ fue la equidad, es decir, hasta qu\'e punto una medida de dependencia captura \'utilmente alguna noci\'on de la fuerza de una relaci\'on en un conjunto de relaciones est\'andar. En esto contexto en Reshef et al. (2016) \cite{Reshef2016} se realiz\~o un an\'alisis emp\'irico de la equidad de $MIC_e$ con respecto a R2 y su desempe\~no fue comparado con la correlaci\'on de distancia (Sz\'ekely et al., 2007; Sz\'ekely and Rizzo, 2009), la estimaci\'on de la informaci\'on mutua (Kraskov et al., 2004) y la estimaci\'on de la correlaci\'on m\'axima (Breiman and Friedman, 1985).
-
-	Se comenz\'o evaluando la equidad en el conjunto de relaciones $Q$ definido anteriormente, un conjunto que ha sido analizado en otros trabajos previos (Reshef et al., 2011, 2015a; Kinney and Atwal, 2014). Los resultados, mostrados en la Figura \ref{reshef_2016_f3}, confirman la superior equidad del estimador $MIC_e$ en este conjunto de relaciones.
-
-	Para evaluar la equidad de manera m\'as objetiva sin depender de un conjunto de funciones curado manualmente, se analizaron 160 funciones aleatorias extra\'idas de una distribuci\'on de proceso Gaussiano con un kernel de funci\'on radial con una de ocho posibles anchuras en el conjunto $\{0.01, 0.025, 0.05, 0.1, 0.2, 0.25, 0.5, 1\}$ para representar una variedad de complejidades de relaciones posibles. Los resultados, mostrados en la Figura \ref{reshef_2016_f4}, muestran que $MIC_e$ supera a los m\'etodos existentes en t\'erminos de equidad con respecto a $R^2$ en estas funciones tambi\'en. Tambi\'en se examin\'o el efecto de las relaciones at\'ipicas en los resultados al muestrear repetidamente subconjuntos aleatorios de 20 funciones de este gran conjunto de relaciones y medir la equidad de cada m\'etodo en promedio sobre los subconjuntos; los resultados fueron similares.
-
-	Una caracter\'istica del desempe\~no de $MIC_e$ en estas relaciones elegidas al azar, como se muestra en la Figura \ref{reshef_2016_f4}, es que parece ser m\'inimamente sensible a la anchura del proceso Gaussiano del cual se extrae una relaci\'on dada. Esto contrasta, por ejemplo, con la estimaci\'on de la informaci\'on mutua, que muestra una sensibilidad pronunciada a este par\'ametro que le impide ser altamente equitativa cuando hay relaciones con diferentes anchuras en el mismo conjunto de datos.
-
-	\begin{figure}[H] 
-		\centering
-		\includegraphics[scale = 0.4]{reshef_2016_fig3.png}
-		\caption{Equitabilidad con respecto a $R^2$ en un conjunto de relaciones funcionales ruidosas de $(a)$ el coeficiente de correlaci\~on de Pearson, $(b)$ una medida hipot\~etica de dependencia $\varphi$ con equitabilidad perfecta, $(c)$ la correlaci\~on de distancia, $(d)$ $\mathrm{MIC}_e$, $(e)$ estimaci\~on de correlaci\~on m\~axima y $(f)$ estimaci\~on de informaci\~on mutua. Para cada relaci\~on, una regi\~on sombreada denota los valores estimados en el percentil 5 y 95 de la distribuci\~on muestral de la estad\~istica en cuesti\~on en esa relaci\~on en cada valor de $R^2$. El gr\~afico resultante muestra qu\~e valores de $R^2$ corresponden a un valor dado de cada estad\~istica. El intervalo rojo en cada gr\~afico indica el rango m\~as amplio de valores de $R^2$ que corresponden a un valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Un intervalo rojo con ancho 0, como en $(b)$, significa que la estad\~istica refleja solo $R^2$ sin depender del tipo de relaci\~on, como se demuestra en los pares de miniaturas de relaciones de diferentes tipos con valores id\~enticos de $R^2$.}
-		\label{reshef_2016_f3}
-	\end{figure}
-
-	\begin{figure}[H] 
-		\centering
-		\includegraphics[scale = 0.4]{reshef_2016_fig4.png}
-		\caption{Equitabilidad de los m\~etodos examinados en funciones extra\~idas al azar de una distribuci\~on de proceso gaussiano. Cada m\~etodo se eval\~ua como se muestra en la Figura \ref{reshef_2016_f3}, con un intervalo rojo que indica el rango m\~as amplio de valores de $R^2$ correspondiente a cualquier valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Cada regi\~on sombreada corresponde a una relaci\~on, y las regiones est\~an coloreadas seg\~un el ancho de banda del proceso gaussiano del que se muestrearon. Las relaciones de muestra para cada ancho de banda se muestran en la esquina superior derecha con colores correspondientes.}
-		\label{reshef_2016_f4}
-	\end{figure}
-
-
-	
-	
 
 	\section[TIC]{\textit{Total Information coefficient ($TIC$)}}
 
@@ -411,7 +381,7 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 	
 	La intuici\'on detr\'as del coeficiente de informaci\'on total es que si en cambio consideramos una propiedad m\'as estable, como la suma de las entradas en la matriz caracter\'istica, podr\'iamos esperar obtener una estad\'istica con un sesgo m\'as peque\~no en el caso de independencia y, por lo tanto, una mejor potencia. En resumen, si nuestro \'unico objetivo es distinguir cualquier dependencia de ruido completo, entonces ignorar toda la matriz caracter\'istica de la muestra, excepto su valor m\'aximo, puede descartar una se\~nal \'util, y el coeficiente de informaci\'on total evita esto al sumar todas las entradas.
 	
-	Cabe destacar que en Reshef et al. (2011)\cite{Reshef2011} se sugiere que otras propiedades de la matriz caracter\'istica pueden permitirnos medir otros aspectos de una relaci\'on dada adem\'as de su fuerza, y se definieron varias de estas propiedades. El coeficiente de informaci\'on total encaja dentro de este marco conceptual. En la siguiente secci\'on definimos el coeficiente de informaci\'on total en el caso de la matriz caracter\'istica ($TIC$) y la matriz equicaracter\'istica ($TIC_e$). Luego demostramos que tanto TIC como TICe producen pruebas de independencia que son consistentes frente a todas las alternativas dependientes. (Al igual que en el caso de $MIC$ y $MIC_e$, $TIC_e$ es m\'as f\'acil de calcular que $TIC$). Finalmente, revisaremos un estudio de simulaci\'on sobre la potencia de las pruebas de independencia basadas en TICe realizado en el paper de Reshef (2016)\cite{Reshef2016} en un conjunto de relaciones elegidas en Simon y Tibshirani (2012)\cite[]{SimonTibshirani}, mostrando que TICe supera a otras medidas comunes de dependencia en muchas de las relaciones y se ajusta estrechamente a su rendimiento en el resto.
+	Cabe destacar que en Reshef et al. (2011)\cite{Reshef2011} se sugiere que otras propiedades de la matriz caracter\'istica pueden permitirnos medir otros aspectos de una relaci\'on dada adem\'as de su fuerza, y se definieron varias de estas propiedades. El coeficiente de informaci\'on total encaja dentro de este marco conceptual. En la siguiente secci\'on definimos el coeficiente de informaci\'on total en el caso de la matriz caracter\'istica ($TIC$) y la matriz equicaracter\'istica ($TIC_e$). Luego demostramos que tanto TIC como TICe producen pruebas de independencia que son consistentes frente a todas las alternativas dependientes. (Al igual que en el caso de $MIC$ y $MIC_e$, $TIC_e$ es m\'as f\'acil de calcular que $TIC$). Finalmente, revisaremos un estudio de simulaci\'on sobre la potencia de las pruebas de independencia basadas en TICe realizado en el paper de Reshef (2016)\cite{Reshef2016} en un conjunto de relaciones elegidas en Simon y Tibshirani (2012)\cite[]{SimonTibshirani}, mostrando que $TIC_e$ supera a otras medidas comunes de dependencia en muchas de las relaciones y se ajusta estrechamente a su rendimiento en el resto.
 
 
 	\subsection[definicionyconcitenciatic]{Definici\'on y Consistenc/'ia de TIC}
@@ -473,16 +443,50 @@ En esta secci/'on discuteremos la definici\'on del MIC, algunas de sus propiedad
 
 	\subsection[poder de independencia basado en TICe]{Prueba de Poder de independencia basadas en $TIC_e$}
 
-	Ya sabemos que ambos, $TIC$ y $TIC_e$, son consitentes, ahora nos interesa 
+	Ya sabemos que ambos, $TIC$ y $TIC_e$, son consitentes, ahora nos interesa realizar una evaluci\'on emp\'irica de la prueba de poder de independencia basado en $TIC_e$	siendo computado usando al algoritmo \textit{EQUICHARCLUMP}.
+
+	En Reshef el at. (2016)\cite{Reshef2016}, para evaluar el poder que tiene esta prueba, se realiza el analisis utilizado por Simon y Tibshirani (2012) \cite{SimonTibshirani}. Este corresponde a un conjunto de relaciones definido por:
+
+	$$
+	\mathcal{Q}=\left\{\left(X, f(X)+\varepsilon^{\prime}\right): X \sim \text { Unif, } f \in F, \varepsilon^{\prime} \sim \mathcal{N}\left(0, \sigma^2\right), \sigma \in \mathbb{R}_{\geq 0}\right\},
+	$$
+	
+	donde $F$ es el conjunto de relaciones definido en Simon y Tibshirani (2012) \cite{SimonTibshirani}. Estas corresponden a relacion: Lineal, Cuadr\'atica, C\'ubica, Seno (Perido $\frac{1}{8}$), Seno (Periodo $\frac{1}{2}$), $X^\frac{1}{4}$, Circular (tratado como dos semicirculos), y Funci\'on escalera. Detalles de la m\'etodolog\'ia que fue utilizada pueden ser encontrados en la secc\'on 5.2 de Reshef el at. (2016)\cite{Reshef2016}.
+
+
+	Los resultados del an\'alisis se presentan en la Figura \ref{reshef_2016_f5}. En primer lugar, la figura muestra que TICe se compara de manera bastante favorable con la correlaci\'on de distancia, un m\'etodo considerado tener un alto poder (Simon y Tibshirani, (2012)\cite{SimonTibshirani}). Espec\'ificamente, $TIC_e$ supera de manera uniforme a la correlaci\'on de distancia en 5 de los 8 tipos de relaciones examinados y se desempe\~na de manera comparable en los otros tres tipos de relaciones. Cabe destacar que la correlaci\'on de distancia tiene muchas ventajas sobre $TIC_e$, incluyendo el hecho de que se generaliza f\'acilmente a relaciones de mayor dimensionalidad y viene con un marco te\'orico elegante y completo.
+
+	El an\'alisis tambi\'en muestra que TICe supera en gran medida al coeficiente de informaci\'on maximal ($MIC$) original, y tambi\'en supera a $MIC_e$, respaldando la intuici\'on de que la suma realizada por el primero puede, de hecho, conducir a ganancias sustanciales en poder contra la independencia en comparaci\'on con la maximizaci\'on realizada por el \'ultimo. 
+
+
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2016_fig5.png}
+		\caption{Comparaci\'on del poder de prueba de independencia basado en $TIC_e$ (azul) con $MIC$ con par\'ametros predeterminados (gris), $MIC_e$ con los mismos par\'ametros que $TIC_e$ (negro), correlaci\'on de distancia (p\'urpura) y el coeficiente de correlaci\'on de Pearson (verde) en varios tipos de relaciones de hip\'otesis alternativas elegidos por Simon y Tibshirani (2012 \cite{SimonTibshirani}).}
+		\label{reshef_2016_f5}
+	\end{figure}
+
 
 
 	\newpage
 
 
 	\subsection{Ejemplos}
-	Ya con la funci\'on bien definida, veamos unos ejemplos del coeficiente, primero para algunos datos, y luego entre im\'agenes. Comenzemos por algunos ejemplos usando 
+	Ahora, con una definici\'on clara de como calcular los coeficientes, podemos procesder a un ejemplo de su uso. Para esto usaremos "The Datasaurus Dozon", un conjutno de datos propuesto por Justin Matejka y George Fitzmaurice (2017) \cite{datasaurus}. Este conjunto de datos nos presenta con 13 realciones, visibles en la Figura \ref{datasaurus_fig}, las cuales todas poseen los mismos valores para estad\'isticos descriptivos comunos (Promedio Marginal, Desviac\'on Estandar Marginal, y Correlaci\'on de Pearson), pero son claramente visualmente distinos.
 
-	el formato de esta secci\'on es temporal
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.2]{datasaurusdozon.png}
+		\caption{The Datasaurus Dozon", a pesar de compartir los mismos estad\'isticos descriptivos, son visualmente distintos.}
+		\label{datasaurus_fig}
+	\end{figure}
+
+	De particular interes para nosotros es el valor de la correlaci\'on de Pearson de, esta es b\'asicamente cero, lo que nos "deber\'ia" indicar que las relaciones son independientes. Sin embargo, como podemos ver en la Figura \ref{datasaurus_fig}, esto no es cierto. Es por esto que estos datos nos son de gran ayuda. 
+
+	Para este ejemplo, tomamos los vectores marginales de cada una de las relaciones, y los colocamos todos en un solo conjunto de datos. Luego de esto utilizamos $TIC_e$ para encontrar los pares que sean m\'as independientes, y finalmente usamos $MIC_e$ para cuantificar la relacion entre estos pares. Los resultados de este analisis se pueden ver en la Figura %\ref{datasaurus_fig2}.
+
+	
+
 	\subsection[]{Ejemplos}
 	\begin{figure}[H]
 		\centering
