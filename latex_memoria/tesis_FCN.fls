@@ -963,6 +963,8 @@ INPUT ./cap6.tex
 INPUT cap6.tex
 INPUT ./cap6.tex
 INPUT cap6.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
 INPUT ./cap7.tex
 INPUT ./cap7.tex
 INPUT ./cap7.tex
