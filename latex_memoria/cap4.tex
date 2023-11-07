@@ -2,9 +2,9 @@
 
 	\section{Introducci\'on}
 
-	La equitabilidad ha sido descrita de manera informal por Reshef et al. como la capacidad de una estadística para "asignar puntuaciones similares a relaciones igualmente ruidosas de diferentes tipos" \cite{Reshef2011}. Aunque útil, esta definición informal es imprecisa en el sentido de que no especifica lo que se entiende por "ruidoso" o "similar", y no especifica para qué relaciones debe cumplirse la propiedad mencionada.
+	La equitabilidad ha sido descrita de manera informal por Reshef et al. como la capacidad de una estad\'istica para "asignar puntuaciones similares a relaciones igualmente ruidosas de diferentes tipos" \cite{Reshef2011}. Aunque \'util, esta definici\'on informal es imprecisa en el sentido de que no especifica lo que se entiende por "ruidoso" o "similar", y no especifica para qu\'e relaciones debe cumplirse la propiedad mencionada.
 
-	En su trabajo posterior  ''Equitability, interval estimation, and statistical power'', Reshef et al. (2015) \cite{Reshef2015}, se formaliz\'o la idea de Equitabilidad a travez del concepto del intervalo interpretativo, que funciona como estimaci\'on en intervalos de la cantidad de ruido presente en una relaci\'on de tipo desconocida. 
+	En su trabajo posterior \textit{''Equitability, interval estimation, and statistical power''}, Reshef et al. (2015) \cite{Reshef2015}, se formaliz\'o la idea de Equitabilidad a travez del concepto del intervalo interpretativo, que funciona como estimaci\'on en intervalos de la cantidad de ruido presente en una relaci\'on de tipo desconocida. 
 
 	En el contexto de este trabajo, nos interesa que las medidas de dependencia sean equitativas puesto que esto nos asegura que la medida de dependencia no est\'a sesgada hacia un tipo de relaci\'on en particular, y por lo tanto, nos ser\'a \'util para comprar comparar las distintas versi\'on de la transformac\'ion Box-Cox que definiremos en la secci\'on \ref{chap6}.
 
@@ -12,7 +12,66 @@
 
 	\subsection[equidefiniciones]{Definiciones.}
 
-	\subsection[equitabilidadmice]{Equitabilidad del $MIC_e$}
+	Sea $\hat{\varphi}$ una estad\'istico que toma valores en el intervalo $[0,1]$, sea $\mathcal{Q}$ un conjunto de distribuciones, y sea $\Phi: \mathcal{Q} \rightarrow [0,1]$ una medida de la fuerza de la relaci\'on. Nos referimos a $\mathcal{Q}$ como el conjunto de relaciones est\'andar y a $\Phi$ como la propiedad de inter\'es. Para construir los intervalos interpretables de $\hat{\varphi}$ con respecto a $\Phi$, primero debemos preguntar cu\'anto puede variar $\hat{\varphi}$ al ser evaluado en una muestra de alguna $\mathcal{Z}$ en $\mathcal{Q}$ con $\Phi(\mathcal{Z})=x$. La siguiente definici\'on nos proporciona una forma de medir esto. (En esta definici\'on y en las definiciones en el resto de este trabajo, asumimos impl\'icitamente un tama\~o de muestra fijo de $n$.)
+
+
+	\begin{defn}[Fiabilidad de un estad\'istico]
+		Sea $\hat{\varphi}$ una estad\'istico que toma valores en $[0,1]$, y sean $x, \alpha \in [0,1]$. El intervalo $\alpha$-fiable de $\hat{\varphi}$ en $x$, denotado como $R_\alpha^{\hat{\varphi}}(x)$, es el intervalo cerrado m\'as peque\~no $A$ con la propiedad de que, para todas las $\mathcal{Z}$ en $\mathcal{Q}$ con $\Phi(\mathcal{Z})=x$, tenemos
+		$$
+		\mathbf{P}(\hat{\varphi}(Z)<\min A)<\alpha / 2 \text { and } \mathbf{P}(\hat{\varphi}(Z)>\max A)<\alpha / 2,
+		$$
+		
+		donde $Z$ es una muestra de tama\~o $n$ de $\mathcal{Z}$.
+	\end{defn}
+
+	El estad\'istico $\hat{\varphi}$ se dice $\frac{1}{d}$-fiable con respecto a $\Phi$ en $\mathcal{Q}$ en $x$ con una probabilidad de $1-\alpha$ si y solo si el di\'ametro de $R_\alpha^{\hat{\varphi}}(x)$ es como m\'aximo $d$.
+	
+		
+	Ver la Figura \ref{reshef_2015_f1}a para una ilustraci\'on. El intervalo confiable en $x$ es una regi\'on de aceptaci\'on de una prueba de tama\~no $\alpha$ de la hip\'otesis nula $H_0: \Phi(\mathcal{Z})=x$. Si solo hay un $\mathcal{Z}$ que satisface $\Phi(\mathcal{Z})=x$, esto equivale a un intervalo central de la distribuci\'on de muestreo de $\hat{\varphi}$ en $\mathcal{Z}$. Si hay m\'as de un $\mathcal{Z}$ que satisface esta condici\'on, el intervalo confiable se expande para incluir los intervalos centrales relevantes de las distribuciones de muestreo de $\hat{\varphi}$ en todas las distribuciones $\mathcal{Z}$ en cuesti\'on. Por ejemplo, cuando $\mathcal{Q}$ es un conjunto de relaciones funcionales ruidosas con varios tipos de funciones diferentes y $\Phi$ es $R^2$, el intervalo confiable en $x$ es el intervalo m\'as peque\~no $A$ tal que, para cualquier relaci\'on funcional $\mathcal{Z} \in \mathcal{Q}$ con $R^2(\mathcal{Z})=x$, $\hat{\varphi}(Z)$ cae en $A$ con alta probabilidad en la muestra $Z$ de tama\~no $n$ de $\mathcal{Z}$.
+
+	Dado que el intervalo confiable $R_\alpha^{\hat{\varphi}}(x)$ se puede ver como la regi\'on de aceptaci\'on de una prueba de nivel $\alpha$ de $H_0: \Phi(\mathcal{Z})=x$, la equivalencia entre las pruebas de hip\'otesis y los intervalos de confianza proporciona estimaciones de intervalos de $\Phi$ en t\'erminos de $R_\alpha^{\hat{\varphi}}(x)$. Estos intervalos son los intervalos interpretables, definidos a continuaci\'on.
+
+	\begin{defn}[Interpretabilidad de un estad\'istico]
+		Sea $\hat{\varphi}$ un estad\'istico que toma valores en $[0,1]$, y sean $y, \alpha \in [0,1]$. El intervalo $\alpha$-interpretable de $\hat{\varphi}$ en $y$, denotado por $I_\alpha^{\hat{\varphi}}(y)$, es el intervalo cerrado m\'as peque\~no que contiene el conjunto:
+
+		$$
+		\left\{x \in[0,1]: y \in R_\alpha^{\hat{\varphi}}(x)\right\} .
+		$$
+
+		El estad\'istico $\hat{\varphi}$ es $1/d$-interpretable con respecto a $\Phi$ en $\mathcal{Q}$ en $y$ con una confianza de $1-\alpha$ si y solo si el di\'ametro de $I_\alpha^{\hat{\varphi}}(y)$ es a lo sumo $d$.
+	\end{defn}
+
+	Ver la Figura \ref{reshef_2015_f1} para una ilustraci\'on. La correspondencia entre pruebas de hip\'otesis y estimaciones de intervalos [20] nos proporciona la siguiente garant\'ia sobre la probabilidad de cobertura del intervalo interpretable, cuya prueba omitimos.
+
+	\begin{prop}
+		Sea $\hat{\varphi}$ un estad\'istico que toma valores en $[0,1]$, y sea $\alpha \in [0,1]$. Para todo $x \in [0,1]$ y para todo $\mathcal{Z} \in \mathcal{Q}$,
+
+		$$
+		\mathbf{P}\left(\Phi(\mathcal{Z}) \in I_\alpha^{\hat{\varphi}}(\hat{\varphi}(Z))\right) \geq 1-\alpha
+		$$
+	\end{prop}
+
+	Las definiciones reci\'en presentadas tienen contrapartes no estoc\'asticas naturales en el caso l\'imite de muestras grandes, que resumimos a continuaci\'on.
+
+	\begin{defn}[Confiabilidad e interpretabilidad en el l\'imite]
+		Sea $\varphi:\mathcal{Q} \rightarrow [0,1]$ una funci\'on de distribuciones. Para $x \in [0,1]$, el intervalo cerrado m\'as peque\~no que contiene el conjunto $\varphi\left(\Phi^{-1}({x})\right)$ se llama el intervalo confiable de $\varphi$ en $x$ y se denota como $R^{\varphi}(x)$. Para $y \in [0,1]$, el intervalo cerrado m\'as peque\~no que contiene el conjunto $\left\{ x: y \in \R^{\varphi} (x) \right\}$ se llama el intervalo interpretable de $\varphi$ en $y$ y se denota como $I^{\varphi}(y)$.
+
+	\end{defn}
+
+	Mira la Figura \ref{reshef_2015_f1}b para una ilustraci\'on.
+
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2015_fig1.png}
+		\caption{
+			Una ilustraci\'on esquem\'atica de intervalos confiables e interpretables. En ambas partes de la figura, $\mathcal{Q}$ consiste en relaciones ruidosas de tres tipos diferentes representados en tres colores distintos. (a) La relaci\'on entre un estad\'istico $\hat{\varphi}$ y $\Phi$ en $\mathcal{Q}$ en un tama\~no de muestra finito. Los l\'imites inferior y superior de cada regi\'on sombreada indican los percentiles $(\alpha / 2) \cdot 100 \%$ y $(1 - \alpha / 2) \cdot 100 \%$ de la distribuci\'on de muestreo de $\hat{\varphi}$ para cada tipo de relaci\'on en varios valores de $\Phi$. El intervalo vertical (en negro) es el intervalo confiable $R_\alpha^{\hat{\varphi}}(x)$, y el intervalo horizontal (en rojo) es el intervalo interpretable $I_\alpha^{\hat{\varphi}}(y)$. (b) En el l\'imite de muestra grande, reemplazamos $\hat{\varphi}$ por una cantidad poblacional $\varphi$. El intervalo vertical (en negro) es el intervalo confiable $R^{\varphi}(x)$, y el intervalo horizontal (en rojo) es el intervalo interpretable $I^{\varphi}(y)$.}
+		\label{reshef_2015_f1}
+	\end{figure}
+
+
+	\subsection[equitabilidadmice]{Equitabilidad del las medidas}
+
+	esta secci\'on está extraida de la secci\'on en el paper, la idea es hacer un an\'alisis similar para las otras medidas propuestas
 
 	Como se mencion\'o previamente, una de las principales motivaciones para la introducci\'on de $MIC$ fue la equidad, es decir, hasta qu\'e punto una medida de dependencia captura \'utilmente alguna noci\'on de la fuerza de una relaci\'on en un conjunto de relaciones est\'andar. En esto contexto en Reshef et al. (2016) \cite{Reshef2016} se realiz\~o un an\'alisis emp\'irico de la equidad de $MIC_e$ con respecto a R2 y su desempe\~no fue comparado con la correlaci\'on de distancia (Sz\'ekely et al., (2007)\cite{Szekely2007}; Sz\'ekely and Rizzo, (2009)\cite{Szekely2009}), la estimaci\'on de la informaci\'on mutua (Kraskov et al., 2004) y la estimaci\'on de la correlaci\'on m\'axima (Breiman and Friedman, 1985).
 

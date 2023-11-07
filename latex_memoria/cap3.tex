@@ -109,6 +109,66 @@ De la misma forma que las medidas que hemos visto anteriormente, estas son medid
 
 La primera de estas afirmaciones es importante, ya que nos permite utulizar esta medida para comparar im\'agenes sin mayor problema, de todas formas en la secci\'on \ref{chap5} estudiaremos como adaptar est\'as medidas para im\'agnes. En esta secci\'on definiremos estos 3 coeficientes, la relaci\'on entre ellos y verificaremos la afirmaciones realizadas m\'as arriba, para esto comenzaremos con las definiciones. 
 
+\subsection{Definiciones}
+
+Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
+
+\begin{defn}[Covarianza por distancia]
+	La Covarianza por distancia (dCov) entre los vectores aleatorios $X$ e $Y$ con primeros momentos finitos es el n\'umero no negativo $\mathcal{V}(X, Y)$ definido por:
+	$$
+	\begin{aligned}
+	\mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
+	& =\frac{1}{c_p c_q} \int_{\mathbb{R}^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
+	\end{aligned}
+	$$
+	\end{defn}
+
+	Similarmente, la Varianza por distancia (dVar) se define como la raiz cuadrada:
+
+	$$
+	\mathcal{V}^2(X)=\mathcal{V}^2(X, X)=\left\|f_{X, X}(t, s)-f_X(t) f_X(s)\right\|^2 .
+	$$
+
+	Por definici\'on de la norma $\|\cdot\|$, es claro que  $\mathcal{V}(X, Y) \geq 0$ y $\mathcal{V}(X, Y)=0$ si y solo si $X$ e $Y$ son indepentes.
+
+	\begin{defn} [Correlaci\'on por distancia]
+		La correlaci\'on por distancia (dCor) entre los vectores aleatorios $X$ e $Y$ con primer momento finito es el n\'unero no negtivo $\mathcal{R}(X, Y)$ definido por:
+		$$
+		\mathcal{R}^2(X, Y)= \begin{cases}\frac{\mathcal{V}^2(X, Y)}{\sqrt{\mathcal{V}^2(X) \mathcal{V}^2(Y)}}, & \mathcal{V}^2(X) \mathcal{V}^2(Y)>0 \\ 0, & \mathcal{V}^2(X) \mathcal{V}^2(Y)=0\end{cases}.
+		$$
+
+	Algunas propiedades de $\mathcal{R}$ an\'alogo a $\rho$ ser\'an revisadas m\'as adelante. 
+	\end{defn}
+
+	Ahora, para el caso muestral, definimos los estad\'isticos de distancia de la siguiente forma. Para una muestra aleatoria $(\mathbf{X}, \mathbf{Y})=\left\{\left(X_k, Y_k\right): k=1, \ldots, n\right\}$ de $n$ ventores aleatorios $(X, Y)$ i.i.d., calculamos las matrices de distancia euclideana  $\left(a_{k l}\right)=\left(\left|X_k-X_l\right|_p\right)$ y $\left(b_{k l}\right)=\left(\left|Y_k-Y_l\right|_q\right)$. Definimos:
+
+	$$
+	A_{k l}=a_{k l}-\bar{a}_{k .}-\bar{a}_{. l}+\bar{a}_{. .}, \quad k, l=1, \ldots, n,
+	$$
+	donde
+	$$
+	\bar{a}_{k .}=\frac{1}{n} \sum_{l=1}^n a_{k l}, \quad \bar{a}_{. l},=\frac{1}{n} \sum_{k=1}^n a_{k l}, \quad \bar{a}_{. .}=\frac{1}{n^2} \sum_{k, l=1}^n a_{k l} .
+	$$
+	
+	De forma similar, definimos $B_{k l}=b_{k l}-\bar{b}_{k .}-\bar{b}_{\cdot l}+\bar{b}_{. .}$, para $k, l=1, \ldots, n$.
+
+	\begin{defn}[Covarianza y Correlaci\'on por distancia muestral]
+		La no negativa Covarianza por distancia muestral $\mathcal{V}_n(\mathbf{X}, \mathbf{Y})$ y la Correlaci\'on por distancia muestral $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})$ estan definidas por
+		$$
+		\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l} B_{k l},
+		$$
+		y
+		$$
+		\mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})= \begin{cases}\frac{\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})}{\sqrt{\mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})}}, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})>0 \\ 0, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})=0\end{cases},
+		$$
+		respectivamente. Adem\'as la Varianza por distancia muestral $\mathcal{V}_n(\mathbf{X})$ est\'a definida por
+		$$
+		\mathcal{V}_n^2(\mathbf{X})=\mathcal{V}_n^2(\mathbf{X}, \mathbf{X})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l}^2 .
+		$$
+	\end{defn}
+
+	Ahora, queremos estudiar la definici\'on de la Covarianza por Distancia Browniana, para esto necesitamos definir hacer un paso por procesos aleatorios. 
+
 \section[]{Correlaci\'on de Pearson}
 
 	\subsection{Introducci\'on}
