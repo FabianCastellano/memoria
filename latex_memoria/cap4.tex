@@ -1,77 +1,37 @@
-% ---------------------------------------------------------------------------------------
-\chapter{Otros Métodos de Comparación de Imágenes}\label{chap4}
+\chapter{Equitabilidad}\label{chap4}
 
+	\section{Introducci\'on}
 
-\section{Introducci\'on}
+	La equitabilidad ha sido descrita de manera informal por Reshef et al. como la capacidad de una estadística para "asignar puntuaciones similares a relaciones igualmente ruidosas de diferentes tipos" \cite{Reshef2011}. Aunque útil, esta definición informal es imprecisa en el sentido de que no especifica lo que se entiende por "ruidoso" o "similar", y no especifica para qué relaciones debe cumplirse la propiedad mencionada.
 
-\section[]{Correlaci\'on local} 
+	En su trabajo posterior  ''Equitability, interval estimation, and statistical power'', Reshef et al. (2015) \cite{Reshef2015}, se formaliz\'o la idea de Equitabilidad a travez del concepto del intervalo interpretativo, que funciona como estimaci\'on en intervalos de la cantidad de ruido presente en una relaci\'on de tipo desconocida. 
 
-	%chen2010.pdf
+	En el contexto de este trabajo, nos interesa que las medidas de dependencia sean equitativas puesto que esto nos asegura que la medida de dependencia no est\'a sesgada hacia un tipo de relaci\'on en particular, y por lo tanto, nos ser\'a \'util para comprar comparar las distintas versi\'on de la transformac\'ion Box-Cox que definiremos en la secci\'on \ref{chap6}.
 
-	\subsection{Discucion sobre el coef.}
+	En esta secci\'on se presentar\'a la definici\'on formal de equitabilidad, y de equitabilidad con respecto a $R^2$, recrearemos el experimento realizado por Reshef et al. (2016) \cite{Reshef2016} sobre la equitabilidad del $MIC_e$, y junto con esto se estudiar\'a la equitabilidad de las otras medidas propuestas en la Secci\'on \ref{chap4}. 
 
-	donde se publico, como su ocupa, despcion en palabras
+	\subsection[equidefiniciones]{Definiciones.}
 
-	La correlaci\'on local, tamb\'ien conodica como coeficiente no param\'etrico de Chen, o coeficiente de Chen. Este, sin realizar supuestos sobre distribuciones, detecta relaciones no lineales al invenstigar un mont\'on de correalciones locales. 
+	\subsection[equitabilidadmice]{Equitabilidad del $MIC_e$}
 
-	\subsection{Definiciones}
+	Como se mencion\'o previamente, una de las principales motivaciones para la introducci\'on de $MIC$ fue la equidad, es decir, hasta qu\'e punto una medida de dependencia captura \'utilmente alguna noci\'on de la fuerza de una relaci\'on en un conjunto de relaciones est\'andar. En esto contexto en Reshef et al. (2016) \cite{Reshef2016} se realiz\~o un an\'alisis emp\'irico de la equidad de $MIC_e$ con respecto a R2 y su desempe\~no fue comparado con la correlaci\'on de distancia (Sz\'ekely et al., (2007)\cite{Szekely2007}; Sz\'ekely and Rizzo, (2009)\cite{Szekely2009}), la estimaci\'on de la informaci\'on mutua (Kraskov et al., 2004) y la estimaci\'on de la correlaci\'on m\'axima (Breiman and Friedman, 1985).
 
-	La definici\'on del m\'etodo est\'a basada en en el concepto de integrales de correlaci\'on, las cuales se definen de la siguiente forma:
-	\begin{defn}
-		$$
-		I(r)=\lim _{N \rightarrow \infty}\left\{\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)\right\}
-		$$
-	\end{defn}
-	La integral de correlaci\'on cuantifica el el n\'umero promedio de vecinos dentro de un radio $r$. Notemos que esta definici\'on sigue teniendo sentido cuando los datos no son series de tiempo.
+	Se comenz\'o evaluando la equidad en el conjunto de relaciones $Q$ definido anteriormente, un conjunto que ha sido analizado en otros trabajos previos (Reshef et al., 2011, 2015a; Kinney and Atwal, 2014). Los resultados, mostrados en la Figura \ref{reshef_2016_f3}, confirman la superior equidad del estimador $MIC_e$ en este conjunto de relaciones.
 
-	Para desarrollar una medida de asociaci\'on entre vectores, $x$ e $y$, modificamos la definici\'on de $I(r)$ como sigue. Sean $z_i=(x_i,y_i)$ con $i=1,\dots, N$ las observaciones en el conjunto de datos. Sea $|z_i-z_j|$ la distancia euclidiana. Definimos $\hat{I}(r)=\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)$. Las distancias obsevadas son adem\'as linealmente transformadas para que se encuentren entres 0 y 1 antes de calcular $\hat{I}$. Notemos que $\hat{I}$a tiene las propiedades de una funci\'on de distribuci\'on acumulativa. Es no decreciente entre 0 y 1 y continua por la derecha. La funci\'on $\hat{I}(r)$ descrive el patr\'on global de distancias entre vecinos. 
+	Para evaluar la equidad de manera m\'as objetiva sin depender de un conjunto de funciones curado manualmente, se analizaron 160 funciones aleatorias extra\'idas de una distribuci\'on de proceso Gaussiano con un kernel de funci\'on radial con una de ocho posibles anchuras en el conjunto $\{0.01, 0.025, 0.05, 0.1, 0.2, 0.25, 0.5, 1\}$ para representar una variedad de complejidades de relaciones posibles. Los resultados, mostrados en la Figura \ref{reshef_2016_f4}, muestran que $MIC_e$ supera a los m\'etodos existentes en t\'erminos de equidad con respecto a $R^2$ en estas funciones tambi\'en. Tambi\'en se examin\'o el efecto de las relaciones at\'ipicas en los resultados al muestrear repetidamente subconjuntos aleatorios de 20 funciones de este gran conjunto de relaciones y medir la equidad de cada m\'etodo en promedio sobre los subconjuntos; los resultados fueron similares.
 
-	Nuestro inter\'es principal es la definici\'on  de una metrica para cuantificar la asosiaci\'on no lineal estudiando patrones locale. Dado esto, definimos la densidad de vecinos $D$ de forma similar a la derivada de $\hat{I}$: 
+	Una caracter\'istica del desempe\~no de $MIC_e$ en estas relaciones elegidas al azar, como se muestra en la Figura \ref{reshef_2016_f4}, es que parece ser m\'inimamente sensible a la anchura del proceso Gaussiano del cual se extrae una relaci\'on dada. Esto contrasta, por ejemplo, con la estimaci\'on de la informaci\'on mutua, que muestra una sensibilidad pronunciada a este par\'ametro que le impide ser altamente equitativa cuando hay relaciones con diferentes anchuras en el mismo conjunto de datos.
 
-	$$
-		\hat{D}(r)= \frac{\vartriangle\hat{I}(r)}{\vartriangle r}
-	$$
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2016_fig3.png}
+		\caption{Equitabilidad con respecto a $R^2$ en un conjunto de relaciones funcionales ruidosas de $(a)$ el coeficiente de correlaci\~on de Pearson, $(b)$ una medida hipot\~etica de dependencia $\varphi$ con equitabilidad perfecta, $(c)$ la correlaci\~on de distancia, $(d)$ $\mathrm{MIC}_e$, $(e)$ estimaci\~on de correlaci\~on m\~axima y $(f)$ estimaci\~on de informaci\~on mutua. Para cada relaci\~on, una regi\~on sombreada denota los valores estimados en el percentil 5 y 95 de la distribuci\~on muestral de la estad\~istica en cuesti\~on en esa relaci\~on en cada valor de $R^2$. El gr\~afico resultante muestra qu\~e valores de $R^2$ corresponden a un valor dado de cada estad\~istica. El intervalo rojo en cada gr\~afico indica el rango m\~as amplio de valores de $R^2$ que corresponden a un valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Un intervalo rojo con ancho 0, como en $(b)$, significa que la estad\~istica refleja solo $R^2$ sin depender del tipo de relaci\~on, como se demuestra en los pares de miniaturas de relaciones de diferentes tipos con valores id\~enticos de $R^2$.}
+		\label{reshef_2016_f3}
+	\end{figure}
 
-	Donde $\vartriangle\hat{I}(r)$ denota un cambio en $\hat{I}(r)$. La densidad de vecinos es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$  y $m$ es un grosor de malla arbitrario. Una funci\'on de suavizado autom\'atico usando validaci\'on cruzada es usada para elegir un \'optimo el tama\~no $m$ (Vilela et al. 2007) y se aplica para suavizar $D(r)$. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
-
-	En base a esto definimos la correlaci\'on local. Intuitivamente, las distancias entre los puntos de datos entre dos variables correlacionadas diferir\'ian de las distancias entre dos variables no correlacionadas. Sea $\widehat{D_0}(r)$ la estimaci\'on de una distribuci\'on nula, que se compone de dos vectores sin asociaci\'on. Definimos la correlaci\'on local ($\ell(r)$) como la desviaci\'on de D de la de la distribuci\'on nula a una distancia vecina dada r:
-
-	$$
-		\ell(r)=\widehat{D}(r)-\widehat{D}_{0}(r)
-	$$
-
-	Este enfoque no asume ninguna distribuci\'on param\'etrica. La flexibilidad de este m\'etodo facilita el cambio de la distribuci\'on nula a cualquier distribuci\'on de inter\'es. 
-	
-	Por ultimo, definimos el coficiente como de correlaci\'on local m\'axima, o coeficiente de Chen como:
-	$$
-		M=\max _{r}\{|\ell(r)|\}
-	$$
-	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
-
-\section[]{\textit{Distance Covariance \& Distance Correlation}} 
-
-
-\section[]{Correlaci\'on de Pearson}
-
-	\subsection{Discucion sobre el coef.}
-	
-		donde se publico, como su ocupa, despcion en palabras
-	 
-	\section{Definiciones}
-	
-	El coef. se define como:
-	\begin{equation}\label{pearson_orig}
-		\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}
-	\end{equation}
-	
-	Para una muestra de tama\~no $N$, tenemos:
-	
-	\begin{equation}\label{pearson_r}
-		r=\frac{\sum_{i}^N\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum_{i}^n\left(x_{i}-\bar{x}\right)^{2}} \sqrt{\sum_{i}^n\left(y_{i}-\bar{y}\right)^{2}}}
-	\end{equation}
-	
-	Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
-	
-	Hablar de The Ineffectiveness of the Correlation Coefficient for Image Comparisons
-	
-	\newpage
+	\begin{figure}[H] 
+		\centering
+		\includegraphics[scale = 0.4]{reshef_2016_fig4.png}
+		\caption{Equitabilidad de los m\~etodos examinados en funciones extra\~idas al azar de una distribuci\~on de proceso gaussiano. Cada m\~etodo se eval\~ua como se muestra en la Figura \ref{reshef_2016_f3}, con un intervalo rojo que indica el rango m\~as amplio de valores de $R^2$ correspondiente a cualquier valor de la estad\~istica; cuanto m\~as estrecho sea el intervalo rojo, mayor ser\~a la equitabilidad. Cada regi\~on sombreada corresponde a una relaci\~on, y las regiones est\~an coloreadas seg\~un el ancho de banda del proceso gaussiano del que se muestrearon. Las relaciones de muestra para cada ancho de banda se muestran en la esquina superior derecha con colores correspondientes.}
+		\label{reshef_2016_f4}
+	\end{figure}

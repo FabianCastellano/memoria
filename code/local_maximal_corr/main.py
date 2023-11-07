@@ -29,7 +29,6 @@ class LocalMaximalCorr:
 
 
 
-nh
 
 
 
