@@ -8,9 +8,9 @@
 
 	En el contexto de este trabajo, nos interesa que las medidas de dependencia sean equitativas puesto que esto nos asegura que la medida de dependencia no est\'a sesgada hacia un tipo de relaci\'on en particular, y por lo tanto, nos ser\'a \'util para comprar comparar las distintas versi\'on de la transformac\'ion Box-Cox que definiremos en la secci\'on \ref{chap6}.
 
-	En esta secci\'on se presentar\'a la definici\'on formal de equitabilidad, y de equitabilidad con respecto a $R^2$, recrearemos el experimento realizado por Reshef et al. (2016) \cite{Reshef2016} sobre la equitabilidad del $MIC_e$, y junto con esto se estudiar\'a la equitabilidad de las otras medidas propuestas en la Secci\'on \ref{chap4}. 
+	En esta secci\'on se presentar\'a la definici\'on de Intercalo Interpretativo formal, y para luego poder definir equitabilidad y  equitabilidad con respecto a $R^2$. Posteriormente, recrearemos el experimento realizado por Reshef et al. (2016) \cite{Reshef2016} sobre la equitabilidad del $MIC_e$, y junto con esto se estudiar\'a la equitabilidad de las otras medidas propuestas en la Secci\'on \ref{chap4}. 
 
-	\subsection[equidefiniciones]{Definiciones.}
+	\subsection[equidefiniciones]{Intervalos interpretativos.}
 
 	Sea $\hat{\varphi}$ una estad\'istico que toma valores en el intervalo $[0,1]$, sea $\mathcal{Q}$ un conjunto de distribuciones, y sea $\Phi: \mathcal{Q} \rightarrow [0,1]$ una medida de la fuerza de la relaci\'on. Nos referimos a $\mathcal{Q}$ como el conjunto de relaciones est\'andar y a $\Phi$ como la propiedad de inter\'es. Para construir los intervalos interpretables de $\hat{\varphi}$ con respecto a $\Phi$, primero debemos preguntar cu\'anto puede variar $\hat{\varphi}$ al ser evaluado en una muestra de alguna $\mathcal{Z}$ en $\mathcal{Q}$ con $\Phi(\mathcal{Z})=x$. La siguiente definici\'on nos proporciona una forma de medir esto. (En esta definici\'on y en las definiciones en el resto de este trabajo, asumimos impl\'icitamente un tama\~o de muestra fijo de $n$.)
 
@@ -68,11 +68,15 @@
 		\label{reshef_2015_f1}
 	\end{figure}
 
+	\section{Definiendo Equitabilidad}
+
+	\todo{definir $\alpha$-fiabilidad y $\alpha$-interpretabilidad, y finalmente equitatibilidad }
 
 	\subsection[equitabilidadmice]{Equitabilidad del las medidas}
 
-	esta secci\'on está extraida de la secci\'on en el paper, la idea es hacer un an\'alisis similar para las otras medidas propuestas
-
+	\todo{esta secci\'on está extraida de la secci\'on en el paper, la idea es hacer un an\'alisis similar para todas medidas propuestas
+	}
+	
 	Como se mencion\'o previamente, una de las principales motivaciones para la introducci\'on de $MIC$ fue la equidad, es decir, hasta qu\'e punto una medida de dependencia captura \'utilmente alguna noci\'on de la fuerza de una relaci\'on en un conjunto de relaciones est\'andar. En esto contexto en Reshef et al. (2016) \cite{Reshef2016} se realiz\~o un an\'alisis emp\'irico de la equidad de $MIC_e$ con respecto a R2 y su desempe\~no fue comparado con la correlaci\'on de distancia (Sz\'ekely et al., (2007)\cite{Szekely2007}; Sz\'ekely and Rizzo, (2009)\cite{Szekely2009}), la estimaci\'on de la informaci\'on mutua (Kraskov et al., 2004) y la estimaci\'on de la correlaci\'on m\'axima (Breiman and Friedman, 1985).
 
 	Se comenz\'o evaluando la equidad en el conjunto de relaciones $Q$ definido anteriormente, un conjunto que ha sido analizado en otros trabajos previos (Reshef et al., 2011, 2015a; Kinney and Atwal, 2014). Los resultados, mostrados en la Figura \ref{reshef_2016_f3}, confirman la superior equidad del estimador $MIC_e$ en este conjunto de relaciones.
