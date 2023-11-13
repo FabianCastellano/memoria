@@ -55,17 +55,25 @@
 
     Cabe destacar que el proceso de aplicar la tranformaci\'on es iterativo, en el cual se ha de buscar un parametro $\lambda$, esto hace que aplicar esta la transformaci\'on en grandes bancos de imagenes sea demoroso. Una alternativa propuesta por A. Cheddad \cite{boxcoximg} es utilizar el histograma como proxy comprido de la matriz de datos, dado que este refleja la probabilidad estimada de que un pixel esa de un tono en particular. En lo que continua de la secci\'on discutiremos este m\'etodo.
 
-    Dada una imagen en el espacio de color RGB, definimos:
+    Dada una imagen en el espacio de color RGB, como fue defininda en el cap\'itulo \ref{chap5}, definimos:
+    
     $$
     \mathcal{F}(u, v)=\{R(u, v), G(u, v), B(u, v)\}
     $$
 
-    donde $(u, v)$ son las coordenadas en el espacio de pixeles que cumplen $u=1, \ldots U$, $v=1, \ldots V$ y $(U, V)$ son las dos dimensiones de la foto. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto definimos:
+    donde $(u, v)$ son las coordenadas en el espacio de pixeles que cumplen $u=1, \ldots U$, $v=1, \ldots V$ y $(U, V)$ son las dos dimensiones de la foto. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto utilizaremos la siguiente formula.
+
     $$
     \mathcal{F}^{\prime} =(0.299 \mathrm{R}+0.587 \mathrm{G}+0.114 \mathrm{~B})
     $$
 
-    Que corresponde al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En base a esto definimos la funci\'on de probabilidad de im\'agen, i.e., el histograma como:
+    Que corresponde al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En la figrua 
+    
+    Ahora, antes de pasar a la siguiente secci\'on, podemos ver algunos ejemplos de como afecta a una imagen la aplicaci\'on de la transformaci\'on a lo largo de un rango de valores para $lambda$. En la
+
+    \section[prpuestas de lambda]{Propuestas de $\lambda$ para imagenes.}\label{}
+
+    En base a esto definimos la funci\'on de probabilidad de im\'agen, i.e., el histograma como:
     
     $$\chi(i)=\sum_{i=0}^{255}\mathcal{F}^{\prime}_i,$$
 
@@ -84,6 +92,5 @@
     
     Notemos que este ultimo paso se realiza para que los datos esten entre 0 y 1, y as\'i poder ser representados en una imagen. En la Figura se puede ver un ejemplo de la transformaci\'on aplicada sobre una imagen, con ambas versiones de $\lambda$.
 
-    \section[prpuestas de lambda]{Propuestas de $\lambda$ para imagenes.}
 
     
