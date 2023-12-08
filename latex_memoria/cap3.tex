@@ -61,7 +61,7 @@ Definiremos los coeficientes, revisaremos algunas de sus propiedades y finalment
 		donde $\vartriangle\hat{I}(r)$ denota un cambio en $\hat{I}(r)$ y $\vartriangle r$ la magnitud de este.
 	\end{defn}
 	
-	La densidad de vecinos observada es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$, con $m$ es un grosor de malla arbitrario que determina $\vartriangle r = \frac{1}{m}$. Una funci\'on de suavizado autom\'atico usando validaci\'on cruzada es usada para elegir un \'optimo el tama\~no $m$ (Vilela et al. 2007) y se aplica para suavizar $D(r)$. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
+	La densidad de vecinos observada es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$, con $m$ es un grosor de malla arbitrario que determina $\vartriangle r = \frac{1}{m}$. Una funci\'on de suavizado autom\'atico es usado para suavizar $D(r)$, en su propuesta original se us\'o el algoritmo propuesto por Videla et al. (2007) \cite{videla2007}, nosotros utilizaremos filtros Savitzky-Golay \cite{Savitzky-Golay}, tambi\'en haciendo uso de validaci\'on cruzada para elegir los mejores hiperparametros. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
 
 	En base a esto definimos la correlaci\'on local. Intuitivamente, las distancias entre los puntos de datos entre dos variables correlacionadas diferir\'ian de las distancias entre dos variables no correlacionadas. 
 	
@@ -167,10 +167,92 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 		$$
 	\end{defn}
 
-	Ahora, queremos estudiar la definici\'on de la Covarianza por Distancia Browniana, para esto necesitamos definir hacer un paso por procesos aleatorios. 
-
 	\subsection{Covarianza Browniana}
-		\todo{terminar secci\'on, hablar sobre procesos y covarianza basado en el papaer}
+		
+		Para introducir la noci\'on de covarianza browniana, comenzaremos considerando la covarianza cuadrada del producto-momento. Recordemos que una variable prima $X'$ denota una copia independiente e id\'enticamente distribuida (i.i.d.) del símbolo no prima $X$. Para dos variables aleatorias continuas de valores reales, el cuadrado de su covarianza clásica es:
+
+		$$\E[(X-\E(X))(Y-\E(Y))] = \E[(X-\E(X))(X'-\E(X'))(Y-\E(Y))(Y'-\E(Y'))]	$$
+
+		Ahora generalizamos la covarianza al cuadrado y definimos el cuadrado de la covarianza condicional, dadas dos procesos estocásticos de valores reales, $U(\circ)$ y $V(*)$. Obtenemos un resultado interesante cuando U y V son procesos de Wiener independientes.
+
+
+		Primero, para centrar la variable aleatoria $X$ en la covarianza condicional, necesitamos la siguiente definici\'on. Sea $X$ una variable aleatoria de valores reales y $\{U(t): t \in \R\}$ un proceso estoc\'astico de valores reales, independiente de $X$. La versi\'on centrada de $X$ respecto a $U$ se define por:
+
+		$$
+		X_U = U(X)-\int_{-\infty}^{\infty}U(t)dF_X(t)=U(X)-\E[U(X)|U],
+		$$
+
+		siempre que la esperanza condicional exista. Notemos que, si $id$ es la identidad, $X_{id}=X-\E[X]$. 
+
+		Ahora, sea $\mathcal{W}$ un movimiento Browniano/Wiener de una dimensi\'on en ambos lados con esperanza cero y funci\'on de covarianza.
+		\begin{equation}\label{brw_covariamce}
+			|s|+|t|-|s-t|=2\min(s.t)
+		\end{equation}
+			
+
+		Esto es dos veces la covarianza estandar para un proceso Wiener. Pero en adelante el factor de dos nos simplificar\'a algunos calculos, por lo que en el resto de la secci\'on asumiermos esta funcion de covarianza \ref{brw_covariamce} para $\mathcal{W}$. Ya con esto, podemos definir la Covarianza Browniana 
+
+		\begin{defn}[Covarianza Browniana]
+			La Covarianza Browniana (o covarianza Wiener) de dos variables aleatorias con valores reales $X$ e $Y$, con segundos monetos fin\'itos es el n\'umero no negativo definido por su cuadrado:
+			\begin{equation}\label{brw_cov}
+				\mathcal{W}^2(X,Y)={Cov}_{{W}^2}(X,Y)=\E[X_{W}X'_{W}Y_{W'}Y'_{W'}],
+			\end{equation}
+
+			donde $({W},{W'})$ no dependen de $(X,X',Y.Y')$.
+		\end{defn}
+
+		Tomemos en cuenta que si ${W}$ en ${Cov}_{{W}^2}$ es reemplazada por la funci\'on identidad (no aleatoria) $id$, entonces ${Cov}_{id}(X, Y) = |{Cov}(X, Y)| = |\sigma_{X,Y}|$, el valor absoluto de la covarianza del producto-momento de Pearson. Mientras que la covarianza del producto-momento estandarizada, la correlación de Pearson ($\rho$), mide el grado de relaci\'on lineal entre dos variables con valores reales, veremos que la covarianza estandarizada de Brownian mide el grado de todos los tipos posibles de relaciones entre dos variables aleatorias con valores reales.
+
+		La definición de ${Cov}_{{W}^2}$ se puede extender a procesos aleatorios en dimensiones superiores de la siguiente manera. Si $X$ es una variable aleatoria con valores en $\R^p$ y $U(s)$ es un proceso aleatorio (campo aleatorio) definido para todos los $s \in \R^p$ e independiente de $X$, define la versión centrada en $U$ de $X$ como
+
+		$$
+			X_U=\E(X)-\E[U(X)|U]
+		$$
+		siempre que la expectativa condicional exista.
+
+		\begin{defn}
+			Si $X$ es un vector aleatorio con valores en $\R^p$ y $Y$ es un vector aleatorio con valores en $\R^q$, y $U(s)$ y $V(t)$ son procesos aleatorios, definamos para todo $s\in\R^p$, $t\in\R^q$, entonces la covarianza (U,V) de $X$ e $Y$ es el n\'umero no negativo definido por su cuadrado:
+			$$
+				{Cov}^2_{(U,V)}(X,Y) = \E[X_U X'_U Y_V Y'_V],
+			$$
+			siempre que el lado derecho sea positivo y finito.
+		\end{defn}
+
+		En particular, si ${W}$ y ${W'}$ son procesos brownianos con funci\'on de covarianza \ref{brw_covariamce} en $\R^p$ y $\R^q$ respectivamente, la Covarianza Browniana de $X$ e $Y$ esta definida por:
+
+		\begin{equation}
+			\mathcal{W}^2(X,Y) = Cov^2_W(X,Y) = Cov^2_{W,W'}(X,Y).
+		\end{equation}
+
+		De la misma forma, para variables aleatorias con varianza finita podemos definir la Varianza Browniana:
+
+		\begin{equation}
+			\mathcal{W}(X) = Cov_W(X) = Cov_{W}(X,X).
+		\end{equation}
+		
+		Y con esto, podemos definir la correlaci\'on Browniana:
+		
+		\begin{defn}[Correlaci\'on Browniana]
+			Definimos la correalci\'on Browniana de dos variables aleatorias con valores reales $X$ e $Y$ con segundos momentos finitos como:
+			\begin{equation}	
+				Cor_W(X,Y) = \frac{\mathcal{W}}{\sqrt[]{\mathcal{W}(X)\mathcal{W}(Y)}},
+			\end{equation}
+			siempre que el denominador no sea 0; otro caso $Cor_W(X,Y) = 0$.
+		\end{defn}
+
+		Ahora, solo nos queda probar que $Cov_W(X,Y)$ existe para vectores aleatorios de segundos momentos finitos, y con esto derivar la Covarianza Browniana. Para esto, tenemos el siguiente teorema:
+
+		\begin{thm}
+			Si $X$ es un vector aleatorio con valores en $\R^p$, e $Y$ es un vector aleatorio con valores en $\R^q$, y $\E(|X|^2+|Y|^2)>\infty$, entonces $\E[X_{W}X'_{W}Y_{W'}Y'_{W'}]$ es no negativo y finito, y:
+			\begin{align*}
+				\mathcal{W}^2(X,Y) &= \E[X_{W}X'_{W}Y_{W'}Y'_{W'}]\\
+								   &= \E|X-X'||Y-Y'| + \E|X-X'|\E|Y-Y'| - \\
+								   &\qquad - \E|X-X'||Y-Y''|\E|X-X''||Y-Y'|,
+ 			\end{align*}
+			donde $(X,Y)$, $(X',Y')$, y $(X'',Y'')$ son iid.
+		\end{thm}
+
+		\todo{revisar la demostraci\'on del teorema}
 
 	\subsection{Equivalencia entre covarianzas}
 		\todo{repasar la secci\'on de convergencia}

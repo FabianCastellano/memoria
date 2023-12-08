@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bcf:controlfile version="3.9" bltxversion="3.18b" xmlns:bcf="https://sourceforge.net/projects/biblatex">
+<bcf:controlfile version="3.10" bltxversion="3.19" xmlns:bcf="https://sourceforge.net/projects/biblatex">
   <!-- BIBER OPTIONS -->
   <bcf:options component="biber" type="global">
     <bcf:option type="singlevalued">
@@ -37,6 +37,11 @@
     <bcf:option type="singlevalued">
       <bcf:key>alphaothers</bcf:key>
       <bcf:value>+</bcf:value>
+    </bcf:option>
+    <bcf:option type="multivalued">
+      <bcf:key>extradatecontext</bcf:key>
+      <bcf:value order="1">labelname</bcf:value>
+      <bcf:value order="2">labeltitle</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
@@ -276,6 +281,11 @@
   </bcf:options>
   <!-- online -->
   <bcf:options component="biblatex" type="online">
+    <bcf:option type="multivalued">
+      <bcf:key>extradatecontext</bcf:key>
+      <bcf:value order="1">labelname</bcf:value>
+      <bcf:value order="2">labeltitle</bcf:value>
+    </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
       <bcf:value>0</bcf:value>
@@ -495,6 +505,7 @@
     <bcf:option datatype="xml">sortingnamekeytemplate</bcf:option>
     <bcf:option datatype="xml">sortingtemplate</bcf:option>
     <bcf:option datatype="xml">extradatespec</bcf:option>
+    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -718,6 +729,7 @@
     <bcf:option datatype="xml">translit</bcf:option>
     <bcf:option datatype="xml">sortexclusion</bcf:option>
     <bcf:option datatype="xml">sortinclusion</bcf:option>
+    <bcf:option datatype="xml">extradatecontext</bcf:option>
     <bcf:option datatype="xml">labelnamespec</bcf:option>
     <bcf:option datatype="xml">labeltitlespec</bcf:option>
     <bcf:option datatype="xml">labeldatespec</bcf:option>
@@ -2392,27 +2404,35 @@
     <bcf:citekey order="41" intorder="1">Chen2012</bcf:citekey>
     <bcf:citekey order="42" intorder="1">Szekely2009</bcf:citekey>
     <bcf:citekey order="43" intorder="1">Chen2012</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">Szekely2007</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">Szekely2009</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">Reshef2011</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">Reshef2015</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">Szekely2007</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">Szekely2009</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">bicego2016</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">bicego2016</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">boxcox64</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">lane2003introduction</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">videla2007</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Savitzky-Golay</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">Reshef2011</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">Reshef2015</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">inftheo2006</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">inftheo2008</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">infcorr</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">renyi1959</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">Reshef2015a</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">Szekely2009</bcf:citekey>
     <bcf:citekey order="60" intorder="1">bicego2016</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">draper1969</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">boxcoximg</bcf:citekey>
-    <bcf:citekey order="63" intorder="1">lee2009mr</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">boxcox64</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">lane2003introduction</bcf:citekey>
     <bcf:citekey order="64" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">draper1969</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">lee2009mr</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">boxcoximg</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

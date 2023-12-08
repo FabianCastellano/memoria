@@ -39,6 +39,7 @@
 		$$
 
 		El estad\'istico $\hat{\varphi}$ es $1/d$-interpretable con respecto a $\Phi$ en $\mathcal{Q}$ en $y$ con una confianza de $1-\alpha$ si y solo si el di\'ametro de $I_\alpha^{\hat{\varphi}}(y)$ es a lo sumo $d$.
+		\label{interpretabilidad}
 	\end{defn}
 
 	Ver la Figura \ref{reshef_2015_f1} para una ilustraci\'on. La correspondencia entre pruebas de hip\'otesis y estimaciones de intervalos [20] nos proporciona la siguiente garant\'ia sobre la probabilidad de cobertura del intervalo interpretable, cuya prueba omitimos.
@@ -64,15 +65,69 @@
 		\centering
 		\includegraphics[scale = 0.4]{reshef_2015_fig1.png}
 		\caption{
+			\label{reshef_2015_f1}
 			Una ilustraci\'on esquem\'atica de intervalos confiables e interpretables. En ambas partes de la figura, $\mathcal{Q}$ consiste en relaciones ruidosas de tres tipos diferentes representados en tres colores distintos. (a) La relaci\'on entre un estad\'istico $\hat{\varphi}$ y $\Phi$ en $\mathcal{Q}$ en un tama\~no de muestra finito. Los l\'imites inferior y superior de cada regi\'on sombreada indican los percentiles $(\alpha / 2) \cdot 100 \%$ y $(1 - \alpha / 2) \cdot 100 \%$ de la distribuci\'on de muestreo de $\hat{\varphi}$ para cada tipo de relaci\'on en varios valores de $\Phi$. El intervalo vertical (en negro) es el intervalo confiable $R_\alpha^{\hat{\varphi}}(x)$, y el intervalo horizontal (en rojo) es el intervalo interpretable $I_\alpha^{\hat{\varphi}}(y)$. (b) En el l\'imite de muestra grande, reemplazamos $\hat{\varphi}$ por una cantidad poblacional $\varphi$. El intervalo vertical (en negro) es el intervalo confiable $R^{\varphi}(x)$, y el intervalo horizontal (en rojo) es el intervalo interpretable $I^{\varphi}(y)$.}
-		\label{reshef_2015_f1}
 	\end{figure}
 
 	\section{Definiendo Equitabilidad}
 
-	\todo{definir $\alpha$-fiabilidad y $\alpha$-interpretabilidad, y finalmente equitatibilidad }
+	La proposici\'on \ref{interpretabilidad} implica que si los intervalos de interpretabilidad de $\hat{\varphi}$ con respecto a $\Phi$ son pequen\~os, entonces $\hat{\varphi}$ dar\'a buenos intervalos de estimac\'on de $\Phi$. Hay variadas formas de resumir si los intervalos de interpretabilidad son peque\~nos; nos enfocaremos en dos formas simples de hacerlo.
+	
+	\begin{defn}[$\alpha$-fiabilidad y $\alpha$-interpretabilidad]
+		La \textit{$\alpha$-fiabilidad (resp. $\alpha$-interpretabilidad) en caso peor} de $\hat{\varphi}$ es $1/d$ si es $1/d$-fiable (resp. interpretable) para todo $x$ (resp. $y$) $\in [0,1]$. Se dice que $\hat{\varphi}$ es \textit{$1/d$-fiable (resp. $\alpha$-interpretable) en caso peor} con probabilidad (resp. confianza) $1-\alpha$.
 
-	\subsection[equitabilidadmice]{Equitabilidad del las medidas}
+		La \textit{$\alpha$-fiabilidad (resp. $\alpha$-interpretabilidad) en caso promedio} de $\hat{\varphi}$ es $1/d$ si su fiabilidad (resp. interpretabilidad), promediada sobre todo $x$ (resp. $y$) $\in [0,1]$, es al menos $1/d$. Se dice que $\hat{\varphi}$ es \textit{$1/d$-fiable (resp. $\alpha$-interpretable) en caso promedio} con probabilidad (resp. confianza) $1-\alpha$
+	\end{defn}
+
+	Con este vocaculario, podemos definir equitabilidad.
+
+	\begin{defn}
+		La \textit{Equitabilidad en caso promedio/peor} es simplemente \textit{interpretabilidad en caso promedio/peor} con respecto a un $\Phi$ que refeleje la fuerza de la relaci\'on. 
+	\end{defn}
+
+	\begin{rem}
+		Notemos que Equitabilidad es un caso en particular de interpretabilidad donde $\Phi$ cumple un rol en especifico. Es posible definir un $\Phi$ que mida otras propiedades y resalte otro tipo de relaci\'ones. En este trabajo usaremos $R^2$ para medir fuerza entre relaciones, ahondaremos m\'as en esto en la siguiente secci\'on.
+	\end{rem}
+
+	Las definiciones correspondientes de interpretabilidad/fiablidad en caso promedio/peor son posibles para $\varphi$ in el caso de l\'imite para muestras grandes. En este caso, es posible que todos los intervalos de interpretabilidad de $\varphi$ con respecto a $\Phi$ tengan taman\~o 0, esto es, que el valor de $\varphi(Z)$ determina \'unicamente el valor de $\Phi(Z)$. En este caso, la interpretabilidad/fiablidad en caso promedio/peor de $\varphi$ es $\infty$, y se dice que $\varphi$ es perfectamente interpretable/fiable, o perfectamente equitativo dependiendo del contexto.
+
+	Antes de seguir con la siguiente secci\'on, con el objetivo de construir intuici\'on, vamos a presentar dos ejemplos de estadi\'isticos que son perfectamente interpretables en el caso 
+	l\'imite para muestras grandes. Primero, la Informaci\'on M\'utua \cite{inftheo2006}\cite{inftheo2008} es perfectamente interpretable con respecto a la correlaci\'on $\rho^2$ en el conjunto $\mathcal{Q}$ de vectores normales bivariados. Esto es dado que para normales bivariadas tenemos que $1-2^{-2I} = \rho^2$ \cite{infcorr}. Adicionalmente, el Teorema 6 de \cite{Szekely2009} muestra que para normales bivariadas, la correlaci\'on por distancia es tambi\'en es una funci\'on completamente determinada por $\rho^2$. Por lo tanto, la correlaci\'on por distancia tambi\'en es perfectamente interpretable y perfectamentef fiable con respecto a $\phi^2$ en el conjunto normales bivariadas $\mathcal{Z}$.
+
+	La interpretabilidad perfecta con respecto a $\rho^2$ en bivariadas normales exhibida en ambos ejemplos es de hecho equivalente a una de las ''propiedades fundamentales'' introducidas por R\'enyi en su m\'etodo para evaluar las propiedades ideales de medidas de dependencia \cite{renyi1959}. Esto contiene un compromiso: Por un lado garantiza interpretabilidad perfecta, pero por el otro, solo aplica en un conjunto de relaciones relativamente pequen\~o. Uno de los objetivo de la Equitabilidad es relajar el requermiento de ''perfecci\'on'' a cambio de la habilidad de aplicar a un conjunto de relaciones m\'as amplio, por ejemplo, un conjuntod e funcionales ruidosos. Por tanto, es posible ver la equitabilidad como una generalizaci\'on de los requermiento de R\'enyi que nos permite hacer un intercambio entre la precisi\'on con la que nuestro estad\'istico nos informa sobre $\Phi$ y el conjunto $\mathcal{Q}$ sobre el cu\'al act\'ua.
+	
+	\section[interpretabilidad sobre r2]{Interpretabilidad sobre $R^2$}
+
+	Durante este cap\'itulo hemos mencionado el concepto de relaciones funcionales ruidosas y de $R^2$, ahora los definimos de forma formal. Comenzemos primero con $R^2$
+	\begin{defn}[$R^2$]
+		Sea $y=[y_1,\dots,y_n]\in\R^n$ un vector de muestras de una variable aleatoria y sea $f:\R\to\R$ una funci\'on que modela la variable aleatoria, definamos $f_i:=f(y_i)$. El coeficiente de determinaci\'on o $R^2$ se define como:
+
+		$$
+		R^2 = 1 - \frac{\sum_i(y_i-f_i)^2}{\sum_i(y_i-\bar{y})^2},
+		$$
+
+		donde $\sum_i(y_i-f_i)^2$ corresponde a la suma del cuadrado de los residuales, $\sum_i(y_i-\bar{y})^2$ es la suma total de cuadrados (proporcional a la varianza), e $\hat{y}$ es el promedio de la muestra.
+	\end{defn}
+
+	En palabras simples, $R^2$ es la proporci\'on de variaci\'on en la variable dependiente que puede ser explicado por la variable independiente. Notemos que al momento de hacer el an\'alisis de equitabilidad, tenemos total claridad de cual es nuestra funci\'on $f$, dado que nosotros definimos la relaci\'on. Veamos ahora la siguiente definici\'on.	
+		
+	\begin{defn}[Relaci\'on Funcional Ruidosa]
+		Una variable aleatoria distribuida sobre $\R^2$ es llamada una \textit{relaci\'on funcional ruidosa} si, y solo si, puede ser escrita en la forma $(X+\epsilon, f(X)+\epsilon\prime)$, donde $f:[0,1]\to\R$, $X$ es una variable aleatoria distribuida sobre $[0,1]$, y $\epsilon$ y $\epsilon\prime$ son (posiblemente nulas) distribuciones aleatorias. Denotamos el conjunto de todas las relaciones funcionales ruidosas como $\mathcal{F}$
+		\label{ruido_func}
+	\end{defn}
+
+	Ya con esto, tenemos todo lo que necesitamos para definir la equitabilidad que usaremos para los an\'alisis de la siguiente secci\'on: Equitabilidad sobre $R^2$
+
+	\begin{defn}[Equitabilidad en relaciones funcionales sobre $R^2$]
+		Sea $\mathcal{Q}\in\mathcal{F}$ un conjunto de relaciones funcionales ruidosas. Una medida de dependencia es $1/d$-equitativa en $\mathcal{Q}$ con respecto a $R^2$ si es $1/d$-interpretable sobre $R^2$ en $\mathcal{Q}$ 
+	\end{defn}
+
+	Es necesario destacar que esta definici\'on aun depende del conjunto $\mathcal{Q}$ en cuesti\'on. El m\'etodo generalmente utilizado en la literatura ha sido fijar un conjunto $F$ de funciones tales que sean lo suficientemente grandes como para ser representativo de las relaciones encontradas en datos reales, pero que por otro lado sean lo suficientemente pequen\~nos tal que permitan an\'alsis emp\'irico. Discutiremos el $F$ a ultilziar en la siguiente secci\'on, donde realizaremos un ana\'alisis de equitabilidad sobre los estad\'isticos definidos en este trabajo.
+
+	Tan importante como la elecc\'ion de funciones a incluir en $F$, es la elecci\'on de distribuciones marginales y el ruido, los cuales fueron no son especificados en la definici\'on \ref{ruido_func}. Varias posibilidades han sido propuestas por Reshef et al. \cite{Reshef2015a}, pero la m\'as utilizada en la literatura, y la que usaremos en la siguiente secci\'on, continua siendo la m\'as simple con $X\sim Unif$, $\epsilon\prime\sim\mathcal{N}(0,\sigma^2)$ con $\sigma$ variable y $\epsilon\equiv0$. 
+
+	
+	\subsection[equitabilidadmice]{Equitabilidad de las medidas}
 
 	\todo{esta secci\'on está extraida de la secci\'on en el paper, la idea es hacer un an\'alisis similar para todas medidas propuestas
 	}
