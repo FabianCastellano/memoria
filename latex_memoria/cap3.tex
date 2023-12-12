@@ -264,22 +264,30 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 		\end{proof}
 
 	\subsection{Equivalencia entre covarianzas}
-	3.3. The surprising coincidence: $\mathcal{W}=\mathcal{V}$.
-
-	THEOREM 8. For arbitrary $X \in \mathbb{R}^p, Y \in \mathbb{R}^q$ with finite second moments
-	$$
-	\mathcal{W}(X, Y)=\mathcal{V}(X, Y) .
-	$$
 	
-	Proof. Both $\mathcal{V}$ and $\mathcal{W}$ are nonnegative, hence, it is enough to show that their squares coincide. Lemma 1 can be applied to evaluate $\mathcal{V}^2(X, Y)$. In the numerator of the integral we have terms like
+	Ahora estudiaremos la equivalencia entre la Covarianza por distancia y la Covarianza Browniana. Para esto, veamos el siguiente teorema
+
+	\begin{thm}
+		Para un $X \in \mathbb{R}^p, Y \in \mathbb{R}^q$ arbitrario, con segundos momentos finitos
+			$$
+			\mathcal{W}(X, Y)=\mathcal{V}(X, Y) .
+			$$
+			\end{thm}
+	
+	\begin{proof}
+		
+	Proof. Ambos $\mathcal{V}$ y $\mathcal{W}$ son no negativos, por tanto, basta por demostrar que sus cuadrados coinciden. Para esto, primero notemos Lemma 1 puede ser aplicado para evaluar $\mathcal{V}^2(X, Y)$. En el numerador de la integral tenemos t\'erminos como:
+	
 	$$
 	E\left[\cos \left\langle X-X^{\prime}, t\right\rangle \cos \left\langle Y-Y^{\prime}, s\right\rangle\right],
 	$$
-	where $X, X^{\prime}$ are i.i.d. and $Y, Y^{\prime}$ are i.i.d. Now apply the identity
+
+	donde $X, X^{\prime}$ son i.i.d. y $Y, Y^{\prime}$ son i.i.d. Ahora, aplicando la identidad:
 	$$
 	\cos u \cos v=1-(1-\cos u)-(1-\cos v)+(1-\cos u)(1-\cos v)
 	$$
-	and Lemma 1 to simplify the integrand. After cancelation in the numerator of the integrand, there remains to evaluate integrals of the type
+	y el Lemma 1 para simplificar el integrando. Despu\'es de cancelar en el numerador del integrando, queda por evaluar integrales del tipo:
+
 	$$
 	\begin{aligned}
 	& E \int_{\mathbb{R}^{p+q}} \frac{\left.\left[1-\cos \left\langle X-X^{\prime}, t\right\rangle\right]\left[1-\cos \left\langle Y-Y^{\prime}, s\right\rangle\right)\right]}{|t|^{1+p}|s|^{1+q}} d t d s \\
@@ -287,21 +295,21 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 	& =c_p c_q E\left|X-X^{\prime}\right| E\left|Y-Y^{\prime}\right|
 	\end{aligned}
 	$$
-	
-	Applying similar steps, after further simplification, we obtain
+	Luego de esto, y simplificando, obtenemos:
 	$$
 	\begin{aligned}
 	\mathcal{V}^2(X, Y)= & E\left|X-X^{\prime}\right|\left|Y-Y^{\prime}\right|+E\left|X-X^{\prime}\right| E\left|Y-Y^{\prime}\right| \\
 	& -E\left|X-X^{\prime}\right|\left|Y-Y^{\prime \prime}\right|-E\left|X-X^{\prime \prime}\right|\left|Y-Y^{\prime}\right|,
 	\end{aligned}
 	$$
-	and this is exactly equal to the expression (3.7) obtained for $\mathcal{W}(X, Y)$ in Theorem 7 .
-	As a corollary to Theorem 8, the properties of Brownian covariance for random vectors $X$ and $Y$ with finite second moments are therefore the same properties established for distance covariance $\mathcal{V}(X, Y)$ in Theorem 3.
+	y esta es exactamente igual a la expresi\'on (3.7) obtenida para $\mathcal{W}^2(X, Y)$ en el Teorema 7.
+	\end{proof}
 
-	The surprising result that Brownian covariance equals distance covariance dCov, exactly as defined in (2.6) for $X \in \mathbb{R}^p$ and $Y \in \mathbb{R}^q$, parallels a familiar special case when $p=q=1$. For bivariate $(X, Y)$ we found that $\mathcal{R}(X, Y)$ is a natural counterpart of the absolute value of the Pearson correlation. That is, if in (3.5) $U$ and $V$ are the simplest nonrandom function $i d$, then we obtain the square of Pearson covariance $\sigma_{X, Y}^2$. Next, if we consider the most fundamental random processes, $U=W$ and $V=W^{\prime}$, we obtain the square of distance covariance, $\mathcal{V}^2(X, Y)$.
+	Como corolario del Teorema 8, tenemos que las propiedades de la Covarianza Browniana para vectores aleatorios $X$ e $Y$ con segundos momentos finitos son las mismas propiedades establecidas para la Covarianza por distancia $\mathcal{V}(X, Y)$ en el Teorema 3.
+	
+	El sorpredente resultado de que la Covarianza Browniana es igual a la Covarianza por distancia, exactamente como se define en (2.6) para $X \in \mathbb{R}^p$ e $Y \in \mathbb{R}^q$, es paralelo a un caso especial familiar cuando $p=q=1$. Para bivariados $(X, Y)$ encontramos que $\mathcal{R}(X, Y)$ es un contraparte natural del valor absoluto de la correlaci\'on de Pearson. Es decir, si en (3.5) $U$ y $V$ son la funci\'on no aleatoria m\'as simple $id$, entonces obtenemos el cuadrado de la covarianza de Pearson $\sigma_{X, Y}^2$. Luego, si consideramos los procesos aleatorios m\'as fundamentales, $U=W$ y $V=W^{\prime}$, obtenemos el cuadrado de la covarianza por distancia, $\mathcal{V}^2(X, Y)$.
 
-	Interested readers are referred to Székely and Bakirov [25] for the background of the interesting coincidence in Theorem 8 .
-		\todo{Traducir esto}
+		\todo{Arreglar referencias y Lemma 1}
 \section[]{Correlaci\'on de Pearson}
 
 	\subsection{Introducci\'on}
