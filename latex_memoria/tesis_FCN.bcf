@@ -2401,3 +2401,77 @@
     <bcf:citekey order="38" intorder="1">SimonTibshirani</bcf:citekey>
     <bcf:citekey order="39" intorder="1">SimonTibshirani</bcf:citekey>
     <bcf:citekey order="40" intorder="1">datasaurus</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">Chen2012</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">Chen2012</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">videla2007</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">Savitzky-Golay</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">Reshef2011</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">Reshef2015</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">inftheo2006</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">inftheo2008</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">infcorr</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">renyi1959</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">Reshef2015a</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">boxcox64</bcf:citekey>
+    <bcf:citekey order="64" intorder="1">lane2003introduction</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">bicego2016</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">draper1969</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">boxcoximg</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">lee2009mr</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">boxcoximg</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="nty">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">presort</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="2" final="1">
+      <bcf:sortitem order="1">sortkey</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3">
+      <bcf:sortitem order="1">sortname</bcf:sortitem>
+      <bcf:sortitem order="2">author</bcf:sortitem>
+      <bcf:sortitem order="3">editor</bcf:sortitem>
+      <bcf:sortitem order="4">translator</bcf:sortitem>
+      <bcf:sortitem order="5">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="6">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="4">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="5">
+      <bcf:sortitem order="1">sortyear</bcf:sortitem>
+      <bcf:sortitem order="2">year</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="6">
+      <bcf:sortitem order="1">volume</bcf:sortitem>
+      <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="nty/global//global/global"
+                type="entry"
+                sortingtemplatename="nty"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>
