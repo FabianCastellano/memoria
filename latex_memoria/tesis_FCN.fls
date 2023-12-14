@@ -1194,6 +1194,8 @@ INPUT ./cap3.tex
 INPUT cap3.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx5.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT ./cap4.tex
 INPUT ./cap4.tex
 INPUT ./cap4.tex

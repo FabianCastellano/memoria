@@ -111,16 +111,17 @@ La primera de estas afirmaciones es importante, ya que nos permite utulizar esta
 
 \subsection{Definiciones}
 
-Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
+Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
 
 \begin{defn}[Covarianza por distancia]
 	La Covarianza por distancia (dCov) entre los vectores aleatorios $X$ e $Y$ con primeros momentos finitos es el n\'umero no negativo $\mathcal{V}(X, Y)$ definido por:
-	$$
-	\begin{aligned}
-	\mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
-	& =\frac{1}{c_p c_q} \int_{\mathbb{R}^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
-	\end{aligned}
-	$$
+	\begin{equation}
+		\begin{aligned}\label{dcov_formula}
+			\mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
+			& =\frac{1}{c_p c_q} \int_{\R^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
+			\end{aligned}
+	\end{equation}
+
 	\end{defn}
 
 	Similarmente, la Varianza por distancia (dVar) se define como la raiz cuadrada:
@@ -167,6 +168,57 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 		$$
 	\end{defn}
 
+	Por ultimo, plantearemos los siguientes teoremas que nos entregan  propiedades importantes de la Correlaci\'on por distancia:
+
+	\begin{thm}
+		Si $(\mathbf{X}, \mathbf{Y})$ es una muestra aleatoria del vector aleatorio $(X, Y)$, entonces
+		$$
+		\mathcal{V}n^2(\mathbf{X}, \mathbf{Y})=\left\|f{X, Y}^n(t, s)-f_X^n(t) f_Y^n(s)\right\|^2 .
+		$$
+	\end{thm}
+	\begin{thm}
+		Si $E|X|_p<\infty$ and $E|Y|_q<\infty$, entonces casi seguramente
+		$$
+		\lim _{n \rightarrow \infty} \mathcal{V}_n(\mathbf{X}, \mathbf{Y})=\mathcal{V}(X, Y) .
+		$$
+	\end{thm}
+	
+	\begin{cor}
+		If $E\left(|X|_p+|Y|_q\right)<\infty$, then almost surely
+		$$
+		\lim _{n \rightarrow \infty} \mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})=\mathcal{R}^2(X, Y) \text {. }
+		$$
+	\end{cor}
+	\begin{thm}\label{thm3_brcov}
+		Para vectores aleatorios $X \in \mathbb{R}^p$ y $Y \in \mathbb{R}^q$ tal que $E\left(|X|_p+\right.$ $\left.|Y|_q\right)<\infty$, se tienen las siguientes propiedades:
+		\begin{enumerate}
+			\item $0 \leq \mathcal{R}(X, Y) \leq 1$, y $\mathcal{R}=0$ si y solo si $X$ e $Y$ son independientes.
+			\item $\mathcal{V}\left(a_1+b_1 C_1 X, a_2+b_2 C_2 Y\right)=\sqrt{\left|b_1 b_2\right|} \mathcal{V}(X, Y)$, para todos los vectores constantes $a_1 \in \mathbb{R}^p, a_2 \in \mathbb{R}^q$, escalares $b_1, b_2$ y matrices ortogonales $C_1, C_2$ en $\mathbb{R}^p$ y $\mathbb{R}^q$, respectivamente.	
+			\item Si el vector aleatorio $\left(X_1, Y_1\right)$ es ind. del vector aleatorio $\left(X_2, Y_2\right)$, se tiene
+			 $$
+			\mathcal{V}\left(X_1+X_2, Y_1+Y_2\right) \leq \mathcal{V}\left(X_1, Y_1\right)+\mathcal{V}\left(X_2, Y_2\right) .
+			$$
+			La igualdad se cumple si y solo si $X_1$ e $Y_1$ son constantes, o $X_2$ e $Y_2$ son constantes, o $X_1, X_2, Y_1, Y_2$ son mutuamente independientes.
+
+			\item $\mathcal{V}(X)=0$ implica que $X=E[X]$, casi seguramente.
+			\item $\mathcal{V}(a+b C X)=|b| \mathcal{V}(X)$, para todos los vectores constantes $a$ en $\mathbb{R}^p$, escalares $b$, y matrices ortogonales $p \times p$ $C$.
+			\item Si $X$ e $Y$ son independientes, entonces $\mathcal{V}(X+Y) \leq \mathcal{V}(X)+\mathcal{V}(Y)$. La igualdad se cumple si y solo si uno de los vectores aleatorios $X$ o $Y$ es constante.
+		\end{enumerate}
+	\end{thm}
+	\begin{thm}
+	\begin{enumerate}
+		\item $\mathcal{V}_n(\mathbf{X}, \mathbf{Y}) \geq 0$.
+		\item $\mathcal{V}_n(\mathbf{X})=0$ si y solo si cada observaci\'on de la muestra es id\'entica.
+		\item $0 \leq \mathcal{R}_n(\mathbf{X}, \mathbf{Y}) \leq 1$.
+		\item $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})=1$ implica que las dimensiones de los subespacios lineales generados por $\mathbf{X}$ y $\mathbf{Y}$ respectivamente son casi seguramente iguales, y si asumimos que estos subespacios son iguales, entonces en este subespacio
+		\item $$
+		\mathbf{Y}=a+b \mathbf{X} C,
+		$$
+		para alg\'un vector $a$, n\'umero real no nulo $b$, y matriz ortogonal $C$.
+	\end{enumerate}	
+	\end{thm}
+	demostraci\'ones de todos estos teoremas pueden ser encontrados en Szekely y Rizzo (2009) \cite{Szekely2009}.
+
 	\subsection{Covarianza Browniana}
 		
 		Para introducir la noci\'on de covarianza browniana, comenzaremos considerando la covarianza cuadrada del producto-momento. Recordemos que una variable prima $X'$ denota una copia independiente e id\'enticamente distribuida (i.i.d.) del símbolo no prima $X$. Para dos variables aleatorias continuas de valores reales, el cuadrado de su covarianza clásica es:
@@ -190,7 +242,7 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 		\end{equation}
 			
 
-		Esto es dos veces la covarianza estandar para un proceso Wiener. Pero en adelante el factor de dos nos simplificar\'a algunos calculos, por lo que en el resto de la secci\'on asumiermos esta funcion de covarianza \ref{brw_covariamce} para $\mathcal{W}$. Ya con esto, podemos definir la Covarianza Browniana 
+		Esto es dos veces la covarianza estandar para un proceso Wiener. Pero en adelante el factor de dos nos simplificar\'a algunos calculos, por lo que en el resto de la secci\'on asumiermos esta funci\'on de covarianza \ref{brw_covariamce} para $\mathcal{W}$. Ya con esto, podemos definir la Covarianza Browniana 
 
 		\begin{defn}[Covarianza Browniana]
 			La Covarianza Browniana (o covarianza Wiener) de dos variables aleatorias con valores reales $X$ e $Y$, con segundos monetos fin\'itos es el n\'umero no negativo definido por su cuadrado:
@@ -212,9 +264,10 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 
 		\begin{defn}
 			Si $X$ es un vector aleatorio con valores en $\R^p$ y $Y$ es un vector aleatorio con valores en $\R^q$, y $U(s)$ y $V(t)$ son procesos aleatorios, definamos para todo $s\in\R^p$, $t\in\R^q$, entonces la covarianza (U,V) de $X$ e $Y$ es el n\'umero no negativo definido por su cuadrado:
-			$$
+			\begin{equation}\label{eq_35_brcov}
 				{Cov}^2_{(U,V)}(X,Y) = \E[X_U X'_U Y_V Y'_V],
-			$$
+			\end{equation}
+				
 			siempre que el lado derecho sea positivo y finito.
 		\end{defn}
 
@@ -242,12 +295,12 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 
 		Ahora, solo nos queda probar que $Cov_W(X,Y)$ existe para vectores aleatorios de segundos momentos finitos, y con esto derivar la Covarianza Browniana. Para esto, tenemos el siguiente teorema:
 
-		\begin{thm}
+		\begin{thm}\label{thm_exists_cov_browniana}
 			Si $X$ es un vector aleatorio con valores en $\R^p$, e $Y$ es un vector aleatorio con valores en $\R^q$, y $\E(|X|^2+|Y|^2)>\infty$, entonces $\E[X_{W}X'_{W}Y_{W'}Y'_{W'}]$ es no negativo y finito, y:
 			\begin{align}
 				\mathcal{W}^2(X,Y) &= \E[X_{W}X'_{W}Y_{W'}Y'_{W'}]\\
 								   &= \E|X-X'||Y-Y'| + \E|X-X'|\E|Y-Y'| - \label{cov_browniana_exists} \\ 
-								   &\qquad - \E|X-X'||Y-Y''|\E|X-X''||Y-Y'|,
+								   &\qquad - \E|X-X'||Y-Y''|\E|X-X''||Y-Y'|,\label{eq_37_brcov}
  			\end{align}
 			donde $(X,Y)$, $(X',Y')$, y $(X'',Y'')$ son iid.
 		\end{thm}
@@ -265,10 +318,51 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 
 	\subsection{Equivalencia entre covarianzas}
 	
-	Ahora estudiaremos la equivalencia entre la Covarianza por distancia y la Covarianza Browniana. Para esto, veamos el siguiente teorema
+	Ahora estudiaremos la equivalencia entre la Covarianza por distancia y la Covarianza Browniana. Pero antes de esto necesitamos plantear el siguiente lema:
 
-	\begin{thm}
-		Para un $X \in \mathbb{R}^p, Y \in \mathbb{R}^q$ arbitrario, con segundos momentos finitos
+	\begin{lem}\label{lemma_1_brcov}
+		Si $0<\alpha<2$, entonces para todo $x$ en $\R^d$
+		$$
+		\int_{\R^d} \frac{1-\cos \langle t, x\rangle}{|t|_d^{d+\alpha}} d t=C(d, \alpha)|x|_d^\alpha,
+		$$
+		donde
+		$$
+		C(d, \alpha)=\frac{2 \pi^{d / 2} \Gamma(1-\alpha / 2)}{\alpha 2^\alpha \Gamma((d+\alpha) / 2)},
+		$$
+		y $\Gamma(\cdot)$ es la funci\'on completea gamma. Las integrales en 0 y $\infty$ se entienden en el sentido de valor principal: $\lim_{\varepsilon \rightarrow 0} \int_{\R^d \backslash\left\{\varepsilon B+\varepsilon^{-1} B^c\right\}}$, donde $B$ es la bola unitaria (centrada en 0) en $\R^d$ y $B^c$ es el complemento de $B$.
+	\end{lem}
+	Una demostraci\'on de este lemma puede ser entontrada en Székely and Rizzo (2007) \cite{Szekely2007}. El Lemma \ref{lemma_1_brcov}
+	sugiere que la funci\'on de pesos
+	\begin{equation}\label{eq_23_brcov}
+	w(t, s ; \alpha)=\left(\left.\left.C(p, \alpha) C(q, \alpha)|t|_p^{p+\alpha}\right|s\right|_q ^{q+\alpha}\right)^{-1}, \quad 0<\alpha<2 .	
+	\end{equation}
+
+	En el caso m\'as simple correspondiente a $\alpha=1$ y norma euclidiana $|x|$,
+	\begin{equation}\label{eq_24_brcov}
+		w(t, s)=\left(c_p c_q|t|_p^{1+p}|s|_q^{1+q}\right)^{-1},
+		\end{equation}
+	
+	donde,
+	\begin{equation}\label{eq_25_brcov}
+		c_d=C(d, 1)=\frac{\pi^{(1+d) / 2}}{\Gamma((1+d) / 2)} .
+	\end{equation}
+	
+	(La constante $2 c_d$ es el \'area de la esfera unitaria en $\R^{d+1}$).
+	\begin{rem}
+		El Lemma \ref{lemma_1_brcov} es aplicado para evaluar el integrando en \ref{dcov_formula} para las funciones de peso \ref{eq_23_brcov} y \ref{eq_24_brcov}. Por ejemplo, si $\alpha=1$ \ref{eq_24_brcov}, entonces por el Lemma \ref{lemma_1_brcov} existen constantes $c_p$ y $c_q$ tal que para $X$ en $\R^p$ y $Y$ en $\R^q$,
+		$$
+		\begin{gathered}
+		\int_{\mathbb{R}^p} \frac{1-\exp \{i\langle t, X\rangle\}}{|t|p^{1+p}} d t=c_p|X|_p, \quad \int{\mathbb{R}^q} \frac{1-\exp \{i\langle s, Y\rangle\}}{|s|_q^{1+q}} d s=c_q|Y|_q, \\
+		\int_{\mathbb{R}^p} \int_{\mathbb{R}^q} \frac{1-\exp \{i\langle t, X\rangle+i\langle s, Y\rangle\}}{|t|_p^{1+p}|s|_q^{1+q}} d t d s=c_p c_q|X|_p|Y|_q
+		\end{gathered}
+		$$
+	\end{rem}
+	
+	Ya con esto, podemos pasar el resultado principal de esta secci\'on, con el siguiente teorema.
+	
+
+	\begin{thm}\label{thm_8_brcov}
+		Para un $X \in \R^p, Y \in \R^q$ arbitrario, con segundos momentos finitos
 			$$
 			\mathcal{W}(X, Y)=\mathcal{V}(X, Y) .
 			$$
@@ -276,7 +370,7 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 	
 	\begin{proof}
 		
-	Proof. Ambos $\mathcal{V}$ y $\mathcal{W}$ son no negativos, por tanto, basta por demostrar que sus cuadrados coinciden. Para esto, primero notemos Lemma 1 puede ser aplicado para evaluar $\mathcal{V}^2(X, Y)$. En el numerador de la integral tenemos t\'erminos como:
+	Proof. Ambos $\mathcal{V}$ y $\mathcal{W}$ son no negativos, por tanto, basta por demostrar que sus cuadrados coinciden. Para esto, primero notemos Lemma \ref{lemma_1_brcov} puede ser aplicado para evaluar $\mathcal{V}^2(X, Y)$. En el numerador de la integral tenemos t\'erminos como:
 	
 	$$
 	E\left[\cos \left\langle X-X^{\prime}, t\right\rangle \cos \left\langle Y-Y^{\prime}, s\right\rangle\right],
@@ -286,12 +380,12 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 	$$
 	\cos u \cos v=1-(1-\cos u)-(1-\cos v)+(1-\cos u)(1-\cos v)
 	$$
-	y el Lemma 1 para simplificar el integrando. Despu\'es de cancelar en el numerador del integrando, queda por evaluar integrales del tipo:
+	y el Lemma \ref{lemma_1_brcov} para simplificar el integrando. Despu\'es de cancelar en el numerador del integrando, queda por evaluar integrales del tipo:
 
 	$$
 	\begin{aligned}
-	& E \int_{\mathbb{R}^{p+q}} \frac{\left.\left[1-\cos \left\langle X-X^{\prime}, t\right\rangle\right]\left[1-\cos \left\langle Y-Y^{\prime}, s\right\rangle\right)\right]}{|t|^{1+p}|s|^{1+q}} d t d s \\
-	& \quad=E\left[\int_{\mathbb{R}^p} \frac{1-\cos \left\langle X-X^{\prime}, t\right\rangle}{|t|^{1+p}} d t \times \int_{\mathbb{R}^q} \frac{1-\cos \left\langle Y-Y^{\prime}, s\right\rangle}{|s|^{1+q}} d s\right] \\
+	& E \int_{\R^{p+q}} \frac{\left.\left[1-\cos \left\langle X-X^{\prime}, t\right\rangle\right]\left[1-\cos \left\langle Y-Y^{\prime}, s\right\rangle\right)\right]}{|t|^{1+p}|s|^{1+q}} d t d s \\
+	& \quad=E\left[\int_{\R^p} \frac{1-\cos \left\langle X-X^{\prime}, t\right\rangle}{|t|^{1+p}} d t \times \int_{\R^q} \frac{1-\cos \left\langle Y-Y^{\prime}, s\right\rangle}{|s|^{1+q}} d s\right] \\
 	& =c_p c_q E\left|X-X^{\prime}\right| E\left|Y-Y^{\prime}\right|
 	\end{aligned}
 	$$
@@ -302,14 +396,13 @@ Sean $X$ en $\mathbb{R}^p$ y $Y$ en $\mathbb{R}^q$ vectores aleatorios, donde $p
 	& -E\left|X-X^{\prime}\right|\left|Y-Y^{\prime \prime}\right|-E\left|X-X^{\prime \prime}\right|\left|Y-Y^{\prime}\right|,
 	\end{aligned}
 	$$
-	y esta es exactamente igual a la expresi\'on (3.7) obtenida para $\mathcal{W}^2(X, Y)$ en el Teorema 7.
+	y esta es exactamente igual a la expresi\'on \ref{eq_37_brcov} obtenida para $\mathcal{W}^2(X, Y)$ en el Teorema \ref{thm_exists_cov_browniana}.
 	\end{proof}
 
-	Como corolario del Teorema 8, tenemos que las propiedades de la Covarianza Browniana para vectores aleatorios $X$ e $Y$ con segundos momentos finitos son las mismas propiedades establecidas para la Covarianza por distancia $\mathcal{V}(X, Y)$ en el Teorema 3.
+	Como corolario del Teorema \ref{thm_8_brcov}, tenemos que las propiedades de la Covarianza Browniana para vectores aleatorios $X$ e $Y$ con segundos momentos finitos son las mismas propiedades establecidas para la Covarianza por distancia $\mathcal{V}(X, Y)$ en el Teorema \ref{thm3_brcov}.
 	
-	El sorpredente resultado de que la Covarianza Browniana es igual a la Covarianza por distancia, exactamente como se define en (2.6) para $X \in \mathbb{R}^p$ e $Y \in \mathbb{R}^q$, es paralelo a un caso especial familiar cuando $p=q=1$. Para bivariados $(X, Y)$ encontramos que $\mathcal{R}(X, Y)$ es un contraparte natural del valor absoluto de la correlaci\'on de Pearson. Es decir, si en (3.5) $U$ y $V$ son la funci\'on no aleatoria m\'as simple $id$, entonces obtenemos el cuadrado de la covarianza de Pearson $\sigma_{X, Y}^2$. Luego, si consideramos los procesos aleatorios m\'as fundamentales, $U=W$ y $V=W^{\prime}$, obtenemos el cuadrado de la covarianza por distancia, $\mathcal{V}^2(X, Y)$.
+	El sorpredente resultado de que la Covarianza Browniana es igual a la Covarianza por distancia, exactamente como se define en \ref{dcov_formula} para $X \in \R^p$ e $Y \in \R^q$, es paralelo a un caso especial familiar cuando $p=q=1$. Para bivariados $(X, Y)$ encontramos que $\mathcal{R}(X, Y)$ es un contraparte natural del valor absoluto de la correlaci\'on de Pearson. Es decir, si en \ref{eq_35_brcov} $U$ y $V$ son la funci\'on no aleatoria m\'as simple $id$, entonces obtenemos el cuadrado de la covarianza de Pearson $\sigma_{X, Y}^2$. Luego, si consideramos los procesos aleatorios m\'as fundamentales, $U=W$ y $V=W^{\prime}$, obtenemos el cuadrado de la covarianza por distancia, $\mathcal{V}^2(X, Y)$.
 
-		\todo{Arreglar referencias y Lemma 1}
 \section[]{Correlaci\'on de Pearson}
 
 	\subsection{Introducci\'on}
