@@ -25,9 +25,9 @@ class BoxCoxImg:
          return 0.299*self.img[:,:,0] + 0.587*self.img[:,:,1] + 0.114*self.img[:,:,2]
 
          
-    
-    def transform(self, lam=None, Method='full', normalize=True):
+    def transform(self, lam=None, method='full', normalize=True):
         X = self.bw_img.flatten()
+        
         if normalize:
             X = self.normalize(X)
 
@@ -40,11 +40,11 @@ class BoxCoxImg:
         
         else:
 
-            if Method == 'full':
+            if method == 'full':
                 img, lam = stats.boxcox(X)
                 return self.normalize_reshape(img, shape = self.bw_img.shape), lam
  
-            elif Method == 'hist':
+            elif method == 'hist':
         
 
                 X_hist = np.histogram(X, bins=256)
@@ -55,9 +55,9 @@ class BoxCoxImg:
 
 
                 return self.normalize_reshape(img, shape = self.bw_img.shape), lam
-            elif Method == 'grid':
+            elif method == 'grid':
                 
-                X = self.bw_img
+                X = self.bw_img.copy()
 
                 resolution = 10
 
@@ -73,11 +73,12 @@ class BoxCoxImg:
                         except:
                             continue
                 lam = lam.mean()
-                return self.transform(lam=lam)
-            
-            elif Method == 'moving_window':
 
-                X = self.bw_img
+                return self.transform(lam=lam), lam
+            
+            elif method == 'moving_window':
+
+                X = self.bw_img.copy()
 
                 lam = np.zeros(X.shape)
 
@@ -92,17 +93,17 @@ class BoxCoxImg:
                         except:
                             continue
                 lam = lam.mean()
-                return self.transform(lam=lam)
+                return self.transform(lam=lam), lam
 
 
         
-            elif Method == 'moving_window_moving_lambda':
+            elif method == 'moving_window_moving_lambda':
                 
-                X = self.bw_img
+                X = self.bw_img.copy()
 
                 img = np.zeros(X.shape)
                 lam = np.zeros(X.shape)
-                print(X.shape)
+                # print(X.shape)
 
                 for i in range(0, X.shape[0], 10):
                     for j in range(0, X.shape[1], 10):

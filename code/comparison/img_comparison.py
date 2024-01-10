@@ -21,7 +21,7 @@ class compare_images:
         self.img_1_title = img_1_title
         self.img_2_title = img_2_title
 
-    def show(self):
+    def show_images(self):
         # plot both images side by side
         fig = plt.figure(figsize=(10, 10))
         ax1 = fig.add_subplot(121)
@@ -31,6 +31,24 @@ class compare_images:
         ax2 = fig.add_subplot(122)
         ax2.imshow(self.img_2, cmap='gray')
         ax2.set_title(self.img_2_title)
+
+        plt.show()
+    
+    def show_images_scatter(self):
+        # plot both images side by side and scatter plot of pixels
+        fig, ax = plt.subplots(1, 3, figsize=(15, 5))
+
+        ax[0].imshow(self.img_1, cmap='gray')
+        ax[0].set_title(self.img_1_title)
+
+        ax[1].imshow(self.img_2, cmap='gray')
+        ax[1].set_title(self.img_2_title)
+
+        ax[2].scatter(self.img_1.flatten(), self.img_2.flatten())
+        ax[2].set_xlabel(self.img_1_title)
+        ax[2].set_ylabel(self.img_2_title)
+
+
 
         plt.show()
         

@@ -12,7 +12,7 @@ class LocalMaximalCorr:
         self.data = np.vstack((X,Y)).T
 
         if grid_size is None:
-            print(f"grid_size is {len(self.data)}")
+            # print(f"grid_size is {len(self.data)}")
             self.grid_size = len(self.data)
 
         else:
@@ -26,7 +26,7 @@ class LocalMaximalCorr:
         self.distances = np.linspace(1/self.grid_size, 1, self.grid_size)
 
         self.corr = self.get_correlation_integral(self.data, self.method)
-        print('corr',self.corr.shape)
+        # print('corr',self.corr.shape)
 
 
         
@@ -40,7 +40,7 @@ class LocalMaximalCorr:
         else:
             raise ValueError("ci_method must be euclidean, chebyshev or manhattan")
         
-        print('corr_int',corr_int.shape)
+        # print('corr_int',corr_int.shape)
         return corr_int
         
     def neighbors_density(self, corr_int, smooth = False): 
@@ -48,7 +48,7 @@ class LocalMaximalCorr:
         for i in range(self.grid_size-1):
             density[i] += (corr_int[i+1]-corr_int[i])/(1/self.grid_size)
         if smooth:
-            print(pd.Series(density).shape)
+            # print(pd.Series(density).shape)
             density = auto_savgol(pd.Series(density), plot = False, verbose = False)
             density = density.values
         return density
@@ -58,8 +58,8 @@ class LocalMaximalCorr:
         self.density = self.neighbors_density(self.corr, smooth = True)
         self.null_density = self.get_null_density(self.grid_size)
         local_corr = np.zeros(self.grid_size)
-        print('density',self.density.shape)
-        print('null_density',self.null_density.shape)
+        # print('density',self.density.shape)
+        # print('null_density',self.null_density.shape)
 
         local_corr = self.density - self.null_density
         return local_corr

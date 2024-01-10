@@ -73,8 +73,26 @@
 
     \section[prpuestas de lambda]{Propuestas de $\lambda$ para imagenes.}\label{}
 
+    Uno de los problemas que tenemos al momento de aplicar la transformaci\'on es la selecci\'on del factor $\lambda$, cómo mencionamos anteriormente el proceso estandar es utilizar el m\'etodo de m\'axima verosimilitud, pero como las im\'agenes poseen datos correlacionados de manera espacial, y deberíamos aplicar una transformaci\'on a vector, esta relaci\'on sería perdida. 
+
+    En esta secci\'on revisaremos los dos m\'etodos utilizados en la literatura, junto con otros 2 que se proponen en este trabajo. Luego en el siguiente cap\'itulo compararemos los resultados de estos procedimientos utilizando los m\'etodos de comparaci\'on de im\'agenes definidos en el cap\'itulo \ref{chap2} y \ref{chap3}. 
+
+    A lo largo de la secci\'on usaremos las im\'agenes en la siguiente figura para ejemplificar los resultados de los distintos m\'etodos. En la figura \todo{mostrar una imagen}
+
     \todo{reescribir esta parte de la secci\'on y agregar las propuestas de lambda}
     \subsection{Box-Cox sobre datos completos}
+
+    Este es el m\'etodo utilizado por Lee et. al. \cite{lee2009mr}, y consiste en aplicar la transformaci\'on sobre los datos completos, i.e., transformar la matriz a vector de alguna forma y luego aplicar verosimilitud para determnar el lambda. Notemos que la forma en la que la matriz sea transformada a vector no es de particular importancia, dado que la transformaci\'on es agn\'ostica con respecto al orden de los datos. 
+
+    \begin{defn}
+        Sea $\mathcal{F}(u, v)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y $\mathcal{F}^{\prime}(i)\in\R^{n\times m}$ el vector de datos, entonces definimos $\lambda_{full}$ como el valor de $\lambda$ que maximiza la verosimilitud de los datos completos, i.e., $\mathcal{F}^{\prime}(i)$.
+    \end{defn}
+    
+    Este m\'etodo es el m\'as utilizado en la literatura, pero como mencionamos anteriormente, este no toma en cuenta la correlaci\'on espacial de los datos, y por lo tanto no es el m\'as adecuado para imagenes. Veamos que resultados tiene este m\'etodo sobre la imagen de la figura \todo{mostrar una imagen}
+
+    
+
+     
 
     \subsection[short]{Box Cox sobre histograma}
 
