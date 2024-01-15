@@ -1228,6 +1228,10 @@ INPUT ./cap5.tex
 INPUT cap5.tex
 INPUT ./cap5.tex
 INPUT cap5.tex
+INPUT ./figuras//dip_4_fig2_18.png
+INPUT figuras//dip_4_fig2_18.png
+INPUT ./figuras//dip_4_fig2_18.png
+INPUT ./figuras//dip_4_fig2_18.png
 INPUT ./cap6.tex
 INPUT ./cap6.tex
 INPUT ./cap6.tex
