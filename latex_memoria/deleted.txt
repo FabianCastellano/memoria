@@ -1,0 +1,208 @@
+\section[]{Correlaci\'on M\'axima local} 
+
+	%chen2010.pdf
+
+	\subsection{Introducci\'on}
+
+
+	La correlaci\'on local, tamb\'ien conodica como coeficiente no param\'etrico de Chen, o coeficiente de Chen, es un coeficiente que busca detectar relaciones no lineales basado en la integral de correlaci\'on. Este fue propuesto por Chen et al. en su trabajo \textit{A Nonparametric Approach to Detect Nonlinear Correlation in Gene Expression} (2012) \cite{Chen2012}. Este coeficiente es una medida de asociaci\'on no param\'etrica que puede detectar relaciones no lineales entre dos variables, esto lo hace a trav\'es de un m\'etodo similar al de aproximaci\'on lineal por secci\'ones. 
+
+	La integral de correlaci\'on examina la distribuci\'on acumulativa de distancias entre puntos en una serie de tiempo, en base a esto y con algunas modificaciones, se puede utilizar para estimar patrones y asociaciones globales. 
+
+
+	\subsection{Definiciones}
+
+	Defnimamos primero el coraz\'on del coeficiente, la integral de correlaci\'on:
+
+	\begin{defn}[Correlaci\'on Integral]
+		Sea $z_1,\dots,z_N$ una serie de tiempo de $N$ observaciones y sea $r\in\R_{>0}$. Definimos la integral de correlaci\'on $I(r)$ una funci\'on indicadora definida como:
+		$$
+		I(r)=\lim _{N \rightarrow \infty}\left\{\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)\right\}.
+		$$
+	\end{defn}
+
+	La integral de correlaci\'on cuantifica el el n\'umero promedio de vecinos dentro de un radio $r$. Notemos que esta definici\'on sigue teniendo sentido cuando los datos no son series de tiempo, solo requerimos de una indexaci\'on de los estos.
+
+	Para desarrollar una medida de asociaci\'on entre vectores, $x$ e $y$, modificamos la definici\'on de $I(r)$ como sigue. Sean $z_i=(x_i,y_i)$ con $i=1,\dots, N$ las observaciones en el conjunto de datos. Con esto definimos:
+
+	\begin{defn}[Correlaci\'on Integral entre vectores]
+		Sean $x= \{x_1,\dots,x_N\} $ e $y=\{y_1,\dots,y_N\}$ dos vectores de $N$ observaciones y sea $r\in\R_{>0}$. Definimos la integral de correlaci\'on $\hat{I}(r)$ entre $x$ e $y$ como:
+		$$\hat{I}(r)=\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|\begin{pmatrix}
+			x_{i} \\
+			y_{i}
+		  \end{pmatrix}-\begin{pmatrix}
+			x_{j} \\
+			y_{j}
+		  \end{pmatrix}\right|<r\right)$$,
+		donde $|\cdot|$ es la norma euclidiana. En adelante, al referirnos a la Integral de Correlaci\'on nos referiremos a esta definici\'on, a menos que se indique lo contrario.
+
+	\end{defn}
+	
+	Notemos que las distancias obsevadas son adem\'as linealmente transformadas para que se encuentren entres 0 y 1 antes de calcular $\hat{I}$. Es importante destacar que $\hat{I}$a tiene las propiedades de una funci\'on de distribuci\'on acumulativa. Es no decreciente entre 0 y 1 y continua por la derecha. La funci\'on $\hat{I}(r)$ descrive el patr\'on global de distancias entre vecinos. 
+
+	El inter\'es principal es la definici\'on de una metrica para cuantificar la asosiaci\'on no lineal estudiando patrones locales. Dado esto, definimos la densidad de vecinos $D$ de forma similar a la derivada de $\hat{I}$: 
+	\begin{defn} [Densidad de Vecinos]
+		Dados $x= \{x_1,\dots,x_N\} $, $y=\{y_1,\dots,y_N\}$ y su respectiva Integral de correalci\'on $\hat{I}(r)$
+		$$
+		\hat{D}(r)= \frac{\vartriangle\hat{I}(r)}{\vartriangle r},
+		$$
+		donde $\vartriangle\hat{I}(r)$ denota un cambio en $\hat{I}(r)$ y $\vartriangle r$ la magnitud de este.
+	\end{defn}
+	
+	La densidad de vecinos observada es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$, con $m$ es un grosor de malla arbitrario que determina $\vartriangle r = \frac{1}{m}$. Una funci\'on de suavizado autom\'atico es usado para suavizar $D(r)$, en su propuesta original se us\'o el algoritmo propuesto por Videla et al. (2007) \cite{videla2007}, nosotros utilizaremos filtros Savitzky-Golay \cite{Savitzky-Golay}, tambi\'en haciendo uso de validaci\'on cruzada para elegir los mejores hiperparametros. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
+
+	En base a esto definimos la correlaci\'on local. Intuitivamente, las distancias entre los puntos de datos entre dos variables correlacionadas diferir\'ian de las distancias entre dos variables no correlacionadas. 
+	
+	\begin{defn}[Correlaci\'on Local]
+	
+		Sea $\widehat{D_0}(r)$ la estimaci\'on de una distribuci\'on nula, que se compone de dos vectores sin asociaci\'on. Definimos la correlaci\'on local ($\ell(r)$) como la desviaci\'on de D de la de la distribuci\'on nula a una distancia vecina dada r:
+
+		$$
+			\ell(r)=\widehat{D}(r)-\widehat{D}_{0}(r),
+		$$	
+
+		donde $\widehat{D}(r)$ es la distribuci\'on asociada a los vectores que queremos comparar.
+
+	\end{defn}
+
+	Este enfoque no asume ninguna distribuci\'on param\'etrica. La flexibilidad de este m\'etodo facilita el cambio de la distribuci\'on nula a cualquier distribuci\'on de inter\'es. 
+	
+	Por ultimo, definimos el coficiente como de correlaci\'on local m\'axima, o coeficiente de Chen como:
+
+	\begin{defn}
+		Sea $\ell(r)$ la funci\'on de correlaci\'on local entre dos vectores, definimos el coeficiente de correlaci\'on local m\'axima como:
+
+		$$
+		M=\max _{r}\{|\ell(r)|\}
+		$$
+
+		con $r\in[0,1]$. Recordemos que las distancias fueron nomralizadas.
+		
+	\end{defn}
+	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
+
+\section[]{\textit{Distance Covariance \& Distance Correlation}} 
+
+\subsection{Introducci\'on}
+
+
+La Covarianza por Distancia  y la Correlaci\'on por distancia  fueron propuestas por Sz\'ekely, Rizzo, y Bakirov en su trabajo \textit{''Measuring and testing independence by correlation of distances''} (2007) \cite{Szekely2007}, posteriormente tambi\'en propusieton la Covarianza por Distancia Browniana en su trabajo \textit{''Brownian Distance Covariance''} (2009) \cite{Szekely2009}, en donde tambi\'en se demostr\'o que esta coincide con la Covarianza por Distancia tradicional.
+
+De la misma forma que las medidas que hemos visto anteriormente, estas son medidas de asociaci\'on no param\'etricas que buscan encontrar relaciones no lineales entre dos conjuntos de datos, en particular establecer una forma de caracterizar independenc\'ia entre dos distribuci\'ones. Dado esto es importante recalcar que, para distribuci\'on de primer momento fin\'ito, la Correlaci\'on por distancia ($\mathcal{R}$) generaliza la idea de correalci\'on en dos formas:
+
+\begin{enumerate}
+	\item $\mathcal{R}(X,Y)$ est\'a definido para $X,Y$ de dimensi\'on aleatoria.
+	\item $\mathcal{R}(X,Y) = 0$ caracteriza la independenc\'a de $X$ e $Y$.	 
+\end{enumerate}
+
+La primera de estas afirmaciones es importante, ya que nos permite utulizar esta medida para comparar im\'agenes sin mayor problema, de todas formas en la secci\'on \ref{chap5} estudiaremos como adaptar est\'as medidas para im\'agnes. En esta secci\'on definiremos estos 3 coeficientes, la relaci\'on entre ellos y verificaremos la afirmaciones realizadas m\'as arriba, para esto comenzaremos con las definiciones. 
+
+\subsection{Definiciones}
+
+Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
+
+\begin{defn}[Covarianza por distancia]
+	La Covarianza por distancia (dCov) entre los vectores aleatorios $X$ e $Y$ con primeros momentos finitos es el n\'umero no negativo $\mathcal{V}(X, Y)$ definido por:
+	\begin{equation}
+		\begin{aligned}\label{dcov_formula}
+			\mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
+			& =\frac{1}{c_p c_q} \int_{\R^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
+			\end{aligned}
+	\end{equation}
+
+	\end{defn}
+
+	Similarmente, la Varianza por distancia (dVar) se define como la raiz cuadrada:
+
+	$$
+	\mathcal{V}^2(X)=\mathcal{V}^2(X, X)=\left\|f_{X, X}(t, s)-f_X(t) f_X(s)\right\|^2 .
+	$$
+
+	Por definici\'on de la norma $\|\cdot\|$, es claro que  $\mathcal{V}(X, Y) \geq 0$ y $\mathcal{V}(X, Y)=0$ si y solo si $X$ e $Y$ son indepentes.
+
+	\begin{defn} [Correlaci\'on por distancia]
+		La correlaci\'on por distancia (dCor) entre los vectores aleatorios $X$ e $Y$ con primer momento finito es el n\'unero no negtivo $\mathcal{R}(X, Y)$ definido por:
+		$$
+		\mathcal{R}^2(X, Y)= \begin{cases}\frac{\mathcal{V}^2(X, Y)}{\sqrt{\mathcal{V}^2(X) \mathcal{V}^2(Y)}}, & \mathcal{V}^2(X) \mathcal{V}^2(Y)>0 \\ 0, & \mathcal{V}^2(X) \mathcal{V}^2(Y)=0\end{cases}.
+		$$
+
+	Algunas propiedades de $\mathcal{R}$ an\'alogo a $\rho$ ser\'an revisadas m\'as adelante. 
+	\end{defn}
+
+	Ahora, para el caso muestral, definimos los estad\'isticos de distancia de la siguiente forma. Para una muestra aleatoria $(\mathbf{X}, \mathbf{Y})=\left\{\left(X_k, Y_k\right): k=1, \ldots, n\right\}$ de $n$ ventores aleatorios $(X, Y)$ i.i.d., calculamos las matrices de distancia euclideana  $\left(a_{k l}\right)=\left(\left|X_k-X_l\right|_p\right)$ y $\left(b_{k l}\right)=\left(\left|Y_k-Y_l\right|_q\right)$. Definimos:
+
+	$$
+	A_{k l}=a_{k l}-\bar{a}_{k .}-\bar{a}_{. l}+\bar{a}_{. .}, \quad k, l=1, \ldots, n,
+	$$
+	donde
+	$$
+	\bar{a}_{k .}=\frac{1}{n} \sum_{l=1}^n a_{k l}, \quad \bar{a}_{. l},=\frac{1}{n} \sum_{k=1}^n a_{k l}, \quad \bar{a}_{. .}=\frac{1}{n^2} \sum_{k, l=1}^n a_{k l} .
+	$$
+	
+	De forma similar, definimos $B_{k l}=b_{k l}-\bar{b}_{k .}-\bar{b}_{\cdot l}+\bar{b}_{. .}$, para $k, l=1, \ldots, n$.
+
+	\begin{defn}[Covarianza y Correlaci\'on por distancia muestral]
+		La no negativa Covarianza por distancia muestral $\mathcal{V}_n(\mathbf{X}, \mathbf{Y})$ y la Correlaci\'on por distancia muestral $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})$ estan definidas por
+		$$
+		\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l} B_{k l},
+		$$
+		y
+		$$
+		\mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})= \begin{cases}\frac{\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})}{\sqrt{\mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})}}, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})>0 \\ 0, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})=0\end{cases},
+		$$
+		respectivamente. Adem\'as la Varianza por distancia muestral $\mathcal{V}_n(\mathbf{X})$ est\'a definida por
+		$$
+		\mathcal{V}_n^2(\mathbf{X})=\mathcal{V}_n^2(\mathbf{X}, \mathbf{X})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l}^2 .
+		$$
+	\end{defn}
+
+	Por ultimo, plantearemos los siguientes teoremas que nos entregan  propiedades importantes de la Correlaci\'on por distancia:
+
+	\begin{thm}
+		Si $(\mathbf{X}, \mathbf{Y})$ es una muestra aleatoria del vector aleatorio $(X, Y)$, entonces
+		$$
+		\mathcal{V}n^2(\mathbf{X}, \mathbf{Y})=\left\|f{X, Y}^n(t, s)-f_X^n(t) f_Y^n(s)\right\|^2 .
+		$$
+	\end{thm}
+	\begin{thm}
+		Si $E|X|_p<\infty$ and $E|Y|_q<\infty$, entonces casi seguramente
+		$$
+		\lim _{n \rightarrow \infty} \mathcal{V}_n(\mathbf{X}, \mathbf{Y})=\mathcal{V}(X, Y) .
+		$$
+	\end{thm}
+	
+	\begin{cor}
+		If $E\left(|X|_p+|Y|_q\right)<\infty$, then almost surely
+		$$
+		\lim _{n \rightarrow \infty} \mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})=\mathcal{R}^2(X, Y) \text {. }
+		$$
+	\end{cor}
+	\begin{thm}\label{thm3_brcov}
+		Para vectores aleatorios $X \in \mathbb{R}^p$ y $Y \in \mathbb{R}^q$ tal que $E\left(|X|_p+\right.$ $\left.|Y|_q\right)<\infty$, se tienen las siguientes propiedades:
+		\begin{enumerate}
+			\item $0 \leq \mathcal{R}(X, Y) \leq 1$, y $\mathcal{R}=0$ si y solo si $X$ e $Y$ son independientes.
+			\item $\mathcal{V}\left(a_1+b_1 C_1 X, a_2+b_2 C_2 Y\right)=\sqrt{\left|b_1 b_2\right|} \mathcal{V}(X, Y)$, para todos los vectores constantes $a_1 \in \mathbb{R}^p, a_2 \in \mathbb{R}^q$, escalares $b_1, b_2$ y matrices ortogonales $C_1, C_2$ en $\mathbb{R}^p$ y $\mathbb{R}^q$, respectivamente.	
+			\item Si el vector aleatorio $\left(X_1, Y_1\right)$ es ind. del vector aleatorio $\left(X_2, Y_2\right)$, se tiene
+			 $$
+			\mathcal{V}\left(X_1+X_2, Y_1+Y_2\right) \leq \mathcal{V}\left(X_1, Y_1\right)+\mathcal{V}\left(X_2, Y_2\right) .
+			$$
+			La igualdad se cumple si y solo si $X_1$ e $Y_1$ son constantes, o $X_2$ e $Y_2$ son constantes, o $X_1, X_2, Y_1, Y_2$ son mutuamente independientes.
+
+			\item $\mathcal{V}(X)=0$ implica que $X=E[X]$, casi seguramente.
+			\item $\mathcal{V}(a+b C X)=|b| \mathcal{V}(X)$, para todos los vectores constantes $a$ en $\mathbb{R}^p$, escalares $b$, y matrices ortogonales $p \times p$ $C$.
+			\item Si $X$ e $Y$ son independientes, entonces $\mathcal{V}(X+Y) \leq \mathcal{V}(X)+\mathcal{V}(Y)$. La igualdad se cumple si y solo si uno de los vectores aleatorios $X$ o $Y$ es constante.
+		\end{enumerate}
+	\end{thm}
+	\begin{thm}
+	\begin{enumerate}
+		\item $\mathcal{V}_n(\mathbf{X}, \mathbf{Y}) \geq 0$.
+		\item $\mathcal{V}_n(\mathbf{X})=0$ si y solo si cada observaci\'on de la muestra es id\'entica.
+		\item $0 \leq \mathcal{R}_n(\mathbf{X}, \mathbf{Y}) \leq 1$.
+		\item $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})=1$ implica que las dimensiones de los subespacios lineales generados por $\mathbf{X}$ y $\mathbf{Y}$ respectivamente son casi seguramente iguales, y si asumimos que estos subespacios son iguales, entonces en este subespacio
+		\item $$
+		\mathbf{Y}=a+b \mathbf{X} C,
+		$$
+		para alg\'un vector $a$, n\'umero real no nulo $b$, y matriz ortogonal $C$.
+	\end{enumerate}	
+	\end{thm}
+	demostraci\'ones de todos estos teoremas pueden ser encontrados en Szekely y Rizzo (2009) \cite{Szekely2009}.

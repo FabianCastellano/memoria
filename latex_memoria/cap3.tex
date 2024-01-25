@@ -1,106 +1,13 @@
 % ---------------------------------------------------------------------------------------
-\chapter{Otros M\'etodos de Comparaci\'on}\label{chap3}
-
+\chapter[Covarianza y Correlaci\'on por Distancia]{Covarianza y Correlaci\'on por Distancia} \label{chap3}
 
 \section{Introducci\'on}
 
-En la secci\'on anterior nos enfocamos en describir con detalle el Coeficiente de Informaci\'on M\'axima (MIC), esta medida de correalci\'on es una de las m\'as poderosas al momento de encontrar relaciones entre varibales, y tambi\'en una de las m\'as complejas, motivo por el cu\'al una secci\'on fue dedicada a esta. A pesar de eso, tenemos otros coeficientes tambi\'en poderosos y que nos ayduar\'an a caracterizar la relaci\'on que existe entre las im\'agenes transformadas y sus primitivas. 
+En la secci\'on anterior, discutimos el MIC y el TIC, dos medidas de asociaci\'on utilizadas para cuantificar relaciones no lineales entre datos, pero no es la \'unica, y de hecho es cr\'iticada por tener algunas falencias al momento de detectar la fuerza entre relaciones \cite{SimonTibshirani}. Por esto tambi\'en buscamos otra medida que nos ayudar\'a a complementar el an\'alisis de asociaci\'on entre variables, y por esto en este cap\'itulo estudiaremos la Covarianza y Correlaci\'on por Distancia.
 
-En este cap\'itulo estudiaremos 3 medidas de correalci\'on, las que finalmente usaremos en la compraci\'on de las im\'agenes, estas las podemos separar en dos categorías. La primera, que corresponde a la Correlaci\'on M\'axima Local\cite{Chen2012} y la Correlaci\'on por Distancia \cite{Szekely2009}, estas son dos medidas avanzados que buscan relaciones no lineales entre conjuntos de datos. La segunda categor\'ia corresponde unicamente a la Correlaci\'on de Pearson la cu\'al es la medida m\'as utilizada para comparar dos conjuntos, pero est\'a limitada a solo encontrar relaciones lineales entre los datos.
+La Covarianza por Distancia (cCor) y la Correlaci\'on por distancia (dCor) fueron propuestas por Sz\'ekely, Rizzo, y Bakirov en su trabajo \textit{''Measuring and testing independence by correlation of distances''} (2007) \cite{Szekely2007}, posteriormente tambi\'en propusieton la Covarianza por Distancia Browniana en su trabajo \textit{''Brownian Distance Covariance''} (2009) \cite{Szekely2009}, en donde tambi\'en se demostr\'o que esta coincide con la Covarianza por Distancia tradicional.
 
-Definiremos los coeficientes, revisaremos algunas de sus propiedades y finalmente discutiremos la inefectividad del coeficiente de Pearson para comparar im\'agenes. Luego en la secci\'on posterior estdiaremos el concepto de Equitatibilidad y lo usaremos para comparar los coeficientes. 
-
-\section[]{Correlaci\'on M\'axima local} 
-
-	%chen2010.pdf
-
-	\subsection{Introducci\'on}
-
-
-	La correlaci\'on local, tamb\'ien conodica como coeficiente no param\'etrico de Chen, o coeficiente de Chen, es un coeficiente que busca detectar relaciones no lineales basado en la integral de correlaci\'on. Este fue propuesto por Chen et al. en su trabajo \textit{A Nonparametric Approach to Detect Nonlinear Correlation in Gene Expression} (2012) \cite{Chen2012}. Este coeficiente es una medida de asociaci\'on no param\'etrica que puede detectar relaciones no lineales entre dos variables, esto lo hace a trav\'es de un m\'etodo similar al de aproximaci\'on lineal por secci\'ones. 
-
-	La integral de correlaci\'on examina la distribuci\'on acumulativa de distancias entre puntos en una serie de tiempo, en base a esto y con algunas modificaciones, se puede utilizar para estimar patrones y asociaciones globales. 
-
-
-	\subsection{Definiciones}
-
-	Defnimamos primero el coraz\'on del coeficiente, la integral de correlaci\'on:
-
-	\begin{defn}[Correlaci\'on Integral]
-		Sea $z_1,\dots,z_N$ una serie de tiempo de $N$ observaciones y sea $r\in\R_{>0}$. Definimos la integral de correlaci\'on $I(r)$ una funci\'on indicadora definida como:
-		$$
-		I(r)=\lim _{N \rightarrow \infty}\left\{\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|z_{i}-z_{j}\right|<r\right)\right\}.
-		$$
-	\end{defn}
-
-	La integral de correlaci\'on cuantifica el el n\'umero promedio de vecinos dentro de un radio $r$. Notemos que esta definici\'on sigue teniendo sentido cuando los datos no son series de tiempo, solo requerimos de una indexaci\'on de los estos.
-
-	Para desarrollar una medida de asociaci\'on entre vectores, $x$ e $y$, modificamos la definici\'on de $I(r)$ como sigue. Sean $z_i=(x_i,y_i)$ con $i=1,\dots, N$ las observaciones en el conjunto de datos. Con esto definimos:
-
-	\begin{defn}[Correlaci\'on Integral entre vectores]
-		Sean $x= \{x_1,\dots,x_N\} $ e $y=\{y_1,\dots,y_N\}$ dos vectores de $N$ observaciones y sea $r\in\R_{>0}$. Definimos la integral de correlaci\'on $\hat{I}(r)$ entre $x$ e $y$ como:
-		$$\hat{I}(r)=\frac{1}{N^{2}} \sum_{i, j=1}^{N} I\left(\left|\begin{pmatrix}
-			x_{i} \\
-			y_{i}
-		  \end{pmatrix}-\begin{pmatrix}
-			x_{j} \\
-			y_{j}
-		  \end{pmatrix}\right|<r\right)$$,
-		donde $|\cdot|$ es la norma euclidiana. En adelante, al referirnos a la Integral de Correlaci\'on nos referiremos a esta definici\'on, a menos que se indique lo contrario.
-
-	\end{defn}
-	
-	Notemos que las distancias obsevadas son adem\'as linealmente transformadas para que se encuentren entres 0 y 1 antes de calcular $\hat{I}$. Es importante destacar que $\hat{I}$a tiene las propiedades de una funci\'on de distribuci\'on acumulativa. Es no decreciente entre 0 y 1 y continua por la derecha. La funci\'on $\hat{I}(r)$ descrive el patr\'on global de distancias entre vecinos. 
-
-	El inter\'es principal es la definici\'on de una metrica para cuantificar la asosiaci\'on no lineal estudiando patrones locales. Dado esto, definimos la densidad de vecinos $D$ de forma similar a la derivada de $\hat{I}$: 
-	\begin{defn} [Densidad de Vecinos]
-		Dados $x= \{x_1,\dots,x_N\} $, $y=\{y_1,\dots,y_N\}$ y su respectiva Integral de correalci\'on $\hat{I}(r)$
-		$$
-		\hat{D}(r)= \frac{\vartriangle\hat{I}(r)}{\vartriangle r},
-		$$
-		donde $\vartriangle\hat{I}(r)$ denota un cambio en $\hat{I}(r)$ y $\vartriangle r$ la magnitud de este.
-	\end{defn}
-	
-	La densidad de vecinos observada es evaluada en radio distreto r, con $r=0,1/m, 2/m, \dots, 1$, con $m$ es un grosor de malla arbitrario que determina $\vartriangle r = \frac{1}{m}$. Una funci\'on de suavizado autom\'atico es usado para suavizar $D(r)$, en su propuesta original se us\'o el algoritmo propuesto por Videla et al. (2007) \cite{videla2007}, nosotros utilizaremos filtros Savitzky-Golay \cite{Savitzky-Golay}, tambi\'en haciendo uso de validaci\'on cruzada para elegir los mejores hiperparametros. En el paper, el tama\~no predeterminado $m$ se establece como $N$, el n\'umero de observaciones y en este trabajo usaremos el mismo $m$. El estad\'istico $\hat{D}$ es una aproximaci\'on discreta de $d\hat{I}(r)/d r$, la cual tiene las propiedades formales de una probabilidad funci\'on de densidad. Por lo tanto, con un ligero abuso de terminolog\'ia nos referimos a $\widehat{D}(r)$ como una distribuci\'on.
-
-	En base a esto definimos la correlaci\'on local. Intuitivamente, las distancias entre los puntos de datos entre dos variables correlacionadas diferir\'ian de las distancias entre dos variables no correlacionadas. 
-	
-	\begin{defn}[Correlaci\'on Local]
-	
-		Sea $\widehat{D_0}(r)$ la estimaci\'on de una distribuci\'on nula, que se compone de dos vectores sin asociaci\'on. Definimos la correlaci\'on local ($\ell(r)$) como la desviaci\'on de D de la de la distribuci\'on nula a una distancia vecina dada r:
-
-		$$
-			\ell(r)=\widehat{D}(r)-\widehat{D}_{0}(r),
-		$$	
-
-		donde $\widehat{D}(r)$ es la distribuci\'on asociada a los vectores que queremos comparar.
-
-	\end{defn}
-
-	Este enfoque no asume ninguna distribuci\'on param\'etrica. La flexibilidad de este m\'etodo facilita el cambio de la distribuci\'on nula a cualquier distribuci\'on de inter\'es. 
-	
-	Por ultimo, definimos el coficiente como de correlaci\'on local m\'axima, o coeficiente de Chen como:
-
-	\begin{defn}
-		Sea $\ell(r)$ la funci\'on de correlaci\'on local entre dos vectores, definimos el coeficiente de correlaci\'on local m\'axima como:
-
-		$$
-		M=\max _{r}\{|\ell(r)|\}
-		$$
-
-		con $r\in[0,1]$. Recordemos que las distancias fueron nomralizadas.
-		
-	\end{defn}
-	La interpretaci\'on de $\ell(r)$ como la diferencia de dos distribuciones implica que $M$ puede interpretarse como la distancia bajo la norma del supremo entre $\widehat{D}$ y $\widehat{D_0}$. En otras palabras, definimos el estad\'istico M como la desviaci\'on m\'axima entre dos densidades vecinas subyacentes.
-
-\section[]{\textit{Distance Covariance \& Distance Correlation}} 
-
-\subsection{Introducci\'on}
-
-
-La Covarianza por Distancia  y la Correlaci\'on por distancia  fueron propuestas por Sz\'ekely, Rizzo, y Bakirov en su trabajo \textit{''Measuring and testing independence by correlation of distances''} (2007) \cite{Szekely2007}, posteriormente tambi\'en propusieton la Covarianza por Distancia Browniana en su trabajo \textit{''Brownian Distance Covariance''} (2009) \cite{Szekely2009}, en donde tambi\'en se demostr\'o que esta coincide con la Covarianza por Distancia tradicional.
-
-De la misma forma que las medidas que hemos visto anteriormente, estas son medidas de asociaci\'on no param\'etricas que buscan encontrar relaciones no lineales entre dos conjuntos de datos, en particular establecer una forma de caracterizar independenc\'ia entre dos distribuci\'ones. Dado esto es importante recalcar que, para distribuci\'on de primer momento fin\'ito, la Correlaci\'on por distancia ($\mathcal{R}$) generaliza la idea de correalci\'on en dos formas:
+Estas son medidas de asociaci\'on no param\'etricas que buscan encontrar relaciones no lineales entre dos conjuntos de datos, en particular establecer una forma de caracterizar independenc\'ia entre dos distribuci\'ones. Dado esto es importante recalcar que, para distribuci\'on de primer momento fin\'ito, la Correlaci\'on por distancia ($\mathcal{R}$) generaliza la idea de correalci\'on en dos formas:
 
 \begin{enumerate}
 	\item $\mathcal{R}(X,Y)$ est\'a definido para $X,Y$ de dimensi\'on aleatoria.
@@ -109,7 +16,7 @@ De la misma forma que las medidas que hemos visto anteriormente, estas son medid
 
 La primera de estas afirmaciones es importante, ya que nos permite utulizar esta medida para comparar im\'agenes sin mayor problema, de todas formas en la secci\'on \ref{chap5} estudiaremos como adaptar est\'as medidas para im\'agnes. En esta secci\'on definiremos estos 3 coeficientes, la relaci\'on entre ellos y verificaremos la afirmaciones realizadas m\'as arriba, para esto comenzaremos con las definiciones. 
 
-\subsection{Definiciones}
+\section{Definiciones}
 
 Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
 
@@ -219,7 +126,8 @@ Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son ente
 	\end{thm}
 	demostraci\'ones de todos estos teoremas pueden ser encontrados en Szekely y Rizzo (2009) \cite{Szekely2009}.
 
-	\subsection{Covarianza Browniana}
+
+	\section{Covarianza Browniana}
 		
 		Para introducir la noci\'on de covarianza browniana, comenzaremos considerando la covarianza cuadrada del producto-momento. Recordemos que una variable prima $X'$ denota una copia independiente e id\'enticamente distribuida (i.i.d.) del símbolo no prima $X$. Para dos variables aleatorias continuas de valores reales, el cuadrado de su covarianza clásica es:
 
@@ -316,7 +224,7 @@ Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son ente
 			y esto es siempre no negativo. Para finitud, es suficiente demostrar que todos los factores en la definici\'on de  $\operatorname{Cov}_W(X, Y)$ tienen cuartos momentos finitos. La ecuaci\'on \ref{cov_browniana_exists} se basa en la forma especial de la funci\'on de covarianza de \ref{brw_covariamce} de $W$. El resto de la demostraci\'on se puede encontrar en el ap\'endice de /Szehely and Rizzo (2009)\cite{Szekely2009}.	
 		\end{proof}
 
-	\subsection{Equivalencia entre covarianzas}
+	\section{Equivalencia entre covarianzas}
 	
 	Ahora estudiaremos la equivalencia entre la Covarianza por distancia y la Covarianza Browniana. Pero antes de esto necesitamos plantear el siguiente lema:
 
@@ -405,7 +313,7 @@ Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son ente
 
 \section[]{Correlaci\'on de Pearson}
 
-	\subsection{Introducci\'on}
+	\section{Introducci\'on}
 
 	\todo{donde se public\'o, pequena intro.}
 		

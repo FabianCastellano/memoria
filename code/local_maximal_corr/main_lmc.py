@@ -49,8 +49,8 @@ class LocalMaximalCorr:
             density[i] += (corr_int[i+1]-corr_int[i])/(1/self.grid_size)
         if smooth:
             # print(pd.Series(density).shape)
-            density = auto_savgol(pd.Series(density), plot = False, verbose = False)
-            density = density.values
+            # density = auto_savgol(pd.Series(density), plot = False, verbose = False)
+            density = density #.values
         return density
     
     

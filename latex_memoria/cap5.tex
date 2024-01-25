@@ -28,11 +28,11 @@ El lado derecho de esta ecuación es una imagen digital representada como un con
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{dip_4_fig2_18.png}
+    \includegraphics[width=0.6\textwidth]{dip_4_fig2_18.png}
     \caption{
         (a) Imagen representada como una superficie.
         (b) Imagen mostrada como un conjunto de intensidades visuales.
-        (c) Imagen presentada como un conjunto numérico en 2D. (Los números 0, 0.5 y 1 representan negro, gris y blanco, respectivamente).}
+        (c) Imagen presentada como un conjunto numérico en 2D. (Los números 0, 0.6 y 1 representan negro, gris y blanco, respectivamente).}
     \label{fig:dip_2_18}
 \end{figure}
 
@@ -59,44 +59,131 @@ Con $R$, $G$, y $B$ representando los valores de los canales rojo, verde y azul 
 Al momento de trabajar con imagenes para el contexto de este trabajo, nos es de interes hacerlo con imagenes en escala de grises, puesto que queremos mantener la informaci\'on espacial de la imagen, y nos facilitar\'a el calculo m\'as adelante. El paso a escala de grises no es más que un promedio ponderado de los tres canales de color de la imagen, aunque tendría sentido utilizar un promedio simple, la percepción humana varía dependiendo del color, dado que somos mas sensibles a los colores verdes, y menos sensibles a los colores azules. Para esto, podemos convertir una imagen RGB a escala de grises utilizando la siguiente ecuaci\'on:
 
 \begin{equation}
-    I(x, y)=0.299 R(x, y)+0.587 G(x, y)+0.114 B(x, y), 
+    I(x, y)=0.299 R(x, y)+0.687 G(x, y)+0.114 B(x, y), 
     \label{eq:grayscale}
 \end{equation}
 
 que corresponde el canal gris del espacio de colores $YC_bC_r$. En la siguiente figura podemos ver una imagen RGB, una transformaci\'on utilizando un promdeio simple, y su correspondiente imagen en escala de grises como fue definida anteriormente.
 
-% \begin{figure}
-%     \centering
-%     \includegraphics[width=0.5\textwidth]{rgb2gray.png}
-%     \caption{Imagen RGB, promedio simple, y escala de grises.}
-%     \label{fig:rgb2gray}
-% \end{figure}
-
-\todo[]{insertar imagen rgb2gray}
-
-En la siguiente secci\'ion presentaremos el banco de imagenes que utilizamos para el desarrollo de este trabajo, y mostraremos como se ven las imagenes en escala de grises.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img_ex_bw.png}
+    \caption{Imagen RGB,escala de grises, y promedio simple.}
+    \label{fig:rgb2gray}
+\end{figure}
 
 
 \section{Banco de im\'agenes}
 
 El banco que utilizaremos es llamado \textit{Kodak Lossless True Color Image Suite
-}\cite{KodakLosslessTrueColorImageSuite} que corresponde a 24 imagenes no comprimidas y con color completo. Est\'as fueron publicadas por la compa\~nia Eastman Kodak en 1999, y son ampliamente utilizadas en el \'area de procesamiento de im\'agenes. 
+}\cite{KodakLosslessTrueColorImageSuite} que corresponde a 24 imagenes no comprimidas y con color completo, de tama\~no 768x512 pixeles o 512x768 pixeles. Est\'as fueron publicadas por la compa\~nia Eastman Kodak en 1999, y son ampliamente utilizadas en el \'area de procesamiento de im\'agenes. 
 
-Podemos ver las imagenes en la figura , y podemos ver las imagenes en escala de grises en la figura 
+Podemos ver las imagenes en la figura , y podemos ver las imagenes en escala de grises en las firguras \ref{fig:banco_color} y \ref{fig:banco_gris}. Est\'as imagenes correponden a una gran variedad de escenas y texturas, teniendo figuras humanas, arquitecura, y paisajes; lo que nos entrega un amplio abanico de posibilidades y variedad al momento de hacer los experimentos.
 
-\todo{insertar imagenes del banco de imagenes}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{all_images_grid.png}
+    \caption{Imagenes a utilizar en el banco a color.}
+    \label{fig:banco_color}
+\end{figure}
 
-Est\'as imagenes correponden a una gran variedad de escenas y texturas, teniendo figuras humanas, arquitecura, y paisajes; lo que nos entrega un amplio abanico de posibilidades y variedad al momento de hacer los experimentos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{all_images_grid_bw.png}
+    \caption{Imagenes a utilizar en el banco en escala de grises.}
+    \label{fig:banco_gris}
+\end{figure}
 
-\section{Characteristicas de una imagen, y escala de grises.}
-
-
-Estadistico
-\todo{hablar del banco de imagenes kodak lossless true color image suite}
 
 \section{Comparando imagenes}
 
-\todo{secci\'on sobre como aplicamos los coeficientes de comparacion obre imagenes}
-\todo{comparaci\'on entre histogramas inspirado en bicego \cite{bicego2016}}
+Cómo discutimos anteriormente, podemos representar una im\'agen como una matriz de valores, pero esto nos genera un problema al momento de usar los m\'etodos de comparaci\'on descritos en el cap\'itulo \ref{chap3} y \ref{chap4}, puesto que estas est\'an definidas para vectores, y no para matrices. Para solucionar esto, podemos utilizar una de las siguientes dos estrategias:
+
+\subsection{Im\'agen a vector}
+
+La forma m\'as simple de solucionar este problema es convertir la matriz de la imagen en un vector, y luego aplicar los m\'etodos de comparaci\'on sobre este vector. Antes de realizar esta conversi\'on, debemos tener en cuenta problemas generados por esta propuesta. 
+
+La primera es que el m\'etodo que utilizaemos para comparar dos im\'agenes puede no ser agn\'ostico con respecto al orden de los vectores a comparar, lo que nos llevaría a otro problema, la elecci\'on del orden de los elementos del vector. Tenemos la suerte de que todos los m\'etodos de comparaci\'on que utilizaremos son agn\'osticos con respecto al orden de los vectores, por lo que no tendremos que preocuparnos de este problema \cite{Reshef2016} \cite{Szekely2009}.
+
+El segundo problema es la perdida de informaci\'on, esto es dado que cada pixel posee una correlaci\'on espacial con sus pixeles vecinos, y al momento de convertir la matriz en un vector, perdemos esta informaci\'on. Para solucionar esto, podr\'iamos utilizar una curva de Hilbert, que es una curva fractal que se puede utilizar para mapear una matriz en un vector, de forma que los pixeles vecinos en la matriz, sean vecinos en el vector. Sin embargo, esto no es necesario, puesto que los m\'etodos de comparaci\'on que utilizaremos son agn\'osticos con respecto al orden de los vectores.
+
+Por ultimo tenemos un problema de tama\~no, las im\'agenes del banco tienen una resouluci\'on de 512x768, lo que nos genera un vector de 393216 elementos, lo que es un vector de dimensi\'on muy alta, y podr\'ia generar problemas de performance al momento de calcular los coeficientes de comparaci\'on. 
+
+\subsection{Imagen a histograma}
+
+Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma que en Bicego (2016)\cite{bicego2016} donde, luego de convertir la imagen en escala de grises, cada valor de intensidad corresponde a un bin del histograma, y este es usado para calcular el lambda optimo para la transformaci\'on de Box-Cox. 
+
+Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realziar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que los pixeles vecinos en la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
+
+El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas, como se ve en la figura \todo{hacer figura imagen mismo histograma dif iamgen}, donde se ve que las dos imagenes tienen el mismo histograma, pero son completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, puesto que lo que nos interesa es comparar imagenes que son similares, puesto que son el resultado de una transformaci\'on de la imagen original.
+
+\section{Ejemplos de comparaci\'on de imagenes}
+
+Ya describimos los m\'etodos que usaremos para comprar las imagenes usando las t\'ecnicas descritas en el cap\'itulo \ref{chap2} y \ref{chap3}, ahora revisaremos 4 imagenes del banco, y veremos como se comportan los coeficientes de comparaci\'on para estas imagenes comparadas con una versi\'on de la misma imagen a la se le aplicaron distintos niveles de ruido. En la figura \ref{fig:img_hist} podemos ver las imagenes junto con sus histogramas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img_hist.png}
+    \caption{Imagenes junto con sus histogramas de intensidad. Corresponden a las imagenes 1, 2, 13, y 22 del banco de imagenes.}
+    \label{fig:img_hist}
+\end{figure}
+
+Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas son se ven m\'as normales que otros, pero cabe notar que varias de est\'as fotos son multimodales, lo que dificulta el proceso de "normalizarlas", veamos ahora como se comportan las imagenes y su histograma al momento de aplicarles ruido. En la figura \ref{fig:img_hist_ruido} podemos ver las imagenes con ruido, junto con sus histogramas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img_hist_noise.png}
+    \caption{Imagenes junto con sus histogramas con ruido.}
+    \label{fig:img_hist_ruido}
+\end{figure}
+
+\todo{describir mtodlogía de comparaci\'on}
+Podemos ver que el ruido afecta de forma distinta a cada imagen, y que el histograma de cada imagen con ruido es distinto al histograma de la imagen original. Al momento de agregarles ruido gausiano es esperable que el histograma se vea más normal, y cabe destacar que la media de la distribución de los valores de intensidad queda centrada donde se encontraba la mayor moda del histograma original. 
+
+Ahora, procederemos a revisar como se comporta la matriz de calor al ocmpara las imagenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las imagenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En las siguientes figuras \ref{fig:heatmap1} \ref{fig:heatmap2} \ref{fig:heatmap13} \ref{fig:heatmap22} podemos ver las matrices de calor para cada m\'etodo,  
+
+% do a figure with 4 images 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_1.png}
+    \caption{Matriz de calor para imagen 1 del banco, comparando imagenes con sus versiones con ruido. }
+    \label{fig:heatmap1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_2.png}
+    \caption{Matriz de calor para imagen 2 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_13.png}
+    \caption{Matriz de calor para imagen 13 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap13}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_22.png}
+    \caption{Matriz de calor para imagen 22 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap22}
+\end{figure}
+
+Notemos que a la izquierda tenemos la comparaci\'on del vector de las im\'agenes completo, y la derecha tenemos la comparaci\'on de los histogramas; además desde arriba hac\'ia abajo tenemos dCor, MIC, y Pearson.
+
+Directamente podemos ver que existe una relaci\'on invesamente proporcional entre la cantidad de rudio y el coeficiente de comparaci\'on, lo que es esperable. Lo segundo que vale la pena mencionar es que en el caso de comparar los histogramas, en particular al momento de comparar entre las imagenes con ruidos obtenemos valores soprendentemente altos, esto es evidente al momento de ver la figura \ref{fig:img_hist_ruido}, donde podemos ver que los histogramas de las imagenes con ruido son bastante similares entre si. Pero si es destacable que se encontró una relaci\'on bastante fuerte entre los histogramas de las im\'agenes con ruido y las imagenes originales. 
 
 
+Por ultimo vale la pena destcar que, en particular para el caso de la comparaci\'on del vector completo de la imagen, dCor y Pearson tienen un comportamiento bastante similar, mientras que MIC tiene dificultad para encontrar una relaci\'on entre las imagenes con niveles de ruido m\'as alto y la imagen original. 
+
+\todo{ordenar y arreglar figuras}
+\todo{agregar que el anexo tiene el resto de las imagenes}
+\todo{agregar el resto de las imagenes al anexo}
+
+\section{Conclusiones}
+
+
+
+\todo{concluir}
