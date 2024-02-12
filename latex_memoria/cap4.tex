@@ -176,40 +176,42 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{img_bci_1.png}
-        \caption{Transformaciones de la im\'agen 1.}
+        \caption{Transformaciones de la im\'agen 1. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
         \label{fig:img_bci_1}
     \end{figure}
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{img_bci_2.png}
-        \caption{Transformaciones de la im\'agen 2.}
+        \caption{Transformaciones de la im\'agen 2. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
         \label{fig:img_bci_2}
     \end{figure}
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{img_bci_13.png}
-        \caption{Transformaciones de la im\'agen 13.}
+        \caption{Transformaciones de la im\'agen 13. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
         \label{fig:img_bci_13}
     \end{figure}
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{img_bci_22.png}
-        \caption{Transformaciones de la im\'agen 22.}
+        \caption{Transformaciones de la im\'agen 22. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
         \label{fig:img_bci_22}
     \end{figure}
 
     \todo{juntar imagenes una figura? }
 
-    Lo primero que podemos notar es que el efecto visual que genera cada una de las transformaciones es distinto, \todo{hablar de esto y de las imagenes}. 
+    Lo primero que notamos al ver l\'as im\'agenes es que el efecto que cada m\'etodo tiene en la imagen es distinto, podemos ver como, por ejemplo, el m\'etodo de grilla, el efecto que tiene en la im\'agen 1 es totalmente distinto al efecto que tiene en la im\'agen 2. 
+
+    No es extra\~no que la composici\'on de cada im\'agen afecta el valor de $\lambda$ seleccionado, pero parece que esto es m\'as pronunciado en el m\'etodo de grilla, que en los otros dos m\'etodos. Esto se debe a que el m\'etodo de grilla es susceptible a grandes secciones de la im\'agen que tienen un bajo contraste, lo que genera que el valor de $\lambda$ se dispare. 
+
+    Notemos, por otro lado, que el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. Pero de la misma forma que Cheddad \cite{boxcoximg}, notamos que estos m\'etodos tampoco suelen coinsidir, y que el m\'etodo de histograma suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos.
+
+    Notemos que el mismo tratamiento realizado para todas las imagenes se encuentra en el anexo \todo{anexo}.
     
-    No es extra\~no que la composici\'on de cada im\'agen afecta el valor de $\lambda$ seleccionado \todo{hablar cualitaivamente de el efecto que cada forma de transformacion tiene en la imagen}
-
-    \todo{el resto de las iamgenes est\'an en el anexo}
-
-    Ahora, veamos como se comportan $\lambda$ en todo el banco de imagenes.
+    Ahora, veamos como se comportan $\lambda$ en todo el banco de imagenes, separado por m\'etodo.
 
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{lambda_noclip.png}
@@ -217,7 +219,7 @@
         \label{fig:lambda_noclip}
     \end{figure}
 
-    \todo{Podemos ver que en elgunos casos lamba se demasiado solo pasa en gris}. Notemos que las im\'agenes cuyo $\lambda$ se dispara son las imagenes 10, 15, y 20, las cuales podemos ver a continuaci\'on en la figura \ref{fig:img_bci_10_15_20}
+    Lo primero que notamos es que el m\'etodo de grilla tiene un comportamiento mucho m\'as err\'atico que los otros dos m\'etodos, en particular suele dispararse a valores extremadamente altos de $\lambda$. Notemos que las im\'agenes cuyo $\lambda$ se dispara son las imagenes 10, 15, y 20, las cuales podemos ver a continuaci\'on en la figura \ref{fig:img_bci_10_15_20}
 
     \begin{figure}[H]
         \centering
@@ -226,7 +228,7 @@
         \label{fig:img_bci_10_15_20}
     \end{figure}
 
-    Lo que est\'as imagenes tienen en com\'un es que son im\'agenes que contienen grandes secciones de color similar, lo que genera al momento de hacer la grilla, que muchas secciones se ven ''planas'', esto genera que el valor de $\lambda$ se dispare. Ahora, vamos a cortar los valores en $5$ para poder ver mejor el comportamiento de $\lambda$ en el resto de las imagenes.
+    Lo que est\'as imagenes tienen en com\'un es que son im\'agenes que contienen grandes secciones de color similar, o bajo contraste, lo que genera al momento de hacer la grilla, que muchas secciones se ven ''planas'', esto genera que el valor de $\lambda$ se dispare. Ahora, vamos a cortar los valores en $5$ para poder ver mejor el comportamiento de $\lambda$ en el resto de las imagenes.
 
     \begin{figure}[H]
         \includegraphics[width=\textwidth]{lambda_clip.png}
@@ -234,18 +236,22 @@
         \label{fig:lambda_clip}
     \end{figure}
 
-   \todo{ podemos ver que esto, hablar de correlaciones entre los valores de lambda, y como se comportan en distintos tipos de imagenes.}
+    Aqu\'i ya podemos ver el comprtamiento de los lambda, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, pero el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. Notemos que el m\'etodo de histograma, no solo suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos, sino que en todo nuestro banco esto siempre fue verdad.
+
+    Ahora, podemos revisar que valore tuvieron las correlaciones de pearson entre los distintos m\'etodos de selecci\'on de $\lambda$.
 
 
-   resultado de las correlaciones de pearson entre los distintos metodos de seleccion de lambda
+    \begin{table}[H]
+        \begin{tabular}{|l|l|l|l|}
+            \hline
+            M\'etodo 1 & M\'etodo 2 & Pearson r & Valor P \\ \hline
+            Completo                  & Histograma                & -0.1621   & 0.4598  \\ 
+            Completo                  & Grilla                    & 0.1785    & 0.4149  \\ 
+            Histograma                & Grilla                    & -0.3417   & 0.1105  \\ \hline
+        \end{tabular}
+    \end{table}
 
-    full, hist PearsonRResult(r=-0.1621, pvalue=0.4598)
-
-    full, grid PearsonRResult(r=0.1785, pvalue=0.4149)
-
-    hist, grid PearsonRResult(r=-0.3417, pvalue=0.1105)
-
-    \todo{hablar de esto}
+        \todo{hablar de esto}
 
     \section{Box-Cox sobre imagenes a color}
 
