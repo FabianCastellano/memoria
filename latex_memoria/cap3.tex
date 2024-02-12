@@ -1,341 +1,189 @@
 % ---------------------------------------------------------------------------------------
-\chapter[Covarianza y Correlaci\'on por Distancia]{Covarianza y Correlaci\'on por Distancia} \label{chap3}
+\chapter{Análisis y Procesamiento de Imagenes }\label{chap3}
 
 \section{Introducci\'on}
 
-En la secci\'on anterior, discutimos el MIC y el TIC, dos medidas de asociaci\'on utilizadas para cuantificar relaciones no lineales entre datos, pero no es la \'unica, y de hecho es cr\'iticada por tener algunas falencias al momento de detectar la fuerza entre relaciones \cite{SimonTibshirani}. Por esto tambi\'en buscamos otra medida que nos ayudar\'a a complementar el an\'alisis de asociaci\'on entre variables, y por esto en este cap\'itulo estudiaremos la Covarianza y Correlaci\'on por Distancia.
+Tanto en la ciencia de datos, commom en estad\'istica, y la compitaci\'on, el an\'alisis de im\'agenes es un ha emergido como un \'area de estudio de gran importancia, que he sido pivotal y con un extenso alcance en multiples discuplinas. De la forma en que la era digital avanza, la cantidad de datos que se generan en forma de im\'agenes es cada vez mayor, y con ello la necesidad herramientas para analizar, procesar, comprender y en general obtener informaci\'on relevante de estas imagenes. 
 
-La Covarianza por Distancia (cCor) y la Correlaci\'on por distancia (dCor) fueron propuestas por Sz\'ekely, Rizzo, y Bakirov en su trabajo \textit{''Measuring and testing independence by correlation of distances''} (2007) \cite{Szekely2007}, posteriormente tambi\'en propusieton la Covarianza por Distancia Browniana en su trabajo \textit{''Brownian Distance Covariance''} (2009) \cite{Szekely2009}, en donde tambi\'en se demostr\'o que esta coincide con la Covarianza por Distancia tradicional.
+El uso de im\'agenes ha evolucionado de aplicaci\'ones tradicionales como imagenolog\'ia satelital y diagn\'ostico m\'edico, a dominios m\'as modernos como inteligencia artificial, reconocimiento facial, y vehiculos aut\'onomos. La habilidad de detectar patrones, animal\'ias, y derivar informaci\'on de estas tiene un potencial enorme para la innovaci\'on y el desarrollo de nuevas tecnolog\'ias. 
 
-Estas son medidas de asociaci\'on no param\'etricas que buscan encontrar relaciones no lineales entre dos conjuntos de datos, en particular establecer una forma de caracterizar independenc\'ia entre dos distribuci\'ones. Dado esto es importante recalcar que, para distribuci\'on de primer momento fin\'ito, la Correlaci\'on por distancia ($\mathcal{R}$) generaliza la idea de correalci\'on en dos formas:
+En este cap\'itulo, se introducen los conceptos necesarios para entender el an\'alisis de im\'agenes, y se presentan las herramientas que se utilizaron para el desarrollo de este trabajo. Comenzaremos defininiendo las imagenes como matrices, luego presentaremos el banco de imagenes a utilizar durante el resto del trabajo, para posteriormente hablar de las caracter\'isticas de una imagen, como el contraste, la luminosidad, y la saturaci\'on. Luego, hablaremos de los espacios de color, y como estos se utilizan para representar una imagen. Finalmente, hablaremos de las t\'ecnicas de comparaci\'on de im\'agenes, en particular como aplicamos t\'ecnicas de comparaci\'on entre vectores sobre im\'agenes,
 
-\begin{enumerate}
-	\item $\mathcal{R}(X,Y)$ est\'a definido para $X,Y$ de dimensi\'on aleatoria.
-	\item $\mathcal{R}(X,Y) = 0$ caracteriza la independenc\'a de $X$ e $Y$.	 
-\end{enumerate}
+% ---------------------------------------------------------------------------------------
+\section{Imagenes como matrices}
 
-La primera de estas afirmaciones es importante, ya que nos permite utulizar esta medida para comparar im\'agenes sin mayor problema, de todas formas en la secci\'on \ref{chap5} estudiaremos como adaptar est\'as medidas para im\'agnes. En esta secci\'on definiremos estos 3 coeficientes, la relaci\'on entre ellos y verificaremos la afirmaciones realizadas m\'as arriba, para esto comenzaremos con las definiciones. 
+Una im\'agen es una representaci\'on visual de un objeto, y se puede definir como una funci\'on bidimensional $f(x,y)$, donde $x$ y $y$ son coordenadas espaciales, y el valor de $f$ en cualquier par de coordenadas $(x,y)$ es la intensidad de la imagen en ese punto. Cuando $x$, $y$, y los valores de intensidad de $f$ son todos finitos y discretos, llamamos a la imagen una imagen digital. En este trabajo hemos utilizado (y seguiremos utilziando) el concepto de imagen digital e im\'agen de forma intercambiable. Por claridad en notaci\'on y conveniencia, usamos valores enteros para determinar las coordenadas de la imagen, y su origen en la esquina superior izquierda, como se muestra en la siguiente ecuaci\'on:
 
-\section{Definiciones}
+$$
+f(x, y)=\left[\begin{array}{cccc}
+f(0,0) & f(0,1) & \cdots & f(0, N-1) \\
+f(1,0) & f(1,1) & \cdots & f(1, N-1) \\
+\vdots & \vdots & & \vdots \\
+f(M-1,0) & f(M-1,1) & \cdots & f(M-1, N-1)
+\end{array}\right]
+$$
 
-Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son enteros positivos. Las funciones en min\'uscula $f_X$ y $f_Y$ se utilizarán para denotar las funciones caracter\'isticas de $X$ y $Y$, respectivamente, y su funci\'on caracter\'istica conjunta se denota como $f_{X, Y}$. 
-
-\begin{defn}[Covarianza por distancia]
-	La Covarianza por distancia (dCov) entre los vectores aleatorios $X$ e $Y$ con primeros momentos finitos es el n\'umero no negativo $\mathcal{V}(X, Y)$ definido por:
-	\begin{equation}
-		\begin{aligned}\label{dcov_formula}
-			\mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
-			& =\frac{1}{c_p c_q} \int_{\R^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
-			\end{aligned}
-	\end{equation}
-
-	\end{defn}
-
-	Similarmente, la Varianza por distancia (dVar) se define como la raiz cuadrada:
-
-	$$
-	\mathcal{V}^2(X)=\mathcal{V}^2(X, X)=\left\|f_{X, X}(t, s)-f_X(t) f_X(s)\right\|^2 .
-	$$
-
-	Por definici\'on de la norma $\|\cdot\|$, es claro que  $\mathcal{V}(X, Y) \geq 0$ y $\mathcal{V}(X, Y)=0$ si y solo si $X$ e $Y$ son indepentes.
-
-	\begin{defn} [Correlaci\'on por distancia]
-		La correlaci\'on por distancia (dCor) entre los vectores aleatorios $X$ e $Y$ con primer momento finito es el n\'unero no negtivo $\mathcal{R}(X, Y)$ definido por:
-		$$
-		\mathcal{R}^2(X, Y)= \begin{cases}\frac{\mathcal{V}^2(X, Y)}{\sqrt{\mathcal{V}^2(X) \mathcal{V}^2(Y)}}, & \mathcal{V}^2(X) \mathcal{V}^2(Y)>0 \\ 0, & \mathcal{V}^2(X) \mathcal{V}^2(Y)=0\end{cases}.
-		$$
-
-	Algunas propiedades de $\mathcal{R}$ an\'alogo a $\rho$ ser\'an revisadas m\'as adelante. 
-	\end{defn}
-
-	Ahora, para el caso muestral, definimos los estad\'isticos de distancia de la siguiente forma. Para una muestra aleatoria $(\mathbf{X}, \mathbf{Y})=\left\{\left(X_k, Y_k\right): k=1, \ldots, n\right\}$ de $n$ ventores aleatorios $(X, Y)$ i.i.d., calculamos las matrices de distancia euclideana  $\left(a_{k l}\right)=\left(\left|X_k-X_l\right|_p\right)$ y $\left(b_{k l}\right)=\left(\left|Y_k-Y_l\right|_q\right)$. Definimos:
-
-	$$
-	A_{k l}=a_{k l}-\bar{a}_{k .}-\bar{a}_{. l}+\bar{a}_{. .}, \quad k, l=1, \ldots, n,
-	$$
-	donde
-	$$
-	\bar{a}_{k .}=\frac{1}{n} \sum_{l=1}^n a_{k l}, \quad \bar{a}_{. l},=\frac{1}{n} \sum_{k=1}^n a_{k l}, \quad \bar{a}_{. .}=\frac{1}{n^2} \sum_{k, l=1}^n a_{k l} .
-	$$
-	
-	De forma similar, definimos $B_{k l}=b_{k l}-\bar{b}_{k .}-\bar{b}_{\cdot l}+\bar{b}_{. .}$, para $k, l=1, \ldots, n$.
-
-	\begin{defn}[Covarianza y Correlaci\'on por distancia muestral]
-		La no negativa Covarianza por distancia muestral $\mathcal{V}_n(\mathbf{X}, \mathbf{Y})$ y la Correlaci\'on por distancia muestral $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})$ estan definidas por
-		$$
-		\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l} B_{k l},
-		$$
-		y
-		$$
-		\mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})= \begin{cases}\frac{\mathcal{V}_n^2(\mathbf{X}, \mathbf{Y})}{\sqrt{\mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})}}, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})>0 \\ 0, & \mathcal{V}_n^2(\mathbf{X}) \mathcal{V}_n^2(\mathbf{Y})=0\end{cases},
-		$$
-		respectivamente. Adem\'as la Varianza por distancia muestral $\mathcal{V}_n(\mathbf{X})$ est\'a definida por
-		$$
-		\mathcal{V}_n^2(\mathbf{X})=\mathcal{V}_n^2(\mathbf{X}, \mathbf{X})=\frac{1}{n^2} \sum_{k, l=1}^n A_{k l}^2 .
-		$$
-	\end{defn}
-
-	Por ultimo, plantearemos los siguientes teoremas que nos entregan  propiedades importantes de la Correlaci\'on por distancia:
-
-	\begin{thm}
-		Si $(\mathbf{X}, \mathbf{Y})$ es una muestra aleatoria del vector aleatorio $(X, Y)$, entonces
-		$$
-		\mathcal{V}n^2(\mathbf{X}, \mathbf{Y})=\left\|f{X, Y}^n(t, s)-f_X^n(t) f_Y^n(s)\right\|^2 .
-		$$
-	\end{thm}
-	\begin{thm}
-		Si $E|X|_p<\infty$ and $E|Y|_q<\infty$, entonces casi seguramente
-		$$
-		\lim _{n \rightarrow \infty} \mathcal{V}_n(\mathbf{X}, \mathbf{Y})=\mathcal{V}(X, Y) .
-		$$
-	\end{thm}
-	
-	\begin{cor}
-		If $E\left(|X|_p+|Y|_q\right)<\infty$, then almost surely
-		$$
-		\lim _{n \rightarrow \infty} \mathcal{R}_n^2(\mathbf{X}, \mathbf{Y})=\mathcal{R}^2(X, Y) \text {. }
-		$$
-	\end{cor}
-	\begin{thm}\label{thm3_brcov}
-		Para vectores aleatorios $X \in \mathbb{R}^p$ y $Y \in \mathbb{R}^q$ tal que $E\left(|X|_p+\right.$ $\left.|Y|_q\right)<\infty$, se tienen las siguientes propiedades:
-		\begin{enumerate}
-			\item $0 \leq \mathcal{R}(X, Y) \leq 1$, y $\mathcal{R}=0$ si y solo si $X$ e $Y$ son independientes.
-			\item $\mathcal{V}\left(a_1+b_1 C_1 X, a_2+b_2 C_2 Y\right)=\sqrt{\left|b_1 b_2\right|} \mathcal{V}(X, Y)$, para todos los vectores constantes $a_1 \in \mathbb{R}^p, a_2 \in \mathbb{R}^q$, escalares $b_1, b_2$ y matrices ortogonales $C_1, C_2$ en $\mathbb{R}^p$ y $\mathbb{R}^q$, respectivamente.	
-			\item Si el vector aleatorio $\left(X_1, Y_1\right)$ es ind. del vector aleatorio $\left(X_2, Y_2\right)$, se tiene
-			 $$
-			\mathcal{V}\left(X_1+X_2, Y_1+Y_2\right) \leq \mathcal{V}\left(X_1, Y_1\right)+\mathcal{V}\left(X_2, Y_2\right) .
-			$$
-			La igualdad se cumple si y solo si $X_1$ e $Y_1$ son constantes, o $X_2$ e $Y_2$ son constantes, o $X_1, X_2, Y_1, Y_2$ son mutuamente independientes.
-
-			\item $\mathcal{V}(X)=0$ implica que $X=E[X]$, casi seguramente.
-			\item $\mathcal{V}(a+b C X)=|b| \mathcal{V}(X)$, para todos los vectores constantes $a$ en $\mathbb{R}^p$, escalares $b$, y matrices ortogonales $p \times p$ $C$.
-			\item Si $X$ e $Y$ son independientes, entonces $\mathcal{V}(X+Y) \leq \mathcal{V}(X)+\mathcal{V}(Y)$. La igualdad se cumple si y solo si uno de los vectores aleatorios $X$ o $Y$ es constante.
-		\end{enumerate}
-	\end{thm}
-	\begin{thm}
-	\begin{enumerate}
-		\item $\mathcal{V}_n(\mathbf{X}, \mathbf{Y}) \geq 0$.
-		\item $\mathcal{V}_n(\mathbf{X})=0$ si y solo si cada observaci\'on de la muestra es id\'entica.
-		\item $0 \leq \mathcal{R}_n(\mathbf{X}, \mathbf{Y}) \leq 1$.
-		\item $\mathcal{R}_n(\mathbf{X}, \mathbf{Y})=1$ implica que las dimensiones de los subespacios lineales generados por $\mathbf{X}$ y $\mathbf{Y}$ respectivamente son casi seguramente iguales, y si asumimos que estos subespacios son iguales, entonces en este subespacio
-		\item $$
-		\mathbf{Y}=a+b \mathbf{X} C,
-		$$
-		para alg\'un vector $a$, n\'umero real no nulo $b$, y matriz ortogonal $C$.
-	\end{enumerate}	
-	\end{thm}
-	demostraci\'ones de todos estos teoremas pueden ser encontrados en Szekely y Rizzo (2009) \cite{Szekely2009}.
+El lado derecho de esta ecuación es una imagen digital representada como un conjunto de números reales. Cada elemento de este conjunto se llama elemento de imagen, píxel o "pel". La Figura \ref{fig:dip_2_18} muestra una representación gráfica de un conjunto de imágenes, donde los ejes $x$ e $y$ se utilizan para denotar las filas y columnas del conjunto. Píxeles específicos son valores del conjunto en un par fijo de coordenadas. Como se mencionó anteriormente, generalmente utilizamos $f(i, j)$ al referirnos a un píxel con coordenadas $(i, j)$.
 
 
-	\section{Covarianza Browniana}
-		
-		Para introducir la noci\'on de covarianza browniana, comenzaremos considerando la covarianza cuadrada del producto-momento. Recordemos que una variable prima $X'$ denota una copia independiente e id\'enticamente distribuida (i.i.d.) del símbolo no prima $X$. Para dos variables aleatorias continuas de valores reales, el cuadrado de su covarianza clásica es:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{dip_4_fig2_18.png}
+    \caption{
+        (a) Imagen representada como una superficie.
+        (b) Imagen mostrada como un conjunto de intensidades visuales.
+        (c) Imagen presentada como un conjunto numérico en 2D. (Los números 0, 0.6 y 1 representan negro, gris y blanco, respectivamente).}
+    \label{fig:dip_2_18}
+\end{figure}
 
-		$$\E[(X-\E(X))(Y-\E(Y))] = \E[(X-\E(X))(X'-\E(X'))(Y-\E(Y))(Y'-\E(Y'))]	$$
+Como se ve en la figura \ref{fig:dip_2_18}, y como mencionamos anteriormente, el origen se define en la esquina superior izquierda, esta es una convenci\'on que nace en que mucha tecnolog\'ia usada para representar imagenes hacen un barrido de imagen de arriba hacía abajo y de izquierda a derecha, por ejemplo, los televisores. Esto tambi\'en es conveniente dado que concorda con la forma en la que solemos indexar matrices, las cuales tambi\'en podemos podemos utilizar para representar una imagen  de la siguiente forma:
 
-		Ahora generalizamos la covarianza al cuadrado y definimos el cuadrado de la covarianza condicional, dadas dos procesos estocásticos de valores reales, $U(\circ)$ y $V(*)$. Obtenemos un resultado interesante cuando U y V son procesos de Wiener independientes.
+$$
+\mathbf{A}=\left[\begin{array}{cccc}
+a_{0,0} & a_{0,1} & \cdots & a_{0, N-1} \\
+a_{1,0} & a_{1,1} & \cdots & a_{1, N-1} \\
+\vdots & \vdots & & \vdots \\
+a_{M-1,0} & a_{M-1,1} & \cdots & a_{M-1, N-1}
+\end{array}\right]
+$$
+
+Normalmente, cuando trabajamos con una im\'agen obtenida de una c\'amara digital, esta se encuentra en el espacio de color RGB, donde cada pixel de la imagen es representado por tres valores, uno para cada canal de color. Por tanto, podemos representar una imagen RGB como una matriz de $N \times M \times 3$, donde $N$ y $M$ son el ancho y alto de la imagen, y el tercer valor representa los tres canales de color de la siguiente forma:
+
+$$
+\mathcal{F}(x, y)=\{R(x, y), G(x, y), B(x, y)\}
+$$
 
 
-		Primero, para centrar la variable aleatoria $X$ en la covarianza condicional, necesitamos la siguiente definici\'on. Sea $X$ una variable aleatoria de valores reales y $\{U(t): t \in \R\}$ un proceso estoc\'astico de valores reales, independiente de $X$. La versi\'on centrada de $X$ respecto a $U$ se define por:
+Con $R$, $G$, y $B$ representando los valores de los canales rojo, verde y azul respectivamente, y con $x\in[0,M-1]$ e $y\in[0,N-1]$ representando las coordenadas de la imagen. El espacio de color RGB es el espacio m\'as comun para representar imagenes en monitores y es como la gran mayoría de c\'amaras digitales capturan imagenes, pero no es el \'unico espacio de color que existe, otros ejemplos notables son el espacio CMY (cyan, magenta, yellow) y CMYK (cyan, magenta, yellow, black) son espacios comunmente utilizados en impresi\'on, y el espacio HSI (hue, saturation, intensity), que corresponde de forma cercana a la forma en la que los humanos describimos e interpretamos el color. \cite{DigitalImageProcessing}
 
-		$$
-		X_U = U(X)-\int_{-\infty}^{\infty}U(t)dF_X(t)=U(X)-\E[U(X)|U],
-		$$
+Al momento de trabajar con imagenes para el contexto de este trabajo, nos es de interes hacerlo con imagenes en escala de grises, puesto que queremos mantener la informaci\'on espacial de la imagen, y nos facilitar\'a el calculo m\'as adelante. El paso a escala de grises no es más que un promedio ponderado de los tres canales de color de la imagen, aunque tendría sentido utilizar un promedio simple, la percepción humana varía dependiendo del color, dado que somos mas sensibles a los colores verdes, y menos sensibles a los colores azules. Para esto, podemos convertir una imagen RGB a escala de grises utilizando la siguiente ecuaci\'on:
 
-		siempre que la esperanza condicional exista. Notemos que, si $id$ es la identidad, $X_{id}=X-\E[X]$. 
+\begin{equation}
+    I(x, y)=0.299 R(x, y)+0.687 G(x, y)+0.114 B(x, y), 
+    \label{eq:grayscale}
+\end{equation}
 
-		Ahora, sea $\mathcal{W}$ un movimiento Browniano/Wiener de una dimensi\'on en ambos lados con esperanza cero y funci\'on de covarianza.
-		\begin{equation}\label{brw_covariamce}
-			|s|+|t|-|s-t|=2\min(s.t)
-		\end{equation}
-			
+que corresponde el canal gris del espacio de colores $YC_bC_r$. En la siguiente figura podemos ver una imagen RGB, una transformaci\'on utilizando un promdeio simple, y su correspondiente imagen en escala de grises como fue definida anteriormente.
 
-		Esto es dos veces la covarianza estandar para un proceso Wiener. Pero en adelante el factor de dos nos simplificar\'a algunos calculos, por lo que en el resto de la secci\'on asumiermos esta funci\'on de covarianza \ref{brw_covariamce} para $\mathcal{W}$. Ya con esto, podemos definir la Covarianza Browniana 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img_ex_bw.png}
+    \caption{Imagen RGB,escala de grises, y promedio simple.}
+    \label{fig:rgb2gray}
+\end{figure}
 
-		\begin{defn}[Covarianza Browniana]
-			La Covarianza Browniana (o covarianza Wiener) de dos variables aleatorias con valores reales $X$ e $Y$, con segundos monetos fin\'itos es el n\'umero no negativo definido por su cuadrado:
-			\begin{equation}\label{brw_cov}
-				\mathcal{W}^2(X,Y)={Cov}_{{W}^2}(X,Y)=\E[X_{W}X'_{W}Y_{W'}Y'_{W'}],
-			\end{equation}
 
-			donde $({W},{W'})$ no dependen de $(X,X',Y.Y')$.
-		\end{defn}
+\section{Banco de im\'agenes}
 
-		Tomemos en cuenta que si ${W}$ en ${Cov}_{{W}^2}$ es reemplazada por la funci\'on identidad (no aleatoria) $id$, entonces ${Cov}_{id}(X, Y) = |{Cov}(X, Y)| = |\sigma_{X,Y}|$, el valor absoluto de la covarianza del producto-momento de Pearson. Mientras que la covarianza del producto-momento estandarizada, la correlación de Pearson ($\rho$), mide el grado de relaci\'on lineal entre dos variables con valores reales, veremos que la covarianza estandarizada de Brownian mide el grado de todos los tipos posibles de relaciones entre dos variables aleatorias con valores reales.
+El banco que utilizaremos es llamado \textit{Kodak Lossless True Color Image Suite
+}\cite{KodakLosslessTrueColorImageSuite} que corresponde a 24 imagenes no comprimidas y con color completo, de tama\~no 768x512 pixeles o 512x768 pixeles. Est\'as fueron publicadas por la compa\~nia Eastman Kodak en 1999, y son ampliamente utilizadas en el \'area de procesamiento de im\'agenes. 
 
-		La definición de ${Cov}_{{W}^2}$ se puede extender a procesos aleatorios en dimensiones superiores de la siguiente manera. Si $X$ es una variable aleatoria con valores en $\R^p$ y $U(s)$ es un proceso aleatorio (campo aleatorio) definido para todos los $s \in \R^p$ e independiente de $X$, define la versión centrada en $U$ de $X$ como
+Podemos ver las imagenes en la figura , y podemos ver las imagenes en escala de grises en las firguras \ref{fig:banco_color} y \ref{fig:banco_gris}. Est\'as imagenes correponden a una gran variedad de escenas y texturas, teniendo figuras humanas, arquitecura, y paisajes; lo que nos entrega un amplio abanico de posibilidades y variedad al momento de hacer los experimentos.
 
-		$$
-			X_U=\E(X)-\E[U(X)|U]
-		$$
-		siempre que la expectativa condicional exista.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{all_images_grid.png}
+    \caption{Imagenes a utilizar en el banco a color.}
+    \label{fig:banco_color}
+\end{figure}
 
-		\begin{defn}
-			Si $X$ es un vector aleatorio con valores en $\R^p$ y $Y$ es un vector aleatorio con valores en $\R^q$, y $U(s)$ y $V(t)$ son procesos aleatorios, definamos para todo $s\in\R^p$, $t\in\R^q$, entonces la covarianza (U,V) de $X$ e $Y$ es el n\'umero no negativo definido por su cuadrado:
-			\begin{equation}\label{eq_35_brcov}
-				{Cov}^2_{(U,V)}(X,Y) = \E[X_U X'_U Y_V Y'_V],
-			\end{equation}
-				
-			siempre que el lado derecho sea positivo y finito.
-		\end{defn}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{all_images_grid_bw.png}
+    \caption{Imagenes a utilizar en el banco en escala de grises.}
+    \label{fig:banco_gris}
+\end{figure}
 
-		En particular, si ${W}$ y ${W'}$ son procesos brownianos con funci\'on de covarianza \ref{brw_covariamce} en $\R^p$ y $\R^q$ respectivamente, la Covarianza Browniana de $X$ e $Y$ esta definida por:
 
-		\begin{equation}
-			\mathcal{W}^2(X,Y) = Cov^2_W(X,Y) = Cov^2_{W,W'}(X,Y).
-		\end{equation}
+\section{Comparando imagenes}
 
-		De la misma forma, para variables aleatorias con varianza finita podemos definir la Varianza Browniana:
+Cómo discutimos anteriormente, podemos representar una im\'agen como una matriz de valores, pero esto nos genera un problema al momento de usar los m\'etodos de comparaci\'on descritos en el cap\'itulo \ref{chap3} y \ref{chap4}, puesto que estas est\'an definidas para vectores, y no para matrices. Para solucionar esto, podemos utilizar una de las siguientes dos estrategias:
 
-		\begin{equation}
-			\mathcal{W}(X) = Cov_W(X) = Cov_{W}(X,X).
-		\end{equation}
-		
-		Y con esto, podemos definir la correlaci\'on Browniana:
-		
-		\begin{defn}[Correlaci\'on Browniana]
-			Definimos la correalci\'on Browniana de dos variables aleatorias con valores reales $X$ e $Y$ con segundos momentos finitos como:
-			\begin{equation}	
-				Cor_W(X,Y) = \frac{\mathcal{W}}{\sqrt[]{\mathcal{W}(X)\mathcal{W}(Y)}},
-			\end{equation}
-			siempre que el denominador no sea 0; otro caso $Cor_W(X,Y) = 0$.
-		\end{defn}
+\subsection{Im\'agen a vector}
 
-		Ahora, solo nos queda probar que $Cov_W(X,Y)$ existe para vectores aleatorios de segundos momentos finitos, y con esto derivar la Covarianza Browniana. Para esto, tenemos el siguiente teorema:
+La forma m\'as simple de solucionar este problema es convertir la matriz de la imagen en un vector, y luego aplicar los m\'etodos de comparaci\'on sobre este vector. Antes de realizar esta conversi\'on, debemos tener en cuenta problemas generados por esta propuesta. 
 
-		\begin{thm}\label{thm_exists_cov_browniana}
-			Si $X$ es un vector aleatorio con valores en $\R^p$, e $Y$ es un vector aleatorio con valores en $\R^q$, y $\E(|X|^2+|Y|^2)>\infty$, entonces $\E[X_{W}X'_{W}Y_{W'}Y'_{W'}]$ es no negativo y finito, y:
-			\begin{align}
-				\mathcal{W}^2(X,Y) &= \E[X_{W}X'_{W}Y_{W'}Y'_{W'}]\\
-								   &= \E|X-X'||Y-Y'| + \E|X-X'|\E|Y-Y'| - \label{cov_browniana_exists} \\ 
-								   &\qquad - \E|X-X'||Y-Y''|\E|X-X''||Y-Y'|,\label{eq_37_brcov}
- 			\end{align}
-			donde $(X,Y)$, $(X',Y')$, y $(X'',Y'')$ son iid.
-		\end{thm}
-		\begin{proof}
-			Notemos que
-			$$
-			\begin{aligned}
-			E\left[X_W X_W^{\prime} Y_{W^{\prime}} Y_{W^{\prime}}^{\prime}\right] & =E\left[E\left(X_W Y_{W^{\prime}} X_W^{\prime} Y_{W^{\prime}}^{\prime} \mid W, W^{\prime}\right)\right] \\
-			& =E\left[E\left(X_W Y_{W^{\prime}} \mid W, W^{\prime}\right) E\left(X_W^{\prime} Y_{W^{\prime}}^{\prime} \mid W, W^{\prime}\right)\right] \\
-			& =E\left[E\left(X_W Y_{W^{\prime}} \mid W, W^{\prime}\right)\right]^2,
-			\end{aligned}
-			$$
-			y esto es siempre no negativo. Para finitud, es suficiente demostrar que todos los factores en la definici\'on de  $\operatorname{Cov}_W(X, Y)$ tienen cuartos momentos finitos. La ecuaci\'on \ref{cov_browniana_exists} se basa en la forma especial de la funci\'on de covarianza de \ref{brw_covariamce} de $W$. El resto de la demostraci\'on se puede encontrar en el ap\'endice de /Szehely and Rizzo (2009)\cite{Szekely2009}.	
-		\end{proof}
+La primera es que el m\'etodo que utilizaemos para comparar dos im\'agenes puede no ser agn\'ostico con respecto al orden de los vectores a comparar, lo que nos llevaría a otro problema, la elecci\'on del orden de los elementos del vector. Tenemos la suerte de que todos los m\'etodos de comparaci\'on que utilizaremos son agn\'osticos con respecto al orden de los vectores, por lo que no tendremos que preocuparnos de este problema \cite{Reshef2016} \cite{Szekely2009}.
 
-	\section{Equivalencia entre covarianzas}
-	
-	Ahora estudiaremos la equivalencia entre la Covarianza por distancia y la Covarianza Browniana. Pero antes de esto necesitamos plantear el siguiente lema:
+El segundo problema es la perdida de informaci\'on, esto es dado que cada pixel posee una correlaci\'on espacial con sus pixeles vecinos, y al momento de convertir la matriz en un vector, perdemos esta informaci\'on. Para solucionar esto, podr\'iamos utilizar una curva de Hilbert, que es una curva fractal que se puede utilizar para mapear una matriz en un vector, de forma que los pixeles vecinos en la matriz, sean vecinos en el vector. Sin embargo, esto no es necesario, puesto que los m\'etodos de comparaci\'on que utilizaremos son agn\'osticos con respecto al orden de los vectores.
 
-	\begin{lem}\label{lemma_1_brcov}
-		Si $0<\alpha<2$, entonces para todo $x$ en $\R^d$
-		$$
-		\int_{\R^d} \frac{1-\cos \langle t, x\rangle}{|t|_d^{d+\alpha}} d t=C(d, \alpha)|x|_d^\alpha,
-		$$
-		donde
-		$$
-		C(d, \alpha)=\frac{2 \pi^{d / 2} \Gamma(1-\alpha / 2)}{\alpha 2^\alpha \Gamma((d+\alpha) / 2)},
-		$$
-		y $\Gamma(\cdot)$ es la funci\'on completea gamma. Las integrales en 0 y $\infty$ se entienden en el sentido de valor principal: $\lim_{\varepsilon \rightarrow 0} \int_{\R^d \backslash\left\{\varepsilon B+\varepsilon^{-1} B^c\right\}}$, donde $B$ es la bola unitaria (centrada en 0) en $\R^d$ y $B^c$ es el complemento de $B$.
-	\end{lem}
-	Una demostraci\'on de este lemma puede ser entontrada en Székely and Rizzo (2007) \cite{Szekely2007}. El Lemma \ref{lemma_1_brcov}
-	sugiere que la funci\'on de pesos
-	\begin{equation}\label{eq_23_brcov}
-	w(t, s ; \alpha)=\left(\left.\left.C(p, \alpha) C(q, \alpha)|t|_p^{p+\alpha}\right|s\right|_q ^{q+\alpha}\right)^{-1}, \quad 0<\alpha<2 .	
-	\end{equation}
+Por ultimo tenemos un problema de tama\~no, las im\'agenes del banco tienen una resouluci\'on de 512x768, lo que nos genera un vector de 393216 elementos, lo que es un vector de dimensi\'on muy alta, y podr\'ia generar problemas de performance al momento de calcular los coeficientes de comparaci\'on. 
 
-	En el caso m\'as simple correspondiente a $\alpha=1$ y norma euclidiana $|x|$,
-	\begin{equation}\label{eq_24_brcov}
-		w(t, s)=\left(c_p c_q|t|_p^{1+p}|s|_q^{1+q}\right)^{-1},
-		\end{equation}
-	
-	donde,
-	\begin{equation}\label{eq_25_brcov}
-		c_d=C(d, 1)=\frac{\pi^{(1+d) / 2}}{\Gamma((1+d) / 2)} .
-	\end{equation}
-	
-	(La constante $2 c_d$ es el \'area de la esfera unitaria en $\R^{d+1}$).
-	\begin{rem}
-		El Lemma \ref{lemma_1_brcov} es aplicado para evaluar el integrando en \ref{dcov_formula} para las funciones de peso \ref{eq_23_brcov} y \ref{eq_24_brcov}. Por ejemplo, si $\alpha=1$ \ref{eq_24_brcov}, entonces por el Lemma \ref{lemma_1_brcov} existen constantes $c_p$ y $c_q$ tal que para $X$ en $\R^p$ y $Y$ en $\R^q$,
-		$$
-		\begin{gathered}
-		\int_{\mathbb{R}^p} \frac{1-\exp \{i\langle t, X\rangle\}}{|t|p^{1+p}} d t=c_p|X|_p, \quad \int{\mathbb{R}^q} \frac{1-\exp \{i\langle s, Y\rangle\}}{|s|_q^{1+q}} d s=c_q|Y|_q, \\
-		\int_{\mathbb{R}^p} \int_{\mathbb{R}^q} \frac{1-\exp \{i\langle t, X\rangle+i\langle s, Y\rangle\}}{|t|_p^{1+p}|s|_q^{1+q}} d t d s=c_p c_q|X|_p|Y|_q
-		\end{gathered}
-		$$
-	\end{rem}
-	
-	Ya con esto, podemos pasar el resultado principal de esta secci\'on, con el siguiente teorema.
-	
+\subsection{Imagen a histograma}
 
-	\begin{thm}\label{thm_8_brcov}
-		Para un $X \in \R^p, Y \in \R^q$ arbitrario, con segundos momentos finitos
-			$$
-			\mathcal{W}(X, Y)=\mathcal{V}(X, Y) .
-			$$
-			\end{thm}
-	
-	\begin{proof}
-		
-	Proof. Ambos $\mathcal{V}$ y $\mathcal{W}$ son no negativos, por tanto, basta por demostrar que sus cuadrados coinciden. Para esto, primero notemos Lemma \ref{lemma_1_brcov} puede ser aplicado para evaluar $\mathcal{V}^2(X, Y)$. En el numerador de la integral tenemos t\'erminos como:
-	
-	$$
-	E\left[\cos \left\langle X-X^{\prime}, t\right\rangle \cos \left\langle Y-Y^{\prime}, s\right\rangle\right],
-	$$
+Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma que en Bicego (2016)\cite{bicego2016} donde, luego de convertir la imagen en escala de grises, cada valor de intensidad corresponde a un bin del histograma, y este es usado para calcular el lambda optimo para la transformaci\'on de Box-Cox. 
 
-	donde $X, X^{\prime}$ son i.i.d. y $Y, Y^{\prime}$ son i.i.d. Ahora, aplicando la identidad:
-	$$
-	\cos u \cos v=1-(1-\cos u)-(1-\cos v)+(1-\cos u)(1-\cos v)
-	$$
-	y el Lemma \ref{lemma_1_brcov} para simplificar el integrando. Despu\'es de cancelar en el numerador del integrando, queda por evaluar integrales del tipo:
+Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realziar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que los pixeles vecinos en la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
 
-	$$
-	\begin{aligned}
-	& E \int_{\R^{p+q}} \frac{\left.\left[1-\cos \left\langle X-X^{\prime}, t\right\rangle\right]\left[1-\cos \left\langle Y-Y^{\prime}, s\right\rangle\right)\right]}{|t|^{1+p}|s|^{1+q}} d t d s \\
-	& \quad=E\left[\int_{\R^p} \frac{1-\cos \left\langle X-X^{\prime}, t\right\rangle}{|t|^{1+p}} d t \times \int_{\R^q} \frac{1-\cos \left\langle Y-Y^{\prime}, s\right\rangle}{|s|^{1+q}} d s\right] \\
-	& =c_p c_q E\left|X-X^{\prime}\right| E\left|Y-Y^{\prime}\right|
-	\end{aligned}
-	$$
-	Luego de esto, y simplificando, obtenemos:
-	$$
-	\begin{aligned}
-	\mathcal{V}^2(X, Y)= & E\left|X-X^{\prime}\right|\left|Y-Y^{\prime}\right|+E\left|X-X^{\prime}\right| E\left|Y-Y^{\prime}\right| \\
-	& -E\left|X-X^{\prime}\right|\left|Y-Y^{\prime \prime}\right|-E\left|X-X^{\prime \prime}\right|\left|Y-Y^{\prime}\right|,
-	\end{aligned}
-	$$
-	y esta es exactamente igual a la expresi\'on \ref{eq_37_brcov} obtenida para $\mathcal{W}^2(X, Y)$ en el Teorema \ref{thm_exists_cov_browniana}.
-	\end{proof}
+El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas, como se ve en la figura \todo{hacer figura imagen mismo histograma dif iamgen}, donde se ve que las dos imagenes tienen el mismo histograma, pero son completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, puesto que lo que nos interesa es comparar imagenes que son similares, puesto que son el resultado de una transformaci\'on de la imagen original.
 
-	Como corolario del Teorema \ref{thm_8_brcov}, tenemos que las propiedades de la Covarianza Browniana para vectores aleatorios $X$ e $Y$ con segundos momentos finitos son las mismas propiedades establecidas para la Covarianza por distancia $\mathcal{V}(X, Y)$ en el Teorema \ref{thm3_brcov}.
-	
-	El sorpredente resultado de que la Covarianza Browniana es igual a la Covarianza por distancia, exactamente como se define en \ref{dcov_formula} para $X \in \R^p$ e $Y \in \R^q$, es paralelo a un caso especial familiar cuando $p=q=1$. Para bivariados $(X, Y)$ encontramos que $\mathcal{R}(X, Y)$ es un contraparte natural del valor absoluto de la correlaci\'on de Pearson. Es decir, si en \ref{eq_35_brcov} $U$ y $V$ son la funci\'on no aleatoria m\'as simple $id$, entonces obtenemos el cuadrado de la covarianza de Pearson $\sigma_{X, Y}^2$. Luego, si consideramos los procesos aleatorios m\'as fundamentales, $U=W$ y $V=W^{\prime}$, obtenemos el cuadrado de la covarianza por distancia, $\mathcal{V}^2(X, Y)$.
+\section{Ejemplos de comparaci\'on de imagenes}
 
-\section[]{Correlaci\'on de Pearson}
+Ya describimos los m\'etodos que usaremos para comprar las imagenes usando las t\'ecnicas descritas en el cap\'itulo \ref{chap2} y \ref{chap3}, ahora revisaremos 4 imagenes del banco, y veremos como se comportan los coeficientes de comparaci\'on para estas imagenes comparadas con una versi\'on de la misma imagen a la se le aplicaron distintos niveles de ruido. En la figura \ref{fig:img_hist} podemos ver las imagenes junto con sus histogramas.
 
-	\section{Introducci\'on}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img_hist.png}
+    \caption{Imagenes junto con sus histogramas de intensidad. Corresponden a las imagenes 1, 2, 13, y 22 del banco de imagenes.}
+    \label{fig:img_hist}
+\end{figure}
 
-	\todo{donde se public\'o, pequena intro.}
-		
-	 
-	\section{Definiciones}
-	
-	El coef. se define como:
-	\begin{equation}\label{pearson_orig}
-		\rho_{X,Y}=\frac{cov(X,Y)}{\sigma_X\sigma_Y}
-	\end{equation}
-	
-	Para una muestra de tama\~no $N$, tenemos:
-	
-	\begin{equation}\label{pearson_r}
-		r=\frac{\sum_{i}^N\left(x_{i}-\bar{x}\right)\left(y_{i}-\bar{y}\right)}{\sqrt{\sum_{i}^n\left(x_{i}-\bar{x}\right)^{2}} \sqrt{\sum_{i}^n\left(y_{i}-\bar{y}\right)^{2}}}
-	\end{equation}
-	
-	Con $x_i,y_i$ elementos de la muestra y $\bar{x},\bar{y}$ sus respectivos promedios.
-	\todo{Hablar de The Ineffectiveness of the Correlation Coefficient for Image ComparisonsS}
+Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas son se ven m\'as normales que otros, pero cabe notar que varias de est\'as fotos son multimodales, lo que dificulta el proceso de "normalizarlas", veamos ahora como se comportan las imagenes y su histograma al momento de aplicarles ruido. En la figura \ref{fig:img_hist_ruido} podemos ver las imagenes con ruido, junto con sus histogramas.
 
-\section{Ejemplos}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img_hist_noise.png}
+    \caption{Imagenes junto con sus histogramas con ruido.}
+    \label{fig:img_hist_ruido}
+\end{figure}
 
-	\todo{usar datasaurus para mostrar los coeficientes}
+\todo{describir mtodlogía de comparaci\'on}
+Podemos ver que el ruido afecta de forma distinta a cada imagen, y que el histograma de cada imagen con ruido es distinto al histograma de la imagen original. Al momento de agregarles ruido gausiano es esperable que el histograma se vea más normal, y cabe destacar que la media de la distribución de los valores de intensidad queda centrada donde se encontraba la mayor moda del histograma original. 
 
-	\newpage
+Ahora, procederemos a revisar como se comporta la matriz de calor al ocmpara las imagenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las imagenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En las siguientes figuras \ref{fig:heatmap1} \ref{fig:heatmap2} \ref{fig:heatmap13} \ref{fig:heatmap22} podemos ver las matrices de calor para cada m\'etodo,  
+
+% do a figure with 4 images 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_1.png}
+    \caption{Matriz de calor para imagen 1 del banco, comparando imagenes con sus versiones con ruido. }
+    \label{fig:heatmap1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_2.png}
+    \caption{Matriz de calor para imagen 2 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_13.png}
+    \caption{Matriz de calor para imagen 13 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap13}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{heatmap_22.png}
+    \caption{Matriz de calor para imagen 22 del banco, comparando imagenes con sus versiones con ruido.}
+    \label{fig:heatmap22}
+\end{figure}
+
+Notemos que a la izquierda tenemos la comparaci\'on del vector de las im\'agenes completo, y la derecha tenemos la comparaci\'on de los histogramas; además desde arriba hac\'ia abajo tenemos dCor, MIC, y Pearson.
+
+Directamente podemos ver que existe una relaci\'on invesamente proporcional entre la cantidad de rudio y el coeficiente de comparaci\'on, lo que es esperable. Lo segundo que vale la pena mencionar es que en el caso de comparar los histogramas, en particular al momento de comparar entre las imagenes con ruidos obtenemos valores soprendentemente altos, esto es evidente al momento de ver la figura \ref{fig:img_hist_ruido}, donde podemos ver que los histogramas de las imagenes con ruido son bastante similares entre si. Pero si es destacable que se encontró una relaci\'on bastante fuerte entre los histogramas de las im\'agenes con ruido y las imagenes originales. 
+
+
+Por ultimo vale la pena destcar que, en particular para el caso de la comparaci\'on del vector completo de la imagen, dCor y Pearson tienen un comportamiento bastante similar, mientras que MIC tiene dificultad para encontrar una relaci\'on entre las imagenes con niveles de ruido m\'as alto y la imagen original. 
+
+\todo{ordenar y arreglar figuras}
+\todo{agregar que el anexo tiene el resto de las imagenes}
+\todo{agregar el resto de las imagenes al anexo}
+
+\section{Conclusiones}
+
+
+
+\todo{concluir}
