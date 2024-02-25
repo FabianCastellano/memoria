@@ -1,7 +1,6 @@
 % ---------------------------------------------------------------------------------------
 \chapter{Análisis y Procesamiento de Imagenes }\label{chap3}
 
-\section{Introducci\'on}
 
 Tanto en la ciencia de datos, commom en estad\'istica, y la compitaci\'on, el an\'alisis de im\'agenes es un ha emergido como un \'area de estudio de gran importancia, que he sido pivotal y con un extenso alcance en multiples discuplinas. De la forma en que la era digital avanza, la cantidad de datos que se generan en forma de im\'agenes es cada vez mayor, y con ello la necesidad herramientas para analizar, procesar, comprender y en general obtener informaci\'on relevante de estas imagenes. 
 
@@ -115,7 +114,7 @@ Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma
 
 Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realziar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que los pixeles vecinos en la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
 
-El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas, como se ve en la figura \todo{hacer figura imagen mismo histograma dif iamgen}, donde se ve que las dos imagenes tienen el mismo histograma, pero son completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, puesto que lo que nos interesa es comparar imagenes que son similares, puesto que son el resultado de una transformaci\'on de la imagen original.
+El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, puesto que lo que nos interesa es comparar imagenes que son similares, puesto que son el resultado de una transformaci\'on de la imagen original.
 
 \section{Ejemplos de comparaci\'on de imagenes}
 
@@ -137,38 +136,18 @@ Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas son s
     \label{fig:img_hist_ruido}
 \end{figure}
 
-\todo{describir mtodlogía de comparaci\'on}
 Podemos ver que el ruido afecta de forma distinta a cada imagen, y que el histograma de cada imagen con ruido es distinto al histograma de la imagen original. Al momento de agregarles ruido gausiano es esperable que el histograma se vea más normal, y cabe destacar que la media de la distribución de los valores de intensidad queda centrada donde se encontraba la mayor moda del histograma original. 
 
-Ahora, procederemos a revisar como se comporta la matriz de calor al ocmpara las imagenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las imagenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En las siguientes figuras \ref{fig:heatmap1} \ref{fig:heatmap2} \ref{fig:heatmap13} \ref{fig:heatmap22} podemos ver las matrices de calor para cada m\'etodo,  
+Ahora, procederemos a revisar como se comporta la matriz de calor al ocmpara las imagenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las imagenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En la siguiente figura \ref{fig:heatmapall} podemos ver las matrices de calor para cada m\'etodo de comparaci\'on.
+
+Notemos que la matrices para el resto de las imagenes se pueden encontrar en el Ap\'endice \ref{appA}
 
 % do a figure with 4 images 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{heatmap_1.png}
-    \caption{Matriz de calor para imagen 1 del banco, comparando imagenes con sus versiones con ruido. }
-    \label{fig:heatmap1}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{heatmap_2.png}
-    \caption{Matriz de calor para imagen 2 del banco, comparando imagenes con sus versiones con ruido.}
-    \label{fig:heatmap2}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{heatmap_13.png}
-    \caption{Matriz de calor para imagen 13 del banco, comparando imagenes con sus versiones con ruido.}
-    \label{fig:heatmap13}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{heatmap_22.png}
-    \caption{Matriz de calor para imagen 22 del banco, comparando imagenes con sus versiones con ruido.}
-    \label{fig:heatmap22}
+    \includegraphics[width=0.8\textwidth]{heatmap_all.png}
+    \caption{Matriz de calor para las imagenes 1, 2, 13, y 22 del banco, cada mapa de calor corresponde a un m\'etodo de comparaci\'on, ya sea comparando el total de la im\'agen (izquierda), o el histograma de estas (derecha). La cantidad de ruido aumenta de izquierda a derecha, y de arriba hacía abajo.}
+    \label{fig:heatmapall}
 \end{figure}
 
 Notemos que a la izquierda tenemos la comparaci\'on del vector de las im\'agenes completo, y la derecha tenemos la comparaci\'on de los histogramas; además desde arriba hac\'ia abajo tenemos dCor, MIC, y Pearson.
@@ -177,13 +156,3 @@ Directamente podemos ver que existe una relaci\'on invesamente proporcional entr
 
 
 Por ultimo vale la pena destcar que, en particular para el caso de la comparaci\'on del vector completo de la imagen, dCor y Pearson tienen un comportamiento bastante similar, mientras que MIC tiene dificultad para encontrar una relaci\'on entre las imagenes con niveles de ruido m\'as alto y la imagen original. 
-
-\todo{ordenar y arreglar figuras}
-\todo{agregar que el anexo tiene el resto de las imagenes}
-\todo{agregar el resto de las imagenes al anexo}
-
-\section{Conclusiones}
-
-
-
-\todo{concluir}

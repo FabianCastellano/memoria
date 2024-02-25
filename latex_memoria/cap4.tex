@@ -1,8 +1,6 @@
 % ---------------------------------------------------------------------------------------
-\chapter{La transformaci\'on de Box y Cox}\label{chap4}
+\chapter{La transformaci\'on de Box-Cox}\label{chap4}
 
-    \section{Introducci\'on}
- 
     La transformaci\'on de Box y Cox, conocida como Box-Cox, es una t\'ecnica de transformaci\'on no lineal que fue propuesta por George Box y David Cox en 1964 en su trabajo \textit{''An Analysis of Transformations''}\cite{boxcox64}. Cuenta la historia que el Profesor cox estaba visitando al doctor Box en Wisconsin, y decidieron que deberían escribir un artículo juntos dada la similitud de sus nombres, y que ambos eran británicos \cite{lane2003introduction}. 
     Muchos importantes resultados y t\'ecnicas en el an\'alisis estad\'istico de datos toman el supuesto de que los datos poseen una distribuc\'on normal, en los casos cuando este supuesto no se sostiene, una de las alternativas es transformar los datos para que se acerquen a una distribuci\'on normal. En este contexto la transformaci\'on de Box-Cox fue propuesta para convertir un conjunto de datos en una distribuci\'on que se asemeja a la normal, dejando una distribuci\'on con menos sesgo que es un poco m\'as sim\'etrica, esto suele ser determinado en base a un test de m\'axima verosimilitud, m\'as adeltante discutiremos el motivo de esto. La transformaci\'on de Box-Cox pertenece una familia de t\'ecnicas conocidas como transformaciones de potencia. Estas transformaciones buscan modificar los datos de entrada elev\'andolos a una potencia determinada, identificada por el par\'ametro $\lambda$.
     
@@ -28,10 +26,6 @@
     
     Cabe notar que Bicego y Baldo (2016)\cite{bicego2016} demostraron que, dado un vector $\textbf{y}=(y_1,\dots,y_n)\in\R^n_{>0}$, la transformaci\'on no cambia dado el orden de los elementos en el vector, por lo tanto al momento de aplicar la transformaci\'on sobre una imagen, o en general una matriz d-dimensional, se puede aplicar la cualquier ordenamiento sobre los datos, y luego aplicar la transformaci\'on sobre el vector unidimensional resultante. Dado esto tambi\'en cabe notar que al ser agn\'ostica con respecto al orden de los datos, la transformaci\'on no altera la relaci\'on espacial entre los datos.
     
-    Este no es el caso para la definici\'on de lambda, que es lo que discutiremos en la siguiente secci\'on.
-
-    \section[Eliguiendo Lambda]{Elguiendo $\lambda$}
-
     Como mencionamos anteriormente, el objetivo de la transformaci\'on es encontrar el valor de $\lambda$ que proporciona el mejor ajuste a una distribuci\'on normal. Para esto, Box y Cox proponen un criterio de m\'axima verosimilitud, el cual se define como:
 
     \begin{equation}
@@ -49,76 +43,27 @@
     Este proceso de regularizaci\'on conduce a una distribuci\'on que cumple con ciertos criterios deseables, como la simetr\'ia o la homocedasticidad. Esta \'ultima caracter\'istica, que se refiere a la constancia de la varianza a lo largo del conjunto de datos, es especialmente \'util en campos como el reconocimiento de patrones y el aprendizaje autom\'atico. Por ejemplo, en el an\'alisis discriminante lineal de Fisher, la homocedasticidad facilita la diferenciaci\'on entre diferentes clases de datos, potenciando la eficacia de este tipo de t\'ecnicas de aprendizaje autom\'atico.
 
 
-    \section[]{Box-Cox sobre imagenes} 
+    \section{Box-Cox sobre imagenes} 
 
     En su art\'iculo del 2020 \cite{boxcoximg}, Abbas Cheddad resalta una notable brecha en la aplicaci\'on de la transformaci\'on de Box-Cox a im\'agenes digitales. Seg\'un Cheddad, existe una carencia significativa de estudios en este \'ambito, destacando el trabajo de JD Lee en 2009 como una excepci\'on\cite{lee2009mr}. En el estudio de Lee, se present\'o un m\'etodo de segmentaci\'on para im\'agenes de resonancia magn\'etica cerebral a trav\'es de una t\'ecnica de transformaci\'on de distribuci\'on. En este enfoque, la transformaci\'on de Box-Cox se aplic\'o a las im\'agenes de resonancia magn\'etica cerebral para normalizar la distribuci\'on de intensidad de los p\'ixeles. Es relevante se\~nalar que, en este estudio, las im\'agenes se trataron como un vector de datos en lugar de una matriz, lo que implica un enfoque unidimensional en la manipulaci\'on y an\'alisis de la imagen.
 
     Cabe destacar que el proceso de aplicar la tranformaci\'on es iterativo, en el cual se ha de buscar un parametro $\lambda$, esto hace que aplicar esta la transformaci\'on en grandes bancos de imagenes sea demoroso. Una alternativa propuesta por A. Cheddad \cite{boxcoximg} es utilizar el histograma como proxy comprido de la matriz de datos, dado que este refleja la probabilidad estimada de que un pixel esa de un tono en particular. En lo que continua de la secci\'on discutiremos este m\'etodo.
 
-    Dada una imagen en el espacio de color RGB, como fue defininda en el cap\'itulo \ref{chap4}, definimos:
+    Como mencionamos en el cap\'itulo \ref{chap3}, podemos tratar una imagen como una funci\'on bidimensional $f(x,y)$, donde $x$ y $y$ son coordenadas espaciales, en este caso usaremos imagenes en el espacio de RGB, por lo que tenemos 
     
     $$
-    \mathcal{F}(x, y)=\{R(x, y), G(x, y), B(x, y)\}
+    f(x, y)=\{R(x, y), G(x, y), B(x, y)\}
     $$
 
-    donde $(x, y)$ son las coordenadas en el espacio de pixeles que cumplen $x=0, \ldots X-1$, $y=0, \ldots Y-1$ y $(X, Y)$ son las dos dimensiones de la im\'agen. Notemos que cada elemento de la imagen es vector de tres dimensiones con los canales rojo, verde, y azul, pero en la literatura se suele trabajar con imagenes en escala de grises, para esto utilizaremos la siguiente formula.
+    donde $(x, y)$ son las coordenadas en el espacio de pixeles que cumplen $x=0, \ldots X-1$, $y=0, \ldots Y-1$ y $(X, Y)$ son las dos dimensiones de la im\'agen. Ahora utilizaremos la transformaci\'on \ref{eq:grayscale}, para transformar la im\'agen a escala de grises de la siguiente forma
 
-    $$
-    \mathcal{F}^{\prime} =(0.299 \mathrm{R}+0.587 \mathrm{G}+0.114 \mathrm{~B})
-    $$
+    \begin{equation*}
+        \mathcal{F}(x, y)=0.299 R(x, y)+0.687 G(x, y)+0.114 B(x, y), 
+    \end{equation*}
 
-    Que corresponde al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$ lo calcula. En la figrua 
-    
-    Ahora, antes de pasar a la siguiente secci\'on, podemos ver algunos ejemplos de como afecta a una imagen la aplicaci\'on de la transformaci\'on a lo largo de un rango de valores para $lambda$. En la figura \todo{mostrar una imagen}
+    que corresponde al canal de escala de grises como est\'a definido por el espacio de color $\mathrm{YC}_{\mathrm{b}} \mathrm{C}_{\mathrm{r}}$. Ya teniendo la im\'agen en escala de grises, i.e., en forma de matriz de $XxY$, podemos aplicar la formula \ref{Box-Cox} luego de aplicar alguna operaci\'on que tranforme la matriz a un vector de los mismos valores. Recordemos que los particulares de esta transformaci\'on no son de importancia, m\'as all\'a de que la transformaci\'on debe ser reversible, dado que la transformaci\'on de Box-Cox es agn\'ostica al orden del vector.
 
-    \section[prpuestas de lambda]{Propuestas de $\lambda$ para imagenes.}\label{}
-
-    Uno de los problemas que tenemos al momento de aplicar la transformaci\'on es la selecci\'on del factor $\lambda$, cómo mencionamos anteriormente el proceso estandar es utilizar el m\'etodo de m\'axima verosimilitud, pero como las im\'agenes poseen datos correlacionados de manera espacial, y deberíamos aplicar una transformaci\'on a vector, esta relaci\'on sería perdida. 
-
-    En esta secci\'on revisaremos los dos m\'etodos utilizados en la literatura, junto con otros 2 que se proponen en este trabajo. Luego en el siguiente cap\'itulo compararemos los resultados de estos procedimientos utilizando los m\'etodos de comparaci\'on de im\'agenes definidos en el cap\'itulo \ref{chap2} y \ref{chap3}. 
-
-    A lo largo de la secci\'on usaremos las im\'agenes en la siguiente figura para ejemplificar los resultados de los distintos m\'etodos. En la figura \todo{mostrar una imagen}
-
-    \todo{reescribir esta parte de la secci\'on y agregar las propuestas de lambda}
-
-    \subsection{Box-Cox sobre datos completos}
-
-    Este es el m\'etodo utilizado por Lee et. al. \cite{lee2009mr}, y consiste en aplicar la transformaci\'on sobre los datos completos, i.e., transformar la matriz a vector de alguna forma y luego aplicar verosimilitud para determnar el lambda. Notemos que la forma en la que la matriz sea transformada a vector no es de particular importancia, dado que la transformaci\'on es agn\'ostica con respecto al orden de los datos. 
-
-    \begin{defn}
-        Sea $\mathcal{F}(x, y)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y $\mathcal{F}^{\prime}(i)\in\R^{n\times m}$ el vector de datos, entonces definimos $\lambda_{full}$ como el valor de $\lambda$ que maximiza la verosimilitud de los datos completos, i.e., $\mathcal{F}^{\prime}(i)$.
-    \end{defn}
-    
-    Este m\'etodo es el m\'as utilizado en la literatura, pero como mencionamos anteriormente, este no toma en cuenta la correlaci\'on espacial de los datos, y por lo tanto no es el m\'as adecuado para imagenes. Veamos que resultados tiene este m\'etodo sobre la imagen de la figura \todo{mostrar una imagen}
-
-    
-
-    \subsection[short]{Box Cox sobre histograma}
-
-    En base a esto definimos la funci\'on de probabilidad de im\'agen, i.e., el histograma como:
-    
-    $$\chi(i)= \# \{f(x,y)=i | x\in[0,X-1], y\in[0,Y-1] \}$$ 
-
-    donde $i$ es el nivel de gris. Notemos que, para nuestro caso y en general, i es un entero entre 0 y 255, puesto que mayormente trabajamos con im\'agenes en 8-bits. Pero este tambien puede ser un valor real entre 0 y 1, o un valor entero entre 0 y $N\in\Nset$, dependiendo de la cantidad de bits que se utilicen para representar la imagen.
-    
-    Ahora, denotemos por $\hat{\lambda}_{\chi}$ al parametro de la transformaci\'on Box-Cox seleccionado usando el histograma, y de forma analoga definamos $\lambda_{\mathcal{F}^{\prime}}$ al seleccionado usando los datos completos. Fue obserado por Cheddad que estos no coinciden (de hecho la correlaci\'on obervada en su experimento es $r^2=-0.3022$) pero aun as\'i este calculo se ha desmostrado util en problemas de clasificaci\'on.
-    \todo{mostrar imagen}
-    
-
-    \subsection[short]{Box-Cox Grid}
-
-    En este m\'etodo utilizamos una grilla sobre la imagen, luego calculamos el $\lambda$ para cada subimagen, y finalmente calculamos el promedio de estos. Este m\'etodo busca tomar ventaja de la correlaci\'on espacial de los datos, y as\'i obtener un mejor valor de $\lambda$, el cual sea representatiivo de la imagen completa.
-
-    Para esto nos definimos una resoluci\'on 
-
-    
-    
-    \todo{mencionar la idea de $\lambda(x,y)$? Nop, se menciona en trabajos futuros}
-
-    \subsection{Ultimo paso}
-
-    Ya teniendo un valor de $\lambda$ designado, podemos aplicar la transformaci\'on sobre la imagen. Para esto hay algo que debemos tomar en cuenta, nuestra imagen antes de la transformaci\'on esta en el rango $[0,255]$, pero la transformaci\'on de Box-Cox no esta definida para valores no positivos, por lo tanto debemos trasladar los datos para que esten en el rango $[1,256]$, y luego aplicar la transformaci\'on. Adem\'as, para facilidad de calculo los valores son llevados al intervalo $[0,1]$.
-
+    Ahora nos hace falta elegir un $\lambda$ para aplicar la transformaci\'on, discutiremos la elecci\'on de este en la siguiente secci\'on, pero asumiento que ya tenemos uno seleccionado, podemos aplicar Box-Cox sobre la imagen. Para esto debemos tomar en cuenta que nuestra imagen, posterior al paso a blanco y negro, esta constituida por valores entre $0$ y $255$, pero la transformaci\'on de Box-Cox no esta definida para valores no positivos, por lo tanto debemos trasladar los datos para que esten en el rango $[1,256]$, y luego aplicar la transformaci\'on. Adem\'as, para facilidad de calculo los valores son llevados al intervalo $[\frac{1}{256},1]$.
 
     Pero esto nos entrega un \'ultimo problema, posterios a la transformaci\'on podemos obtener valores que est\'en por encima de 1, por lo tanto debemos normalizar los datos para que esten en el intervalo $[0,1]$. Para esto definimos Box-Cox para imagenes o BCI como:
 
@@ -133,8 +78,15 @@
         
     \end{defn}
 
+    Notemos que este \'ultimo paso se realiza para que los datos esten entre 0 y 1, y as\'i poder ser representados en una imagen.
+    
+    \subsection{Ejemplos}
+    
+    En las siguientes figuras \ref{fig:all_lambda_1} \ref{fig:all_lambda_2} se puede ver un ejemplo de la transformaci\'on aplicada sobre dos imagenes, en particular la im\'agen 1 y 3 del banco, para distintos valores de $\lambda$ ubicados en el intervalo $[-2,5]$, estos valores fueron selecionados pues es donde la transformaci\'on es m\'as efectiva.
 
-    Notemos que este \'ultimo paso se realiza para que los datos esten entre 0 y 1, y as\'i poder ser representados en una imagen. En la Figura se puede ver un ejemplo de la transformaci\'on aplicada sobre dos imagenes para distintos valores de $\lambda$ ubicados en el intervalo $[-2,5]$.
+    Es claro a simple vista que valores m\'as bajos de lambda producen imagenes m\'as ''claras'', hasta el punto en que la imagen es completamente blanca. Por otro lado, valores m\'as altos de lambda producen imagenes m\'as ''oscuras'', pero en general podemos ver que el rango \'util para im\'agenes es $[-0.25,4]$, puesto que valores m\'as altos o m\'as bajos producen imagenes casi indistinguibles. 
+
+    Esto es f\'acil de corroborar al momento de analizar los histogramas, que podemos ver en las figuras \ref{fig:img_bci_hist_1} y \ref{fig:img_bci_hist_2} 
 
     \begin{figure}[H]
         \centering
@@ -146,11 +98,9 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{all_lambda_3.png}
-        \caption{Transformaciones de la im\'agen 2.}
-        \label{fig:all_lambda_1}
+        \caption{Transformaciones de la im\'agen 3.}
+        \label{fig:all_lambda_2}
     \end{figure}
-
-    Es claro que, valores m\'as bajos de lambda producen imagenes m\'as claras, hasta el punto en que la imagen es completamente blanca. Por otro lado, valores m\'as altos de lambda producen imagenes m\'as oscuras, pero en general podemos ver que el rango \'util para im\'agenes es $[0,4]$, puesto que valores m\'as altos o m\'as bajos producen imagenes que no son de utilidad. Esto es f\'acil de corroborar al momento de analizar los histogramas. 
 
     \begin{figure}[H]
         \centering
@@ -165,56 +115,84 @@
         \caption{Histograma de las transformaciones de la im\'agen 2.}
         \label{fig:img_bci_hist_2}
     \end{figure}
-    Podemos ver como la transformacion ''mueve'' los datos hac\'ia la izquierda mientras m\'as alto es el valor de $\lambda$, adem\'as mientras m\'as extremo es este valor, los datos se ven m\'as comprimidos.  
 
-   
+    Podemos ver como la transformacion ''mueve'' los datos hac\'ia la izquierda mientras m\'as alto es el valor de $\lambda$, adem\'as mientras m\'as extremo es este valor, los datos se ven m\'as comprimidos. Esto confirma la idea de que hay un rango de valores los cuales son los m\'as \'utiles al momento de aplicar la transformaci\'on sobre ima\'agenes
 
-    \section[comparando lambdas]{Comparando $\lambda$'s}
 
-    Como mencionamos en la secci\'on anterior, usaremos las im\'agenes mencionadas, ahora en las siguientes figuras \ref{fig:img_bci_1} \ref{fig:img_bci_2} \ref{fig:img_bci_13} \ref{fig:img_bci_22} podemos ver las transformaciones de cada una de est\'as imagenes, junto con el $\lambda$ seleccionado para cada una.
+
+    \section[Propuestas de lambda]{Propuestas de $\lambda$ para imagenes.}\label{}
+
+
+    Ya teniendo la im\'agen como un vector, debemos decidir un $\lambda$ el cual usaremos para realizar la transformaci\'on. en esta secci\'on revisaremos los dos m\'etodos utilizados en la literatura, junto con otro que se propone en este trabajo. Luego en el siguiente cap\'itulo compararemos los resultados de estos procedimientos utilizando los m\'etodos de comparaci\'on de im\'agenes definidos en el cap\'itulo \ref{chap2}.
+
+
+    \subsection{Box-Cox sobre datos completos}
+
+    Este es el m\'etodo utilizado por Lee et. al. \cite{lee2009mr}, y consiste en aplicar la transformaci\'on sobre los datos completos, i.e., transformar la matriz a vector de alguna forma y luego aplicar verosimilitud para determnar el lambda. Notemos que la forma en la que la matriz sea transformada a vector no es de particular importancia, dado que la transformaci\'on es agn\'ostica con respecto al orden de los datos. 
+
+    \begin{defn}\label{lambda_full}
+        Sea $\mathcal{F}(x, y)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y $\mathcal{F}^{\prime}(i)\in\R^{n\times m}$ el vector de datos, entonces definimos $\lambda_{full}$ como el valor de $\lambda$ que maximiza la verosimilitud de los datos completos, i.e., $\mathcal{F}^{\prime}(i)$.
+    \end{defn}
+    
+    Este m\'etodo es el m\'as utilizado en la literatura, pero como mencionamos anteriormente, este no toma en cuenta la correlaci\'on espacial de los datos, y por lo tanto no es el m\'as adecuado para imagenes. 
+
+
+
+    \subsection{Box Cox sobre histograma}
+
+    En base a esto definimos la funci\'on de probabilidad de im\'agen, i.e., el histograma como:
+    
+    $$\chi(i)= \# \{\mathcal{F}(x,y)=i | x\in[0,X-1], y\in[0,Y-1] \}$$ 
+
+    donde $i$ es el nivel de gris. Notemos que, para nuestro caso y en general, i es un entero entre 0 y 255, puesto que mayormente trabajamos con im\'agenes en 8-bits. Pero este tambien puede ser un valor real entre 0 y 1, o un valor entero entre 0 y $N\in\Nset$, dependiendo de la cantidad de bits que se utilicen para representar la imagen. Lo definimos cómo:
+
+    \begin{defn}\label{lambda_hist}
+        Sea $\mathcal{F}(x, y)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y $\chi(i)\in\R^{256}$ el vector de histograma, entonces definimos $\lambda_{\chi}$ como el valor de $\lambda$ que maximiza la verosimilitud del vector histograma, i.e., $\chi(i)$.
+    \end{defn}
+    
+    Fue obserado por Cheddad que estos dos m\'etodos ya definidos no coinciden (de hecho la correlaci\'on obervada en su experimento es $\rho=-0.3022$).
+
+    \subsection{Box-Cox Grilla}
+
+    En este m\'etodo utilizamos una grilla sobre la imagen, luego calculamos el $\lambda$ para cada subimagen, y finalmente calculamos el promedio de estos. Este m\'etodo busca tomar ventaja de la correlaci\'on espacial de los datos, y as\'i obtener un mejor valor de $\lambda$, el cual sea representatiivo de la imagen completa.
+
+    
+    \begin{defn}\label{lambda_grid}
+        Sea $\mathcal{F}(x, y)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y sea $r \in \mathcal{N} $ una resoluci\'on dada, definimos $\mathcal{F}_{i,j}(x, y)\in\mathcal{M}_{r\times r}$ como la $i,j$-ésima subimagen, con $i\in[0,\lfloor\frac{n}{r}\rfloor]$ y $i\in[0,\lfloor\frac{m}{r}\rfloor]$ las coordenadas de la subimagen.
+        
+        Ahora, para cada una de estas subimagenes definimos $\lambda^{i,j}_full$, como el valor lambda resultado de usar el m\'etodo definido en \ref{lambda_full} en la subim\'agen.
+
+        Por ultimo, definimos $\lambda_{grid}$ como:
+        
+        $$
+        \lambda_{grid} := \frac{\sum_{i,j} \lambda^{i,j}_full}{\lfloor\frac{n}{r}\rfloor\lfloor\frac{m}{r}\rfloor}.
+        $$
+    \end{defn}
+    
+        Durante este trabajo se uso una grilla de tama\~no $10x10$. Notemos adem\'as que para evitar problemas en el borde de la imagen, dejamos de lado las subimagenes que no tienen el tama\~no completo.
+
+    Ahora en la siguiente figura \ref{fig:img_bci_all} podemos ver las transformaciones de cada una de est\'as imagenes, junto con el $\lambda$ seleccionado para cada una. Las transformaciones del resto de las im\'agenes pueden ser encontradas en el Ap\'endice \ref{appA}.
+
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\textwidth]{img_bci_1.png}
-        \caption{Transformaciones de la im\'agen 1. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
-        \label{fig:img_bci_1}
+        \includegraphics[width=0.9\textwidth]{img_bci_all.png}
+        \caption{Transformaciones de la im\'agen 1, 2, 13, y 22. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
+        \label{fig:img_bci_all}
     \end{figure}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{img_bci_2.png}
-        \caption{Transformaciones de la im\'agen 2. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
-        \label{fig:img_bci_2}
-    \end{figure}
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{img_bci_13.png}
-        \caption{Transformaciones de la im\'agen 13. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
-        \label{fig:img_bci_13}
-    \end{figure}
+    Lo primero que notamos al ver l\'as im\'agenes es que el efecto que cada m\'etodo tiene en la imagen es distinto, m\'as abajo discutiremos los particulares de cada uno, pero de buenas a primeras es claro que el m\'etodo de grilla tiene un comportamiento m\'as err\'atico que los otros dos m\'etodos, mientras que el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable.
 
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.9\textwidth]{img_bci_22.png}
-        \caption{Transformaciones de la im\'agen 22. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
-        \label{fig:img_bci_22}
-    \end{figure}
-
-    \todo{juntar imagenes una figura? }
-
-    Lo primero que notamos al ver l\'as im\'agenes es que el efecto que cada m\'etodo tiene en la imagen es distinto, podemos ver como, por ejemplo, el m\'etodo de grilla, el efecto que tiene en la im\'agen 1 es totalmente distinto al efecto que tiene en la im\'agen 2. 
-
-    No es extra\~no que la composici\'on de cada im\'agen afecta el valor de $\lambda$ seleccionado, pero parece que esto es m\'as pronunciado en el m\'etodo de grilla, que en los otros dos m\'etodos. Esto se debe a que el m\'etodo de grilla es susceptible a grandes secciones de la im\'agen que tienen un bajo contraste, lo que genera que el valor de $\lambda$ se dispare. 
+    No es extra\~no que la composici\'on de cada im\'agen afecta el valor de $\lambda$ seleccionado, pero parece que esto es m\'as pronunciado en el m\'etodo de grilla, que en los otros dos m\'etodos. Esto se debe a que el m\'etodo de grilla es susceptible a grandes secciones de la im\'agen que tienen un bajo contraste, i.e. secciones de la im\'agen con valores de brillo sismilares, lo que genera que el valor de $\lambda$ se dispare. 
 
     Notemos, por otro lado, que el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. Pero de la misma forma que Cheddad \cite{boxcoximg}, notamos que estos m\'etodos tampoco suelen coinsidir, y que el m\'etodo de histograma suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos.
-
-    Notemos que el mismo tratamiento realizado para todas las imagenes se encuentra en el anexo \todo{anexo}.
     
-    Ahora, veamos como se comportan $\lambda$ en todo el banco de imagenes, separado por m\'etodo.
+    Ahora, veamos como se comportan $\lambda$ en todo el banco de imagenes, separado por m\'etodo. Cabe mencionar que a pesar de que  en la primera secci\'on de este cap\'itulo hablamos de que la transformaci\'on de Box-Cox es utilizada para $\lambda\in[-5,5]$, dejamos sin l\'imite los valores de este para ver los resultados que obteniamos con los distintos m\'etodos.
 
     \begin{figure}[H]
-        \includegraphics[width=\textwidth]{lambda_noclip.png}
+        \centering
+        \includegraphics[width=0.6\textwidth]{lambda_noclip.png}
         \caption{Valores de lambda para todo el banco de imagenes. Amarillo es el m\'etodo de grilla, azul es el m\'etodo de histograma, y rojo es el m\'etodo de datos completos}
         \label{fig:lambda_noclip}
     \end{figure}
@@ -231,33 +209,31 @@
     Lo que est\'as imagenes tienen en com\'un es que son im\'agenes que contienen grandes secciones de color similar, o bajo contraste, lo que genera al momento de hacer la grilla, que muchas secciones se ven ''planas'', esto genera que el valor de $\lambda$ se dispare. Ahora, vamos a cortar los valores en $5$ para poder ver mejor el comportamiento de $\lambda$ en el resto de las imagenes.
 
     \begin{figure}[H]
-        \includegraphics[width=\textwidth]{lambda_clip.png}
-        \caption{Valores de lambda para todo el banco de imagenes, cortado en 5. Amarillo es el m\'etodo de grilla, azul es el m\'etodo de histograma, y rojo es el m\'etodo de datos completos}
+        \centering
+        \includegraphics[width=0.7\textwidth]{lambda_clip.png}
+        \caption{Valores de lambda para todo el banco de imagenes, cortado en 5. Amarillo es el m\'etodo de grilla, azul es histograma, y rojo es datos completos}
         \label{fig:lambda_clip}
     \end{figure}
 
-    Aqu\'i ya podemos ver el comprtamiento de los lambda, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, pero el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. Notemos que el m\'etodo de histograma, no solo suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos, sino que en todo nuestro banco esto siempre fue verdad.
+    Aqu\'i ya podemos ver el comprtamiento de los lambda con m\'as detalle, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, es Incluso el \'unico m\'etodo que nos entreg\'o un valor negativo para $lambda$, esto ocurrio en la im\'agen numero 2, la cual podemos ver en la figura \ref{fig:img_bci_all}.
+    
+    pero el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. 
+    
+    Notemos que el m\'etodo de histograma, no solo suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos, sino que en todo nuestro banco esto siempre fue verdad.
 
     Ahora, podemos revisar que valore tuvieron las correlaciones de pearson entre los distintos m\'etodos de selecci\'on de $\lambda$.
 
 
     \begin{table}[H]
+        \centering
         \begin{tabular}{|l|l|l|l|}
             \hline
-            M\'etodo 1 & M\'etodo 2 & Pearson r & Valor P \\ \hline
+            M\'etodo 1 & M\'etodo 2 & Pearson $\rho$ & Valor P \\ \hline
             Completo                  & Histograma                & -0.1621   & 0.4598  \\ 
             Completo                  & Grilla                    & 0.1785    & 0.4149  \\ 
             Histograma                & Grilla                    & -0.3417   & 0.1105  \\ \hline
         \end{tabular}
     \end{table}
 
-        \todo{hablar de esto}
+    De aqu\'i podemos destacar que el valor de la correlaci\'on encontrados por Cheddad \cite{boxcoximg} entre el m\'etodo completo y el del histograma es de $\rho=-0.3022$, que es similar al encontrado en nuestros experimentos. Otro resultado interesante es que la correlaci\'on con m\'agnitud m\'as alta es entre el m\'etodo del histograma y el de la grilla, lo que sugiere una relaci\'on entre estos, pero a\'un as\'i el valor no es muy alto.
 
-    \section{Box-Cox sobre imagenes a color}
-
-    A pesar de que en este trabajo nos centrados en discutir la transformaci\'on de Box-Cox sobre imagenes en escala de grises, vale la pena mencionar es posible extender la transformaci\'on a imagenes a color. Para esto podemos encontrar un lambda para cada canal de color, y luego aplicar la transformaci\'on sobre cada canal, o podemos aplicar la transformaci\'on sobre cada color de la im\'agen. 
-
-
-    En la figura podemos ver algunos ejemplos de la primera transformaci\'on descrita. \todo{hacer imagen} No ahondaremos m\'as en este concepto cabe mencionar este fue el m\'etodo usado por Cheddad \cite{boxcoximg} en su trabajo.
-
-    \section{Concluciones}

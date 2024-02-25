@@ -1,6 +1,22 @@
 % ---------------------------------------------------------------------------------------
 \chapter{Consideraciones Finales}\label{chap6}
 
-\todo{dificultades de trabajar en imagenes}
-\todo{todo lo que hacemos es una dimension}
-\todo{trabajos futuros y continuaciones}
+\section{Conclusiones.}
+
+
+    A lo largo de la escritura de este trabajo, es claro que el problema de comparar im\'agenes es un problema complejo, y que no existe una soluci\'on \'unica. En este trabajo se presentaron dos coeficientes para comparar im\'agenes, y para cada uno de ellos se presentaron dos m\'etodos para calcularlos. A\'un as\'i, no se puede decir que estos m\'etodos sean los mejores, o que sean los m\'as eficientes, o que sean los m\'as precisos. Si encontramos que son m\'etodos que funcionan bien para el prop\'osito de este trabajo, comparando relaciones no lineales entre im\'agenes, una siendo el resultado de la transformaci\'on de Box-Cox de la otra.
+
+    En este contexto se encontr\'o que existe una fuerte relaci\'on entre la transformaci\'on de Box-Cox y la im\'agen original, casi sin importar el valor de $\lambda$ que se utilice, mientras se encuentre en ciertos rangos. Esto es cierto sea cual sea el m\'etodo que se utilice para encontrar comparar las im\'agenes, lo que nos lleva a concluir que al aplicar la transformaci\'on de Box-Cox a una imagen, se mantiene una gran relaci\'on con la imagen original.
+
+    Por otro lado econtramos que, en general, el m\'etodo para encontrar $\lambda$ que generen una corelaci\'ion m\'as alta entre las im\'agenes es el m\'etodo que utiliza el total de la imagen. Junto con esto se encontr\'o que el m\'etodo propuesto, el de grilla, no es el m\'as adecuado, dado que es propenso a entregar valores extremos de $\lambda$. 
+
+    En general, las herramientas que tenemos para generealizar problemas de una dimensi\'on a dos dimensiones son limitadas, y en general, no se pueden generalizar de una forma directa.
+    
+
+
+\section{Trabajos Futuros.}
+
+    Existen muchas extensiones naturales de los trabajos presentados. Primeramente se puede extender el an\'alisis para incluir otras medidas de comparaci\'on entre vectores, como el Coeficiente no paramétrico de Chen, y dentro de la misma categor\'ia, encontrar nuevos m\'etodos para aplicar est\'os coeficientes sobre im\'agenes. 
+
+    Otra arista que se puede atacar es la de encontar el $\lambda$, entre ellas usar una versi\'on reducida de la ima\'agen, o una ventana m\'ovil para definir un mejor lambda. En el caso de la ventana m\'ovil, tambi\'en se podria extender a no usar un $\lambda$ fijo, sino uno de la forma $\lambda(x,y)$, es decir, que dependa de la posici\'on de la ventana. 
+

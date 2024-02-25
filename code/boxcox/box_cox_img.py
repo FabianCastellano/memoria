@@ -62,7 +62,7 @@ class BoxCoxImg:
                 resolution = 10
 
                 lam = np.array([])
-                print(X.shape)
+                # print(X.shape)
 
                 for i in range(0, X.shape[0], resolution):
                     for j in range(0, X.shape[1], resolution):
