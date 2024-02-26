@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.12)  25 FEB 2024 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.12)  26 FEB 2024 18:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1173,27 +1173,28 @@ File: figuras//plot_comparison_full.png Graphic file (type png)
 <use figuras//plot_comparison_full.png>
 Package pdftex.def Info: figuras//plot_comparison_full.png  used on input line 58.
 (pdftex.def)             Requested size: 207.0021pt x 193.95909pt.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 61.
 <figuras//anomalies_grid.png, id=693, 839.7774pt x 329.5512pt>
 File: figuras//anomalies_grid.png Graphic file (type png)
 <use figuras//anomalies_grid.png>
-Package pdftex.def Info: figuras//anomalies_grid.png  used on input line 68.
+Package pdftex.def Info: figuras//anomalies_grid.png  used on input line 69.
 (pdftex.def)             Requested size: 258.75pt x 101.54129pt.
  [67
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.71 
+l.72 
       <./figuras//plot_comparison_full.png>]
-<figuras//plot_comparison_hist.png, id=703, 1299.4146pt x 1215.5814pt>
+<figuras//plot_comparison_hist.png, id=704, 1299.4146pt x 1215.5814pt>
 File: figuras//plot_comparison_hist.png Graphic file (type png)
 <use figuras//plot_comparison_hist.png>
-Package pdftex.def Info: figuras//plot_comparison_hist.png  used on input line 100.
+Package pdftex.def Info: figuras//plot_comparison_hist.png  used on input line 101.
 (pdftex.def)             Requested size: 207.0021pt x 193.64377pt.
  [68
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.103 
+l.104 
        <./figuras//anomalies_grid.png>]) [69
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
@@ -1218,31 +1219,41 @@ Cap\'{\i }tulo 6.
 
  (./appA.tex
 Ap\'{e}ndice A.
-<figuras/img_hist_all.png, id=733, 1680.2775pt x 3341.7648pt>
+<figuras/img_hist_all.png, id=734, 1680.2775pt x 3341.7648pt>
 File: figuras/img_hist_all.png Graphic file (type png)
 <use figuras/img_hist_all.png>
 Package pdftex.def Info: figuras/img_hist_all.png  used on input line 8.
 (pdftex.def)             Requested size: 207.0021pt x 411.65163pt.
-<figuras/img_hist_noise_1.png, id=734, 839.7774pt x 1669.437pt>
+<figuras/img_hist_noise_1.png, id=735, 839.7774pt x 1669.437pt>
 File: figuras/img_hist_noise_1.png Graphic file (type png)
 <use figuras/img_hist_noise_1.png>
 Package pdftex.def Info: figuras/img_hist_noise_1.png  used on input line 14.
 (pdftex.def)             Requested size: 207.0021pt x 411.49931pt.
-<figuras/img_hist_noise_2.png, id=735, 839.7774pt x 1669.437pt>
+<figuras/img_hist_noise_2.png, id=736, 839.7774pt x 1669.437pt>
 File: figuras/img_hist_noise_2.png Graphic file (type png)
 <use figuras/img_hist_noise_2.png>
 Package pdftex.def Info: figuras/img_hist_noise_2.png  used on input line 20.
 (pdftex.def)             Requested size: 207.0021pt x 411.49931pt.
-<figuras/img_BCI_all_1.png, id=736, 839.7774pt x 2684.1078pt>
+<figuras/img_BCI_all_1.png, id=737, 839.7774pt x 2684.1078pt>
 File: figuras/img_BCI_all_1.png Graphic file (type png)
 <use figuras/img_BCI_all_1.png>
 Package pdftex.def Info: figuras/img_BCI_all_1.png  used on input line 27.
 (pdftex.def)             Requested size: 137.9979pt x 441.05661pt.
-<figuras/img_BCI_all_2.png, id=737, 839.7774pt x 2684.1078pt>
+<figuras/img_BCI_all_2.png, id=738, 839.7774pt x 2684.1078pt>
 File: figuras/img_BCI_all_2.png Graphic file (type png)
 <use figuras/img_BCI_all_2.png>
 Package pdftex.def Info: figuras/img_BCI_all_2.png  used on input line 33.
 (pdftex.def)             Requested size: 137.9979pt x 441.05661pt.
+<figuras/full_comp.png, id=739, 957.5775pt x 2659.536pt>
+File: figuras/full_comp.png Graphic file (type png)
+<use figuras/full_comp.png>
+Package pdftex.def Info: figuras/full_comp.png  used on input line 39.
+(pdftex.def)             Requested size: 172.5pt x 479.06107pt.
+<figuras/hist_comp.png, id=740, 956.8548pt x 2676.1581pt>
+File: figuras/hist_comp.png Graphic file (type png)
+<use figuras/hist_comp.png>
+Package pdftex.def Info: figuras/hist_comp.png  used on input line 45.
+(pdftex.def)             Requested size: 172.5pt x 482.4227pt.
 ) [74
 
 
@@ -1271,12 +1282,22 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.5
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.149 \include{appA}
-                     <./figuras/img_BCI_all_2.png>]
+                     <./figuras/img_BCI_all_2.png>] [80
+pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.149 \include{appA}
+                     <./figuras/full_comp.png>] [81
+pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.149 \include{appA}
+                     <./figuras/hist_comp.png>]
 \openout2 = `appB.aux'.
 
  (./appB.tex
 Ap\'{e}ndice B.
-) [80
+) [82
 
 
 
@@ -1286,45 +1307,45 @@ Ap\'{e}ndice B.
 
  (./appC.tex
 Ap\'{e}ndice C.
-[81
+[83
 
 
 
 
-] [82]
-<figuras//reshef_2015_fig1.png, id=800, 518.6878pt x 279.29344pt>
+] [84]
+<figuras//reshef_2015_fig1.png, id=815, 518.6878pt x 279.29344pt>
 File: figuras//reshef_2015_fig1.png Graphic file (type png)
 <use figuras//reshef_2015_fig1.png>
 Package pdftex.def Info: figuras//reshef_2015_fig1.png  used on input line 67.
 (pdftex.def)             Requested size: 207.47144pt x 111.7154pt.
- [83
+ [85
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.79 
-      <./figuras//reshef_2015_fig1.png>] [84] [85]
-<figuras//reshef_2016_fig3.png, id=842, 782.925pt x 923.45pt>
+      <./figuras//reshef_2015_fig1.png>] [86] [87]
+<figuras//reshef_2016_fig3.png, id=857, 782.925pt x 923.45pt>
 File: figuras//reshef_2016_fig3.png Graphic file (type png)
 <use figuras//reshef_2016_fig3.png>
 Package pdftex.def Info: figuras//reshef_2016_fig3.png  used on input line 143.
 (pdftex.def)             Requested size: 313.16446pt x 369.37346pt.
- [86] [87]
-<figuras//reshef_2016_fig4.png, id=853, 765.86125pt x 952.55875pt>
+ [88] [89]
+<figuras//reshef_2016_fig4.png, id=868, 765.86125pt x 952.55875pt>
 File: figuras//reshef_2016_fig4.png Graphic file (type png)
 <use figuras//reshef_2016_fig4.png>
 Package pdftex.def Info: figuras//reshef_2016_fig4.png  used on input line 150.
 (pdftex.def)             Requested size: 306.33907pt x 381.01675pt.
- [88
+ [90
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.154 
-       <./figuras//reshef_2016_fig3.png>]) [89
+       <./figuras//reshef_2016_fig3.png>]) [91
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.151 \include{appC}
-                     <./figuras//reshef_2016_fig4.png>] [90
+                     <./figuras//reshef_2016_fig4.png>] [92
 
 
 ]
@@ -1341,14 +1362,14 @@ Overfull \hbox (16.55267pt too wide) in paragraph at lines 156--156
 \OT1/cmtt/m/n/10 Statistics / Introductory _ Statistics _ (Lane ) /16 % 3A _ Transformations /
  []
 
-[91
+[93
 
 ]
 Overfull \hbox (8.61621pt too wide) in paragraph at lines 156--156
 \OT1/cmr/m/n/10 En: \OT1/cmr/m/it/10 The Jour-nal of Ma-chi-ne Lear-ning Re-search \OT1/cmr/m/n/10 17.1 (2016), p^^Sags. 7406[]7468. 
  []
 
-[92] (./tesis_FCN.aux (./tapa.aux)
+[94] (./tesis_FCN.aux (./tapa.aux)
 LaTeX Info: Redefining \sptext on input line 25.
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -1358,18 +1379,18 @@ Package logreq Info: Writing requests to 'tesis_FCN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31815 strings out of 476041
- 599076 string characters out of 5793174
+ 31941 strings out of 476041
+ 601958 string characters out of 5793174
  1866388 words of memory out of 6000000
- 51394 multiletter control sequences out of 15000+600000
+ 51513 multiletter control sequences out of 15000+600000
  525266 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,11n,94p,1370b,2354s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on tesis_FCN.pdf (92 pages, 31806244 bytes).
+Output written on tesis_FCN.pdf (94 pages, 38203814 bytes).
 PDF statistics:
- 1129 PDF objects out of 1200 (max. 8388607)
- 911 compressed objects within 10 object streams
- 297 named destinations out of 1000 (max. 500000)
- 400 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1145 PDF objects out of 1200 (max. 8388607)
+ 921 compressed objects within 10 object streams
+ 302 named destinations out of 1000 (max. 500000)
+ 410 words of extra memory for PDF output out of 10000 (max. 10000000)
 
