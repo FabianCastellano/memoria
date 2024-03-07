@@ -243,7 +243,7 @@
     
         \begin{figure} 
             \centering
-            \includegraphics[scale=0.6]{figuras/figure_1_reshef_2016.png}
+            \includegraphics[scale=0.8]{figuras/figure_1_reshef_2016.png}
             \caption{Un esquema que ilustra la diferencia entre la matriz caracter\'istica $M$ y la matriz equicaracter\'istica $[M]$. (Arriba) Cuando se restringe a 2 filas y 3 columnas, la matriz caracter\'istica $M$ se calcula a partir de la rejilla \'optima de 2 por 3. En contraste, la matriz equicaracter\'istica $[M]$ a\'un optimiza la partici\'on m\'as peque\~na de tama\~no 2 pero est\'a restringida a tener la partici\'on m\'as grande como una equipartici\'on de tama\~no 3. Esto resulta en una informaci\'on mutua m\'as baja de 0.613. (Abajo) Cuando se permiten 9 columnas en lugar de 3, la rejilla encontrada por la matriz caracter\'istica no cambia, ya que la rejilla con 3 columnas ya era \'optima. Sin embargo, ahora la matriz equicaracter\'istica utiliza una equipartici\'on en columnas de tama\~no 9, cuya resoluci\'on es capaz de capturar completamente la dependencia entre $X$ e $Y$.}
             \label{fig:matriz_equicaracteristica}
         \end{figure}
@@ -463,7 +463,7 @@
     
         \begin{figure}[H] 
             \centering
-            \includegraphics[scale = 0.4]{reshef_2016_fig5.png}
+            \includegraphics[width= \textwidth]{reshef_2016_fig5.png}
             \caption{Comparaci\'on del poder de prueba de independencia basado en $TIC_e$ (azul) con $MIC$ con par\'ametros predeterminados (gris), $MIC_e$ con los mismos par\'ametros que $TIC_e$ (negro), correlaci\'on de distancia (p\'urpura) y el coeficiente de correlaci\'on de Pearson (verde) en varios tipos de relaciones de hip\'otesis alternativas elegidos por Simon y Tibshirani (2012 \cite{SimonTibshirani}).}
             \label{reshef_2016_f5}
         \end{figure}
@@ -788,9 +788,9 @@ Sean $X$ en $\R^p$ y $Y$ en $\R^q$ vectores aleatorios, donde $p$ y $q$ son ente
 
     Ya con los coeficientes claros, podemos revisar un ejemplo r\'apido de estos. Para esto usaremos "The Datasaurus Dozon", un conjutno de datos propuesto por Justin Matejka y George Fitzmaurice (2017) \cite{datasaurus}. Este conjunto de datos nos presenta con 13 realciones, visibles en la Figura \ref{datasaurus_fig}, las cuales todas poseen los mismos valores para estad\'isticos descriptivos comunos (Promedio Marginal, Desviac\'on Estandar Marginal, y Correlaci\'on de Pearson), pero son claramente visualmente distinos.
 
-    \begin{figure}[H] 
+    \begin{figure} 
         \centering
-        \includegraphics[scale = 0.2]{datasaurusdozon.png}
+        \includegraphics[width=\textwidth]{datasaurusdozon.png}
         \caption{The Datasaurus Dozon", a pesar de compartir los mismos estad\'isticos descriptivos, son visualmente distintos.}
         \label{datasaurus_fig}
     \end{figure}

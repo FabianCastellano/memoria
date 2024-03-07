@@ -1,0 +1,219 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+
+\setbeamercolor{normal text}{fg=white,bg=black!90}
+\setbeamercolor{structure}{fg=white}
+
+\setbeamercolor{alerted text}{fg=red!85!black}
+
+\setbeamercolor{item projected}{use=item,fg=black,bg=item.fg!35}
+
+\setbeamercolor*{palette primary}{use=structure,fg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=structure.fg!95!black}
+\setbeamercolor*{palette tertiary}{use=structure,fg=structure.fg!90!black}
+\setbeamercolor*{palette quaternary}{use=structure,fg=structure.fg!95!black,bg=black!80}
+
+\setbeamercolor*{framesubtitle}{fg=white}
+
+\setbeamercolor*{block title}{parent=structure,bg=black!60}
+\setbeamercolor*{block body}{fg=black,bg=black!10}
+\setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
+\setbeamercolor*{block title example}{parent=example text,bg=black!15}
+
+\setbeamertemplate{headline}{}
+
+\usepackage[brazil,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\title[Defensa de Memoria]{An\'alisis de Imagenes transformadas con
+Box-Cox}
+% Titre du diaporama
+
+% Sous-titre optionnel
+
+\author{Fabián Castellano Núñez}
+% La commande \inst{...} Permet d'afficher l' affiliation de l'intervenant.
+% Si il y a plusieurs intervenants: Marcel Dupont\inst{1}, Roger Durand\inst{2}
+% Il suffit alors d'ajouter un autre institut sur le modèle ci-dessous.
+
+\institute[Universidad Técnica Federico Santa María]
+  {
+  Profesor Guia: Ronny Vallejos A.
+  }
+
+
+\date{Marzo,  2024}
+% Optionnel. La date, généralement celle du jour de la conférence
+
+\subject{Transformación BoxCox}
+% C'est utilisé dans les métadonnes du PDF
+\titlegraphic{
+    \includegraphics[width=3cm,keepaspectratio]{logo_dmat.png}%
+    \hfill%
+    \includegraphics[width=2cm,keepaspectratio]{logo_usm3.png}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Contenidos}
+  \tableofcontents
+  % possibilité d'ajouter l'option [pausesections]
+\end{frame}
+
+
+
+
+
+\section{Comparación entre imágenes}
+\subsection{Coeficiente de Información Máxima}
+
+\begin{frame}{Metodología: Coeficiente de Información Máxima}
+    \pause
+    
+    \begin{block}{Información mutua}
+    Dada una distribución bivariada $P(x,y)$, definimos:
+        \begin{equation}\label{información mutua}
+            \mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
+        \end{equation}
+    \end{block}
+    \pause
+
+
+    \begin{block}{Máximo sobre todas las mallas}
+        Para un conjunto finito $D\in\mathcal{R}  ^2$ y enteros positivos $x,y$, definimos:
+		$$
+		I^*(D,x,y)=\max I(D|_G)
+		$$
+    \end{block}
+    \begin{figure}
+        \centering
+        \includegraphics[scale=0.6] {rsos201424f03.png}
+        \label{fig:my_label}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Metodología: Coeficiente de Información Máxima}
+    \begin{block}{Matriz Característica}
+        Definimos la siguiente matriz       
+        \begin{equation}
+	    	M(D)_{x, y}=\frac{I^{*}(D, x, y)}{\log \min \{x, y\}}
+        \end{equation}
+        Notemos que en principio la matriz es infinita.
+    \end{block}
+    \pause
+
+    \begin{block}{Coeficiente de Información Máxima}
+        Definido en por Reshef en 2011 \cite{reshef2011} Dado un conjunto de datos bivariado, tenemos:
+        \begin{equation}\label{MIC}
+	    	\operatorname{MIC}(D)=\max _{x y<B(n)}\left\{M(D)_{x, y}\right\}
+        \end{equation}
+        donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$. En el artiuclo utilizan $B(n)=n^{0.6}$
+    \end{block}
+\end{frame}
+
+\subsection{Correlaci\'on y Covarianza por Distancia}
+
+\begin{frame}{Correlaci\'on por Distancia}
+\end{frame}
+
+\section{Análisis y Procesamiento de Imágenes}
+\begin{frame}{Imágen cómo Matriz}
+    \pause
+    \begin{block}{Imágen cómo Matriz}
+        Dada una imágen $I$ de tamaño $m\times n$, podemos verla cómo una matriz $A$ de tamaño $m\times n$.
+    \end{block}
+\end{frame}
+
+\section{La transformación BoxCox}
+
+\begin{frame}{La transformación BoxCox}
+    \pause
+    \begin{block}{Transformación BoxCox}
+    Como fue definida por Box y Cox en 1964 \cite{boxcox}
+        \begin{equation}\label{boxcox}
+            y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
+        \end{equation}
+    \end{block}
+        \pause
+    \begin{block}{Verosimilitud}
+        \begin{equation*}
+            \mathcal{L}(\lambda) \equiv-\frac{n}{2} \log \left[\frac{1}{n} \sum_{j=1}^{n}\left(x_{j}^{\lambda}-\overline{x^{\lambda}}\right)^{2}\right] +(\lambda-1) \sum_{j=1}^{n} \log x_{j}
+        \end{equation*}
+    \end{block}
+    
+\end{frame}
+
+\subsection{BoxCox sobre imágenes}
+
+\begin{frame}{La transformación BoxCox sobre imágenes}
+    \pause
+    \begin{block}{Transformación 1-D}
+        Transformar la imagen a un vector unidimensional, usar estos datos para determinar $\lambda$.
+    \end{block}
+    
+        \pause
+        
+    \begin{block}{Histograma}
+        La idea es usar el histograma como un proxy comprimido de de la matriz de datos. 
+    \end{block}
+        \pause
+    
+    La correlación entre estos dos números encontrada de forma experimental fue $r^2=-0.3022$ (Cheddad, 2020) \cite{cheddad2020}. La diferencia de tiempo de calculo entre las dos versiones es de 2 ordenes de magnitud
+    -
+\end{frame}
+
+
+\section{Resultados}
+
+\begin{frame}{Experimentos}
+    \pause
+    \begin{block}{Transformación 1-D}
+        Transformar la imagen a un vector unidimensional, usar estos datos para determinar $\lambda$.
+    \end{block}
+    
+    La correlación entre estos dos números encontrada de forma experimental fue $r^2=-0.3022$ (Cheddad, 2020) \cite{cheddad2020}. La diferencia de tiempo de calculo entre las dos versiones es de 2 ordenes de magnitud
+    -
+\end{frame}
+
+
+\begin{frame}{Bibliografía}
+    \begin{thebibliography}{9}
+    \bibitem{boxcox}
+    Box, G. and Cox, D., 1964. An Analysis of Transformations. Journal of the Royal Statistical Society, 26(2), pp.211-252.
+    
+    \bibitem{chen2010}
+    Chen, Y., Almeida, J., Richards, A., Müller, P., Carroll, R. and Rohrer, B., 2010. A Nonparametric Approach to Detect Nonlinear Correlation in Gene Expression. Journal of Computational and Graphical Statistics, 19(3), pp.552-568.
+    
+    \bibitem[]{reshef2011}
+    Reshef, D., Reshef, Y., Finucane, H., Grossman, S., McVean, G., Turnbaugh, P., Lander, E., Mitzenmacher, M. and Sabeti, P., 2011. Detecting Novel Associations in Large Data Sets. Science, 334(6062), pp.1518-1524.
+    
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}{Bibliografía}
+    \begin{thebibliography}{9}
+    \bibitem[]{cheddad2020}
+    Cheddad, A., 2020. On Box-Cox Transformation for Image Normality and Pattern Classification. IEEE Access, 8, pp.154975-154983.
+    
+    \bibitem[]{juin2009}
+    Juin-Der Lee, Hong-Ren Su, Cheng, P., Liou, M., Aston, J., Tsai, A. and Cheng-Yu Chen, 2009. MR Image Segmentation Using a Power Transformation Approach. IEEE Transactions on Medical Imaging, 28(6), pp.894-905.
+    
+    \end{thebibliography}
+\end{frame}
+\end{document}
+
+
+
+
