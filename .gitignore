@@ -3,8 +3,13 @@
 *.log
 *.bcf 
 #add pdfs folder
-*.pdf
+# add pdfs folder
+pdfs/
 
+*.pdf
+# add .pdf and and make sure to get files with spaces in their names
+*.pdf
+*.pdf
 *.acn
 *.acr
 *.alg
