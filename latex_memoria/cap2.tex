@@ -1,12 +1,12 @@
 \chapter{Coeficientes de Correlaci\'on}\label{chap2}
         
-    Para este trabajo nos es de buscamos estudiar la corelaci\'on que existe entre una im\'agen y su transformada Box-Cox. Dado esto, lo primero que necesitamos es una metodolog\'ia para medir la corelaci\'on entre dos im\'agenes. Este es un problema m\'as complejo de lo que parece. 
+    Para este trabajo de buscamos estudiar la corelaci\'on que existe entre una im\'agen y su transformada Box-Cox. Dado esto, lo primero que necesitamos es una metodolog\'ia para medir la corelaci\'on entre dos im\'agenes. Este es un problema m\'as complejo de lo que parece. 
 
-    Como veremos en el Capitulo \ref{chap3}, podemos definir una im\'agen de forma tan simple como una matriz de valores entre 0 y 1, donde cada valor representa la intensidad de un pixel, pero esta definici\'on no captura el completo de lo que solemos referirnos cuando hablamos de ''im\'agenes'' . Lo que diferencia una ''im\'agen'' de una matriz de valores de valores cualesquiera es que esta tiene una estructura que presenta correlaci\'on espacial, i.e., la intensidad de un pixel est\'a relacionada con la de sus vecinos.
+    Como veremos en el Capitulo \ref{chap3}, podemos definir una im\'agen de forma tan simple como una matriz de valores entre 0 y 1, donde cada valor representa la intensidad de un pixel, pero esta definici\'on no captura el completo de lo que solemos referirnos cuando hablamos de ''im\'agenes''. Lo que diferencia una ''im\'agen'' de una matriz de valores de valores cualesquiera es que esta tiene una estructura que presenta correlaci\'on espacial, i.e., la intensidad de un pixel est\'a relacionada con la de sus vecinos.
 
     Dado esto, es claro que no podemos utilizar m\'etricas de correlaci\'on comunes, como la correlaci\'on de Pearson, para medir la relaci\'on entre dos im\'agenes \cite{personbad}, por esto es que buscamos otras metricas que nos permitan cuantificar la relaci\'on entre im\'agenes, en particular, las relacioones no lineales que nos entrega la transformaci\'on Box-Cox.
 
-    Para esto usaremos dos medidas de correlaci\'on no param\'etricas, la distancia de correlaci\'on (dCor) y el coeficiente de informaci\'on m\'axima (MIC). En esta secci\'on discutiremos la definici\'on de estas medidas, sus propiedades y como se comportan en el contexto de im\'agenes.
+    Para esto usaremos dos medidas de correlaci\'on no param\'etricas, el coeficiente de informaci\'on m\'axima ($MIC$) y la distancia de correlaci\'on ($dCor$). En esta secci\'on discutiremos la definici\'on de estas medidas, sus propiedades y como se comportan en el contexto de im\'agenes.
 
     \section{\textit{Maximal Information Coeficient}} 
     
@@ -164,7 +164,7 @@
     
         Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. \cite{Reshef2011}. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
     
-        El siguiente resultado, demostrado en el paper de Reshef (2'16)\cite{Reshef2016}, sobre la convergencia de funciones de la matriz caracter\'istica de muestra a sus contrapartes poblacionales, una consecuencia de lo cual es la convergencia de MIC a $MIC_*$. (En la declaraci\'on del teorema a continuaci\'on, recordemos que $m_\infty$ es el espacio de matrices infinitas equipadas con la norma supremo, y dada una matriz A, la proyecci\'on ri anula todas las entradas $A_{k, \ell}$ para las cuales $k\ell > i.$)
+        El siguiente resultado, demostrado en el paper de Reshef (2'16)\cite{Reshef2016}, sobre la convergencia de funciones de la matriz caracter\'istica de muestra a sus contrapartes poblacionales, una consecuencia de lo cual es la convergencia de MIC a $MIC_*$. (En la declaraci\'on del teorema a continuaci\'on, recordemos que $m_\infty$ es el espacio de matrices infinitas equipadas con la norma supremo, y dada una matriz A, la proyecci\'on $r_i$ anula todas las entradas $A_{k, \ell}$ para las cuales $k\ell > i.$)
     
         \begin{thm}
             Sea $f: m^{\infty} \rightarrow \mathbb{R}$ uniformemente continua, y suponga que $f \circ r_i \rightarrow f$ puntualmente. Entonces, para cada variable aleatoria $(X, Y)$, tenemos

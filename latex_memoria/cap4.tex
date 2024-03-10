@@ -88,28 +88,28 @@
 
     Esto es f\'acil de corroborar al momento de analizar los histogramas, que podemos ver en las figuras \ref{fig:img_bci_hist_1} y \ref{fig:img_bci_hist_2} 
 
-    \begin{figure}[H]
+    \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{all_lambda_1.png}
         \caption{Transformaciones de la im\'agen 1.}
         \label{fig:all_lambda_1}
     \end{figure}
 
-    \begin{figure}[H]
+    \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{all_lambda_3.png}
         \caption{Transformaciones de la im\'agen 3.}
         \label{fig:all_lambda_2}
     \end{figure}
 
-    \begin{figure}[H]
+    \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{all_lambda_hist_1.png}
         \caption{Histograma de las transformaciones de la im\'agen 1.}
         \label{fig:img_bci_hist_1}
     \end{figure}
 
-    \begin{figure}[H]
+    \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{all_lambda_hist_3.png}
         \caption{Histograma de las transformaciones de la im\'agen 2.}
@@ -215,13 +215,11 @@
         \label{fig:lambda_clip}
     \end{figure}
 
-    Aqu\'i ya podemos ver el comprtamiento de los $\lambda$ con m\'as detalle, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, es Incluso el \'unico m\'etodo que nos entreg\'o un valor negativo para $\lambda$, esto ocurrio en la im\'agen numero 2, la cual podemos ver en la figura \ref{fig:img_bci_all}.
+    Aqu\'i ya podemos ver el comprtamiento de los $\lambda$ con m\'as detalle, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, es Incluso el \'unico m\'etodo que nos entreg\'o un valor negativo para $\lambda$, esto ocurrio en la im\'agen numero 2, la cual podemos ver en la figura \ref{fig:img_bci_all}.Pot otro lado, el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. 
     
-    pero el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. 
-    
-    Notemos que el m\'etodo de histograma, no solo suele seleccionar valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos, sino que en todo nuestro banco esto siempre fue verdad.
+    Notemos que el m\'etodo de histograma nos entrega valores m\'as bajos de $\lambda$ que el m\'etodo de datos completos, pero esto no es siempre cierto, y en particular para el banco de im\'agenes que estamos utilizando, ocurre lo contrario en una oportunidad, la im\'agen 24.
 
-    Ahora, podemos revisar que valore tuvieron las correlaciones de pearson entre los distintos m\'etodos de selecci\'on de $\lambda$.
+    Ahora, podemos revisar que valores tuvieron las correlaciones de pearson entre los distintos m\'etodos de selecci\'on de $\lambda$.
 
 
     \begin{table}[H]
@@ -235,5 +233,5 @@
         \end{tabular}
     \end{table}
 
-    De aqu\'i podemos destacar que el valor de la correlaci\'on encontrados por Cheddad \cite{boxcoximg} entre el m\'etodo completo y el del histograma es de $\rho=-0.3022$, que es similar al encontrado en nuestros experimentos. Otro resultado interesante es que la correlaci\'on con m\'agnitud m\'as alta es entre el m\'etodo del histograma y el de la grilla, lo que sugiere una relaci\'on entre estos, pero a\'un as\'i el valor no es muy alto.
+    De aqu\'i podemos destacar que el valor de la correlaci\'on encontrados por Cheddad \cite{boxcoximg} entre el m\'etodo completo y el del histograma es de $\rho=-0.3022$, que es similar al encontrado en nuestros experimentos. Otro resultado interesante es que la correlaci\'on con m\'agnitud m\'as alta es entre el m\'etodo del histograma y el de la grilla, lo que sugiere una mayor relaci\'on entre estos, pero a\'un as\'i  no es un valor muy alto.
 

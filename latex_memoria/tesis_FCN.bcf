@@ -2426,18 +2426,19 @@
     <bcf:citekey order="63" intorder="1">KodakLosslessTrueColorImageSuite</bcf:citekey>
     <bcf:citekey order="64" intorder="1">KodakLosslessTrueColorImageSuite</bcf:citekey>
     <bcf:citekey order="65" intorder="1">KodakLosslessTrueColorImageSuite</bcf:citekey>
-    <bcf:citekey order="66" intorder="1">Reshef2011</bcf:citekey>
-    <bcf:citekey order="67" intorder="1">Reshef2015</bcf:citekey>
-    <bcf:citekey order="68" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="69" intorder="1">inftheo2006</bcf:citekey>
-    <bcf:citekey order="70" intorder="1">inftheo2008</bcf:citekey>
-    <bcf:citekey order="71" intorder="1">infcorr</bcf:citekey>
-    <bcf:citekey order="72" intorder="1">Szekely2009</bcf:citekey>
-    <bcf:citekey order="73" intorder="1">renyi1959</bcf:citekey>
-    <bcf:citekey order="74" intorder="1">Reshef2015a</bcf:citekey>
-    <bcf:citekey order="75" intorder="1">Reshef2016</bcf:citekey>
-    <bcf:citekey order="76" intorder="1">Szekely2007</bcf:citekey>
-    <bcf:citekey order="77" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">Chen2012</bcf:citekey>
+    <bcf:citekey order="67" intorder="1">Reshef2011</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">Reshef2015</bcf:citekey>
+    <bcf:citekey order="69" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="70" intorder="1">inftheo2006</bcf:citekey>
+    <bcf:citekey order="71" intorder="1">inftheo2008</bcf:citekey>
+    <bcf:citekey order="72" intorder="1">infcorr</bcf:citekey>
+    <bcf:citekey order="73" intorder="1">Szekely2009</bcf:citekey>
+    <bcf:citekey order="74" intorder="1">renyi1959</bcf:citekey>
+    <bcf:citekey order="75" intorder="1">Reshef2015a</bcf:citekey>
+    <bcf:citekey order="76" intorder="1">Reshef2016</bcf:citekey>
+    <bcf:citekey order="77" intorder="1">Szekely2007</bcf:citekey>
+    <bcf:citekey order="78" intorder="1">Szekely2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
