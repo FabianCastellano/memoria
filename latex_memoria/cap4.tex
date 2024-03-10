@@ -84,7 +84,7 @@
     
     En las siguientes figuras \ref{fig:all_lambda_1} \ref{fig:all_lambda_2} se puede ver un ejemplo de la transformaci\'on aplicada sobre dos imagenes, en particular la im\'agen 1 y 3 del banco, para distintos valores de $\lambda$ ubicados en el intervalo $[-2,5]$, estos valores fueron selecionados pues es donde la transformaci\'on es m\'as efectiva.
 
-    Es claro a simple vista que valores m\'as bajos de lambda producen imagenes m\'as ''claras'', hasta el punto en que la imagen es completamente blanca. Por otro lado, valores m\'as altos de lambda producen imagenes m\'as ''oscuras'', pero en general podemos ver que el rango \'util para im\'agenes es $[-0.25,4]$, puesto que valores m\'as altos o m\'as bajos producen imagenes casi indistinguibles. 
+    Es claro a simple vista que valores m\'as bajos de $\lambda$ producen imagenes m\'as ''claras'', hasta el punto en que la imagen es completamente blanca. Por otro lado, valores m\'as altos de $\lambda$ producen imagenes m\'as ''oscuras'', pero en general podemos ver que el rango \'util para im\'agenes es $[-0.25,4]$, puesto que valores m\'as altos o m\'as bajos producen imagenes casi indistinguibles. 
 
     Esto es f\'acil de corroborar al momento de analizar los histogramas, que podemos ver en las figuras \ref{fig:img_bci_hist_1} y \ref{fig:img_bci_hist_2} 
 
@@ -160,7 +160,7 @@
     \begin{defn}\label{lambda_grid}
         Sea $\mathcal{F}(x, y)\in\mathcal{M}_{n\times m}$ la imagen en escala de grises, y sea $r \in \mathcal{N} $ una resoluci\'on dada, definimos $\mathcal{F}_{i,j}(x, y)\in\mathcal{M}_{r\times r}$ como la $i,j$-ésima subimagen, con $i\in[0,\lfloor\frac{n}{r}\rfloor]$ y $i\in[0,\lfloor\frac{m}{r}\rfloor]$ las coordenadas de la subimagen.
         
-        Ahora, para cada una de estas subimagenes definimos $\lambda^{i,j}_full$, como el valor lambda resultado de usar el m\'etodo definido en \ref{lambda_full} en la subim\'agen.
+        Ahora, para cada una de estas subimagenes definimos $\lambda^{i,j}_full$, como el valor $\lambda$ resultado de usar el m\'etodo definido en \ref{lambda_full} en la subim\'agen.
 
         Por ultimo, definimos $\lambda_{grid}$ como:
         
@@ -193,29 +193,29 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\textwidth]{lambda_noclip.png}
-        \caption{Valores de lambda para todo el banco de imagenes. verde es el m\'etodo de grilla, azul es el m\'etodo de histograma, y rojo es el m\'etodo de datos completos}
+        \caption{Valores de $\lambda$ para todo el banco de imagenes. verde es el m\'etodo de grilla, azul es el m\'etodo de histograma, y rojo es el m\'etodo de datos completos}
         \label{fig:lambda_noclip}
     \end{figure}
 
-    Lo primero que notamos es que el m\'etodo de grilla tiene un comportamiento mucho m\'as err\'atico que los otros dos m\'etodos, en particular suele dispararse a valores extremadamente altos de $\lambda$. Notemos que las im\'agenes cuyo $\lambda$ se dispara son las imagenes 10, 15, y 20, las cuales podemos ver a continuaci\'on en la figura \ref{fig:img_bci_10_15_20}
+    Lo primero que notamos es que el m\'etodo de grilla tiene un comportamiento mucho m\'as err\'atico que los otros dos m\'etodos, en particular suele dispararse a valores extremadamente altos de $\lambda$. Notemos que las im\'agenes cuyo $\lambda$ se dispara son las imagenes 10, 15, 20, y 24, las cuales podemos ver a continuaci\'on en la figura \ref{fig:img_bci_10_15_20}
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\textwidth]{img_ex_10_15_20.png}
-        \caption{Transformaciones de las imagenes 10, 15, y 20.}
+        \includegraphics[width=0.9\textwidth]{img_ex_10_15_20_24.png}
+        \caption{Transformaciones de las imagenes 10, 15, 20, y 24.}
         \label{fig:img_bci_10_15_20}
     \end{figure}
 
-    Lo que est\'as imagenes tienen en com\'un es que son im\'agenes que contienen grandes secciones de color similar, o bajo contraste, lo que genera al momento de hacer la grilla, que muchas secciones se ven ''planas'', esto genera que el valor de $\lambda$ se dispare. Ahora, vamos a cortar los valores en $5$ para poder ver mejor el comportamiento de $\lambda$ en el resto de las imagenes.
+    Lo que est\'as imagenes tienen en com\'un es que contienen grandes secciones de color similar, o bajo contraste, lo que genera al momento de hacer la grilla, que muchas secciones se ven ''planas'', esto genera que el valor de $\lambda$ se dispare. Ahora, vamos a cortar los valores en $5$ para poder ver mejor el comportamiento de $\lambda$ en el resto de las imagenes.
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\textwidth]{lambda_clip.png}
-        \caption{Valores de lambda para todo el banco de imagenes, cortado en 5. verde es el m\'etodo de grilla, azul es histograma, y rojo es datos completos}
+        \caption{Valores de $\lambda$ para todo el banco de imagenes, cortado en 5. verde es el m\'etodo de grilla, azul es histograma, y rojo es datos completos}
         \label{fig:lambda_clip}
     \end{figure}
 
-    Aqu\'i ya podemos ver el comprtamiento de los lambda con m\'as detalle, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, es Incluso el \'unico m\'etodo que nos entreg\'o un valor negativo para $lambda$, esto ocurrio en la im\'agen numero 2, la cual podemos ver en la figura \ref{fig:img_bci_all}.
+    Aqu\'i ya podemos ver el comprtamiento de los $\lambda$ con m\'as detalle, y notamos que el m\'etodo de grilla sigue teniendo un comportamiento m\'as err\'atico, es Incluso el \'unico m\'etodo que nos entreg\'o un valor negativo para $\lambda$, esto ocurrio en la im\'agen numero 2, la cual podemos ver en la figura \ref{fig:img_bci_all}.
     
     pero el m\'etodo de histograma y el m\'etodo de datos completos tienen un comportamiento m\'as estable. 
     
@@ -229,9 +229,9 @@
         \begin{tabular}{|l|l|l|l|}
             \hline
             M\'etodo 1 & M\'etodo 2 & Pearson $\rho$ & Valor P \\ \hline
-            Completo                  & Histograma                & -0.1621   & 0.4598  \\ 
-            Completo                  & Grilla                    & 0.1785    & 0.4149  \\ 
-            Histograma                & Grilla                    & -0.3417   & 0.1105  \\ \hline
+            Completo                  & Histograma                & -0.1305   & 0.5431  \\ 
+            Completo                  & Grilla                    & 0.1384    & 0.5191  \\ 
+            Histograma                & Grilla                    & -0.3467   & 0.0968  \\ \hline
         \end{tabular}
     \end{table}
 

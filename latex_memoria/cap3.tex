@@ -110,7 +110,7 @@ Por ultimo tenemos un problema de tama\~no, las im\'agenes del banco tienen una 
 
 \subsection{Imagen a histograma}
 
-Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma que en Bicego (2016)\cite{bicego2016} donde, luego de convertir la imagen en escala de grises, cada valor de intensidad corresponde a un bin del histograma, y este es usado para calcular el lambda optimo para la transformaci\'on de Box-Cox. 
+Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma que en Bicego (2016)\cite{bicego2016} donde, luego de convertir la imagen en escala de grises, cada valor de intensidad corresponde a un bin del histograma, y este es usado para calcular el $\lambda$ optimo para la transformaci\'on de Box-Cox. 
 
 Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realziar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que los pixeles vecinos en la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
 

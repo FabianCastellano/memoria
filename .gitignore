@@ -2,6 +2,8 @@
 *.fls
 *.log
 *.bcf 
+#add pdfs folder
+*.pdf
 
 *.acn
 *.acr

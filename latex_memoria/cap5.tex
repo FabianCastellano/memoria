@@ -17,7 +17,7 @@
 
 \section[Comparando imagenes vs. lambda]{Comparando imagenes vs. $\lambda$}
 
-    No es de interes estudiar la relaci\'on com\'un entre las im\'agnes y su transformada para un $\lambda$ cualquiera en $[-2, 5]\subset\R$. Para esto nos vamos a tomamos $31$ valores equidistantes de lambda y calculamos su correlaci\'on haciendo uso de los m\'etodos descritos en el cap\'itulo \ref{chap2}, $dCor$, $MIC$, y $\rho$ de Pearson. Notemos que para cada una de estas mediciones de correlaci\'on tenemos dos formas de aplicarlas en im\'agenes, utilizando el vector completo o utilizando el histograma de la im\'agen. 
+    No es de interes estudiar la relaci\'on com\'un entre las im\'agnes y su transformada para un $\lambda$ cualquiera en $[-2, 5]\subset\R$. Para esto nos vamos a tomamos $31$ valores equidistantes de $\lambda$ y calculamos su correlaci\'on haciendo uso de los m\'etodos descritos en el cap\'itulo \ref{chap2}, $dCor$, $MIC$, y $\rho$ de Pearson. Notemos que para cada una de estas mediciones de correlaci\'on tenemos dos formas de aplicarlas en im\'agenes, utilizando el vector completo o utilizando el histograma de la im\'agen. 
 
     Ahora, veamos los resultados para algunas de las im\'agenes del banco, primero utilizando el ventor completo en la medici\'on de correlaci\'on  
 
@@ -49,7 +49,7 @@
 
 \section{Comparando imagenes con su tranformada}
 
-    Ya habiendo revisado la relaci\'on que tienen las im\'agenes dado un rango de valores para $\lambda$, ahora nos enfocamos en revisar los valores de correlaci\'on para los lambdas obtenidos utilziando los m\'etodos descritos en el cap\'itulo \ref{chap4}. 
+    Ya habiendo revisado la relaci\'on que tienen las im\'agenes dado un rango de valores para $\lambda$, ahora nos enfocamos en revisar los valores de correlaci\'on para los $\lambda$'s obtenidos utilziando los m\'etodos descritos en el cap\'itulo \ref{chap4}. 
     
     De la misma forma que en la secci\'on anterior, comenzaremos analizando los valores de $dCor$, $MIC$, y $rho$, para cada im\'agen.
     
@@ -66,7 +66,7 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.75\textwidth]{anomalies_grid.png}
-        \caption{De izquierda a derecha, im\'agenes 2, 10, 15, y 20 del bamco \cite{KodakLosslessTrueColorImageSuite}}
+        \caption{De izquierda a derecha, im\'agenes 2, 10, 15, 20, y 24 del bamco \cite{KodakLosslessTrueColorImageSuite}}
     \end{figure}
 
     Podemos ver que estas im\'agenes sufren del mismo problema descrito en el cap\'itulo \ref{chap4}, donde imagenes con grandes secciones de similar color generan problemas al momento de calcular un $\lambda$.
@@ -78,20 +78,20 @@
         \begin{tabular}{|l|l|l|}
             \hline
         Correlaci\'on    & $\lambda$ & Valor  \\    \hline
-        dcor    & Completo & 1.000000  \\
-        mic     & Completo & 1.000000  \\
-        mic     & Histograma & 1.000000  \\
-        pearson & Completo & 0.987437  \\
-        mic     & Grilla & 0.970955  \\
-        dcor    & Histograma & 0.947233  \\
-        pearson & Histograma & 0.924601  \\
-        dcor    & Grilla & 0.865844  \\
-        pearson & Grilla & 0.842625  \\     \hline
+        dcor    & Completo    & 1.000  \\
+        mic     & Completo    & 1.000  \\
+        mic     & Histograma  & 1.000  \\
+        pearson & Completo    & 0.985 \\
+        dcor    & Histograma  & 0.948 \\
+        mic     & Grilla      & 0.945  \\
+        pearson & Histograma  & 0.925  \\
+        dcor    & Grilla      & 0.856  \\
+        pearson & Grilla      & 0.945  \\     \hline
 
         \end{tabular}
     \end{table}
 
-    Ya con esto es claro ver que los valores m\'as altos fueron alcanzados por el m\'etodo de selecci\'on de $lambda$ que utiliza todo el vector de datos es el cual m\'antiene posee la mayor correlaci\'on, seguido por el histograma y finalmente el m\'etodo de grilla. Otra cosa que podemos destacar es que pearson present\'o los valores m\'as bajos en general.
+    Ya con esto es claro ver que los valores m\'as altos fueron alcanzados por el m\'etodo de selecci\'on de  $\lambda$ que utiliza todo el vector de datos es el cual m\'antiene posee la mayor correlaci\'on, seguido por el histograma y finalmente el m\'etodo de grilla. Otra cosa que podemos destacar es que pearson present\'o los valores m\'as bajos en general.
 
     Veamos ahora como se ve la situaci\'on al realizar la comparaci\'on haciendo uso de los histogramas.
 
@@ -106,15 +106,15 @@
     \begin{table}[H]
         \centering
         \begin{tabular}{|l|l|l|}\hline
-        mic     & Completo    & 0.483314  \\\hline
-        dcor    & Completo    & 0.453417  \\
-        mic     & Histograma  & 0.450874  \\
-        dcor    & Histograma  & 0.424125  \\
-        mic     & Grilla      & 0.409863  \\
-        dcor    & Grilla      & 0.357291  \\
-        pearson & Completo    & 0.161884  \\
-        pearson & Grilla      & 0.114137  \\
-        pearson & Histograma  & -0.233827 \\\hline
+        mic     & Completo    & 0.487  \\\hline
+        dcor    & Completo    & 0.459  \\
+        mic     & Histograma  & 0.457  \\
+        dcor    & Histograma  & 0.431  \\
+        mic     & Grilla      & 0.398  \\
+        dcor    & Grilla      & 0.346 \\
+        pearson & Completo    & 0.108  \\
+        pearson & Grilla      & 0.108  \\
+        pearson & Histograma  & -0.225 \\\hline
         \end{tabular}
     \end{table}
     
