@@ -1,10 +1,10 @@
 \chapter{Coeficientes de Correlaci\'on}\label{chap2}
         
-    Para este trabajo de buscamos estudiar la corelaci\'on que existe entre una im\'agen y su transformada Box-Cox. Dado esto, lo primero que necesitamos es una metodolog\'ia para medir la corelaci\'on entre dos im\'agenes. Este es un problema m\'as complejo de lo que parece. 
+    Para este trabajo de buscamos estudiar la corelaci\'on que existe entre una imagen y su transformada Box-Cox. Dado esto, lo primero que necesitamos es una metodolog\'ia para medir la correlaci\'on entre dos im\'agenes. Este es un problema m\'as complejo de lo que parece. 
 
-    Como veremos en el Capitulo \ref{chap3}, podemos definir una im\'agen de forma tan simple como una matriz de valores entre 0 y 1, donde cada valor representa la intensidad de un pixel, pero esta definici\'on no captura el completo de lo que solemos referirnos cuando hablamos de ''im\'agenes''. Lo que diferencia una ''im\'agen'' de una matriz de valores de valores cualesquiera es que esta tiene una estructura que presenta correlaci\'on espacial, i.e., la intensidad de un pixel est\'a relacionada con la de sus vecinos.
+    Como veremos en el Capitulo \ref{chap3}, podemos definir una imagen de forma tan simple como una matriz de valores entre 0 y 1, donde cada valor representa la intensidad de un pixel, pero esta definici\'on no captura completamente a lo que solemos referirnos cuando hablamos de ''im\'agenes''. Lo que diferencia una ''imagen'' de una matriz de valores cualesquiera es que \'esta tiene una estructura que presenta correlaci\'on espacial, i.e., la intensidad de un pixel est\'a relacionada con la de sus vecinos.
 
-    Dado esto, es claro que no podemos utilizar m\'etricas de correlaci\'on comunes, como la correlaci\'on de Pearson, para medir la relaci\'on entre dos im\'agenes \cite{personbad}, por esto es que buscamos otras metricas que nos permitan cuantificar la relaci\'on entre im\'agenes, en particular, las relacioones no lineales que nos entrega la transformaci\'on Box-Cox.
+    Dado esto, es claro que no podemos utilizar m\'etricas de correlaci\'on comunes, como la correlaci\'on de Pearson, para medir la relaci\'on entre dos im\'agenes \cite{personbad}, por esto es que buscamos otras metricas que nos permitan cuantificar la relaci\'on entre im\'agenes, en particular, las relaciones no lineales que nos entrega la transformaci\'on Box-Cox.
 
     Para esto usaremos dos medidas de correlaci\'on no param\'etricas, el coeficiente de informaci\'on m\'axima ($MIC$) y la distancia de correlaci\'on ($dCor$). En esta secci\'on discutiremos la definici\'on de estas medidas, sus propiedades y como se comportan en el contexto de im\'agenes.
 
@@ -103,13 +103,13 @@
             donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$.
         \end{defn}
         \begin{rem}
-            A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, funci\'on de la cu\'al se encontr\'o que funcon\'a en pr\'actica en el art\'iculo complementario de Reshef et al. (2011) \cite[]{Reshef2011}, discuteremos la selecci\'on de este par\'ametro m\'as adelante en \ref{eligiendo_Bn}
+            A menos que se especifique de otra forma, al momento de trabajar con esta medida usaremos $B(n)=n^{0.6}$, funci\'on de la cual se encontr\'o que funcona en pr\'actica en el art\'iculo complementario de Reshef et al. (2011) \cite[]{Reshef2011}, discuteremos la selecci\'on de este par\'ametro m\'as adelante en \ref{eligiendo_Bn}
         \end{rem}
     
     
         \subsection[Formas practicas de calcular el MIC.]{Formas pr\'acticas de calcular el $MIC$.}
 
-        A pesar que el $MIC$ tiene una definici\'on relativamete simple, resulta que su c\'alculo es tremeandamente complejo, dado que se debe buscar un m\'aximo en el espacio de busqueda de las mallas $G$. En el paper de Reshef et al. (2011) \cite{Reshef2011} se propone un algoritmo heur\'istico para calcular el $MIC$, llamado \textit{Approx-MIC}, que consiste en un algoritmo de b\'usqueda local que busca el m\'aximo de la matriz caracter\'istica. Este algoritmo es r\'apido y eficiente, pero no garantiza encontrar el m\'aximo global, por lo que no es un estimador consistente del $MIC$.
+        A pesar que el $MIC$ tiene una definici\'on relativamente simple, resulta que su c\'alculo es tremeandamente complejo, dado que se debe buscar un m\'aximo en el espacio de busqueda de las mallas $G$. En el paper de Reshef et al. (2011) \cite{Reshef2011} se propone un algoritmo heur\'istico para calcular el $MIC$, llamado \textit{Approx-MIC}, que consiste en un algoritmo de b\'usqueda local que busca el m\'aximo de la matriz caracter\'istica. Este algoritmo es r\'apido y eficiente, pero no garantiza encontrar el m\'aximo global, por lo que no es un estimador consistente del $MIC$.
     
         En el art\'iculo "Measuring Dependence Powerfully and Equitably" de Reshef et al. \cite{Reshef2016}, los autores presentan y caracterizan te\'oricamente dos nuevas medidas de dependencia: $MIC_*$ y $MIC_e$. $MIC_*$ es una medida de dependencia poblacional, y el art\' iculo presenta tres formas de ver esta cantidad. Los autores demuestran que $MIC_*$ es el valor poblacional del coeficiente de informaci\'on m\'axima (MIC), una suavizaci\'on m\'inima de la informaci\'on mutua y el supremo de una secuencia infinita. Estas caracterizaciones simplifican el c\'alculo y fortalecen los resultados te\'oricos.
     
@@ -162,7 +162,7 @@
     
         \subsubsection[]{El $MIC_*$ es el valor poblacional del $MIC$}
     
-        Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. \cite{Reshef2011}. Notemos que para evistar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
+        Con el $MIC_*$ definido, presentamos nuestra primera caracterizaci\'on alternativa de este, como el l\'imite de muestra grande del estad\'istico MIC introducido en Reshef et al. \cite{Reshef2011}. Notemos que para evitar confuci\'on denotaremos como $MIC$ al estad\'istico MIC y como $MIC_*$ al coeficiente de informaci\'on m\'axima poblacional.
     
         El siguiente resultado, demostrado en el paper de Reshef (2'16)\cite{Reshef2016}, sobre la convergencia de funciones de la matriz caracter\'istica de muestra a sus contrapartes poblacionales, una consecuencia de lo cual es la convergencia de MIC a $MIC_*$. (En la declaraci\'on del teorema a continuaci\'on, recordemos que $m_\infty$ es el espacio de matrices infinitas equipadas con la norma supremo, y dada una matriz A, la proyecci\'on $r_i$ anula todas las entradas $A_{k, \ell}$ para las cuales $k\ell > i.$)
     
@@ -184,7 +184,7 @@
     
         \subsubsection[El MIC star es el supremo de la matriz caracteristica de muestra]{El $MIC_*$ es el supremo de la matriz caracter\'istica de muestra}
     
-        Ahora mostramos la una vista alternativa de $MIC_*$: que puede definirse de manera equivalente como el supremo sobre la frontera de la matriz caracter\'istica en lugar de como un supremo sobre todas las entradas de la matriz. Esta caracterizaci\'on de $MIC_*$ servir\'a como base tanto para la aproximaci\'on de $MIC_*(X, Y)$ como para el nuevo estimador de $MIC_*$ ser\'a presentado m\'as adelante.
+        Ahora mostramos la una vista alternativa de $MIC_*$, que puede definirse de manera equivalente como el supremo sobre la frontera de la matriz caracter\'istica en lugar de como un supremo sobre todas las entradas de la matriz. Esta caracterizaci\'on de $MIC_*$ servir\'a como base tanto para la aproximaci\'on de $MIC_*(X, Y)$ como para el nuevo estimador de $MIC_*$ ser\'a presentado m\'as adelante.
     
         Comenzamos definiendo lo que entendemos por frontera de la matriz caracter\'istica. Nuestra definici\'on se basa en la siguiente observaci\'on.
         \begin{prop}
@@ -235,7 +235,7 @@
     
         El estimador $MIC_e$ se basa en la caracterizaci\'on alternativa de $MIC_*$ probada en la secci\'on anterior, si $MIC_*$ puede considerarse como el supremo del l\'imite de la matriz caracter\'istica en lugar de la matriz completa, entonces solo el l\'imite de la matriz debe estimarse con precisi\'on para estimar $MIC_*$. Esto tiene la ventaja de que, mientras que calcular entradas individuales de la matriz caracter\'istica de muestra implica encontrar mallas \'optimas (bidimensionales), estimar las entradas del l\'imite nos requiere solo encontrar particiones \'optimas (unidimensionales). Si bien el primer problema es computacionalmente dif\'icil, el segundo puede resolverse utilizando el algoritmo de programaci\'on din\'amica de Reshef et al.(2011)\cite{Reshef2011}.
     
-        En Reshef (2016) \cite{Reshef2016}, esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominadad $[M]$. La diferencia entre $[M]$ y la matriz caracter\'istica $M$ es la siguiente: mientras que la entrada $k, \ell$-\'esima de $M$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k\times\ell$, la entrada $k, \ell$-\'esima de $[M]$ se calcula a partir de l\ informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k\times\ell$ que equiparticiona la dimensi\'on con m\'as filas/columnas (Ver Figura \ref{fig:matriz_equicaracteristica}.) A pesar de esta diferencia, a medida que la equipartici\'on en cuesti\'on se vuelve m\'as y m\'as fina, se vuelve indistinguible de una partici\'on \'optima del mismo tama\~no Esta intuici\'on se puede formalizar para mostrar que el l\'imite de $[M]$ es igual al l\'imite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducir\'a que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimaci\'on consistente de $\mathrm{MIC}*$.
+        En Reshef (2016) \cite{Reshef2016}, esta idea es formalizada a travez de un objeto llamado la matriz equicaracter\'istica, la cual es denominada $[M]$. La diferencia entre $[M]$ y la matriz caracter\'istica $M$ es la siguiente: mientras que la entrada $k, \ell$-\'esima de $M$ se calcula a partir de la informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k\times\ell$, la entrada $k, \ell$-\'esima de $[M]$ se calcula a partir de l\ informaci\'on mutua m\'axima alcanzable utilizando cualquier cuadr\'icula de $k\times\ell$ que equiparticiona la dimensi\'on con m\'as filas/columnas (Ver Figura \ref{fig:matriz_equicaracteristica}.) A pesar de esta diferencia, a medida que la equipartici\'on en cuesti\'on se vuelve m\'as y m\'as fina, se vuelve indistinguible de una partici\'on \'optima del mismo tama\~no Esta intuici\'on se puede formalizar para mostrar que el l\'imite de $[M]$ es igual al l\'imite de $M$, y por lo tanto que $\sup [M]=\sup M=\mathrm{MIC}*$. Entonces, se deducir\'a que estimar $[M]$ y tomar el supremo, como lo hicimos con $M$ en el caso de MIC, proporciona una estimaci\'on consistente de $\mathrm{MIC}*$.
     
         \subsection{La matriz equicaracter\'istica} 
     
