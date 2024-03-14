@@ -33,8 +33,7 @@
 
 
 
-\title[Defensa de Memoria]{An\'alisis de Imagenes transformadas con
-Box-Cox}
+\title[Defensa de Memoria]{\bf An\'alisis de Im\'agenes a trav\'es de la Transformaci\'on de Box-Cox}
 % Titre du diaporama
 
 % Sous-titre optionnel
@@ -80,7 +79,7 @@ Box-Cox}
 \subsection{Coeficiente de Información Máxima}
 
 \begin{frame}{Metodología: Coeficiente de Información Máxima}
-    \pause
+     
     
     \begin{block}{Información mutua}
     Dada una distribución bivariada $P(x,y)$, definimos:
@@ -88,7 +87,7 @@ Box-Cox}
             \mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
         \end{equation}
     \end{block}
-    \pause
+     
 
 
     \begin{block}{Máximo sobre todas las mallas}
@@ -112,7 +111,7 @@ Box-Cox}
         \end{equation}
         Notemos que en principio la matriz es infinita.
     \end{block}
-    \pause
+     
 
     \begin{block}{Coeficiente de Información Máxima}
         Definido en por Reshef en 2011 \cite{reshef2011} Dado un conjunto de datos bivariado, tenemos:
@@ -126,27 +125,154 @@ Box-Cox}
 \subsection{Correlaci\'on y Covarianza por Distancia}
 
 \begin{frame}{Correlaci\'on por Distancia}
+
+    \begin{block}{Correlaci\'on por Distancia}
+        Esta se Plantea como una generalizaci\'on de la correlaci\'on de Pearon, en particular cumple:
+        \begin{enumerate}
+            \item $\mathcal{R}(X,Y)$ est\'a definido para $X,Y$ de dimensi\'on aleatoria.
+            \item $\mathcal{R}(X,Y) = 0$ caracteriza la independenc\'a de $X$ e $Y$.	 
+        \end{enumerate}
+    \end{block}
+
+    \begin{block}{Correlaci\'on por Distancia}
+        La Covarianza por distancia (dCov) entre los vectores aleatorios $X$ e $Y$ con primeros momentos finitos es el n\'umero no negativo $\mathcal{V}(X, Y)$ definido por:
+        \begin{equation}
+            \begin{aligned}\label{dcov_formula}
+                \mathcal{V}^2(X, Y) & =\left\|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right\|^2 \\
+                & =\frac{1}{c_p c_q} \int_{\mathcal{R}^{p+q}} \frac{\left|f_{X, Y}(t, s)-f_X(t) f_Y(s)\right|^2}{|t|_p^{1+p}|s|_q^{1+q}} d t d s .
+                \end{aligned}
+        \end{equation}
+    \end{block}
 \end{frame}
+
+
+\begin{frame}{Correlaci\'on por Distancia}
+    \begin{block}{Varianza por distancia}
+        Se define como la raiz cuadrada:
+
+        $$
+        \mathcal{V}^2(X)=\mathcal{V}^2(X, X)=\left\|f_{X, X}(t, s)-f_X(t) f_X(s)\right\|^2 .
+        $$
+    
+        Por definici\'on de la norma $\|\cdot\|$, es claro que  $\mathcal{V}(X, Y) \geq 0$ y $\mathcal{V}(X, Y)=0$ si y solo si $X$ e $Y$ son indepentes.
+        
+    \end{block}
+    \begin{block}{Correlaci\'on por Distancia}
+        La correlaci\'on por distancia (dCor) entre los vectores aleatorios $X$ e $Y$ con primer momento finito es el n\'unero no negtivo $\mathcal{R}(X, Y)$ definido por:
+		$$
+		\mathcal{R}^2(X, Y)= \begin{cases}\frac{\mathcal{V}^2(X, Y)}{\sqrt{\mathcal{V}^2(X) \mathcal{V}^2(Y)}}, & \mathcal{V}^2(X) \mathcal{V}^2(Y)>0 \\ 0, & \mathcal{V}^2(X) \mathcal{V}^2(Y)=0\end{cases}.
+		$$
+    \end{block}
+\end{frame}
+
 
 \section{Análisis y Procesamiento de Imágenes}
 \begin{frame}{Imágen cómo Matriz}
-    \pause
+     
     \begin{block}{Imágen cómo Matriz}
-        Dada una imágen $I$ de tamaño $m\times n$, podemos verla cómo una matriz $A$ de tamaño $m\times n$.
+        Una imagen es una representaci\'on visual de un objeto, y se puede definir como una funci\'on bidimensional $f(x,y)$, como se muestra en la siguiente ecuaci\'on:
+
+        $$
+        f(x, y)=\left[\begin{array}{cccc}
+        f(0,0) & f(0,1) & \cdots & f(0, N-1) \\
+        f(1,0) & f(1,1) & \cdots & f(1, N-1) \\
+        \vdots & \vdots & & \vdots \\
+        f(M-1,0) & f(M-1,1) & \cdots & f(M-1, N-1)
+        \end{array}\right]
+        $$
     \end{block}
 \end{frame}
+
+\begin{frame}{Imágen cómo Matriz}
+    \begin{block}{Otras representaciones}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.6\textwidth]{dip_4_fig2_18.png}
+            \caption{
+                (a) Imagen representada como una superficie.
+                (b) Imagen mostrada como un conjunto de intensidades visuales.
+                (c) Imagen presentada como un conjunto numérico en 2D. (Los números 0, 0.6 y 1 representan negro, gris y blanco, respectivamente).}
+            \label{fig:dip_2_18}
+        \end{figure}        
+    \end{block}
+\end{frame}
+
+\begin{frame}{Imágen cómo Matriz}
+    \begin{block}{Im\'agenes Escala de Grises}
+        Nos interesa trabajar con escala de grises, lo hacemos de la siguiente forma.
+
+        \begin{equation}
+            I(x, y)=0.299 R(x, y)+0.687 G(x, y)+0.114 B(x, y), 
+            \label{eq:grayscale}
+        \end{equation}
+
+        que corresponde el canal gris del espacio de colores $YC_bC_r$.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{img_ex_bw.png}
+            \caption{Imagen RGB,escala de grises, y promedio simple.}
+            \label{fig:rgb2gray}
+        \end{figure}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Banco}
+    \begin{block}{Banco}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\textwidth]{all_images_grid.png}
+            \caption{Banco de im\'agenes a utilizar.}
+            \label{fig:rgb2gray_2}
+        \end{figure}        
+    \end{block}
+\end{frame}
+
+\begin{frame}{Correlaci\'on entre Im\'agenes}
+    \begin{block}{Imagen a Vector}
+        
+    \end{block}
+
+    \begin{block}{Histograma}
+        
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{Ejemplos}
+    \begin{block}{Ejemplo}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.9\textwidth]{img_hist_noise.png}
+            \caption{im\'agenes junto con sus histogramas con ruido.}
+            \label{fig:img_hist_ruido}
+    \end{figure}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+    \begin{block}{Ekemplis}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.95\textwidth]{heatmap_all.png}
+            \caption{Matriz de calor para las im\'agenes 1, 2, 13, y 22 del banco, cada mapa de calor corresponde a un m\'etodo de comparaci\'on, ya sea comparando el total de la imagen (izquierda), o el histograma de estas (derecha). La cantidad de ruido aumenta de izquierda a derecha, y de arriba hacía abajo.}
+            \label{fig:heatmapall}
+        \end{figure}
+    \end{block}
+\end{frame}
+
 
 \section{La transformación BoxCox}
 
 \begin{frame}{La transformación BoxCox}
-    \pause
+     
     \begin{block}{Transformación BoxCox}
     Como fue definida por Box y Cox en 1964 \cite{boxcox}
         \begin{equation}\label{boxcox}
             y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
         \end{equation}
     \end{block}
-        \pause
+         
     \begin{block}{Verosimilitud}
         \begin{equation*}
             \mathcal{L}(\lambda) \equiv-\frac{n}{2} \log \left[\frac{1}{n} \sum_{j=1}^{n}\left(x_{j}^{\lambda}-\overline{x^{\lambda}}\right)^{2}\right] +(\lambda-1) \sum_{j=1}^{n} \log x_{j}
@@ -155,36 +281,129 @@ Box-Cox}
     
 \end{frame}
 
-\subsection{BoxCox sobre imágenes}
+\begin{frame}{Box-Cox en Imagenes}
 
-\begin{frame}{La transformación BoxCox sobre imágenes}
-    \pause
-    \begin{block}{Transformación 1-D}
-        Transformar la imagen a un vector unidimensional, usar estos datos para determinar $\lambda$.
-    \end{block}
-    
-        \pause
+    \begin{block}{Box-Cox para im\'agenes}
+        Sea $\mathcal{F}^{\lambda_{\cdot}(x, y)}$ las im\'agen transformada para alg\'un $\lambda_\cdot$ seleccionado, entonces definimos BCI como:
+
+    \begin{equation}
+        BCI = \frac{\left(\mathcal{F}^{\lambda_{\cdot}}(x, y) - \min\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right)\right)}{\left(\max\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right) - \min\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right)\right)}
+    \end{equation}
         
-    \begin{block}{Histograma}
-        La idea es usar el histograma como un proxy comprimido de de la matriz de datos. 
+        
     \end{block}
-        \pause
     
-    La correlación entre estos dos números encontrada de forma experimental fue $r^2=-0.3022$ (Cheddad, 2020) \cite{cheddad2020}. La diferencia de tiempo de calculo entre las dos versiones es de 2 ordenes de magnitud
-    -
 \end{frame}
 
 
-\section{Resultados}
+\begin{frame}{Ejemplos}
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{all_lambda_1.png}
+        \caption{Transformaciones de la im\'agen 1.}
+        \label{fig:all_lambda_1}
+    \end{figure}
 
-\begin{frame}{Experimentos}
-    \pause
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{all_lambda_3.png}
+        \caption{Transformaciones de la im\'agen 3.}
+        \label{fig:all_lambda_2}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{all_lambda_hist_1.png}
+        \caption{Histograma de las transformaciones de la im\'agen 1.}
+        \label{fig:img_bci_hist_1}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{all_lambda_hist_3.png}
+        \caption{Histograma de las transformaciones de la im\'agen 2.}
+        \label{fig:img_bci_hist_2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Seleccionando $\lambda$ en Im\'agenes}
+     
     \begin{block}{Transformación 1-D}
         Transformar la imagen a un vector unidimensional, usar estos datos para determinar $\lambda$.
     \end{block}
     
-    La correlación entre estos dos números encontrada de forma experimental fue $r^2=-0.3022$ (Cheddad, 2020) \cite{cheddad2020}. La diferencia de tiempo de calculo entre las dos versiones es de 2 ordenes de magnitud
-    -
+         
+    \begin{block}{Histograma}
+        La idea es usar el histograma como un proxy comprimido de de la matriz de datos. 
+    \end{block}
+    
+         
+    \begin{block}{Grilla}
+        La idea es usar una grilla sobre la imagen para mantener unformacion local al monento de encontrar $\lambda$
+    \end{block}
+
+\end{frame}
+
+\begin{frame}{Ejemplos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{img_bci_all.png}
+        \caption{Transformaciones de la im\'agen 1, 2, 13, y 22. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
+        \label{fig:img_bci_all}
+    \end{figure}
+    
+\end{frame}
+
+\begin{frame}{$\lambda$'s obtenidos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{lambda_noclip.png}
+        \caption{Valores de $\lambda$ para todo el banco de im\'agenes. verde es el m\'etodo de grilla, azul es el m\'etodo de histograma, y rojo es el m\'etodo de datos completos.}
+        \label{fig:lambda_noclip}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\textwidth]{img_ex_10_15_20_24.png}
+        \caption{Transformaciones de las im\'agenes 10, 15, 20, y 24.}
+        \label{fig:img_bci_10_15_20}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}{$\lambda$'s obtenidos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{lambda_clip.png}
+        \caption{Valores de $\lambda$ para todo el banco de im\'agenes, cortado en 5. verde es el m\'etodo de grilla, azul es histograma, y rojo es datos completos}
+        \label{fig:lambda_clip}
+    \end{figure}
+\end{frame}
+\begin{frame}{Correlaciones}
+    \begin{block}{Correlaciones}
+        
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|l|l|l|l|}
+                \hline
+                M\'etodo 1 & M\'etodo 2 & Pearson $\rho$ & Valor P \\ \hline
+                Completo                  & Histograma                & -0.1305   & 0.5431  \\ 
+                Completo                  & Grilla                    & 0.1384    & 0.5191  \\ 
+                Histograma                & Grilla                    & -0.3467   & 0.0968  \\ \hline
+            \end{tabular}
+        \end{table}
+    \end{block}
+\end{frame}
+
+\section{Experimentos}
+\begin{frame}{Experimentos}
+\end{frame}
+
+\section{Conlusiones}
+
+\begin{frame}{Experimentos}
+    
+    Muy concluido todo
 \end{frame}
 
 
