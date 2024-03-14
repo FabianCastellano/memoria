@@ -6,6 +6,13 @@
 # add pdfs folder
 pdfs/
 
+
+*.gz
+*.log
+*.synvtez.gz
+*.gz
+*.aux
+*.fdb_latexmk
 *.pdf
 # add .pdf and and make sure to get files with spaces in their names
 *.pdf
