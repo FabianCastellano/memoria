@@ -1,6 +1,6 @@
 \documentclass{beamer}
 \usetheme{Warsaw}
-
+\graphicspath{{figuras/}}
 \setbeamercolor{normal text}{fg=white,bg=black!90}
 \setbeamercolor{structure}{fg=white}
 
@@ -19,6 +19,7 @@
 \setbeamercolor*{block body}{fg=black,bg=black!10}
 \setbeamercolor*{block title alerted}{parent=alerted text,bg=black!15}
 \setbeamercolor*{block title example}{parent=example text,bg=black!15}
+\setbeamercolor{figure text}{fg=black}
 
 \setbeamertemplate{headline}{}
 
@@ -83,7 +84,7 @@
     
     \begin{block}{Información mutua}
     Dada una distribución bivariada $P(x,y)$, definimos:
-        \begin{equation}\label{información mutua}
+        \begin{equation}
             \mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
         \end{equation}
     \end{block}
@@ -99,7 +100,6 @@
     \begin{figure}
         \centering
         \includegraphics[scale=0.6] {rsos201424f03.png}
-        \label{fig:my_label}
     \end{figure}
 \end{frame}
 
@@ -115,7 +115,7 @@
 
     \begin{block}{Coeficiente de Información Máxima}
         Definido en por Reshef en 2011 \cite{reshef2011} Dado un conjunto de datos bivariado, tenemos:
-        \begin{equation}\label{MIC}
+        \begin{equation}
 	    	\operatorname{MIC}(D)=\max _{x y<B(n)}\left\{M(D)_{x, y}\right\}
         \end{equation}
         donde $\omega(1)<B(n) \leq O\left(n^{1-\varepsilon}\right)$ para alg\'un $0<\varepsilon<1$. En el artiuclo utilizan $B(n)=n^{0.6}$
@@ -184,17 +184,13 @@
 \end{frame}
 
 \begin{frame}{Imágen cómo Matriz}
-    \begin{block}{Otras representaciones}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.6\textwidth]{dip_4_fig2_18.png}
-            \caption{
-                (a) Imagen representada como una superficie.
-                (b) Imagen mostrada como un conjunto de intensidades visuales.
-                (c) Imagen presentada como un conjunto numérico en 2D. (Los números 0, 0.6 y 1 representan negro, gris y blanco, respectivamente).}
-            \label{fig:dip_2_18}
-        \end{figure}        
-    \end{block}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{dip_4_fig2_18.png}
+    \end{figure}        
+    (a) Como una superficie.
+    (b) Como un conjunto de intensidades visuales.
+    (c) Como un conjunto numérico en 2D.
 \end{frame}
 
 \begin{frame}{Imágen cómo Matriz}
@@ -207,25 +203,21 @@
         \end{equation}
 
         que corresponde el canal gris del espacio de colores $YC_bC_r$.
-
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.8\textwidth]{img_ex_bw.png}
-            \caption{Imagen RGB,escala de grises, y promedio simple.}
-            \label{fig:rgb2gray}
-        \end{figure}
     \end{block}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{img_ex_bw.png}
+        \caption{Imagen RGB,escala de grises, y promedio simple.}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{Banco}
-    \begin{block}{Banco}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.8\textwidth]{all_images_grid.png}
-            \caption{Banco de im\'agenes a utilizar.}
-            \label{fig:rgb2gray_2}
-        \end{figure}        
-    \end{block}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{all_images_grid.png}
+        \caption{Banco de im\'agenes a utilizar.}
+    \end{figure}        
 \end{frame}
 
 \begin{frame}{Correlaci\'on entre Im\'agenes}
@@ -240,25 +232,21 @@
 \end{frame}
 
 \begin{frame}{Ejemplos}
-    \begin{block}{Ejemplo}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.9\textwidth]{img_hist_noise.png}
-            \caption{im\'agenes junto con sus histogramas con ruido.}
-            \label{fig:img_hist_ruido}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{img_hist_noise.png}
+        \caption{im\'agenes junto con sus histogramas con ruido.}
+        \label{fig:img_hist_ruido}
     \end{figure}
-    \end{block}
 \end{frame}
 
 \begin{frame}{Ejemplos}
-    \begin{block}{Ekemplis}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.95\textwidth]{heatmap_all.png}
-            \caption{Matriz de calor para las im\'agenes 1, 2, 13, y 22 del banco, cada mapa de calor corresponde a un m\'etodo de comparaci\'on, ya sea comparando el total de la imagen (izquierda), o el histograma de estas (derecha). La cantidad de ruido aumenta de izquierda a derecha, y de arriba hacía abajo.}
-            \label{fig:heatmapall}
-        \end{figure}
-    \end{block}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{heatmap_all.png}
+        \caption{Matriz de calor para las im\'agenes 1, 2, 13, y 22 del banco, cada mapa de calor corresponde a un m\'etodo de comparaci\'on, ya sea comparando el total de la imagen (izquierda), o el histograma de estas (derecha). La cantidad de ruido aumenta de izquierda a derecha, y de arriba hacía abajo.}
+        \label{fig:heatmapall}
+    \end{figure}
 \end{frame}
 
 
@@ -268,7 +256,7 @@
      
     \begin{block}{Transformación BoxCox}
     Como fue definida por Box y Cox en 1964 \cite{boxcox}
-        \begin{equation}\label{boxcox}
+        \begin{equation}
             y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
         \end{equation}
     \end{block}
@@ -299,28 +287,40 @@
 \begin{frame}{Ejemplos}
     \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{all_lambda_1.png}
+        \includegraphics[width=0.6\textwidth]{all_lambda_1.png}
         \caption{Transformaciones de la im\'agen 1.}
         \label{fig:all_lambda_1}
     \end{figure}
+\end{frame}
+
+
+\begin{frame}{Ejemplos}
 
     \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{all_lambda_3.png}
-        \caption{Transformaciones de la im\'agen 3.}
-        \label{fig:all_lambda_2}
-    \end{figure}
-
-    \begin{figure}
-        \centering
-        \includegraphics[width=\textwidth]{all_lambda_hist_1.png}
+        \includegraphics[width=0.6\textwidth]{all_lambda_hist_1.png}
         \caption{Histograma de las transformaciones de la im\'agen 1.}
         \label{fig:img_bci_hist_1}
     \end{figure}
+\end{frame}
+
+
+
+\begin{frame}{Ejemplos}
 
     \begin{figure}
         \centering
-        \includegraphics[width=\textwidth]{all_lambda_hist_3.png}
+        \includegraphics[width=0.6\textwidth]{all_lambda_3.png}
+        \caption{Transformaciones de la im\'agen 3.}
+        \label{fig:all_lambda_2}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Ejemplos}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{all_lambda_hist_3.png}
         \caption{Histograma de las transformaciones de la im\'agen 2.}
         \label{fig:img_bci_hist_2}
     \end{figure}
@@ -347,11 +347,10 @@
 \begin{frame}{Ejemplos}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{img_bci_all.png}
+        \includegraphics[width=0.7\textwidth]{img_bci_all.png}
         \caption{Transformaciones de la im\'agen 1, 2, 13, y 22. De izquierda a derecha, im\'agen original, m\'etodo de datos completos, m\'etodo de histograma, y m\'etodo de grilla.}
         \label{fig:img_bci_all}
     \end{figure}
-    
 \end{frame}
 
 \begin{frame}{$\lambda$'s obtenidos}
@@ -374,11 +373,13 @@
 \begin{frame}{$\lambda$'s obtenidos}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.7\textwidth]{lambda_clip.png}
+        \includegraphics[width=0.5\textwidth]{lambda_clip.png}
         \caption{Valores de $\lambda$ para todo el banco de im\'agenes, cortado en 5. verde es el m\'etodo de grilla, azul es histograma, y rojo es datos completos}
         \label{fig:lambda_clip}
     \end{figure}
 \end{frame}
+
+
 \begin{frame}{Correlaciones}
     \begin{block}{Correlaciones}
         
@@ -397,11 +398,86 @@
 
 \section{Experimentos}
 \begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{all_images_grid.png}
+        \caption{Banco de im\'agenes a utilizar.}
+    \end{figure}        
+\end{frame}
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\textwidth]{all_images_grid_bw.png}
+        \caption{Banco de im\'agenes a utilizar, en escala de grises.}
+    \end{figure}     
+\end{frame}
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{lam_v_com_all_img.png}
+        \caption{De arriba hacia abajo, im\'agenes 1, 2, 13, y 22. A la izquierda la imagen original y a la derecha el valor de $dCor$ (azul), $MIC$ (naranja), y $\rho$ (verde) utilizando el vector completo en el eje y, $\lambda$ en el eje x.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{lam_v_com_all_img_hist.png}
+        \caption{De arriba hacia abajo, im\'agenes 1, 2, 13, y 22. A la izquierda la imagen original y a la derecha el valor de $dCor$ (azul), $MIC$ (naranja), y $\rho$ (verde) utilizando el histograma en el eje y, $\lambda$ en el eje x.}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{plot_comparison_full.png}
+        \caption{Valores de dcor, mic y pearson para cada imagen usando todo el vector, azul es el metodo para encontrar $\lambda$ con toda la imagen, rojo es el histograma y verde es el grilla.}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=\textwidth]{anomalies_grid.png}
+        \caption{De izquierda a derecha, im\'agenes 2, 10, 15, 20, y 24 del banco.}
+    \end{figure}
+    Estos corresponden a los valores an\'omalos en el m\'etodo de grilla.
+\end{frame}
+
+
+\begin{frame}{Experimentos}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\textwidth]{plot_comparison_hist.png}
+        \caption{Valores de dcor, mic y pearson para cada imagen usando el histograma, azul es el metodo para encontrar $\lambda$ con toda la imagen, rojo es el histograma y verde es el grid}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Experimentos}
+    \begin{block}{Corr.} 
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{|l|l|l|}\hline
+            mic     & Completo    & 0.487  \\\hline
+            dcor    & Completo    & 0.459  \\
+            mic     & Histograma  & 0.457  \\
+            dcor    & Histograma  & 0.431  \\
+            mic     & Grilla      & 0.398  \\
+            dcor    & Grilla      & 0.346 \\
+            pearson & Completo    & 0.108  \\
+            pearson & Grilla      & 0.108  \\
+            pearson & Histograma  & -0.225 \\\hline
+            \end{tabular}
+        \end{table}
+    \end{block}
 \end{frame}
 
 \section{Conlusiones}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Conlusiones}
     
     Muy concluido todo
 \end{frame}
