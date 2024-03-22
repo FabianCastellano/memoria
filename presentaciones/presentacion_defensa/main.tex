@@ -53,7 +53,7 @@
 \date{Marzo,  2024}
 % Optionnel. La date, généralement celle du jour de la conférence
 
-\subject{Transformación BoxCox}
+\subject{Transformación Box-Cox}
 % C'est utilisé dans les métadonnes du PDF
 \titlegraphic{
     \includegraphics[width=3cm,keepaspectratio]{logo_dmat.png}%
@@ -66,41 +66,43 @@
 \begin{frame}
   \titlepage
 \end{frame}
+\begin{frame}
+    \begin{center}
+        {\LARGE\bf Introducción}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Introducción}
+    \begin{itemize}
+        \item La transformación Box-Cox se utiliza para asemejar datos a una Distribución Normal.
+        \item Se evalua el uso de esta transformación para sobre im\'agenes.
+        \item Se estudia la relación entre las im\'agenes y sus transformadas, con diversos m\'etodos propuestos.
+    \end{itemize}
+    \includegraphics[width=0.5\textwidth]{output275.png}
+\end{frame}
+
 
 \begin{frame}{Contenidos}
   \tableofcontents
   % possibilité d'ajouter l'option [pausesections]
 \end{frame}
 
-
-\begin{frame}{Introducción}
+\begin{frame}
     \begin{center}
-        \begin{itemize}
-            \item La transformación Box-Cox es una transformación de datos que es utilizada para estabilizar la varianza y hacer los datos más parecidos a una distribución normal.
-            \item En este trabajo se propone utilizar la transformación Box-Cox para analizar imágenes.
-            \item Se propone utilizar la transformación Box-Cox para encontrar el valor de $\lambda$ que maximiza la correlación entre imágenes.
-        \end{itemize}
+        {\LARGE\bf Coeficientes de Correlación}
     \end{center}
 \end{frame}
 
-
-
-\section{Comparación entre imágenes}
-\begin{frame}{Comparación entre imágenes}
-\frametitle{Comparación entre imágenes}
-\end{frame}
-
+\section{Coeficientes de Correlación}
 \subsection{Coeficiente de Información Máxima}
 \begin{frame}{Coeficiente de Información Máxima}
      
-    
     \begin{block}{Información mutua}
     Dada una distribución bivariada $P(x,y)$, definimos:
         \begin{equation}
             \mathrm{I}(X ; Y)=\int_{\mathcal{Y}} \int_{\mathcal{X}} P_{(X, Y)}(x, y) \log \left(\frac{P_{(X, Y)}(x, y)}{P_{X}(x) P_{Y}(y)}\right)dxdy
         \end{equation}
     \end{block}
-     
 
 
     \begin{block}{Máximo sobre todas las mallas}
@@ -111,7 +113,7 @@
     \end{block}
     \begin{figure}
         \centering
-        \includegraphics[scale=0.6] {rsos201424f03.png}
+        \includegraphics[scale=0.6]{rsos201424f03.png}
     \end{figure}
 \end{frame}
 
@@ -177,11 +179,16 @@
     \end{block}
 \end{frame}
 
+\begin{frame}
+    \begin{center}
+        {\LARGE\bf Análisis y Procesamiento de Imágenes}
+    \end{center}
+\end{frame}
 
 \section{Análisis y Procesamiento de Imágenes}
-\begin{frame}{Imágen cómo Matriz}
+\begin{frame}{Análisis y Procesamiento de Imágenes}
      
-    \begin{block}{Imágen cómo Matriz}
+    \begin{block}{Representación de una Imagen}
         Una imagen es una representaci\'on visual de un objeto, y se puede definir como una funci\'on bidimensional $f(x,y)$, como se muestra en la siguiente ecuaci\'on:
 
         $$
@@ -195,7 +202,7 @@
     \end{block}
 \end{frame}
 
-\begin{frame}{Imágen cómo Matriz}
+\begin{frame}{Análisis y Procesamiento de Imágenes}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\textwidth]{dip_4_fig2_18.png}
@@ -205,7 +212,7 @@
     (c) Como un conjunto numérico en 2D.
 \end{frame}
 
-\begin{frame}{Imágen cómo Matriz}
+\begin{frame}{Análisis y Procesamiento de Imágenes}
     \begin{block}{Im\'agenes Escala de Grises}
         Nos interesa trabajar con escala de grises, lo hacemos de la siguiente forma.
 
@@ -261,12 +268,17 @@
     \end{figure}
 \end{frame}
 
+\begin{frame}
+    \begin{center}
+        {\LARGE\bf La transformación Box-Cox}
+    \end{center}
+\end{frame}
 
-\section{La transformación BoxCox}
+\section{La transformación Box-Cox}
 
-\begin{frame}{La transformación BoxCox}
+\begin{frame}{La transformación Box-Cox}
      
-    \begin{block}{Transformación BoxCox}
+    \begin{block}{Transformación Box-Cox}
     Como fue definida por Box y Cox en 1964 \cite{boxcox}
         \begin{equation}
             y^{(\lambda)}= \begin{cases}\frac{y^{\lambda}-1}{\lambda} & (\lambda \neq 0) \\ \log y & (\lambda=0)\end{cases}
@@ -289,10 +301,7 @@
     \begin{equation}
         BCI = \frac{\left(\mathcal{F}^{\lambda_{\cdot}}(x, y) - \min\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right)\right)}{\left(\max\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right) - \min\left(\mathcal{F}^{\lambda_{\cdot}}(x, y)\right)\right)}
     \end{equation}
-        
-        
     \end{block}
-    
 \end{frame}
 
 
@@ -408,8 +417,14 @@
     \end{block}
 \end{frame}
 
-\section{Experimentos}
-\begin{frame}{Experimentos}
+\begin{frame}
+    \begin{center}
+        {\LARGE\bf Experimentos Numéricos}
+    \end{center}
+\end{frame}
+
+\section{Experimentos Numéricos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{all_images_grid.png}
@@ -417,7 +432,7 @@
     \end{figure}        
 \end{frame}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\textwidth]{all_images_grid_bw.png}
@@ -425,7 +440,7 @@
     \end{figure}     
 \end{frame}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{lam_v_com_all_img.png}
@@ -433,7 +448,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{lam_v_com_all_img_hist.png}
@@ -441,7 +456,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\textwidth]{plot_comparison_full.png}
@@ -450,7 +465,7 @@
 \end{frame}
 
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=\textwidth]{anomalies_grid.png}
@@ -460,7 +475,7 @@
 \end{frame}
 
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\textwidth]{plot_comparison_hist.png}
@@ -468,7 +483,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Experimentos}
+\begin{frame}{Experimentos Numéricos}
     \begin{block}{Corr.} 
         \begin{table}[H]
             \centering
