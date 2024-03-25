@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.27)  19 MAR 2024 18:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.27)  24 MAR 2024 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1570,13 +1570,13 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.1
                                                   \__shipout_drop_firstpage_...
 l.94 
       <./figuras/reshef_2015_fig1.png>] [93]
-<figuras/reshef_2016_fig3.png, id=942, 782.925pt x 923.45pt>
+<figuras/reshef_2016_fig3.png, id=941, 782.925pt x 923.45pt>
 File: figuras/reshef_2016_fig3.png Graphic file (type png)
 <use figuras/reshef_2016_fig3.png>
 Package pdftex.def Info: figuras/reshef_2016_fig3.png  used on input line 143.
 (pdftex.def)             Requested size: 313.16446pt x 369.37346pt.
  [94]
-<figuras/reshef_2016_fig4.png, id=950, 765.86125pt x 952.55875pt>
+<figuras/reshef_2016_fig4.png, id=949, 765.86125pt x 952.55875pt>
 File: figuras/reshef_2016_fig4.png Graphic file (type png)
 <use figuras/reshef_2016_fig4.png>
 Package pdftex.def Info: figuras/reshef_2016_fig4.png  used on input line 150.
@@ -1619,18 +1619,18 @@ Package logreq Info: Writing requests to 'tesis_FCN.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 32513 strings out of 475237
- 607104 string characters out of 5768555
+ 32508 strings out of 475237
+ 606939 string characters out of 5768555
  1936238 words of memory out of 5000000
- 52882 multiletter control sequences out of 15000+600000
+ 52878 multiletter control sequences out of 15000+600000
  570915 words of font info for 85 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  99i,11n,101p,1373b,2329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on tesis_FCN.pdf (100 pages, 47680013 bytes).
+Output written on tesis_FCN.pdf (100 pages, 47678913 bytes).
 PDF statistics:
- 1233 PDF objects out of 1440 (max. 8388607)
- 967 compressed objects within 10 object streams
- 329 named destinations out of 1000 (max. 500000)
+ 1232 PDF objects out of 1440 (max. 8388607)
+ 966 compressed objects within 10 object streams
+ 328 named destinations out of 1000 (max. 500000)
  508 words of extra memory for PDF output out of 10000 (max. 10000000)
 
