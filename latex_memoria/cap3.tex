@@ -2,11 +2,11 @@
 \chapter{Análisis y Procesamiento de im\'agenes }\label{chap3}
 
 
-Tanto en la ciencia de datos, commom en estad\'istica, y la compitaci\'on, el an\'alisis de im\'agenes es un ha emergido como un \'area de estudio de gran importancia, que he sido pivotal y con un extenso alcance en multiples discuplinas. De la forma en que la era digital avanza, la cantidad de datos que se generan en forma de im\'agenes es cada vez mayor, y con ello la necesidad herramientas para analizar, procesar, comprender y en general obtener informaci\'on relevante de estas im\'agenes. 
+Tanto en la ciencia de datos, como en estad\'istica, y la compitaci\'on, el an\'alisis de im\'agenes ha emergido como un \'area de estudio de gran importancia, que he sido pivotal y con un extenso alcance en multiples disciplinas. De la forma en que la era digital avanza, la cantidad de datos que se generan en forma de im\'agenes es cada vez mayor, y con ello la necesidad herramientas para analizar, procesar, comprender y en general obtener informaci\'on relevante de estas im\'agenes. 
 
-El uso de im\'agenes ha evolucionado de aplicaci\'ones tradicionales como imagenolog\'ia satelital y diagn\'ostico m\'edico, a dominios m\'as modernos como inteligencia artificial, reconocimiento facial, y vehiculos aut\'onomos. La habilidad de detectar patrones, animal\'ias, y derivar informaci\'on de estas tiene un potencial enorme para la innovaci\'on y el desarrollo de nuevas tecnolog\'ias. 
+El uso de im\'agenes ha evolucionado de aplicaci\'ones tradicionales como imagenolog\'ia satelital y diagn\'ostico m\'edico, a dominios m\'as modernos como inteligencia artificial, reconocimiento facial, y vehiculos aut\'onomos. La habilidad de detectar patrones, anomal\'ias, y derivar informaci\'on de estas tiene un potencial enorme para la innovaci\'on y el desarrollo de nuevas tecnolog\'ias. 
 
-En este cap\'itulo, se introducen los conceptos necesarios para entender el an\'alisis de im\'agenes, y se presentan las herramientas que se utilizaron para el desarrollo de este trabajo. Comenzaremos defininiendo las im\'agenes como matrices, luego presentaremos el banco de im\'agenes a utilizar durante el resto del trabajo, para posteriormente hablar de las caracter\'isticas de una imagen, como el contraste, la luminosidad, y la saturaci\'on. Luego, hablaremos de los espacios de color, y como estos se utilizan para representar una imagen. Finalmente, hablaremos de las t\'ecnicas de comparaci\'on de im\'agenes, en particular como aplicamos t\'ecnicas de comparaci\'on entre vectores sobre im\'agenes,
+En este cap\'itulo, se introducen los conceptos necesarios para entender el an\'alisis de im\'agenes, y se presentan las herramientas que se utilizaron para el desarrollo de este trabajo. Comenzaremos definiendo las im\'agenes como matrices, luego presentaremos el banco de im\'agenes a utilizar durante el resto del trabajo, para posteriormente hablar de las caracter\'isticas de una imagen, como el contraste, la luminosidad, y la saturaci\'on. Luego, hablaremos de los espacios de color, y como estos se utilizan para representar una imagen. Finalmente, hablaremos de las t\'ecnicas de comparaci\'on de im\'agenes, en particular como aplicamos t\'ecnicas de comparaci\'on entre vectores sobre im\'agenes,
 
 % ---------------------------------------------------------------------------------------
 \section{im\'agenes como matrices}
@@ -35,7 +35,7 @@ El lado derecho de esta ecuación es una imagen digital representada como un con
     \label{fig:dip_2_18}
 \end{figure}
 
-Como se ve en la figura \ref{fig:dip_2_18}, y como mencionamos anteriormente, el origen se define en la esquina superior izquierda, esta es una convenci\'on que nace en que mucha tecnolog\'ia usada para representar im\'agenes hacen un barrido de imagen de arriba hacía abajo y de izquierda a derecha, por ejemplo, los televisores. Esto tambi\'en es conveniente dado que concorda con la forma en la que solemos indexar matrices, las cuales tambi\'en podemos podemos utilizar para representar una imagen  de la siguiente forma:
+Como se ve en la figura \ref{fig:dip_2_18}, y como mencionamos anteriormente, el origen se define en la esquina superior izquierda, esta es una convenci\'on que nace en que mucha tecnolog\'ia usada para representar im\'agenes hacen un barrido de imagen de arriba hacía abajo y de izquierda a derecha, por ejemplo, los televisores. Esto tambi\'en es conveniente dado que concorda con la forma en la que solemos indexar matrices, las cuales tambi\'en podemos utilizar para representar una imagen  de la siguiente forma:
 
 $$
 \mathbf{A}=\left[\begin{array}{cccc}
@@ -53,7 +53,7 @@ $$
 $$
 
 
-Con $R$, $G$, y $B$ representando los valores de los canales rojo, verde y azul respectivamente, y con $x\in[0,M-1]$ e $y\in[0,N-1]$ representando las coordenadas de la imagen. El espacio de color RGB es el espacio m\'as comun para representar im\'agenes en monitores y es como la gran mayoría de c\'amaras digitales capturan im\'agenes, pero no es el \'unico espacio de color que existe, otros ejemplos notables son el espacio CMY (cyan, magenta, yellow) y CMYK (cyan, magenta, yellow, black) son espacios comunmente utilizados en impresi\'on, y el espacio HSI (hue, saturation, intensity), que corresponde de forma cercana a la forma en la que los humanos describimos e interpretamos el color. \cite{DigitalImageProcessing}
+Con $R$, $G$, y $B$ representando los valores de los canales rojo, verde y azul respectivamente, y con $x\in[0,M-1]$ e $y\in[0,N-1]$ representando las coordenadas de la imagen. El espacio de color RGB es el espacio m\'as com\'un para representar im\'agenes en monitores y es como la gran mayoría de c\'amaras digitales capturan im\'agenes, pero no es el \'unico espacio de color que existe, otros ejemplos notables son el espacio CMY (cyan, magenta, yellow) y CMYK (cyan, magenta, yellow, black) son espacios comunmente utilizados en impresi\'on, y el espacio HSI (hue, saturation, intensity), que corresponde de forma cercana a la forma en la que los humanos describimos e interpretamos el color. \cite{DigitalImageProcessing}
 
 Al momento de trabajar con im\'agenes para el contexto de este trabajo, nos es de interes hacerlo con im\'agenes en escala de grises, puesto que queremos mantener la informaci\'on espacial de la imagen, y nos facilitar\'a el calculo m\'as adelante. El paso a escala de grises no es más que un promedio ponderado de los tres canales de color de la imagen, aunque tendría sentido utilizar un promedio simple, la percepción humana varía dependiendo del color, dado que somos mas sensibles a los colores verdes, y menos sensibles a los colores azules. Para esto, podemos convertir una imagen RGB a escala de grises utilizando la siguiente ecuaci\'on:
 
@@ -112,13 +112,13 @@ Por ultimo tenemos un problema de tama\~no, las im\'agenes del banco tienen una 
 
 Otra forma de comparar im\'agenes es utilizando un histograma, de la misma forma que en Bicego (2016)\cite{bicego2016} donde, luego de convertir la imagen en escala de grises, cada valor de intensidad corresponde a un bin del histograma, y este es usado para calcular el $\lambda$ optimo para la transformaci\'on de Box-Cox. 
 
-Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realziar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que los pixeles vecinos en la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
+Inspirados en esto, utilizamos los histogramas como un proxy de la imag\'en al momento de realizar la comparaci\'on entre las im\'agenes. Esto tiene el claro beneficio de que el histograma es un vector de dimensi\'on mucho menor que la imagen, y por tanto, el calculo de los coeficientes de comparaci\'on es mucho m\'as r\'apido. Adem\'as en cierta forma estamos manteniendo la informaci\'on espacial de la imagen, puesto que las intensidades de los pixeles vecinos est\'an relacionadas. 
 
-El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, puesto que lo que nos interesa es comparar im\'agenes que son similares, puesto que son el resultado de una transformaci\'on de la imagen original.
+El claro problema es que dos ima\'agenes pueden tener el mismo histograma, pero ser completamente distintas. Sin embargo, en el contexto de este trabajo, esto no es un problema, lo que nos interesa es comparar im\'agenes que son similares, dado el hecho que son el resultado de una transformaci\'on de la imagen original.
 
 \section{Ejemplos de comparaci\'on de im\'agenes}
 
-Ya describimos los m\'etodos que usaremos para comprar las im\'agenes usando las t\'ecnicas descritas en el cap\'itulo \ref{chap2} y \ref{chap3}, ahora revisaremos 4 im\'agenes del banco, y veremos como se comportan los coeficientes de comparaci\'on para estas im\'agenes comparadas con una versi\'on de la misma imagen a la se le aplicaron distintos niveles de ruido. En la figura \ref{fig:img_hist} podemos ver las im\'agenes junto con sus histogramas.
+Ya describimos los m\'etodos que usaremos para comprar las im\'agenes usando las t\'ecnicas descritas en el cap\'itulo \ref{chap2} y \ref{chap3}, ahora revisaremos 4 im\'agenes del banco, y veremos como se comportan los coeficientes de comparaci\'on para estas im\'agenes comparadas con una versi\'on de la misma imagen a la cual se le aplicaron distintos niveles de ruido. En la figura \ref{fig:img_hist} podemos ver las im\'agenes junto con sus histogramas.
 
 \begin{figure}[H]
     \centering
@@ -127,7 +127,7 @@ Ya describimos los m\'etodos que usaremos para comprar las im\'agenes usando las
     \label{fig:img_hist}
 \end{figure}
 
-Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas son se ven m\'as normales que otros, pero cabe notar que varias de est\'as fotos son multimodales, lo que dificulta el proceso de "normalizarlas", veamos ahora como se comportan las im\'agenes y su histograma al momento de aplicarles ruido. En la figura \ref{fig:img_hist_ruido} podemos ver las im\'agenes con ruido, junto con sus histogramas.
+Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas se ven m\'as normales que otros, pero cabe notar que varias de est\'as fotos son multimodales, lo que dificulta el proceso de "normalizarlas", veamos ahora como se comportan las im\'agenes y su histograma al momento de aplicarles ruido. En la figura \ref{fig:img_hist_ruido} podemos ver las im\'agenes con ruido, junto con sus histogramas.
 
 \begin{figure}[H]
     \centering
@@ -138,7 +138,7 @@ Podemos ver que cada histograma tiene una distribuci\'on distinta, algunas son s
 
 Podemos ver que el ruido afecta de forma distinta a cada imagen, y que el histograma de cada imagen con ruido es distinto al histograma de la imagen original. Al momento de agregarles ruido gausiano es esperable que el histograma se vea más normal, y cabe destacar que la media de la distribución de los valores de intensidad queda centrada donde se encontraba la mayor moda del histograma original. 
 
-Ahora, procederemos a revisar como se comporta la matriz de calor al ocmpara las im\'agenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las im\'agenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En la siguiente figura \ref{fig:heatmapall} podemos ver las matrices de calor para cada m\'etodo de comparaci\'on.
+Ahora, procederemos a revisar como se comporta la matriz de calor al compara las im\'agenes con sus versiones con ruido. Recordemos que finalmente tenemos 4 m\'etodos propuestos de comparar las im\'agenes, por un lado tenemos MIC y dCor, y junto con esto en cada uno de ellos tenemos dos versiones, una donde comparamos directemente la imagen completa transformada a vector (recordemos que estos m\'etodos son agn\'osticos al orden), y otra donde comparamos los histogramas de las im\'agenes. Adem\'as incluimos el coeficientes de Pearson, utilizado de la misma forma. En la siguiente figura \ref{fig:heatmapall} podemos ver las matrices de calor para cada m\'etodo de comparaci\'on.
 
 Notemos que la matrices para el resto de las im\'agenes se pueden encontrar en el Ap\'endice \ref{appA}
 
@@ -155,4 +155,4 @@ Notemos que a la izquierda tenemos la comparaci\'on del vector de las im\'agenes
 Directamente podemos ver que existe una relaci\'on invesamente proporcional entre la cantidad de rudio y el coeficiente de comparaci\'on, lo que es esperable. Lo segundo que vale la pena mencionar es que en el caso de comparar los histogramas, en particular al momento de comparar entre las im\'agenes con ruidos obtenemos valores soprendentemente altos, esto es evidente al momento de ver la figura \ref{fig:img_hist_ruido}, donde podemos ver que los histogramas de las im\'agenes con ruido son bastante similares entre si. Pero si es destacable que se encontró una relaci\'on bastante fuerte entre los histogramas de las im\'agenes con ruido y las im\'agenes originales. 
 
 
-Por ultimo vale la pena destcar que, en particular para el caso de la comparaci\'on del vector completo de la imagen, dCor y Pearson tienen un comportamiento bastante similar, mientras que MIC tiene dificultad para encontrar una relaci\'on entre las im\'agenes con niveles de ruido m\'as alto y la imagen original. 
+Por ultimo vale la pena destacar que, en particular para el caso de la comparaci\'on del vector completo de la imagen, dCor y Pearson tienen un comportamiento bastante similar, mientras que MIC tiene dificultad para encontrar una relaci\'on entre las im\'agenes con niveles de ruido m\'as alto y la imagen original. 

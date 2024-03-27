@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.27)  25 MAR 2024 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.7.27)  27 MAR 2024 11:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1126,66 +1126,66 @@ Package pdftex.def Info: figuras/all_lambda_hist_3.png  used on input line 114.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133     \begin{defn}\label
-                            {lambda_full} <./figuras/all_lambda_1.png>] [46
+l.135     \end{defn}
+                     <./figuras/all_lambda_1.png>] [46
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133     \begin{defn}\label
-                            {lambda_full} <./figuras/all_lambda_3.png>] [47
+l.135     \end{defn}
+                     <./figuras/all_lambda_3.png>] [47
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133     \begin{defn}\label
-                            {lambda_full} <./figuras/all_lambda_hist_1.png>] [48
+l.135     \end{defn}
+                     <./figuras/all_lambda_hist_1.png>] [48
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.133     \begin{defn}\label
-                            {lambda_full} <./figuras/all_lambda_hist_3.png>]
+l.135     \end{defn}
+                     <./figuras/all_lambda_hist_3.png>]
 <figuras/img_bci_all.png, id=583, 431.4519pt x 302.5704pt>
 File: figuras/img_bci_all.png Graphic file (type png)
 <use figuras/img_bci_all.png>
 Package pdftex.def Info: figuras/img_bci_all.png  used on input line 179.
 (pdftex.def)             Requested size: 411.9399pt x 288.89455pt.
- [49] [50
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.192 
-       <./figuras/img_bci_all.png>]
-<figuras/lambda_noclip.png, id=601, 1166.4378pt x 1162.1016pt>
+ [49]
+<figuras/lambda_noclip.png, id=596, 1166.4378pt x 1162.1016pt>
 File: figuras/lambda_noclip.png Graphic file (type png)
 <use figuras/lambda_noclip.png>
 Package pdftex.def Info: figuras/lambda_noclip.png  used on input line 195.
 (pdftex.def)             Requested size: 247.16644pt x 246.24733pt.
+ [50
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.199 
+       <./figuras/img_bci_all.png>]
 <figuras/img_ex_10_15_20_24.png, id=603, 839.7774pt x 329.5512pt>
 File: figuras/img_ex_10_15_20_24.png Graphic file (type png)
 <use figuras/img_ex_10_15_20_24.png>
 Package pdftex.def Info: figuras/img_ex_10_15_20_24.png  used on input line 204.
 (pdftex.def)             Requested size: 370.74338pt x 145.49072pt.
- [51
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.210 
-      
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.210 
-       <./figuras/lambda_noclip.png> <./figuras/img_ex_10_15_20_24.png>]
-<figuras/lambda_clip.png, id=612, 1155.5973pt x 1158.4881pt>
+<figuras/lambda_clip.png, id=604, 1155.5973pt x 1158.4881pt>
 File: figuras/lambda_clip.png Graphic file (type png)
 <use figuras/lambda_clip.png>
 Package pdftex.def Info: figuras/lambda_clip.png  used on input line 213.
 (pdftex.def)             Requested size: 288.35666pt x 289.07332pt.
- [52
+ [51
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.217 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.217 
+       <./figuras/lambda_noclip.png> <./figuras/img_ex_10_15_20_24.png>]) [52
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.237 
-       <./figuras/lambda_clip.png>]) [53]
+l.138 \include{cap4}
+                     <./figuras/lambda_clip.png>] [53]
 \openout2 = `cap5.aux'.
 
  (./cap5.tex
@@ -1232,43 +1232,44 @@ File: figuras/plot_comparison_full.png Graphic file (type png)
 <use figuras/plot_comparison_full.png>
 Package pdftex.def Info: figuras/plot_comparison_full.png  used on input line 58.
 (pdftex.def)             Requested size: 288.35666pt x 288.89597pt.
- [57
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.63 
-      <./figuras/plot_comparison_full.png>]
-<figuras/anomalies_grid.png, id=660, 839.7774pt x 266.6763pt>
+ [57]
+<figuras/anomalies_grid.png, id=658, 839.7774pt x 266.6763pt>
 File: figuras/anomalies_grid.png Graphic file (type png)
 <use figuras/anomalies_grid.png>
 Package pdftex.def Info: figuras/anomalies_grid.png  used on input line 68.
 (pdftex.def)             Requested size: 308.95491pt x 98.1112pt.
-<figuras/plot_comparison_hist.png, id=663, 1151.2611pt x 1144.7568pt>
+ [58
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.74     A
+          ntes de revisar los valores haciendo uso de los histogramas, revis...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.74     A
+          ntes de revisar los valores haciendo uso de los histogramas, revis... <./figuras/plot_comparison_full.png> <./figuras/anomalies_grid.png>]
+<figuras/plot_comparison_hist.png, id=669, 1151.2611pt x 1144.7568pt>
 File: figuras/plot_comparison_hist.png Graphic file (type png)
 <use figuras/plot_comparison_hist.png>
 Package pdftex.def Info: figuras/plot_comparison_hist.png  used on input line 100.
 (pdftex.def)             Requested size: 288.35666pt x 286.71252pt.
- [58
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.103 
-       <./figuras/anomalies_grid.png>]) [59
+ [59
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.139 \include{cap5}
-                     <./figuras/plot_comparison_hist.png>]
+l.105 
+       <./figuras/plot_comparison_hist.png>]) [60]
 \openout2 = `cap6.aux'.
 
  (./cap6.tex
 Cap\'{\i }tulo 6.
-[60
+[61
 
 
 
 
-]) [61] [62
+]) [62] [63
 
 
 ]
@@ -1276,97 +1277,97 @@ Cap\'{\i }tulo 6.
 
  (./appA.tex
 Ap\'{e}ndice A.
-<figuras/all_images_in_order.png, id=692, 839.7774pt x 834.7185pt>
+<figuras/all_images_in_order.png, id=696, 839.7774pt x 834.7185pt>
 File: figuras/all_images_in_order.png Graphic file (type png)
 <use figuras/all_images_in_order.png>
 Package pdftex.def Info: figuras/all_images_in_order.png  used on input line 9.
 (pdftex.def)             Requested size: 288.35666pt x 286.6281pt.
-<figuras/img_hist_1.png, id=693, 1680.2775pt x 2504.1555pt>
+<figuras/img_hist_1.png, id=697, 1680.2775pt x 2504.1555pt>
 File: figuras/img_hist_1.png Graphic file (type png)
 <use figuras/img_hist_1.png>
 Package pdftex.def Info: figuras/img_hist_1.png  used on input line 16.
 (pdftex.def)             Requested size: 329.55316pt x 491.11682pt.
-<figuras/img_hist_2.png, id=694, 1680.2775pt x 2521.5003pt>
+<figuras/img_hist_2.png, id=698, 1680.2775pt x 2521.5003pt>
 File: figuras/img_hist_2.png Graphic file (type png)
 <use figuras/img_hist_2.png>
 Package pdftex.def Info: figuras/img_hist_2.png  used on input line 22.
 (pdftex.def)             Requested size: 329.55316pt x 494.5185pt.
-<figuras/img_hist_3.png, id=695, 1680.2775pt x 2521.5003pt>
+<figuras/img_hist_3.png, id=699, 1680.2775pt x 2521.5003pt>
 File: figuras/img_hist_3.png Graphic file (type png)
 <use figuras/img_hist_3.png>
 Package pdftex.def Info: figuras/img_hist_3.png  used on input line 28.
 (pdftex.def)             Requested size: 329.55316pt x 494.5185pt.
-<figuras/img_hist_noise_1.png, id=696, 839.7774pt x 1112.2353pt>
+<figuras/img_hist_noise_1.png, id=700, 839.7774pt x 1112.2353pt>
 File: figuras/img_hist_noise_1.png Graphic file (type png)
 <use figuras/img_hist_noise_1.png>
 Package pdftex.def Info: figuras/img_hist_noise_1.png  used on input line 34.
 (pdftex.def)             Requested size: 411.9399pt x 545.59407pt.
-<figuras/img_hist_noise_2.png, id=697, 839.7774pt x 1112.2353pt>
+<figuras/img_hist_noise_2.png, id=701, 839.7774pt x 1112.2353pt>
 File: figuras/img_hist_noise_2.png Graphic file (type png)
 <use figuras/img_hist_noise_2.png>
 Package pdftex.def Info: figuras/img_hist_noise_2.png  used on input line 41.
 (pdftex.def)             Requested size: 411.9399pt x 545.59407pt.
-<figuras/img_hist_noise_3.png, id=698, 839.7774pt x 1112.2353pt>
+<figuras/img_hist_noise_3.png, id=702, 839.7774pt x 1112.2353pt>
 File: figuras/img_hist_noise_3.png Graphic file (type png)
 <use figuras/img_hist_noise_3.png>
 Package pdftex.def Info: figuras/img_hist_noise_3.png  used on input line 48.
 (pdftex.def)             Requested size: 411.9399pt x 545.59407pt.
-<figuras/img_hist_noise_4.png, id=699, 839.7774pt x 1112.2353pt>
+<figuras/img_hist_noise_4.png, id=703, 839.7774pt x 1112.2353pt>
 File: figuras/img_hist_noise_4.png Graphic file (type png)
 <use figuras/img_hist_noise_4.png>
 Package pdftex.def Info: figuras/img_hist_noise_4.png  used on input line 55.
 (pdftex.def)             Requested size: 411.9399pt x 545.59407pt.
-<figuras/img_hist_noise_5.png, id=700, 839.7774pt x 1112.958pt>
+<figuras/img_hist_noise_5.png, id=704, 839.7774pt x 1112.958pt>
 File: figuras/img_hist_noise_5.png Graphic file (type png)
 <use figuras/img_hist_noise_5.png>
 Package pdftex.def Info: figuras/img_hist_noise_5.png  used on input line 62.
 (pdftex.def)             Requested size: 411.9399pt x 545.94858pt.
-<figuras/heatmaps/heatmaps_app_0.png, id=701, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_0.png, id=705, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_0.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_0.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_0.png  used on input line 68.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/heatmaps/heatmaps_app_1.png, id=702, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_1.png, id=706, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_1.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_1.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_1.png  used on input line 74.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/heatmaps/heatmaps_app_2.png, id=703, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_2.png, id=707, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_2.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_2.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_2.png  used on input line 81.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/heatmaps/heatmaps_app_3.png, id=704, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_3.png, id=708, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_3.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_3.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_3.png  used on input line 88.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/heatmaps/heatmaps_app_4.png, id=705, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_4.png, id=709, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_4.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_4.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_4.png  used on input line 95.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/heatmaps/heatmaps_app_5.png, id=706, 1119.4623pt x 1111.5126pt>
+<figuras/heatmaps/heatmaps_app_5.png, id=710, 1119.4623pt x 1111.5126pt>
 File: figuras/heatmaps/heatmaps_app_5.png Graphic file (type png)
 <use figuras/heatmaps/heatmaps_app_5.png>
 Package pdftex.def Info: figuras/heatmaps/heatmaps_app_5.png  used on input line 102.
 (pdftex.def)             Requested size: 411.9399pt x 409.01447pt.
-<figuras/img_BCI_all_1.png, id=707, 839.7774pt x 1084.7727pt>
+<figuras/img_BCI_all_1.png, id=711, 839.7774pt x 1084.7727pt>
 File: figuras/img_BCI_all_1.png Graphic file (type png)
 <use figuras/img_BCI_all_1.png>
 Package pdftex.def Info: figuras/img_BCI_all_1.png  used on input line 110.
 (pdftex.def)             Requested size: 411.9399pt x 532.12262pt.
-<figuras/img_BCI_all_2.png, id=708, 839.7774pt x 1084.7727pt>
+<figuras/img_BCI_all_2.png, id=712, 839.7774pt x 1084.7727pt>
 File: figuras/img_BCI_all_2.png Graphic file (type png)
 <use figuras/img_BCI_all_2.png>
 Package pdftex.def Info: figuras/img_BCI_all_2.png  used on input line 116.
 (pdftex.def)             Requested size: 411.9399pt x 532.12262pt.
-<figuras/img_BCI_all_3.png, id=709, 839.7774pt x 1107.1764pt>
+<figuras/img_BCI_all_3.png, id=713, 839.7774pt x 1107.1764pt>
 File: figuras/img_BCI_all_3.png Graphic file (type png)
 <use figuras/img_BCI_all_3.png>
 Package pdftex.def Info: figuras/img_BCI_all_3.png  used on input line 123.
 (pdftex.def)             Requested size: 411.9399pt x 543.11249pt.
-<figuras/img_BCI_all_4.png, id=710, 839.7774pt x 1107.1764pt>
+<figuras/img_BCI_all_4.png, id=714, 839.7774pt x 1107.1764pt>
 File: figuras/img_BCI_all_4.png Graphic file (type png)
 <use figuras/img_BCI_all_4.png>
 Package pdftex.def Info: figuras/img_BCI_all_4.png  used on input line 130.
@@ -1375,37 +1376,37 @@ File: figuras/img_BCI_all_1.png Graphic file (type png)
 <use figuras/img_BCI_all_1.png>
 Package pdftex.def Info: figuras/img_BCI_all_1.png  used on input line 137.
 (pdftex.def)             Requested size: 411.9399pt x 532.12262pt.
-<figuras/full_comp_1.png, id=711, 839.7774pt x 1129.5801pt>
+<figuras/full_comp_1.png, id=715, 839.7774pt x 1129.5801pt>
 File: figuras/full_comp_1.png Graphic file (type png)
 <use figuras/full_comp_1.png>
 Package pdftex.def Info: figuras/full_comp_1.png  used on input line 144.
 (pdftex.def)             Requested size: 329.55316pt x 443.29222pt.
-<figuras/full_comp_2.png, id=712, 839.7774pt x 1144.7568pt>
+<figuras/full_comp_2.png, id=716, 839.7774pt x 1144.7568pt>
 File: figuras/full_comp_2.png Graphic file (type png)
 <use figuras/full_comp_2.png>
 Package pdftex.def Info: figuras/full_comp_2.png  used on input line 150.
 (pdftex.def)             Requested size: 329.55316pt x 449.24817pt.
-<figuras/full_comp_3.png, id=713, 839.7774pt x 1144.7568pt>
+<figuras/full_comp_3.png, id=717, 839.7774pt x 1144.7568pt>
 File: figuras/full_comp_3.png Graphic file (type png)
 <use figuras/full_comp_3.png>
 Package pdftex.def Info: figuras/full_comp_3.png  used on input line 157.
 (pdftex.def)             Requested size: 329.55316pt x 449.24817pt.
-<figuras/hist_comp_1.png, id=714, 1084.05pt x 1445.4pt>
+<figuras/hist_comp_1.png, id=718, 1084.05pt x 1445.4pt>
 File: figuras/hist_comp_1.png Graphic file (type png)
 <use figuras/hist_comp_1.png>
 Package pdftex.def Info: figuras/hist_comp_1.png  used on input line 163.
 (pdftex.def)             Requested size: 329.55316pt x 439.40176pt.
-<figuras/hist_comp_2.png, id=715, 1084.05pt x 1445.4pt>
+<figuras/hist_comp_2.png, id=719, 1084.05pt x 1445.4pt>
 File: figuras/hist_comp_2.png Graphic file (type png)
 <use figuras/hist_comp_2.png>
 Package pdftex.def Info: figuras/hist_comp_2.png  used on input line 169.
 (pdftex.def)             Requested size: 329.55316pt x 439.40176pt.
-<figuras/hist_comp_3.png, id=716, 1084.05pt x 1445.4pt>
+<figuras/hist_comp_3.png, id=720, 1084.05pt x 1445.4pt>
 File: figuras/hist_comp_3.png Graphic file (type png)
 <use figuras/hist_comp_3.png>
 Package pdftex.def Info: figuras/hist_comp_3.png  used on input line 176.
 (pdftex.def)             Requested size: 329.55316pt x 439.40176pt.
-) [63
+) [64
 
 
 
@@ -1413,127 +1414,127 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.1
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/all_images_in_order.png>] [64
+                     <./figuras/all_images_in_order.png>] [65
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_1.png>] [65
+                     <./figuras/img_hist_1.png>] [66
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_2.png>] [66
+                     <./figuras/img_hist_2.png>] [67
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_3.png>] [67
+                     <./figuras/img_hist_3.png>] [68
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_noise_1.png>] [68
+                     <./figuras/img_hist_noise_1.png>] [69
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_noise_2.png>] [69
+                     <./figuras/img_hist_noise_2.png>] [70
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_noise_3.png>] [70
+                     <./figuras/img_hist_noise_3.png>] [71
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_noise_4.png>] [71
+                     <./figuras/img_hist_noise_4.png>] [72
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_hist_noise_5.png>] [72
+                     <./figuras/img_hist_noise_5.png>] [73
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_0.png>] [73
+                     <./figuras/heatmaps/heatmaps_app_0.png>] [74
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.11}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_1.png>] [74
+                     <./figuras/heatmaps/heatmaps_app_1.png>] [75
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.12}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_2.png>] [75
+                     <./figuras/heatmaps/heatmaps_app_2.png>] [76
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.13}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_3.png>] [76
+                     <./figuras/heatmaps/heatmaps_app_3.png>] [77
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.14}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_4.png>] [77
+                     <./figuras/heatmaps/heatmaps_app_4.png>] [78
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.15}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/heatmaps/heatmaps_app_5.png>] [78
+                     <./figuras/heatmaps/heatmaps_app_5.png>] [79
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.16}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_BCI_all_1.png>] [79
+                     <./figuras/img_BCI_all_1.png>] [80
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.17}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_BCI_all_2.png>] [80
+                     <./figuras/img_BCI_all_2.png>] [81
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.18}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_BCI_all_3.png>] [81
+                     <./figuras/img_BCI_all_3.png>] [82
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.19}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/img_BCI_all_4.png>] [82
+                     <./figuras/img_BCI_all_4.png>] [83
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.20}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                    ] [83
+                    ] [84
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.21}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/full_comp_1.png>] [84
+                     <./figuras/full_comp_1.png>] [85
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.22}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/full_comp_2.png>] [85
+                     <./figuras/full_comp_2.png>] [86
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/full_comp_3.png>] [86
+                     <./figuras/full_comp_3.png>] [87
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.24}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/hist_comp_1.png>] [87
+                     <./figuras/hist_comp_1.png>] [88
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.25}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.143 \include{appA}
-                     <./figuras/hist_comp_2.png>] [88
+                     <./figuras/hist_comp_2.png>] [89
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph1.26}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1543,7 +1544,7 @@ l.143 \include{appA}
 
  (./appB.tex
 Ap\'{e}ndice B.
-) [89
+) [90
 
 
 
@@ -1553,45 +1554,45 @@ Ap\'{e}ndice B.
 
  (./appC.tex
 Ap\'{e}ndice C.
-[90
+[91
 
 
 
 
 ]
-<figuras/reshef_2015_fig1.png, id=899, 518.6878pt x 279.29344pt>
+<figuras/reshef_2015_fig1.png, id=904, 518.6878pt x 279.29344pt>
 File: figuras/reshef_2015_fig1.png Graphic file (type png)
 <use figuras/reshef_2015_fig1.png>
 Package pdftex.def Info: figuras/reshef_2015_fig1.png  used on input line 67.
 (pdftex.def)             Requested size: 207.47144pt x 111.7154pt.
- [91] [92
+ [92] [93
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.94 
-      <./figuras/reshef_2015_fig1.png>] [93]
-<figuras/reshef_2016_fig3.png, id=941, 782.925pt x 923.45pt>
+      <./figuras/reshef_2015_fig1.png>] [94]
+<figuras/reshef_2016_fig3.png, id=945, 782.925pt x 923.45pt>
 File: figuras/reshef_2016_fig3.png Graphic file (type png)
 <use figuras/reshef_2016_fig3.png>
 Package pdftex.def Info: figuras/reshef_2016_fig3.png  used on input line 143.
 (pdftex.def)             Requested size: 313.16446pt x 369.37346pt.
- [94]
-<figuras/reshef_2016_fig4.png, id=949, 765.86125pt x 952.55875pt>
+ [95]
+<figuras/reshef_2016_fig4.png, id=953, 765.86125pt x 952.55875pt>
 File: figuras/reshef_2016_fig4.png Graphic file (type png)
 <use figuras/reshef_2016_fig4.png>
 Package pdftex.def Info: figuras/reshef_2016_fig4.png  used on input line 150.
 (pdftex.def)             Requested size: 306.33907pt x 381.01675pt.
- [95
+ [96
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.154 
-       <./figuras/reshef_2016_fig3.png>]) [96
+       <./figuras/reshef_2016_fig3.png>]) [97
 pdfTeX warning (ext4): destination with the same identifier (name{figure.Alph3.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.145 \include{appC}
-                     <./figuras/reshef_2016_fig4.png>] [97
+                     <./figuras/reshef_2016_fig4.png>] [98
 
 
 ]
@@ -1603,9 +1604,9 @@ Overfull \hbox (29.89859pt too wide) in paragraph at lines 153--153
 []\OT1/cmr/m/n/10 I. Csisz^^Sar. []  Axio-ma-tic cha-rac-te-ri-za-tions of in-for-ma-tion mea-su-res[]. En: 10.3 (2008), p^^Sags. 261[]273. 
  []
 
-[98
+[99
 
-] [99] [100] (./tesis_FCN.aux (./tapa.aux)
+] [100] [101] (./tesis_FCN.aux (./tapa.aux)
 LaTeX Info: Redefining \sptext on input line 25.
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
@@ -1620,17 +1621,17 @@ Package logreq Info: Writing requests to 'tesis_FCN.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  32508 strings out of 475237
- 606939 string characters out of 5768555
+ 606927 string characters out of 5768555
  1936238 words of memory out of 5000000
- 52878 multiletter control sequences out of 15000+600000
+ 52877 multiletter control sequences out of 15000+600000
  570915 words of font info for 85 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  99i,11n,101p,1373b,2329s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lasy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on tesis_FCN.pdf (100 pages, 47678966 bytes).
+Output written on tesis_FCN.pdf (101 pages, 47679055 bytes).
 PDF statistics:
- 1232 PDF objects out of 1440 (max. 8388607)
- 966 compressed objects within 10 object streams
- 328 named destinations out of 1000 (max. 500000)
+ 1236 PDF objects out of 1440 (max. 8388607)
+ 969 compressed objects within 10 object streams
+ 329 named destinations out of 1000 (max. 500000)
  508 words of extra memory for PDF output out of 10000 (max. 10000000)
 
